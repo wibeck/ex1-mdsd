@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="componentModel" nsPrefix="cm">
+  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" instanceTypeName="ViewPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemIndependentViewPoint" eSuperTypes="#//ViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" upperBound="-1"
+        eType="#//Repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
+        eType="#//Component" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//Interface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provided" upperBound="-1"
+        eType="#//Interface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
+        eType="#//Service" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" ordered="false"
+        upperBound="-1" eType="#//AssemblyContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
+        eType="#//Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceEffectSpecification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Branch">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalAction" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalAction" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
+        eType="#//Signature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemSpecificViewpoint" eSuperTypes="#//ViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" upperBound="-1"
+        eType="#//Assembly"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//ViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
+        eType="#//AssemblyContext" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" upperBound="-1"
+        eType="#//Connector" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" eType="#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" lowerBound="2"
+        upperBound="2" eType="#//AssemblyContext" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentViewPoint" eSuperTypes="#//ViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environment" upperBound="-1"
+        eType="#//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocation" upperBound="-1"
+        eType="#//Allocation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="#//ViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerlink" upperBound="-1"
+        eType="#//ContainerLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" upperBound="-1"
+        eType="#//Container" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Allocation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Signature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
+        eType="#//Interface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="correspondence" upperBound="-1"
+        eType="#//Signature" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
