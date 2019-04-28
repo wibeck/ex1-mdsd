@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentModel -->
+      <package
+            uri="componentModel"
+            class="ex1-mdsd.componentModel.ComponentModelPackage"
+            genModel="model/componentModel.genmodel"/>
+   </extension>
+
+</plugin>
