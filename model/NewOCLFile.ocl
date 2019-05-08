@@ -1,0 +1,37 @@
+import 'componentModel.ecore'
+import 'environment.ecore'
+
+package componentModel
+
+context SystemIndependentViewPoint
+--
+-- example invariant with a custom error message to verify that
+-- the 'repository' property of all 'componentModel::SystemIndependentViewPoint' instances is non-null
+--
+inv NonNull_repository('The \'repository\' property of "' + self.toString() + '" is null'):
+	repository <> null
+
+endpackage
+
+
+context componentModel::AssemblyConnector
+inv assemblyContextsNotEqual : (not (self.providedrole.assemblycontext = self.requiredrole.assemblycontext)) = true
+
+	
+-- Interfaces share signatures, i.e. more interfaces than signatures
+
+-- required Roles and provided roles that are connected within a single composite-component via AssemblyConnector share the same ownerComponent
+context componentModel::AssemblyConnector
+	inv : (self.providedrole.assemblycontext.ownerComponent = self.requiredrole.assemblycontext.ownerComponent) = true
+	
+-- encapsulated assemblycontexts are not allowed to be allocated to containers by themselves,
+-- they are allocated via the enclosing composite component implictly
+context environment::AllocationContext
+	inv:  environment::Container -> collect(allocationcontext) -> forAll(ac | ac.assemblycontext.ownerComponent= null)
+
+context componentModel::AssemblyConnector
+	inv:let contextsOfRoles =  Set{self.providedrole.assemblycontext, self.requiredrole.assemblycontext},
+	containerOfRoles = environment::Container -> collect(allocationcontext) -> select(ac | contextsOfRoles ->includes(ac.assemblycontext) = true)
+	in (containerOfRoles -> size() = 1 )xor (environment::Link -> collect(container) -> includesAll(containerOfRoles) = true)
+	
+	

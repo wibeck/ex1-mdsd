@@ -9,6 +9,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcontext" upperBound="-1"
+        eType="#//AllocationContext" eOpposite="#//AllocationContext/container"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="2"
@@ -16,19 +18,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllocationContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass componentModel.ecore#//AssemblyContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
+        eOpposite="#//Container/allocationcontext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
         eType="ecore:EClass componentModel.ecore#//AssemblyContext" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
         upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" eType="ecore:EClass componentModel.ecore#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="ecore:EClass componentModel.ecore#//ProvidedRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="ecore:EClass componentModel.ecore#//RequiredRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="ecore:EClass componentModel.ecore#//Component"/>
   </eClassifiers>
 </ecore:EPackage>
