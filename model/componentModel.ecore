@@ -13,26 +13,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="provided" upperBound="-1"
-        eType="#//Interface" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="#//Service" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" ordered="false"
-        upperBound="-1" eType="#//AssemblyContext"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
-        eType="#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceeffectspecification"
         eType="#//ServiceEffectSpecification"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signatureServiceMap" upperBound="-1"
-        eType="#//SignatureMapTuple"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMap" upperBound="-1"
+        eType="#//InterfaceServiceMapTuple"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors" upperBound="-1"
         eType="#//AssemblyConnector"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" upperBound="-1"
         eType="#//DelegationConnector"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SignatureMapTuple">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" eType="#//Signature"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="#//Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceServiceMapTuple">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" upperBound="-1"
+        eType="#//Service"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceEffectSpecification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
@@ -70,12 +63,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//Assembly"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"
         eOpposite="#//ProvidedRole/assemblycontext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"
         eOpposite="#//RequiredRole/assemblycontext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
@@ -84,7 +77,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Signature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -99,7 +91,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
         eType="#//Interface" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="correspondence" lowerBound="1"
-        upperBound="-1" eType="#//Signature" containment="true"/>
+        eType="#//Signature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
@@ -111,11 +103,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="#//AssemblyContext"
         eOpposite="#//AssemblyContext/requiredrole"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="#//AssemblyContext"
         eOpposite="#//AssemblyContext/providedrole"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//Interface"/>
@@ -123,4 +117,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" eSuperTypes="#//SystemIndependentViewPoint #//AssemblyViewPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
+        eType="#//AssemblyContext"/>
+  </eClassifiers>
 </ecore:EPackage>
