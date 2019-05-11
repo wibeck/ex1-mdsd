@@ -63,10 +63,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//Assembly"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"
-        eOpposite="#//ProvidedRole/assemblycontext"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"
-        eOpposite="#//RequiredRole/assemblycontext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
@@ -99,15 +97,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
         upperBound="-1" eType="#//Interface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredRole">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="#//AssemblyContext"
-        eOpposite="#//AssemblyContext/requiredrole"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="#//AssemblyContext"
-        eOpposite="#//AssemblyContext/providedrole"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//Role"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//Role"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" eType="#//AssemblyContext"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
   </eClassifiers>
