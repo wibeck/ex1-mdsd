@@ -18,13 +18,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllocationContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass componentModel.ecore#//AssemblyContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass assembly.ecore#//AssemblyContext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
         eOpposite="#//Container/allocationcontext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
-        eType="ecore:EClass componentModel.ecore#//AssemblyContext" containment="true"/>
+        eType="ecore:EClass assembly.ecore#//AssemblyContext" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
         upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
   </eClassifiers>

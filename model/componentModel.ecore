@@ -50,33 +50,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SystemSpecificViewpoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//ViewType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
-        eType="#//AssemblyContext" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" upperBound="-1"
-        eType="#//AssemblyConnector" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//Assembly"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors" upperBound="-1"
-        eType="#//AssemblyConnector"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" upperBound="-1"
-        eType="#//DelegationConnector"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="#//Interface"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Signature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//DataType"/>
@@ -94,25 +67,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
-        eType="#//AssemblyContext" containment="true"/>
+        eType="ecore:EClass assembly.ecore#//AssemblyContext" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
         upperBound="-1" eType="#//Interface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//Role"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//Role"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Role">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" eType="#//AssemblyContext"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" eSuperTypes="#//SystemIndependentViewPoint #//AssemblyViewPoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
-        eType="#//AssemblyContext"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" eSuperTypes="#//SystemIndependentViewPoint assembly.ecore#//AssemblyViewPoint"/>
 </ecore:EPackage>
