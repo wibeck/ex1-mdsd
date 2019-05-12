@@ -10,15 +10,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//Assembly"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="ecore:EClass componentModel.ecore#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
+        eType="ecore:EClass componentModel.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors" upperBound="-1"
-        eType="#//AssemblyConnector"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" upperBound="-1"
-        eType="#//DelegationConnector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
+        eType="#//RequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
+        eType="#//ProvidedRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
@@ -39,15 +38,27 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="ecore:EClass componentModel.ecore#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="componentModel.ecore#//Component">
+  <eClassifiers xsi:type="ecore:EClass" name="Context">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" upperBound="-1"
+        eType="ecore:EClass componentModel.ecore#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" lowerBound="1"
+        upperBound="-1" eType="#//DelegationConnector"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors" upperBound="-1"
+        eType="#//AssemblyConnector"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Context">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
         eType="#//AssemblyContext"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="System">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
-        eType="#//AssemblyContext" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//AssemblyContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" upperBound="-1"
+        eType="ecore:EClass componentModel.ecore#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
+        eType="#//AssemblyContext"/>
   </eClassifiers>
 </ecore:EPackage>

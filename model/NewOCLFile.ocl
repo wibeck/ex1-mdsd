@@ -20,21 +20,13 @@ inv assemblyContextsNotEqual : (not (self.providedrole.assemblyContext = self.re
 
 	
 
-
--- required Roles and provided roles that are connected within a single composite-component via AssemblyConnector share the same ownerComponent
-context  assembly::AssemblyConnector
-	inv : (self.providedrole.assemblyContext.ownerComponent = self.requiredrole.assemblyContext.ownerComponent) = true
-	
--- encapsulated assemblycontexts are not allowed to be allocated to containers by themselves,
--- they are allocated via the enclosing composite component implictly
-
-context assembly::ProvidedRole
-	inv: self.assemblyContext.ownerComponent.interfaceServiceMap ->select(entry | entry.providedInterface = self.interface)  -> notEmpty()
-
 context assembly::RequiredRole
-	inv: self.assemblyContext.ownerComponent.interfaceServiceMap ->select(entry | entry.service -> select(service| service.required 
-		-> includes(self.interface)))  -> notEmpty()
-	
+	inv: self.assemblyContext.instantiatedComponent.interfaceServiceMap ->select(entry | entry.service -> select(service| service.required 
+		-> includes(self.interface)))  -> notEmpty() and not (self.assemblyContext.instantiatedComponent = null)
+		
+context assembly::ProvidedRole
+	inv: self.assemblyContext.instantiatedComponent.interfaceServiceMap ->select(entry | entry.service -> select(service| service.correspondence -> union(entry.providedInterface.signatures)
+		))  -> notEmpty() and not (self.assemblyContext.instantiatedComponent = null)	
 	
 context assembly::AssemblyConnector
 	inv:let contextsOfRoles =  Set{self.providedrole.assemblyContext, self.requiredrole.assemblyContext},
