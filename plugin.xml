@@ -10,18 +10,19 @@
       <!-- @generated componentModel -->
       <package
             uri="componentModel"
-            class="ex1-mdsd.componentModel.ComponentModelPackage"
+            class="componentModel.ComponentModelPackage"
             genModel="model/componentModel.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated editor -->
       <package
-            uri="componentModel"
-            class="componentModel.ComponentModelPackage"
+            uri="assembly"
+            class="assembly.AssemblyPackage"
             genModel="model/editor.genmodel"/>
    </extension>
 
+null
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated editor -->
       <package

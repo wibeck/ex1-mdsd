@@ -30,7 +30,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//Role"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Role">
+  <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" eType="#//AssemblyContext"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="ecore:EClass componentModel.ecore#//Interface"/>
@@ -44,4 +44,10 @@
         eType="#//AssemblyContext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
+        eType="#//AssemblyContext" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
+  </eClassifiers>
 </ecore:EPackage>

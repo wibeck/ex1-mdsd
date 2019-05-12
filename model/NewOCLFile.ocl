@@ -32,7 +32,8 @@ context assembly::ProvidedRole
 	inv: self.assemblyContext.ownerComponent.interfaceServiceMap ->select(entry | entry.providedInterface = self.interface)  -> notEmpty()
 
 context assembly::RequiredRole
-	inv: self.assemblyContext.ownerComponent.interfaceServiceMap ->select(entry | entry.service -> select(service| service.required -> includes(self.interface)))  -> notEmpty()
+	inv: self.assemblyContext.ownerComponent.interfaceServiceMap ->select(entry | entry.service -> select(service| service.required 
+		-> includes(self.interface)))  -> notEmpty()
 	
 	
 context assembly::AssemblyConnector
