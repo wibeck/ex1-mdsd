@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_Kh998HTPEemxLMq7RTo__A" selectedViews="_LGzwYHTPEemxLMq7RTo__A _LG86UHTPEemxLMq7RTo__A _LG9hYHTPEemxLMq7RTo__A" version="14.1.0.201810161215">
+  <semanticResources>componentModel.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+  <semanticResources>assembly.ecore</semanticResources>
+  <semanticResources>environment.ecore</semanticResources>
+  <semanticResources>editor.genmodel</semanticResources>
+  <semanticResources>NewOCLinEcoreFile.ecore</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" uid="_LGzwYHTPEemxLMq7RTo__A">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Review']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DView" uid="_LG86UHTPEemxLMq7RTo__A">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DView" uid="_LG9hYHTPEemxLMq7RTo__A">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
