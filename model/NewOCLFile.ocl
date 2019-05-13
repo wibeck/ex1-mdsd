@@ -21,8 +21,8 @@ inv assemblyContextsNotEqual : (not (self.providedrole.assemblyContext = self.re
 	
 -- the source of the interface of a required-role is the component's service that requires it
 context assembly::RequiredRole
-	inv: self.assemblyContext.instantiatedComponent.interfaceServiceMap ->exists(entry | entry.service -> select(service| service.required 
-		-> includes(self.interface)))  -> notEmpty() and not (self.assemblyContext.instantiatedComponent = null)
+	inv: self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.service -> select(service| service.required 
+		-> includes(self.interface)))  -> notEmpty() and not (self.assemblyContext.instantiates = null)
 
 -- ensures that there are services for each signature of the provided interfaces of a component		
 context componentModel::Component
@@ -31,7 +31,7 @@ context componentModel::Component
 
 -- the source of the interface of a provided-role is the component's provided-interface
 context assembly::ProvidedRole
-	inv: self.assemblyContext.instantiatedComponent.interfaceServiceMap ->exists(entry | entry.providedInterface = self.interface)
+	inv: self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.providedInterface = self.interface)
 	
 -- assembly contexts, that are connected via asssembly connector are  allocated to the same container or their containers are linked
 context assembly::AssemblyConnector
