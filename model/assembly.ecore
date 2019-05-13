@@ -10,9 +10,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//Assembly"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
-        eType="ecore:EClass componentModel.ecore#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context #//AssemblyViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" eType="ecore:EClass componentModel.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
         eType="#//RequiredRole"/>
@@ -62,4 +61,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
         eType="#//AssemblyContext"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType"/>
 </ecore:EPackage>
