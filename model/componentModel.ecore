@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="componentModel" nsPrefix="cm">
   <eClassifiers xsi:type="ecore:EClass" name="SystemIndependentViewPoint" eSuperTypes="#//ViewPoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType #//RepositoryViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType #//RepositoryViewType #//RepositoryViewType.1">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
@@ -53,11 +53,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Service">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
-        eType="#//Interface" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="correspondence" lowerBound="1"
-        upperBound="-1" eType="#//Signature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="correspondence" lowerBound="1"
+        upperBound="-1" eType="#//Signature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
+        eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="viewTypes" upperBound="-1"
@@ -92,4 +92,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="#//ViewPoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeploymentViewPoint" eSuperTypes="#//ViewPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" abstract="true"
+      eSuperTypes="#//ViewType"/>
 </ecore:EPackage>
