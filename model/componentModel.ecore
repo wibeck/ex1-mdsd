@@ -61,8 +61,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" lowerBound="1"
+        eType="#//RequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" lowerBound="1"
+        eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Signature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -97,7 +99,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
+        eType="#//ProvidedRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" abstract="true">
