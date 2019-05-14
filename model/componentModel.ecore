@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="componentModel" nsPrefix="cm">
   <eClassifiers xsi:type="ecore:EClass" name="SystemIndependentViewPoint" eSuperTypes="#//ViewPoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType #//RepositoryViewType #//RepositoryViewType.1">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType #//RepositoryViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
@@ -85,8 +85,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterType" lowerBound="1"
         eType="#//ParameterType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" abstract="true"
-      eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewTyp" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewTyp" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="#//ViewType"/>

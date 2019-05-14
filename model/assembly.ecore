@@ -55,8 +55,8 @@
         eType="#//AssemblyContext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//AssemblyContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
-        eType="#//AssemblyContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"
+        eType="#//AssemblyContext" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" abstract="true"/>
 </ecore:EPackage>
