@@ -29,7 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
         upperBound="-1" eType="#//Branch" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Branch">
+  <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" lowerBound="1"
         upperBound="-1" eType="#//Action"/>
   </eClassifiers>
@@ -50,7 +50,6 @@
         eType="#//Signature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SystemSpecificViewpoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="Signature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="#//DataType"/>
@@ -67,5 +66,5 @@
         upperBound="-1" eType="#//Signature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" eSuperTypes="#//SystemIndependentViewPoint assembly.ecore#//AssemblyViewPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint"/>
 </ecore:EPackage>
