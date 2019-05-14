@@ -2,18 +2,6 @@ import 'componentModel.ecore'
 import 'assembly.ecore'
 import 'environment.ecore'
 
-package componentModel
-
-context RepositoryViewType
---
--- example invariant with a custom error message to verify that
--- the 'repository' property of all 'componentModel::RepositoryViewType' instances is non-null
---
-inv NonNull_repository('The \'repository\' property of "' + self.toString() + '" is null'):
-	repositories <> null
-
-endpackage
-
 
 context assembly::AssemblyConnector
 inv assemblyContextsNotEqual : (not (self.providedrole.assemblyContext = self.requiredrole.assemblyContext)) = true
@@ -43,3 +31,7 @@ context assembly::AssemblyConnector
 -- implicitly allocated
 context environment::AllocationContext
 	inv: self.assemblycontext.ownerComponent = null
+	
+-- the provided and required interfaces of assemblyContexts stem from their roles	
+context assembly::AssemblyContext
+	inv: self.requiredInterfaces = self.requiredRoles -> collect(interface) and self.providedInterfaces = self.providedRoles -> collect(interface)
