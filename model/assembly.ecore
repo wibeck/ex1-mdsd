@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assembly" nsURI="assembly" nsPrefix="assembly">
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="componentModel.ecore#//ViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="viewTypes" upperBound="-1"
-        eType="#//AssemblyViewType"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="componentModel.ecore#//ViewPoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context #//AssemblyViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" eType="ecore:EClass componentModel.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
@@ -23,7 +20,8 @@
         eType="#//RequiredRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" lowerBound="1"
+        eType="#//RequiredRole"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="ecore:EClass componentModel.ecore#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//Role"/>
@@ -35,7 +33,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="ecore:EClass componentModel.ecore#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
+        eType="#//ProvidedRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Context">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" upperBound="-1"
