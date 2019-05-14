@@ -46,12 +46,8 @@
     </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//ViewType"/>
     <genClasses ecoreClass="componentModel.ecore#//SystemSpecificViewpoint"/>
-    <genClasses ecoreClass="componentModel.ecore#//Assembly">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Assembly/assemblycontext"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Assembly/connector"/>
-    </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//AssemblyViewPoint">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentModel.ecore#//AssemblyViewPoint/assembly"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentModel.ecore#//AssemblyViewPoint/viewTypes"/>
     </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//AssemblyContext">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentModel.ecore#//AssemblyContext/providedrole"/>
@@ -103,6 +99,7 @@
     <genClasses ecoreClass="componentModel.ecore#//CompositeComponent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentModel.ecore#//CompositeComponent/encapsulated"/>
     </genClasses>
+    <genClasses ecoreClass="componentModel.ecore#//AssemblyViewType"/>
   </genPackages>
   <genPackages prefix="Environment" disposableProviderFactory="true" ecorePackage="environment.ecore#/">
     <genClasses ecoreClass="environment.ecore#//Environment">

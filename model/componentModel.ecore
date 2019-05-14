@@ -31,7 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
         upperBound="-1" eType="#//Branch" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Branch">
+  <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" lowerBound="1"
         upperBound="-1" eType="#//Action"/>
   </eClassifiers>
