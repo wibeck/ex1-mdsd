@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="componentModel" nsPrefix="cm">
-  <eClassifiers xsi:type="ecore:EClass" name="SystemIndependentViewPoint">
+  <eClassifiers xsi:type="ecore:EClass" name="SystemIndependentViewPoint" eSuperTypes="#//ViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="repository" upperBound="-1"
         eType="#//Repository"/>
   </eClassifiers>
@@ -53,16 +53,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SystemSpecificViewpoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//ViewType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" upperBound="-1"
-        eType="#//AssemblyContext" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connector" upperBound="-1"
-        eType="#//AssemblyConnector" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="#//ViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewTypes" eType="#//AssemblyViewType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//Assembly"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext">
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//AssemblyViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"
         eOpposite="#//ProvidedRole/assemblycontext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" eType="#//RequiredRole"
@@ -116,9 +110,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" eType="#//ProvidedRole"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" eSuperTypes="#//SystemIndependentViewPoint #//AssemblyViewPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewPoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
         eType="#//AssemblyContext"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" eSuperTypes="#//AssemblyViewPoint"/>
 </ecore:EPackage>
