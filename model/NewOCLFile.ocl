@@ -2,21 +2,7 @@ import 'componentModel.ecore'
 import 'assembly.ecore'
 import 'environment.ecore'
 
-<<<<<<< HEAD
-=======
-package componentModel
 
-context RepositoryViewType
---
--- example invariant with a custom error message to verify that
--- the 'repository' property of all 'componentModel::SystemIndependentViewPoint' instances is non-null
---
-inv NonNull_repository('The \'repository\' property of "' + self.toString() + '" is null'):
-	repositories <> null
-
-endpackage
-
->>>>>>> 89b281d99934a6b67d622a983a545341863583cc
 
 context assembly::AssemblyConnector
 inv assemblyContextsNotEqual : (not (self.providedrole.assemblyContext = self.requiredrole.assemblyContext)) = true
