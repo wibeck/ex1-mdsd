@@ -8,16 +8,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: .,
- assembly,
- assembly.impl,
- assembly.util,
- componentModel,
- componentModel.impl,
- componentModel.util,
- environment,
- environment.impl,
- environment.util
+Export-Package: .
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

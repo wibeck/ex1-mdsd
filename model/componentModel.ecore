@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="componentModel" nsPrefix="cm">
   <eClassifiers xsi:type="ecore:EClass" name="SystemIndependentViewPoint" eSuperTypes="#//ViewPoint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//ViewType #//RepositoryViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="component" upperBound="-1"
         eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
@@ -29,7 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
         eType="#//Action" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
         eType="#//Action" containment="true"/>
@@ -63,7 +63,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="viewTypes" upperBound="-1"
         eType="#//ViewType" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Void" abstract="true" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Void" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterType" abstract="true" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexParameterType" eSuperTypes="#//ParameterType"/>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleParameterType" abstract="true"
@@ -85,10 +85,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterType" lowerBound="1"
         eType="#//ParameterType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" eSuperTypes="#//ViewType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="repositories" upperBound="-1"
-        eType="#//Repository"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" abstract="true"
+      eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewTyp" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewTyp" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="#//ViewType"/>
