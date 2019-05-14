@@ -98,7 +98,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
+        eType="#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
         eType="#//ProvidedRole"/>
   </eClassifiers>
