@@ -11,7 +11,7 @@
       <package
             uri="componentModel"
             class="componentModel.ComponentModelPackage"
-            genModel="model/componentModel.genmodel"/>
+            genModel="model/editor.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
