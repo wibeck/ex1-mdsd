@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assembly" nsURI="assembly" nsPrefix="assembly">
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="componentModel.ecore#//ViewPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" abstract="true" eSuperTypes="componentModel.ecore#//ViewPoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyviewtype" upperBound="-1"
+        eType="#//AssemblyViewType" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context #//AssemblyViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" eType="ecore:EClass componentModel.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
@@ -55,5 +58,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
         eType="#//AssemblyContext"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" abstract="true"/>
 </ecore:EPackage>
