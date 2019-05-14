@@ -52,7 +52,6 @@
         eType="#//Signature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SystemSpecificViewpoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="#//ViewPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="viewTypes" eType="#//AssemblyViewType"/>
   </eClassifiers>
