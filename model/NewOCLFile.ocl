@@ -4,13 +4,13 @@ import 'environment.ecore'
 
 package componentModel
 
-context SystemIndependentViewPoint
+context RepositoryViewType
 --
 -- example invariant with a custom error message to verify that
--- the 'repository' property of all 'componentModel::SystemIndependentViewPoint' instances is non-null
+-- the 'repository' property of all 'componentModel::RepositoryViewType' instances is non-null
 --
 inv NonNull_repository('The \'repository\' property of "' + self.toString() + '" is null'):
-	repository <> null
+	repositories <> null
 
 endpackage
 
