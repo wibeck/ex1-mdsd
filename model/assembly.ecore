@@ -22,11 +22,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" lowerBound="1"
         eType="#//RequiredRole"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" lowerBound="1"
-        eType="#//RequiredRole"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="ecore:EClass componentModel.ecore#//Interface"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector"/>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//Role"/>
   <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true">
@@ -34,11 +30,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="ecore:EClass componentModel.ecore#//Interface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="ecore:EClass componentModel.ecore#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
-        eType="#//ProvidedRole"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//DelegationConnector"/>
   <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" upperBound="-1"
         eType="ecore:EClass componentModel.ecore#//Interface"/>
@@ -47,7 +39,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors" upperBound="-1"
         eType="#//AssemblyConnector"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//RequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="ecore:EClass componentModel.ecore#//Interface"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Context">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
         upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>

@@ -36,3 +36,11 @@ context environment::AllocationContext
 -- the provided and required interfaces of assemblyContexts stem from their roles	
 context assembly::AssemblyContext
 	inv: self.requiredInterfaces = self.requiredRoles -> collect(interface) and self.providedInterfaces = self.providedRoles -> collect(interface)
+
+-- the role of RequiredDelegationConnector can only be of type RequiredRole
+context assembly::RequiredDelegationConnector
+	inv: (self.role.oclIsKindOf(RequiredRole))
+
+-- the role of ProvidedDelegationConnector can only be of type ProvidedRole	
+context assembly::ProvidedDelegationConnector
+	inv: self.role.oclIsKindOf(assembly::ProvidedRole)
