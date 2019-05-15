@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_4AkawHb8EemnDs9sHo9UWw" version="14.1.0.201810161215">
+  <semanticResources>repositoryVT.componentmodel</semanticResources>
+  <semanticResources>webguiISmap.componentmodel</semanticResources>
+  <semanticResources>mediaStoreMap.componentmodel</semanticResources>
+  <semanticResources>soundDWMapEntry.componentmodel</semanticResources>
+  <semanticResources>AudioDBMapEntry.componentmodel</semanticResources>
+  <semanticResources>httpDownloadService.componentmodel</semanticResources>
+  <semanticResources>httpUploadService.componentmodel</semanticResources>
+  <semanticResources>mediaStoreDownload.componentmodel</semanticResources>
+  <semanticResources>mediaStoreUpload.componentmodel</semanticResources>
+  <semanticResources>soundWatermark.componentmodel</semanticResources>
+  <semanticResources>audioDBquery.componentmodel</semanticResources>
+  <semanticResources>audioDBaddFile.componentmodel</semanticResources>
+  <semanticResources>compositeComponent.assembly</semanticResources>
+  <semanticResources>webGui.assembly</semanticResources>
+  <semanticResources>poolingAudioDB.assembly</semanticResources>
+  <semanticResources>mainCompComponent.assembly</semanticResources>
+  <semanticResources>mainProvidedrole.assembly</semanticResources>
+  <semanticResources>mediaManagerProvidedRoles.assembly</semanticResources>
+  <semanticResources>dbCacheProvidedRole.assembly</semanticResources>
+  <semanticResources>digitalWatermarkingProvidedrole.assembly</semanticResources>
+  <semanticResources>poolingAudiProvidedRole.assembly</semanticResources>
+  <semanticResources>webGuiProvidedRole.assembly</semanticResources>
+  <semanticResources>mainRequiredRole.assembly</semanticResources>
+  <semanticResources>dbCacheRequiredRole.assembly</semanticResources>
+  <semanticResources>MediaManagerRequiredRoleAudioDB.assembly</semanticResources>
+  <semanticResources>MediaManagerRequiredRoleSound.assembly</semanticResources>
+  <semanticResources>webGuiRequiredRoleHTTP.assembly</semanticResources>
+  <semanticResources>providedDelegationConnectorMMWG.assembly</semanticResources>
+  <semanticResources>requiredDelegationConnector.assembly</semanticResources>
+  <semanticResources>system.assembly</semanticResources>
+  <semanticResources>sysPovidedDelegationConnector.assembly</semanticResources>
+  <semanticResources>webGuiMainassemblyConnector.assembly</semanticResources>
+  <semanticResources>mediaManagerDigitalWatermarkingAssemblyConnector.assembly</semanticResources>
+  <semanticResources>MediaManagerDBCacheAssemblyCnnector.assembly</semanticResources>
+  <semanticResources>mainCompositeComponentPoolingAudioDBAssemblyConnector.assembly</semanticResources>
+  <semanticResources>environmentMain.environment</semanticResources>
+  <semanticResources>allocationContextDBServer.environment</semanticResources>
+  <semanticResources>mainCompComponentAllocationContext.environment</semanticResources>
+  <semanticResources>webGuiAllocationContext.environment</semanticResources>
+</viewpoint:DAnalysis>

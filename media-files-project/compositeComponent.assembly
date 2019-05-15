@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly:CompositeComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assembly="assembly" name="main">
+  <encapsulates name="dbcache" ownerComponent="/">
+    <instantiates href="repositoryVT.componentmodel#//@component.0"/>
+  </encapsulates>
+  <encapsulates name="mediamanager" ownerComponent="/">
+    <instantiates href="repositoryVT.componentmodel#//@component.1"/>
+  </encapsulates>
+  <encapsulates name="digitalWatermarking" ownerComponent="/">
+    <instantiates href="repositoryVT.componentmodel#//@component.3"/>
+  </encapsulates>
+</assembly:CompositeComponent>

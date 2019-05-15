@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cm:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="assembly" xmlns:cm="componentModel">
+  <component name="DBCache">
+    <interfaceServiceMap href="AudioDBMapEntry.componentmodel#/"/>
+  </component>
+  <component name="MediaManager">
+    <interfaceServiceMap href="mediaStoreMap.componentmodel#/"/>
+  </component>
+  <component name="WebGUI">
+    <interfaceServiceMap href="webguiISmap.componentmodel#/"/>
+  </component>
+  <component name="DigitalWatermarking">
+    <interfaceServiceMap href="soundDWMapEntry.componentmodel#/"/>
+  </component>
+  <component name="PoolingAudioDB">
+    <interfaceServiceMap href="AudioDBMapEntry.componentmodel#/"/>
+  </component>
+  <component xsi:type="assembly:CompositeComponent" name="MediaStore">
+    <interfaceServiceMap href="mediaStoreMap.componentmodel#/"/>
+  </component>
+  <component xsi:type="assembly:CompositeComponent" name="Main">
+    <interfaceServiceMap href="mediaStoreMap.componentmodel#/"/>
+  </component>
+  <interface Name="HTTP">
+    <signatures name="HTTPDownload"/>
+    <signatures name="HTTPUpload"/>
+  </interface>
+  <interface Name="MediaStore">
+    <signatures name="download"/>
+    <signatures name="upload"/>
+  </interface>
+  <interface Name="Sound">
+    <signatures name="watermarkt"/>
+  </interface>
+  <interface Name="AudioDB">
+    <signatures name="queryDB"/>
+    <signatures name="addFile"/>
+  </interface>
+</cm:Repository>

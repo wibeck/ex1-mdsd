@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly:RequiredRole xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assembly="assembly" name="mediaManagerRequiredRoleSound">
+  <assemblyContext href="compositeComponent.assembly#//@encapsulates.1"/>
+  <interface href="repositoryVT.componentmodel#//@interface.2"/>
+</assembly:RequiredRole>

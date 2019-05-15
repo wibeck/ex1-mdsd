@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cm:InterfaceServiceMapEntry xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cm="componentModel" name="AudioDBMapEntry">
+  <providedInterface href="repositoryVT.componentmodel#//@interface.3"/>
+  <service href="audioDBaddFile.componentmodel#/"/>
+  <service href="audioDBquery.componentmodel#/"/>
+</cm:InterfaceServiceMapEntry>
