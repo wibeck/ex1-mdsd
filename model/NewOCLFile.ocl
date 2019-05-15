@@ -40,7 +40,18 @@ context assembly::AssemblyContext
 -- the role of RequiredDelegationConnector can only be of type RequiredRole
 context assembly::RequiredDelegationConnector
 	inv: (self.role.oclIsKindOf(RequiredRole))
+--and (assembly::AssemblyContext.requiredInterfaces -> includes(self.interface))
 
 -- the role of ProvidedDelegationConnector can only be of type ProvidedRole	
 context assembly::ProvidedDelegationConnector
 	inv: self.role.oclIsKindOf(assembly::ProvidedRole)
+
+	
+context componentModel::DeploymentViewPoint
+	inv: self.viewtypes -> forAll(vt | vt.oclIsKindOf(componentModel::EnvironmentViewType) or vt.oclIsKindOf(componentModel::AllocationViewType))
+	
+context componentModel::SystemIndependentViewPoint
+	inv: self.viewtypes -> forAll(vt | vt.oclIsKindOf(componentModel::RepositoryViewType) )
+
+context componentModel::AssemblyViewPoint
+	inv: self.viewtypes -> forAll(vt | vt.oclIsKindOf(componentModel::AssemblyViewType) )

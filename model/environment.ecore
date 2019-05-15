@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="environment" nsURI="env" nsPrefix="env">
-  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewTyp" eSuperTypes="componentModel.ecore#//ViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="componentModel.ecore#//EnvironmentViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" upperBound="-1"
         eType="#//Container" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
@@ -9,8 +9,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcontext" upperBound="-1"
-        eType="#//AllocationContext" eOpposite="#//AllocationContext/container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcontext" lowerBound="1"
+        upperBound="-1" eType="#//AllocationContext" eOpposite="#//AllocationContext/container"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="2"
@@ -23,13 +23,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
         upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AllocationContext">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass assembly.ecore#//AssemblyContext"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="componentModel.ecore#//AllocationViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" lowerBound="1"
+        eType="ecore:EClass assembly.ecore#//AssemblyContext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
         eOpposite="#//Container/allocationcontext"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="componentModel.ecore#//ViewType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
-        eType="#//AllocationContext" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
