@@ -7,6 +7,13 @@
     <semanticResources>assembly.ecore</semanticResources>
     <semanticResources>environment.ecore</semanticResources>
     <semanticResources>editor.genmodel</semanticResources>
+    <semanticResources>NewOCLFile.ocl</semanticResources>
+    <semanticResources>NewOCLFile.ocl.oclas</semanticResources>
+    <semanticResources>http://www.eclipse.org/ocl/2015/Pivot</semanticResources>
+    <semanticResources>componentModel.ecore.oclas</semanticResources>
+    <semanticResources>assembly.ecore.oclas</semanticResources>
+    <semanticResources>environment.ecore.oclas</semanticResources>
+    <semanticResources>http://www.eclipse.org/ocl/2015/Library.oclas</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_HFTTwHaFEemvIbbdvEzbgg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_LGGwwXbHEem76_BqGIYmmQ" name="componentModel class diagram" repPath="#_LGCfUHbHEem76_BqGIYmmQ">

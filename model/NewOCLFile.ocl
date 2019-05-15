@@ -42,9 +42,15 @@ context assembly::RequiredDelegationConnector
 	inv: (self.role.oclIsKindOf(RequiredRole))
 --and (assembly::AssemblyContext.requiredInterfaces -> includes(self.interface))
 
+--context assembly::AssemblyContext
+--	inv: self.requiredInterfaces -> forAll(interf | interf = assembly::RequiredDelegationConnector.interface)
+--  and self.providedInterfaces -> forAll(interf | inter = assembly::ProvidedDelegationConnector.interface)
+
+
+
 -- the role of ProvidedDelegationConnector can only be of type ProvidedRole	
 context assembly::ProvidedDelegationConnector
-	inv: self.role.oclIsKindOf(assembly::ProvidedRole)
+	inv: self.role.oclIsKindOf(assembly::ProvidedRole) 
 
 	
 context componentModel::DeploymentViewPoint
