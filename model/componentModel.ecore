@@ -86,8 +86,16 @@
         eType="#//ParameterType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewTyp" eSuperTypes="#//ViewType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewTyp" eSuperTypes="#//ViewType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="#//ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewTyp" eSuperTypes="#//ViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="ecore:EClass environment.ecore#//Link"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" upperBound="-1"
+        eType="ecore:EClass environment.ecore#//Container" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="#//ViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
+        eType="ecore:EClass environment.ecore#//AllocationContext" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="#//ViewPoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeploymentViewPoint" eSuperTypes="#//ViewPoint"/>
   <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" abstract="true"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="environment" nsURI="env" nsPrefix="env">
-  <eClassifiers xsi:type="ecore:EClass" name="Environment">
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewTyp" eSuperTypes="componentModel.ecore#//ViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" upperBound="-1"
         eType="#//Container" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
@@ -27,5 +27,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" eType="ecore:EClass assembly.ecore#//AssemblyContext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
         eOpposite="#//Container/allocationcontext"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="componentModel.ecore#//ViewType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
+        eType="#//AllocationContext" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
