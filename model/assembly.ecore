@@ -49,7 +49,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" upperBound="-1"
         eType="#//AssemblyContext"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//AssemblyContext">
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="componentModel.ecore#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulates" upperBound="-1"
         eType="#//AssemblyContext" containment="true"/>
   </eClassifiers>
