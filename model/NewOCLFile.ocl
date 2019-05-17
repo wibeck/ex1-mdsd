@@ -11,7 +11,7 @@ inv assemblyContextsNotEqual : (not (self.providedrole.assemblyContext = self.re
 -- the source of the interface of a required-role is the component's service that requires it
 context assembly::RequiredRole
 	inv: self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.service -> select(service| service.required 
-		-> includes(self.interface)))  -> notEmpty() and not (self.assemblyContext.instantiates = null)
+		-> includes(self.interFace)))  -> notEmpty() and not (self.assemblyContext.instantiates = null)
 
 -- ensures that there are services for each signature of the provided interfaces of a component		
 context componentModel::Component
@@ -20,7 +20,7 @@ context componentModel::Component
 
 -- the source of the interface of a provided-role is the component's provided-interface
 context assembly::ProvidedRole
-	inv: self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.providedInterface = self.interface)
+	inv: self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.providedInterface = self.interFace)
 	
 -- assembly contexts, that are connected via asssembly connector are  allocated to the same container or their containers are linked
 context assembly::AssemblyConnector
@@ -35,7 +35,7 @@ context environment::AllocationContext
 	
 -- the provided and required interfaces of assemblyContexts stem from their roles	
 context assembly::AssemblyContext
-	inv: self.requiredInterfaces = self.requiredRoles -> collect(interface) and self.providedInterfaces = self.providedRoles -> collect(interface)
+	inv: self.requiredInterfaces = self.requiredRoles -> collect(interFace) and self.providedInterfaces = self.providedRoles -> collect(interFace)
 
 -- the role of RequiredDelegationConnector can only be of type RequiredRole
 context assembly::RequiredDelegationConnector
