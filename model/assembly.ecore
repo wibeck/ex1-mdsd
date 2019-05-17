@@ -93,7 +93,6 @@
       <details key="providedRoleForProvidedInterfaceExists" value="&#xA;&#x9;&#x9;self.encapsulated -> collect(providedRoles) -> exists(role | providedInterfaces -> includes(role.interFace))"/>
       <details key="requiredRoleForProvidedInterfaceExists" value="&#xA;&#x9;&#x9;self.encapsulated -> collect(providedRoles) -> exists(role | providedInterfaces -> includes(role.interFace))"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false" upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" ordered="false" lowerBound="1" upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulated" ordered="false" upperBound="-1" eType="#//AssemblyContext"/>
   </eClassifiers>
