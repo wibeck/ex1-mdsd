@@ -18,6 +18,7 @@
     <genClasses ecoreClass="assembly.ecore#//AssemblyConnector">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyConnector/providedrole"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyConnector/requiredrole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//AssemblyConnector/name"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//RequiredDelegationConnector"/>
     <genClasses ecoreClass="assembly.ecore#//RequiredRole"/>
@@ -36,10 +37,12 @@
     <genClasses image="false" ecoreClass="assembly.ecore#//DelegationConnector">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//DelegationConnector/interface"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//DelegationConnector/role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//DelegationConnector/name"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//System">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//System/providedInterface"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//System/encapsulated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//System/name"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//CompositeComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//CompositeComponent/encapsulates"/>
@@ -50,6 +53,7 @@
     <genClasses ecoreClass="componentModel.ecore#//Repository">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/component"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/interface"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//Repository/name"/>
     </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//Component/name"/>
@@ -63,11 +67,14 @@
     </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//ServiceEffectSpecification">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//ServiceEffectSpecification/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//ServiceEffectSpecification/name"/>
     </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//Branch">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentModel.ecore#//Branch/actions"/>
     </genClasses>
-    <genClasses ecoreClass="componentModel.ecore#//Action"/>
+    <genClasses ecoreClass="componentModel.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//Action/name"/>
+    </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//Loop">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentModel.ecore#//Loop/actions"/>
     </genClasses>
@@ -123,6 +130,7 @@
     <genClasses ecoreClass="environment.ecore#//Environment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference environment.ecore#//Environment/container"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference environment.ecore#//Environment/link"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute environment.ecore#//Environment/name"/>
     </genClasses>
     <genClasses ecoreClass="environment.ecore#//Container">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute environment.ecore#//Container/name"/>
@@ -132,13 +140,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference environment.ecore#//Link/container"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute environment.ecore#//Link/name"/>
     </genClasses>
-    <genClasses ecoreClass="environment.ecore#//System">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference environment.ecore#//System/assemblycontext"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference environment.ecore#//System/interface"/>
-    </genClasses>
     <genClasses ecoreClass="environment.ecore#//AllocationContext">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference environment.ecore#//AllocationContext/assemblycontext"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference environment.ecore#//AllocationContext/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute environment.ecore#//AllocationContext/name"/>
+    </genClasses>
+    <genClasses ecoreClass="environment.ecore#//System">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference environment.ecore#//System/providedInterface"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference environment.ecore#//System/encapsulated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute environment.ecore#//System/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
