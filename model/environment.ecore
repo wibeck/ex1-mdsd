@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="environment" nsURI="env" nsPrefix="env">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="environment" nsURI="env" nsPrefix="env">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="assembly" value="assembly.ecore#/"/>
     <details key="cm" value="componentModel.ecore#/"/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="componentModel.ecore#//EnvironmentViewType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false"
-        upperBound="-1" eType="#//Container" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="link" ordered="false" upperBound="-1"
-        eType="#//Link" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false" upperBound="-1" eType="#//Container" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" ordered="false" upperBound="-1" eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="containerPartOfOutwardLinks allocationOnSameContainerOrContainersLinked"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="containerPartOfOutwardLinks" value="&#xA;&#x9;&#x9;self.outwardLinks ->collect(container) -> includes(self)"/>
+      <details key="allocationOnSameContainerOrContainersLinked" value="&#xA;&#x9;&#x9;let ProvidedAssemblyContexts =&#xA;&#x9;&#x9;self.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(providedrole),&#xA;&#x9;&#x9;RequiredAssemblyContexts =&#xA;&#x9;&#x9;self.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(requiredrole)&#xA;&#x9;&#x9;in self.allocationcontext -> collect(assemblycontext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))&#xA;&#x9;&#x9;xor self.outwardLinks -> collect(container) ->collect(allocationcontext) -> collect(assemblycontext) &#xA;&#x9;&#x9;-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcontext" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//AllocationContext" eOpposite="#//AllocationContext/container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcontext" ordered="false" lowerBound="1" upperBound="-1" eType="#//AllocationContext"
+        eOpposite="#//AllocationContext/container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outwardLinks" ordered="false" upperBound="-1" eType="#//Link"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false"
-        lowerBound="2" upperBound="-1" eType="#//Container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false" lowerBound="2" upperBound="-1" eType="#//Container"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="componentModel.ecore#//AllocationViewType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" lowerBound="1"
-        eType="ecore:EClass assembly.ecore#//AssemblyContext"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
-        eOpposite="#//Container/allocationcontext"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="onlyTopLevelComponentsAllowedToBeAllocated"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="onlyTopLevelComponentsAllowedToBeAllocated" value="self.assemblycontext.ownerComponent = null"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblycontext" lowerBound="1" eType="ecore:EClass assembly.ecore#//AssemblyContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container" eOpposite="#//Container/allocationcontext"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
