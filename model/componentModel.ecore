@@ -41,7 +41,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMap" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceeffectspecification"
-        eType="#//ServiceEffectSpecification" containment="true"/>
+        lowerBound="1" eType="#//ServiceEffectSpecification" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceServiceMapEntry">
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" ordered="false"

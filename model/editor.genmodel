@@ -17,6 +17,7 @@
     <genClasses ecoreClass="assembly.ecore#//AssemblyConnector">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyConnector/providedrole"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyConnector/requiredrole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//AssemblyConnector/name"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//RequiredDelegationConnector"/>
     <genClasses ecoreClass="assembly.ecore#//RequiredRole"/>
