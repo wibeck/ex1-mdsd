@@ -41,6 +41,7 @@
         eType="#//ProvidedRole"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" lowerBound="1"
         eType="#//RequiredRole"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
