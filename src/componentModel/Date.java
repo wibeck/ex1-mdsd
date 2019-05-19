@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface Date extends SimpleParameterType {
+public interface Date extends SimpleType {
 } // Date

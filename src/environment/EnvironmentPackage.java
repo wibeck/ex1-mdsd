@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EReference;
  * @see environment.EnvironmentFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/OCL/Import assembly='assembly.ecore#/' cm='componentModel.ecore#/'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface EnvironmentPackage extends EPackage {
@@ -143,13 +144,22 @@ public interface EnvironmentPackage extends EPackage {
 	int CONTAINER__ALLOCATIONCONTEXT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Outward Links</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__OUTWARD_LINKS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_FEATURE_COUNT = 2;
+	int CONTAINER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Container</em>' class.
@@ -338,6 +348,17 @@ public interface EnvironmentPackage extends EPackage {
 	EReference getContainer_Allocationcontext();
 
 	/**
+	 * Returns the meta object for the reference list '{@link environment.Container#getOutwardLinks <em>Outward Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outward Links</em>'.
+	 * @see environment.Container#getOutwardLinks()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_OutwardLinks();
+
+	/**
 	 * Returns the meta object for class '{@link environment.Link <em>Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -494,6 +515,14 @@ public interface EnvironmentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTAINER__ALLOCATIONCONTEXT = eINSTANCE.getContainer_Allocationcontext();
+
+		/**
+		 * The meta object literal for the '<em><b>Outward Links</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__OUTWARD_LINKS = eINSTANCE.getContainer_OutwardLinks();
 
 		/**
 		 * The meta object literal for the '{@link environment.impl.LinkImpl <em>Link</em>}' class.

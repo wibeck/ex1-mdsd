@@ -4,6 +4,7 @@ package environment.impl;
 
 import environment.AllocationContext;
 import environment.EnvironmentPackage;
+import environment.Link;
 
 import java.util.Collection;
 
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link environment.impl.ContainerImpl#getName <em>Name</em>}</li>
  *   <li>{@link environment.impl.ContainerImpl#getAllocationcontext <em>Allocationcontext</em>}</li>
+ *   <li>{@link environment.impl.ContainerImpl#getOutwardLinks <em>Outward Links</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +68,16 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 	 * @ordered
 	 */
 	protected EList<AllocationContext> allocationcontext;
+
+	/**
+	 * The cached value of the '{@link #getOutwardLinks() <em>Outward Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutwardLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> outwardLinks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +139,19 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Link> getOutwardLinks() {
+		if (outwardLinks == null) {
+			outwardLinks = new EObjectResolvingEList<Link>(Link.class, this, EnvironmentPackage.CONTAINER__OUTWARD_LINKS);
+		}
+		return outwardLinks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -162,6 +188,8 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 				return getName();
 			case EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT:
 				return getAllocationcontext();
+			case EnvironmentPackage.CONTAINER__OUTWARD_LINKS:
+				return getOutwardLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,6 +210,10 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 				getAllocationcontext().clear();
 				getAllocationcontext().addAll((Collection<? extends AllocationContext>)newValue);
 				return;
+			case EnvironmentPackage.CONTAINER__OUTWARD_LINKS:
+				getOutwardLinks().clear();
+				getOutwardLinks().addAll((Collection<? extends Link>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,6 +232,9 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 			case EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT:
 				getAllocationcontext().clear();
 				return;
+			case EnvironmentPackage.CONTAINER__OUTWARD_LINKS:
+				getOutwardLinks().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -216,6 +251,8 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT:
 				return allocationcontext != null && !allocationcontext.isEmpty();
+			case EnvironmentPackage.CONTAINER__OUTWARD_LINKS:
+				return outwardLinks != null && !outwardLinks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

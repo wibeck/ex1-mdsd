@@ -51,12 +51,12 @@ public interface Parameter extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter Type</em>' reference.
-	 * @see #setParameterType(ParameterType)
+	 * @see #setParameterType(Type)
 	 * @see componentModel.ComponentModelPackage#getParameter_ParameterType()
 	 * @model required="true"
 	 * @generated
 	 */
-	ParameterType getParameterType();
+	Type getParameterType();
 
 	/**
 	 * Sets the value of the '{@link componentModel.Parameter#getParameterType <em>Parameter Type</em>}' reference.
@@ -66,6 +66,6 @@ public interface Parameter extends EObject {
 	 * @see #getParameterType()
 	 * @generated
 	 */
-	void setParameterType(ParameterType value);
+	void setParameterType(Type value);
 
 } // Parameter

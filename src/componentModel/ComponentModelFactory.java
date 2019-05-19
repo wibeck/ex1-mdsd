@@ -130,15 +130,6 @@ public interface ComponentModelFactory extends EFactory {
 	Void createVoid();
 
 	/**
-	 * Returns a new object of class '<em>Complex Parameter Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Complex Parameter Type</em>'.
-	 * @generated
-	 */
-	ComplexParameterType createComplexParameterType();
-
-	/**
 	 * Returns a new object of class '<em>Boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +227,15 @@ public interface ComponentModelFactory extends EFactory {
 	 * @generated
 	 */
 	Parameter createParameter();
+
+	/**
+	 * Returns a new object of class '<em>Complex Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Complex Type</em>'.
+	 * @generated
+	 */
+	ComplexType createComplexType();
 
 	/**
 	 * Returns the package supported by this factory.

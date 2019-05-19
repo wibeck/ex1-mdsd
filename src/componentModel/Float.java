@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface Float extends SimpleParameterType {
+public interface Float extends SimpleType {
 } // Float

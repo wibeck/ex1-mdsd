@@ -8,7 +8,7 @@ import componentModel.AssemblyViewPoint;
 import componentModel.AssemblyViewType;
 import componentModel.Branch;
 import componentModel.Char;
-import componentModel.ComplexParameterType;
+import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
 import componentModel.Date;
@@ -23,13 +23,12 @@ import componentModel.List;
 import componentModel.Loop;
 import componentModel.Map;
 import componentModel.Parameter;
-import componentModel.ParameterType;
 import componentModel.Repository;
 import componentModel.RepositoryViewType;
 import componentModel.Service;
 import componentModel.ServiceEffectSpecification;
 import componentModel.Signature;
-import componentModel.SimpleParameterType;
+import componentModel.SimpleType;
 import componentModel.SystemIndependentViewPoint;
 import componentModel.Type;
 import componentModel.ViewPoint;
@@ -167,16 +166,8 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 				return createVoidAdapter();
 			}
 			@Override
-			public Adapter caseParameterType(ParameterType object) {
-				return createParameterTypeAdapter();
-			}
-			@Override
-			public Adapter caseComplexParameterType(ComplexParameterType object) {
-				return createComplexParameterTypeAdapter();
-			}
-			@Override
-			public Adapter caseSimpleParameterType(SimpleParameterType object) {
-				return createSimpleParameterTypeAdapter();
+			public Adapter caseSimpleType(SimpleType object) {
+				return createSimpleTypeAdapter();
 			}
 			@Override
 			public Adapter caseBoolean(componentModel.Boolean object) {
@@ -245,6 +236,10 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRepositoryViewType(RepositoryViewType object) {
 				return createRepositoryViewTypeAdapter();
+			}
+			@Override
+			public Adapter caseComplexType(ComplexType object) {
+				return createComplexTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -505,44 +500,16 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.ParameterType <em>Parameter Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentModel.ParameterType
+	 * @see componentModel.SimpleType
 	 * @generated
 	 */
-	public Adapter createParameterTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.ComplexParameterType <em>Complex Parameter Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.ComplexParameterType
-	 * @generated
-	 */
-	public Adapter createComplexParameterTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.SimpleParameterType <em>Simple Parameter Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.SimpleParameterType
-	 * @generated
-	 */
-	public Adapter createSimpleParameterTypeAdapter() {
+	public Adapter createSimpleTypeAdapter() {
 		return null;
 	}
 
@@ -781,6 +748,20 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRepositoryViewTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.ComplexType <em>Complex Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.ComplexType
+	 * @generated
+	 */
+	public Adapter createComplexTypeAdapter() {
 		return null;
 	}
 

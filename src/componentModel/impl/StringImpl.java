@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class StringImpl extends SimpleParameterTypeImpl implements componentModel.String {
+public class StringImpl extends SimpleTypeImpl implements componentModel.String {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

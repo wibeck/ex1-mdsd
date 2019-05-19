@@ -152,6 +152,7 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyContext, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContext_contextIsPartOfOutwardAssemblyConnectors(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyContext_reqInterfacesFromRequiredRoles(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyContext_providedInterfacesFromProvidedRoles(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyContext_onlyDelegationConnectorsIfComposite(assemblyContext, diagnostics, context);
@@ -596,7 +597,47 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateContext(Context context, DiagnosticChain diagnostics, Map<Object, Object> theContext) {
-		return validate_EveryDefaultConstraint(context, diagnostics, theContext);
+		if (!validate_NoCircularContainment(context, diagnostics, theContext)) return false;
+		boolean result = validate_EveryMultiplicityConforms(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_UniqueID(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(context, diagnostics, theContext);
+		if (result || diagnostics != null) result &= validateContext_contextIsPartOfOutwardAssemblyConnectors(context, diagnostics, theContext);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the contextIsPartOfOutwardAssemblyConnectors constraint of '<em>Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONTEXT__CONTEXT_IS_PART_OF_OUTWARD_ASSEMBLY_CONNECTORS__EEXPRESSION = "\n" +
+		"\t\tself.outwardAssemblyConnectors -> forAll(aCon | aCon.providedrole.assemblyContext = self xor aCon.requiredrole.assemblyContext = self )";
+
+	/**
+	 * Validates the contextIsPartOfOutwardAssemblyConnectors constraint of '<em>Context</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateContext_contextIsPartOfOutwardAssemblyConnectors(Context context, DiagnosticChain diagnostics, Map<Object, Object> theContext) {
+		return
+			validate
+				(AssemblyPackage.Literals.CONTEXT,
+				 context,
+				 diagnostics,
+				 theContext,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "contextIsPartOfOutwardAssemblyConnectors",
+				 CONTEXT__CONTEXT_IS_PART_OF_OUTWARD_ASSEMBLY_CONNECTORS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -623,6 +664,7 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(system, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(system, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(system, diagnostics, context);
+		if (result || diagnostics != null) result &= validateContext_contextIsPartOfOutwardAssemblyConnectors(system, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSystem_providedRoleForProvidedInterfaceExists(system, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSystem_requiredRoleForRequiredInterfaceExists(system, diagnostics, context);
 		return result;

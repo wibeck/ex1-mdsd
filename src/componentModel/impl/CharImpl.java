@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class CharImpl extends SimpleParameterTypeImpl implements Char {
+public class CharImpl extends SimpleTypeImpl implements Char {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

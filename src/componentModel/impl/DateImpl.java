@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DateImpl extends SimpleParameterTypeImpl implements Date {
+public class DateImpl extends SimpleTypeImpl implements Date {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface Boolean extends SimpleParameterType {
+public interface Boolean extends SimpleType {
 } // Boolean

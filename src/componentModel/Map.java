@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface Map extends SimpleParameterType {
+public interface Map extends SimpleType {
 } // Map

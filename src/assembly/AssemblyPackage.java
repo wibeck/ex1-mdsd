@@ -89,13 +89,13 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__DELEGATION_CONNECTORS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Nested Assembly Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__ASSEMBLY_CONNECTORS = 2;
+	int CONTEXT__NESTED_ASSEMBLY_CONNECTORS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -107,13 +107,22 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 4;
+	int CONTEXT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -153,13 +162,13 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__DELEGATION_CONNECTORS = CONTEXT__DELEGATION_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Nested Assembly Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT__ASSEMBLY_CONNECTORS = CONTEXT__ASSEMBLY_CONNECTORS;
+	int ASSEMBLY_CONTEXT__NESTED_ASSEMBLY_CONNECTORS = CONTEXT__NESTED_ASSEMBLY_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -169,6 +178,15 @@ public interface AssemblyPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSEMBLY_CONTEXT__NAME = CONTEXT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Instantiates</b></em>' reference.
@@ -647,13 +665,13 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__DELEGATION_CONNECTORS = CONTEXT__DELEGATION_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Nested Assembly Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__ASSEMBLY_CONNECTORS = CONTEXT__ASSEMBLY_CONNECTORS;
+	int SYSTEM__NESTED_ASSEMBLY_CONNECTORS = CONTEXT__NESTED_ASSEMBLY_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -663,6 +681,15 @@ public interface AssemblyPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYSTEM__NAME = CONTEXT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__OUTWARD_ASSEMBLY_CONNECTORS = CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Provided Interfaces</b></em>' reference list.
@@ -1062,15 +1089,15 @@ public interface AssemblyPackage extends EPackage {
 	EReference getContext_DelegationConnectors();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.Context#getAssemblyConnectors <em>Assembly Connectors</em>}'.
+	 * Returns the meta object for the reference list '{@link assembly.Context#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Assembly Connectors</em>'.
-	 * @see assembly.Context#getAssemblyConnectors()
+	 * @return the meta object for the reference list '<em>Nested Assembly Connectors</em>'.
+	 * @see assembly.Context#getNestedAssemblyConnectors()
 	 * @see #getContext()
 	 * @generated
 	 */
-	EReference getContext_AssemblyConnectors();
+	EReference getContext_NestedAssemblyConnectors();
 
 	/**
 	 * Returns the meta object for the attribute '{@link assembly.Context#getName <em>Name</em>}'.
@@ -1082,6 +1109,17 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContext_Name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Outward Assembly Connectors</em>'.
+	 * @see assembly.Context#getOutwardAssemblyConnectors()
+	 * @see #getContext()
+	 * @generated
+	 */
+	EReference getContext_OutwardAssemblyConnectors();
 
 	/**
 	 * Returns the meta object for class '{@link assembly.DelegationConnector <em>Delegation Connector</em>}'.
@@ -1452,12 +1490,12 @@ public interface AssemblyPackage extends EPackage {
 		EReference CONTEXT__DELEGATION_CONNECTORS = eINSTANCE.getContext_DelegationConnectors();
 
 		/**
-		 * The meta object literal for the '<em><b>Assembly Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Nested Assembly Connectors</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTEXT__ASSEMBLY_CONNECTORS = eINSTANCE.getContext_AssemblyConnectors();
+		EReference CONTEXT__NESTED_ASSEMBLY_CONNECTORS = eINSTANCE.getContext_NestedAssemblyConnectors();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1466,6 +1504,14 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT__NAME = eINSTANCE.getContext_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Outward Assembly Connectors</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = eINSTANCE.getContext_OutwardAssemblyConnectors();
 
 		/**
 		 * The meta object literal for the '{@link assembly.impl.DelegationConnectorImpl <em>Delegation Connector</em>}' class.

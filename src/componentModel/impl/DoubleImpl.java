@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DoubleImpl extends SimpleParameterTypeImpl implements componentModel.Double {
+public class DoubleImpl extends SimpleTypeImpl implements componentModel.Double {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

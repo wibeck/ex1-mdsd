@@ -75,7 +75,7 @@ public interface AssemblyConnector extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see assembly.AssemblyPackage#getAssemblyConnector_Name()
-	 * @model ordered="false"
+	 * @model
 	 * @generated
 	 */
 	String getName();

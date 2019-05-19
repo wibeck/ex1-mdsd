@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface Double extends SimpleParameterType {
+public interface Double extends SimpleType {
 } // Double

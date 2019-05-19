@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BooleanImpl extends SimpleParameterTypeImpl implements componentModel.Boolean {
+public class BooleanImpl extends SimpleTypeImpl implements componentModel.Boolean {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -19,12 +19,15 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link assembly.Context#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  *   <li>{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}</li>
- *   <li>{@link assembly.Context#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
+ *   <li>{@link assembly.Context#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}</li>
  *   <li>{@link assembly.Context#getName <em>Name</em>}</li>
+ *   <li>{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getContext()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='contextIsPartOfOutwardAssemblyConnectors'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot contextIsPartOfOutwardAssemblyConnectors='\n\t\tself.outwardAssemblyConnectors -&gt; forAll(aCon | aCon.providedrole.assemblyContext = self xor aCon.requiredrole.assemblyContext = self )'"
  * @generated
  */
 public interface Context extends EObject {
@@ -53,16 +56,16 @@ public interface Context extends EObject {
 	EList<DelegationConnector> getDelegationConnectors();
 
 	/**
-	 * Returns the value of the '<em><b>Assembly Connectors</b></em>' reference list.
+	 * Returns the value of the '<em><b>Nested Assembly Connectors</b></em>' reference list.
 	 * The list contents are of type {@link assembly.AssemblyConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assembly Connectors</em>' reference list.
-	 * @see assembly.AssemblyPackage#getContext_AssemblyConnectors()
+	 * @return the value of the '<em>Nested Assembly Connectors</em>' reference list.
+	 * @see assembly.AssemblyPackage#getContext_NestedAssemblyConnectors()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<AssemblyConnector> getAssemblyConnectors();
+	EList<AssemblyConnector> getNestedAssemblyConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -85,5 +88,17 @@ public interface Context extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * The list contents are of type {@link assembly.AssemblyConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outward Assembly Connectors</em>' reference list.
+	 * @see assembly.AssemblyPackage#getContext_OutwardAssemblyConnectors()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<AssemblyConnector> getOutwardAssemblyConnectors();
 
 } // Context

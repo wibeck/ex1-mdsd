@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface List extends SimpleParameterType {
+public interface List extends SimpleType {
 } // List
