@@ -100,24 +100,22 @@
         upperBound="-1" eType="#//ViewType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Void" eSuperTypes="#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterType" abstract="true" eSuperTypes="#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ComplexParameterType" eSuperTypes="#//ParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleParameterType" abstract="true"
-      eSuperTypes="#//ParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Boolean" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Char" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Date" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Map" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Long" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Double" eSuperTypes="#//SimpleParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="String" eSuperTypes="#//SimpleParameterType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexParameterType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" abstract="true" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Boolean" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Char" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Date" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Map" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Long" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Double" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="String" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterType" lowerBound="1"
-        eType="#//ParameterType"/>
+        eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" abstract="true" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewType" abstract="true"
@@ -143,4 +141,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" abstract="true"
       eSuperTypes="#//ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
+  </eClassifiers>
 </ecore:EPackage>
