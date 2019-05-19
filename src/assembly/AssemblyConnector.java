@@ -25,44 +25,44 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AssemblyConnector extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Providedrole</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Providedrole</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Providedrole</em>' containment reference.
+	 * @return the value of the '<em>Providedrole</em>' reference.
 	 * @see #setProvidedrole(ProvidedRole)
 	 * @see assembly.AssemblyPackage#getAssemblyConnector_Providedrole()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	ProvidedRole getProvidedrole();
 
 	/**
-	 * Sets the value of the '{@link assembly.AssemblyConnector#getProvidedrole <em>Providedrole</em>}' containment reference.
+	 * Sets the value of the '{@link assembly.AssemblyConnector#getProvidedrole <em>Providedrole</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Providedrole</em>' containment reference.
+	 * @param value the new value of the '<em>Providedrole</em>' reference.
 	 * @see #getProvidedrole()
 	 * @generated
 	 */
 	void setProvidedrole(ProvidedRole value);
 
 	/**
-	 * Returns the value of the '<em><b>Requiredrole</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Requiredrole</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Requiredrole</em>' containment reference.
+	 * @return the value of the '<em>Requiredrole</em>' reference.
 	 * @see #setRequiredrole(RequiredRole)
 	 * @see assembly.AssemblyPackage#getAssemblyConnector_Requiredrole()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	RequiredRole getRequiredrole();
 
 	/**
-	 * Sets the value of the '{@link assembly.AssemblyConnector#getRequiredrole <em>Requiredrole</em>}' containment reference.
+	 * Sets the value of the '{@link assembly.AssemblyConnector#getRequiredrole <em>Requiredrole</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Requiredrole</em>' containment reference.
+	 * @param value the new value of the '<em>Requiredrole</em>' reference.
 	 * @see #getRequiredrole()
 	 * @generated
 	 */
