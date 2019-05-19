@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Allocation Context</b></em>'.
@@ -42,16 +44,6 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 * @ordered
 	 */
 	protected AssemblyContext assemblycontext;
-
-	/**
-	 * The cached value of the '{@link #getContainer() <em>Container</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContainer()
-	 * @generated
-	 * @ordered
-	 */
-	protected environment.Container container;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -139,24 +131,8 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 */
 	@Override
 	public environment.Container getContainer() {
-		if (container != null && container.eIsProxy()) {
-			InternalEObject oldContainer = (InternalEObject)container;
-			container = (environment.Container)eResolveProxy(oldContainer);
-			if (container != oldContainer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER, oldContainer, container));
-			}
-		}
-		return container;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public environment.Container basicGetContainer() {
-		return container;
+		if (eContainerFeatureID() != EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER) return null;
+		return (environment.Container)eInternalContainer();
 	}
 
 	/**
@@ -165,12 +141,7 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 * @generated
 	 */
 	public NotificationChain basicSetContainer(environment.Container newContainer, NotificationChain msgs) {
-		environment.Container oldContainer = container;
-		container = newContainer;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER, oldContainer, newContainer);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newContainer, EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER, msgs);
 		return msgs;
 	}
 
@@ -181,10 +152,12 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 */
 	@Override
 	public void setContainer(environment.Container newContainer) {
-		if (newContainer != container) {
+		if (newContainer != eInternalContainer() || (eContainerFeatureID() != EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER && newContainer != null)) {
+			if (EcoreUtil.isAncestor(this, newContainer))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (container != null)
-				msgs = ((InternalEObject)container).eInverseRemove(this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, environment.Container.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newContainer != null)
 				msgs = ((InternalEObject)newContainer).eInverseAdd(this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, environment.Container.class, msgs);
 			msgs = basicSetContainer(newContainer, msgs);
@@ -226,8 +199,8 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
-				if (container != null)
-					msgs = ((InternalEObject)container).eInverseRemove(this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, environment.Container.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetContainer((environment.Container)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -253,14 +226,27 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
+				return eInternalContainer().eInverseRemove(this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, environment.Container.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT:
 				if (resolve) return getAssemblycontext();
 				return basicGetAssemblycontext();
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
-				if (resolve) return getContainer();
-				return basicGetContainer();
+				return getContainer();
 			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
 				return getName();
 		}
@@ -320,7 +306,7 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT:
 				return assemblycontext != null;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
-				return container != null;
+				return getContainer() != null;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

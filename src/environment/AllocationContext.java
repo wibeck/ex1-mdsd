@@ -49,24 +49,24 @@ public interface AllocationContext extends AllocationViewType {
 	void setAssemblycontext(AssemblyContext value);
 
 	/**
-	 * Returns the value of the '<em><b>Container</b></em>' reference.
+	 * Returns the value of the '<em><b>Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link environment.Container#getAllocationcontext <em>Allocationcontext</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Container</em>' reference.
+	 * @return the value of the '<em>Container</em>' container reference.
 	 * @see #setContainer(Container)
 	 * @see environment.EnvironmentPackage#getAllocationContext_Container()
 	 * @see environment.Container#getAllocationcontext
-	 * @model opposite="allocationcontext"
+	 * @model opposite="allocationcontext" transient="false"
 	 * @generated
 	 */
 	Container getContainer();
 
 	/**
-	 * Sets the value of the '{@link environment.AllocationContext#getContainer <em>Container</em>}' reference.
+	 * Sets the value of the '{@link environment.AllocationContext#getContainer <em>Container</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Container</em>' reference.
+	 * @param value the new value of the '<em>Container</em>' container reference.
 	 * @see #getContainer()
 	 * @generated
 	 */

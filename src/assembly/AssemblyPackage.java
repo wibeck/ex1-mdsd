@@ -80,7 +80,7 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__REQUIRED_INTERFACES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -107,7 +107,7 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__NAME = 3;
 
 	/**
-	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -153,7 +153,7 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__REQUIRED_INTERFACES = CONTEXT__REQUIRED_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,7 +180,7 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__NAME = CONTEXT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -262,7 +262,7 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONNECTOR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Providedrole</b></em>' reference.
+	 * The feature id for the '<em><b>Providedrole</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -271,7 +271,7 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONNECTOR__PROVIDEDROLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Requiredrole</b></em>' reference.
+	 * The feature id for the '<em><b>Requiredrole</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -656,7 +656,7 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__REQUIRED_INTERFACES = CONTEXT__REQUIRED_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -683,7 +683,7 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__NAME = CONTEXT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -941,10 +941,10 @@ public interface AssemblyPackage extends EPackage {
 	EClass getAssemblyConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link assembly.AssemblyConnector#getProvidedrole <em>Providedrole</em>}'.
+	 * Returns the meta object for the containment reference '{@link assembly.AssemblyConnector#getProvidedrole <em>Providedrole</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Providedrole</em>'.
+	 * @return the meta object for the containment reference '<em>Providedrole</em>'.
 	 * @see assembly.AssemblyConnector#getProvidedrole()
 	 * @see #getAssemblyConnector()
 	 * @generated
@@ -952,10 +952,10 @@ public interface AssemblyPackage extends EPackage {
 	EReference getAssemblyConnector_Providedrole();
 
 	/**
-	 * Returns the meta object for the reference '{@link assembly.AssemblyConnector#getRequiredrole <em>Requiredrole</em>}'.
+	 * Returns the meta object for the containment reference '{@link assembly.AssemblyConnector#getRequiredrole <em>Requiredrole</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Requiredrole</em>'.
+	 * @return the meta object for the containment reference '<em>Requiredrole</em>'.
 	 * @see assembly.AssemblyConnector#getRequiredrole()
 	 * @see #getAssemblyConnector()
 	 * @generated
@@ -1078,10 +1078,10 @@ public interface AssemblyPackage extends EPackage {
 	EReference getContext_RequiredInterfaces();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Delegation Connectors</em>'.
+	 * @return the meta object for the containment reference list '<em>Delegation Connectors</em>'.
 	 * @see assembly.Context#getDelegationConnectors()
 	 * @see #getContext()
 	 * @generated
@@ -1111,10 +1111,10 @@ public interface AssemblyPackage extends EPackage {
 	EAttribute getContext_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outward Assembly Connectors</em>'.
+	 * @return the meta object for the containment reference list '<em>Outward Assembly Connectors</em>'.
 	 * @see assembly.Context#getOutwardAssemblyConnectors()
 	 * @see #getContext()
 	 * @generated
@@ -1366,7 +1366,7 @@ public interface AssemblyPackage extends EPackage {
 		EClass ASSEMBLY_CONNECTOR = eINSTANCE.getAssemblyConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Providedrole</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Providedrole</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1374,7 +1374,7 @@ public interface AssemblyPackage extends EPackage {
 		EReference ASSEMBLY_CONNECTOR__PROVIDEDROLE = eINSTANCE.getAssemblyConnector_Providedrole();
 
 		/**
-		 * The meta object literal for the '<em><b>Requiredrole</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Requiredrole</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1482,7 +1482,7 @@ public interface AssemblyPackage extends EPackage {
 		EReference CONTEXT__REQUIRED_INTERFACES = eINSTANCE.getContext_RequiredInterfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Delegation Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Delegation Connectors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1506,7 +1506,7 @@ public interface AssemblyPackage extends EPackage {
 		EAttribute CONTEXT__NAME = eINSTANCE.getContext_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Outward Assembly Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

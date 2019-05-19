@@ -263,13 +263,22 @@ public interface ComponentModelPackage extends EPackage {
 	int REPOSITORY__INTERFACESERVICEMAPENTRY = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY__PARAMETERS = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 7;
+	int REPOSITORY_FEATURE_COUNT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Repository</em>' class.
@@ -1499,6 +1508,17 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getRepository_Interfaceservicemapentry();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see componentModel.Repository#getParameters()
+	 * @see #getRepository()
+	 * @generated
+	 */
+	EReference getRepository_Parameters();
+
+	/**
 	 * Returns the meta object for class '{@link componentModel.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2189,6 +2209,14 @@ public interface ComponentModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REPOSITORY__INTERFACESERVICEMAPENTRY = eINSTANCE.getRepository_Interfaceservicemapentry();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REPOSITORY__PARAMETERS = eINSTANCE.getRepository_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.ComponentImpl <em>Component</em>}' class.

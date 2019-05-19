@@ -135,7 +135,7 @@ public interface EnvironmentPackage extends EPackage {
 	int CONTAINER__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Allocationcontext</b></em>' reference list.
+	 * The feature id for the '<em><b>Allocationcontext</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -236,7 +236,7 @@ public interface EnvironmentPackage extends EPackage {
 	int ALLOCATION_CONTEXT__ASSEMBLYCONTEXT = ComponentModelPackage.ALLOCATION_VIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' reference.
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -337,10 +337,10 @@ public interface EnvironmentPackage extends EPackage {
 	EAttribute getContainer_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link environment.Container#getAllocationcontext <em>Allocationcontext</em>}'.
+	 * Returns the meta object for the containment reference list '{@link environment.Container#getAllocationcontext <em>Allocationcontext</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Allocationcontext</em>'.
+	 * @return the meta object for the containment reference list '<em>Allocationcontext</em>'.
 	 * @see environment.Container#getAllocationcontext()
 	 * @see #getContainer()
 	 * @generated
@@ -412,10 +412,10 @@ public interface EnvironmentPackage extends EPackage {
 	EReference getAllocationContext_Assemblycontext();
 
 	/**
-	 * Returns the meta object for the reference '{@link environment.AllocationContext#getContainer <em>Container</em>}'.
+	 * Returns the meta object for the container reference '{@link environment.AllocationContext#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Container</em>'.
+	 * @return the meta object for the container reference '<em>Container</em>'.
 	 * @see environment.AllocationContext#getContainer()
 	 * @see #getAllocationContext()
 	 * @generated
@@ -509,7 +509,7 @@ public interface EnvironmentPackage extends EPackage {
 		EAttribute CONTAINER__NAME = eINSTANCE.getContainer_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Allocationcontext</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Allocationcontext</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -569,7 +569,7 @@ public interface EnvironmentPackage extends EPackage {
 		EReference ALLOCATION_CONTEXT__ASSEMBLYCONTEXT = eINSTANCE.getAllocationContext_Assemblycontext();
 
 		/**
-		 * The meta object literal for the '<em><b>Container</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -489,6 +489,16 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
+	public EReference getRepository_Parameters() {
+		return (EReference)repositoryEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getComponent() {
 		return componentEClass;
 	}
@@ -1092,6 +1102,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		createEReference(repositoryEClass, REPOSITORY__TYPES);
 		createEReference(repositoryEClass, REPOSITORY__SERVICES);
 		createEReference(repositoryEClass, REPOSITORY__INTERFACESERVICEMAPENTRY);
+		createEReference(repositoryEClass, REPOSITORY__PARAMETERS);
 
 		componentEClass = createEClass(COMPONENT);
 		createEAttribute(componentEClass, COMPONENT__NAME);
@@ -1250,6 +1261,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		initEReference(getRepository_Types(), this.getType(), null, "types", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRepository_Services(), this.getService(), null, "services", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRepository_Interfaceservicemapentry(), this.getInterfaceServiceMapEntry(), null, "interfaceservicemapentry", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRepository_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

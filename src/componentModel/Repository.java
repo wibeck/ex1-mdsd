@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link componentModel.Repository#getTypes <em>Types</em>}</li>
  *   <li>{@link componentModel.Repository#getServices <em>Services</em>}</li>
  *   <li>{@link componentModel.Repository#getInterfaceservicemapentry <em>Interfaceservicemapentry</em>}</li>
+ *   <li>{@link componentModel.Repository#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getRepository()
@@ -122,5 +123,17 @@ public interface Repository extends RepositoryViewType {
 	 * @generated
 	 */
 	EList<InterfaceServiceMapEntry> getInterfaceservicemapentry();
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link componentModel.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see componentModel.ComponentModelPackage#getRepository_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
 
 } // Repository

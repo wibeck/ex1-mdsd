@@ -6,6 +6,7 @@ import componentModel.Component;
 import componentModel.ComponentModelPackage;
 import componentModel.Interface;
 import componentModel.InterfaceServiceMapEntry;
+import componentModel.Parameter;
 import componentModel.Repository;
 import componentModel.Service;
 import componentModel.Signature;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentModel.impl.RepositoryImpl#getTypes <em>Types</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getServices <em>Services</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getInterfaceservicemapentry <em>Interfaceservicemapentry</em>}</li>
+ *   <li>{@link componentModel.impl.RepositoryImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -127,6 +129,16 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @ordered
 	 */
 	protected EList<InterfaceServiceMapEntry> interfaceservicemapentry;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,6 +266,19 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @generated
 	 */
 	@Override
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ComponentModelPackage.REPOSITORY__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentModelPackage.REPOSITORY__COMPONENT:
@@ -268,6 +293,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
 				return ((InternalEList<?>)getInterfaceservicemapentry()).basicRemove(otherEnd, msgs);
+			case ComponentModelPackage.REPOSITORY__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -294,6 +321,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return getServices();
 			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
 				return getInterfaceservicemapentry();
+			case ComponentModelPackage.REPOSITORY__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -334,6 +363,10 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				getInterfaceservicemapentry().clear();
 				getInterfaceservicemapentry().addAll((Collection<? extends InterfaceServiceMapEntry>)newValue);
 				return;
+			case ComponentModelPackage.REPOSITORY__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -367,6 +400,9 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
 				getInterfaceservicemapentry().clear();
 				return;
+			case ComponentModelPackage.REPOSITORY__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -393,6 +429,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return services != null && !services.isEmpty();
 			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
 				return interfaceservicemapentry != null && !interfaceservicemapentry.isEmpty();
+			case ComponentModelPackage.REPOSITORY__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

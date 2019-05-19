@@ -8,6 +8,7 @@ import assembly.ProvidedRole;
 import assembly.RequiredRole;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -32,7 +33,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implements AssemblyConnector {
 	/**
-	 * The cached value of the '{@link #getProvidedrole() <em>Providedrole</em>}' reference.
+	 * The cached value of the '{@link #getProvidedrole() <em>Providedrole</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProvidedrole()
@@ -42,7 +43,7 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	protected ProvidedRole providedrole;
 
 	/**
-	 * The cached value of the '{@link #getRequiredrole() <em>Requiredrole</em>}' reference.
+	 * The cached value of the '{@link #getRequiredrole() <em>Requiredrole</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequiredrole()
@@ -97,14 +98,6 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	public ProvidedRole getProvidedrole() {
-		if (providedrole != null && providedrole.eIsProxy()) {
-			InternalEObject oldProvidedrole = (InternalEObject)providedrole;
-			providedrole = (ProvidedRole)eResolveProxy(oldProvidedrole);
-			if (providedrole != oldProvidedrole) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, oldProvidedrole, providedrole));
-			}
-		}
 		return providedrole;
 	}
 
@@ -113,8 +106,14 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProvidedRole basicGetProvidedrole() {
-		return providedrole;
+	public NotificationChain basicSetProvidedrole(ProvidedRole newProvidedrole, NotificationChain msgs) {
+		ProvidedRole oldProvidedrole = providedrole;
+		providedrole = newProvidedrole;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, oldProvidedrole, newProvidedrole);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -124,10 +123,17 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	public void setProvidedrole(ProvidedRole newProvidedrole) {
-		ProvidedRole oldProvidedrole = providedrole;
-		providedrole = newProvidedrole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, oldProvidedrole, providedrole));
+		if (newProvidedrole != providedrole) {
+			NotificationChain msgs = null;
+			if (providedrole != null)
+				msgs = ((InternalEObject)providedrole).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, null, msgs);
+			if (newProvidedrole != null)
+				msgs = ((InternalEObject)newProvidedrole).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, null, msgs);
+			msgs = basicSetProvidedrole(newProvidedrole, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, newProvidedrole, newProvidedrole));
 	}
 
 	/**
@@ -137,14 +143,6 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	public RequiredRole getRequiredrole() {
-		if (requiredrole != null && requiredrole.eIsProxy()) {
-			InternalEObject oldRequiredrole = (InternalEObject)requiredrole;
-			requiredrole = (RequiredRole)eResolveProxy(oldRequiredrole);
-			if (requiredrole != oldRequiredrole) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, oldRequiredrole, requiredrole));
-			}
-		}
 		return requiredrole;
 	}
 
@@ -153,8 +151,14 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RequiredRole basicGetRequiredrole() {
-		return requiredrole;
+	public NotificationChain basicSetRequiredrole(RequiredRole newRequiredrole, NotificationChain msgs) {
+		RequiredRole oldRequiredrole = requiredrole;
+		requiredrole = newRequiredrole;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, oldRequiredrole, newRequiredrole);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -164,10 +168,17 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	public void setRequiredrole(RequiredRole newRequiredrole) {
-		RequiredRole oldRequiredrole = requiredrole;
-		requiredrole = newRequiredrole;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, oldRequiredrole, requiredrole));
+		if (newRequiredrole != requiredrole) {
+			NotificationChain msgs = null;
+			if (requiredrole != null)
+				msgs = ((InternalEObject)requiredrole).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, null, msgs);
+			if (newRequiredrole != null)
+				msgs = ((InternalEObject)newRequiredrole).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, null, msgs);
+			msgs = basicSetRequiredrole(newRequiredrole, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, newRequiredrole, newRequiredrole));
 	}
 
 	/**
@@ -199,14 +210,28 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE:
+				return basicSetProvidedrole(null, msgs);
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE:
+				return basicSetRequiredrole(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE:
-				if (resolve) return getProvidedrole();
-				return basicGetProvidedrole();
+				return getProvidedrole();
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE:
-				if (resolve) return getRequiredrole();
-				return basicGetRequiredrole();
+				return getRequiredrole();
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__NAME:
 				return getName();
 		}

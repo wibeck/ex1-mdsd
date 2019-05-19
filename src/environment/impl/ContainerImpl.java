@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -60,7 +60,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getAllocationcontext() <em>Allocationcontext</em>}' reference list.
+	 * The cached value of the '{@link #getAllocationcontext() <em>Allocationcontext</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAllocationcontext()
@@ -129,7 +129,7 @@ public class ContainerImpl extends MinimalEObjectImpl.Container implements envir
 	@Override
 	public EList<AllocationContext> getAllocationcontext() {
 		if (allocationcontext == null) {
-			allocationcontext = new EObjectWithInverseResolvingEList<AllocationContext>(AllocationContext.class, this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER);
+			allocationcontext = new EObjectContainmentWithInverseEList<AllocationContext>(AllocationContext.class, this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER);
 		}
 		return allocationcontext;
 	}

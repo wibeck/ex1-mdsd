@@ -38,9 +38,9 @@
       <details key="providedRoleHasRequiredInterface" value="self.providedrole.interFace = self.requiredrole.interFace"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedrole" lowerBound="1"
-        eType="#//ProvidedRole"/>
+        eType="#//ProvidedRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredrole" lowerBound="1"
-        eType="#//RequiredRole"/>
+        eType="#//RequiredRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//DelegationConnector">
@@ -90,12 +90,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false"
         upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" ordered="false"
-        upperBound="-1" eType="#//DelegationConnector"/>
+        upperBound="-1" eType="#//DelegationConnector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nestedAssemblyConnectors"
         ordered="false" upperBound="-1" eType="#//AssemblyConnector"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outwardAssemblyConnectors"
-        ordered="false" upperBound="-1" eType="#//AssemblyConnector"/>
+        ordered="false" upperBound="-1" eType="#//AssemblyConnector" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interFace" eType="ecore:EClass componentModel.ecore#//Interface"/>

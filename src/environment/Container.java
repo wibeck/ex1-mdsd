@@ -49,15 +49,15 @@ public interface Container extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Allocationcontext</b></em>' reference list.
+	 * Returns the value of the '<em><b>Allocationcontext</b></em>' containment reference list.
 	 * The list contents are of type {@link environment.AllocationContext}.
 	 * It is bidirectional and its opposite is '{@link environment.AllocationContext#getContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Allocationcontext</em>' reference list.
+	 * @return the value of the '<em>Allocationcontext</em>' containment reference list.
 	 * @see environment.EnvironmentPackage#getContainer_Allocationcontext()
 	 * @see environment.AllocationContext#getContainer
-	 * @model opposite="container" required="true" ordered="false"
+	 * @model opposite="container" containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<AllocationContext> getAllocationcontext();
