@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class MapImpl extends SimpleParameterTypeImpl implements Map {
+public class MapImpl extends SimpleTypeImpl implements Map {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

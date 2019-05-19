@@ -12,7 +12,7 @@ import componentModel.AssemblyViewPoint;
 import componentModel.AssemblyViewType;
 import componentModel.Branch;
 import componentModel.Char;
-import componentModel.ComplexParameterType;
+import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
 import componentModel.ComponentModelPackage;
@@ -28,13 +28,12 @@ import componentModel.List;
 import componentModel.Loop;
 import componentModel.Map;
 import componentModel.Parameter;
-import componentModel.ParameterType;
 import componentModel.Repository;
 import componentModel.RepositoryViewType;
 import componentModel.Service;
 import componentModel.ServiceEffectSpecification;
 import componentModel.Signature;
-import componentModel.SimpleParameterType;
+import componentModel.SimpleType;
 import componentModel.SystemIndependentViewPoint;
 import componentModel.Type;
 import componentModel.ViewPoint;
@@ -185,21 +184,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass parameterTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass complexParameterTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass simpleParameterTypeEClass = null;
+	private EClass simpleTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,6 +304,13 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	private EClass repositoryViewTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass complexTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -857,28 +849,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EClass getParameterType() {
-		return parameterTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getComplexParameterType() {
-		return complexParameterTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSimpleParameterType() {
-		return simpleParameterTypeEClass;
+	public EClass getSimpleType() {
+		return simpleTypeEClass;
 	}
 
 	/**
@@ -1077,6 +1049,16 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
+	public EClass getComplexType() {
+		return complexTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ComponentModelFactory getComponentModelFactory() {
 		return (ComponentModelFactory)getEFactoryInstance();
 	}
@@ -1162,11 +1144,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
 		voidEClass = createEClass(VOID);
 
-		parameterTypeEClass = createEClass(PARAMETER_TYPE);
-
-		complexParameterTypeEClass = createEClass(COMPLEX_PARAMETER_TYPE);
-
-		simpleParameterTypeEClass = createEClass(SIMPLE_PARAMETER_TYPE);
+		simpleTypeEClass = createEClass(SIMPLE_TYPE);
 
 		booleanEClass = createEClass(BOOLEAN);
 
@@ -1203,6 +1181,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		deploymentViewPointEClass = createEClass(DEPLOYMENT_VIEW_POINT);
 
 		repositoryViewTypeEClass = createEClass(REPOSITORY_VIEW_TYPE);
+
+		complexTypeEClass = createEClass(COMPLEX_TYPE);
 	}
 
 	/**
@@ -1240,25 +1220,24 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		externalCallEClass.getESuperTypes().add(this.getAction());
 		internalActionEClass.getESuperTypes().add(this.getAction());
 		voidEClass.getESuperTypes().add(this.getType());
-		parameterTypeEClass.getESuperTypes().add(this.getType());
-		complexParameterTypeEClass.getESuperTypes().add(this.getParameterType());
-		simpleParameterTypeEClass.getESuperTypes().add(this.getParameterType());
-		booleanEClass.getESuperTypes().add(this.getSimpleParameterType());
-		intEClass.getESuperTypes().add(this.getSimpleParameterType());
-		charEClass.getESuperTypes().add(this.getSimpleParameterType());
-		dateEClass.getESuperTypes().add(this.getSimpleParameterType());
-		listEClass.getESuperTypes().add(this.getSimpleParameterType());
-		mapEClass.getESuperTypes().add(this.getSimpleParameterType());
-		floatEClass.getESuperTypes().add(this.getSimpleParameterType());
-		longEClass.getESuperTypes().add(this.getSimpleParameterType());
-		doubleEClass.getESuperTypes().add(this.getSimpleParameterType());
-		stringEClass.getESuperTypes().add(this.getSimpleParameterType());
+		simpleTypeEClass.getESuperTypes().add(this.getType());
+		booleanEClass.getESuperTypes().add(this.getSimpleType());
+		intEClass.getESuperTypes().add(this.getSimpleType());
+		charEClass.getESuperTypes().add(this.getSimpleType());
+		dateEClass.getESuperTypes().add(this.getSimpleType());
+		listEClass.getESuperTypes().add(this.getSimpleType());
+		mapEClass.getESuperTypes().add(this.getSimpleType());
+		floatEClass.getESuperTypes().add(this.getSimpleType());
+		longEClass.getESuperTypes().add(this.getSimpleType());
+		doubleEClass.getESuperTypes().add(this.getSimpleType());
+		stringEClass.getESuperTypes().add(this.getSimpleType());
 		assemblyViewTypeEClass.getESuperTypes().add(this.getViewType());
 		environmentViewTypeEClass.getESuperTypes().add(this.getViewType());
 		allocationViewTypeEClass.getESuperTypes().add(this.getViewType());
 		assemblyViewPointEClass.getESuperTypes().add(this.getViewPoint());
 		deploymentViewPointEClass.getESuperTypes().add(this.getViewPoint());
 		repositoryViewTypeEClass.getESuperTypes().add(this.getViewType());
+		complexTypeEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemIndependentViewPointEClass, SystemIndependentViewPoint.class, "SystemIndependentViewPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1323,11 +1302,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
 		initEClass(voidEClass, componentModel.Void.class, "Void", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(parameterTypeEClass, ParameterType.class, "ParameterType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(complexParameterTypeEClass, ComplexParameterType.class, "ComplexParameterType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(simpleParameterTypeEClass, SimpleParameterType.class, "SimpleParameterType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(simpleTypeEClass, SimpleType.class, "SimpleType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(booleanEClass, componentModel.Boolean.class, "Boolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1351,7 +1326,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameter_ParameterType(), this.getParameterType(), null, "parameterType", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_ParameterType(), this.getType(), null, "parameterType", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(assemblyViewTypeEClass, AssemblyViewType.class, "AssemblyViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1364,6 +1339,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		initEClass(deploymentViewPointEClass, DeploymentViewPoint.class, "DeploymentViewPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(repositoryViewTypeEClass, RepositoryViewType.class, "RepositoryViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(complexTypeEClass, ComplexType.class, "ComplexType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

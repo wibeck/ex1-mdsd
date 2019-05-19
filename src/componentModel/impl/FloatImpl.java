@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class FloatImpl extends SimpleParameterTypeImpl implements componentModel.Float {
+public class FloatImpl extends SimpleTypeImpl implements componentModel.Float {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

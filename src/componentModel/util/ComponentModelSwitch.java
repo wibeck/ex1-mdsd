@@ -8,7 +8,7 @@ import componentModel.AssemblyViewPoint;
 import componentModel.AssemblyViewType;
 import componentModel.Branch;
 import componentModel.Char;
-import componentModel.ComplexParameterType;
+import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
 import componentModel.Date;
@@ -23,13 +23,12 @@ import componentModel.List;
 import componentModel.Loop;
 import componentModel.Map;
 import componentModel.Parameter;
-import componentModel.ParameterType;
 import componentModel.Repository;
 import componentModel.RepositoryViewType;
 import componentModel.Service;
 import componentModel.ServiceEffectSpecification;
 import componentModel.Signature;
-import componentModel.SimpleParameterType;
+import componentModel.SimpleType;
 import componentModel.SystemIndependentViewPoint;
 import componentModel.Type;
 import componentModel.ViewPoint;
@@ -207,34 +206,17 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentModelPackage.PARAMETER_TYPE: {
-				ParameterType parameterType = (ParameterType)theEObject;
-				T result = caseParameterType(parameterType);
-				if (result == null) result = caseType(parameterType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.COMPLEX_PARAMETER_TYPE: {
-				ComplexParameterType complexParameterType = (ComplexParameterType)theEObject;
-				T result = caseComplexParameterType(complexParameterType);
-				if (result == null) result = caseParameterType(complexParameterType);
-				if (result == null) result = caseType(complexParameterType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.SIMPLE_PARAMETER_TYPE: {
-				SimpleParameterType simpleParameterType = (SimpleParameterType)theEObject;
-				T result = caseSimpleParameterType(simpleParameterType);
-				if (result == null) result = caseParameterType(simpleParameterType);
-				if (result == null) result = caseType(simpleParameterType);
+			case ComponentModelPackage.SIMPLE_TYPE: {
+				SimpleType simpleType = (SimpleType)theEObject;
+				T result = caseSimpleType(simpleType);
+				if (result == null) result = caseType(simpleType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ComponentModelPackage.BOOLEAN: {
 				componentModel.Boolean boolean_ = (componentModel.Boolean)theEObject;
 				T result = caseBoolean(boolean_);
-				if (result == null) result = caseSimpleParameterType(boolean_);
-				if (result == null) result = caseParameterType(boolean_);
+				if (result == null) result = caseSimpleType(boolean_);
 				if (result == null) result = caseType(boolean_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -242,8 +224,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.INT: {
 				Int int_ = (Int)theEObject;
 				T result = caseInt(int_);
-				if (result == null) result = caseSimpleParameterType(int_);
-				if (result == null) result = caseParameterType(int_);
+				if (result == null) result = caseSimpleType(int_);
 				if (result == null) result = caseType(int_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -251,8 +232,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.CHAR: {
 				Char char_ = (Char)theEObject;
 				T result = caseChar(char_);
-				if (result == null) result = caseSimpleParameterType(char_);
-				if (result == null) result = caseParameterType(char_);
+				if (result == null) result = caseSimpleType(char_);
 				if (result == null) result = caseType(char_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -260,8 +240,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.DATE: {
 				Date date = (Date)theEObject;
 				T result = caseDate(date);
-				if (result == null) result = caseSimpleParameterType(date);
-				if (result == null) result = caseParameterType(date);
+				if (result == null) result = caseSimpleType(date);
 				if (result == null) result = caseType(date);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -269,8 +248,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.LIST: {
 				List list = (List)theEObject;
 				T result = caseList(list);
-				if (result == null) result = caseSimpleParameterType(list);
-				if (result == null) result = caseParameterType(list);
+				if (result == null) result = caseSimpleType(list);
 				if (result == null) result = caseType(list);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -278,8 +256,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.MAP: {
 				Map map = (Map)theEObject;
 				T result = caseMap(map);
-				if (result == null) result = caseSimpleParameterType(map);
-				if (result == null) result = caseParameterType(map);
+				if (result == null) result = caseSimpleType(map);
 				if (result == null) result = caseType(map);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -287,8 +264,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.FLOAT: {
 				componentModel.Float float_ = (componentModel.Float)theEObject;
 				T result = caseFloat(float_);
-				if (result == null) result = caseSimpleParameterType(float_);
-				if (result == null) result = caseParameterType(float_);
+				if (result == null) result = caseSimpleType(float_);
 				if (result == null) result = caseType(float_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -296,8 +272,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.LONG: {
 				componentModel.Long long_ = (componentModel.Long)theEObject;
 				T result = caseLong(long_);
-				if (result == null) result = caseSimpleParameterType(long_);
-				if (result == null) result = caseParameterType(long_);
+				if (result == null) result = caseSimpleType(long_);
 				if (result == null) result = caseType(long_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -305,8 +280,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.DOUBLE: {
 				componentModel.Double double_ = (componentModel.Double)theEObject;
 				T result = caseDouble(double_);
-				if (result == null) result = caseSimpleParameterType(double_);
-				if (result == null) result = caseParameterType(double_);
+				if (result == null) result = caseSimpleType(double_);
 				if (result == null) result = caseType(double_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -314,8 +288,7 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.STRING: {
 				componentModel.String string = (componentModel.String)theEObject;
 				T result = caseString(string);
-				if (result == null) result = caseSimpleParameterType(string);
-				if (result == null) result = caseParameterType(string);
+				if (result == null) result = caseSimpleType(string);
 				if (result == null) result = caseType(string);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -365,6 +338,13 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 				RepositoryViewType repositoryViewType = (RepositoryViewType)theEObject;
 				T result = caseRepositoryViewType(repositoryViewType);
 				if (result == null) result = caseViewType(repositoryViewType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentModelPackage.COMPLEX_TYPE: {
+				ComplexType complexType = (ComplexType)theEObject;
+				T result = caseComplexType(complexType);
+				if (result == null) result = caseType(complexType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -628,47 +608,17 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameter Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameter Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseParameterType(ParameterType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Complex Parameter Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Complex Parameter Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComplexParameterType(ComplexParameterType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Simple Parameter Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Simple Parameter Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSimpleParameterType(SimpleParameterType object) {
+	public T caseSimpleType(SimpleType object) {
 		return null;
 	}
 
@@ -924,6 +874,21 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRepositoryViewType(RepositoryViewType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Complex Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Complex Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComplexType(ComplexType object) {
 		return null;
 	}
 

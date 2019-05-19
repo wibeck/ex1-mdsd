@@ -169,7 +169,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getRepositoryViewType()
 	 * @generated
 	 */
-	int REPOSITORY_VIEW_TYPE = 36;
+	int REPOSITORY_VIEW_TYPE = 34;
 
 	/**
 	 * The number of structural features of the '<em>Repository View Type</em>' class.
@@ -861,88 +861,32 @@ public interface ComponentModelPackage extends EPackage {
 	int VOID_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link componentModel.impl.ParameterTypeImpl <em>Parameter Type</em>}' class.
+	 * The meta object id for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.ParameterTypeImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getParameterType()
+	 * @see componentModel.impl.SimpleTypeImpl
+	 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleType()
 	 * @generated
 	 */
-	int PARAMETER_TYPE = 17;
+	int SIMPLE_TYPE = 17;
 
 	/**
-	 * The number of structural features of the '<em>Parameter Type</em>' class.
+	 * The number of structural features of the '<em>Simple Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+	int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Parameter Type</em>' class.
+	 * The number of operations of the '<em>Simple Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.ComplexParameterTypeImpl <em>Complex Parameter Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.ComplexParameterTypeImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getComplexParameterType()
-	 * @generated
-	 */
-	int COMPLEX_PARAMETER_TYPE = 18;
-
-	/**
-	 * The number of structural features of the '<em>Complex Parameter Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_PARAMETER_TYPE_FEATURE_COUNT = PARAMETER_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Complex Parameter Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLEX_PARAMETER_TYPE_OPERATION_COUNT = PARAMETER_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.SimpleParameterTypeImpl <em>Simple Parameter Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.SimpleParameterTypeImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleParameterType()
-	 * @generated
-	 */
-	int SIMPLE_PARAMETER_TYPE = 19;
-
-	/**
-	 * The number of structural features of the '<em>Simple Parameter Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_PARAMETER_TYPE_FEATURE_COUNT = PARAMETER_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Simple Parameter Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_PARAMETER_TYPE_OPERATION_COUNT = PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int SIMPLE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.BooleanImpl <em>Boolean</em>}' class.
@@ -952,7 +896,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 20;
+	int BOOLEAN = 18;
 
 	/**
 	 * The number of structural features of the '<em>Boolean</em>' class.
@@ -961,7 +905,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int BOOLEAN_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Boolean</em>' class.
@@ -970,7 +914,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int BOOLEAN_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.IntImpl <em>Int</em>}' class.
@@ -980,7 +924,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getInt()
 	 * @generated
 	 */
-	int INT = 21;
+	int INT = 19;
 
 	/**
 	 * The number of structural features of the '<em>Int</em>' class.
@@ -989,7 +933,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INT_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int INT_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Int</em>' class.
@@ -998,7 +942,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INT_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int INT_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.CharImpl <em>Char</em>}' class.
@@ -1008,7 +952,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getChar()
 	 * @generated
 	 */
-	int CHAR = 22;
+	int CHAR = 20;
 
 	/**
 	 * The number of structural features of the '<em>Char</em>' class.
@@ -1017,7 +961,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHAR_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int CHAR_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Char</em>' class.
@@ -1026,7 +970,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHAR_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int CHAR_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.DateImpl <em>Date</em>}' class.
@@ -1036,7 +980,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getDate()
 	 * @generated
 	 */
-	int DATE = 23;
+	int DATE = 21;
 
 	/**
 	 * The number of structural features of the '<em>Date</em>' class.
@@ -1045,7 +989,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int DATE_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Date</em>' class.
@@ -1054,7 +998,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int DATE_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.ListImpl <em>List</em>}' class.
@@ -1064,7 +1008,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getList()
 	 * @generated
 	 */
-	int LIST = 24;
+	int LIST = 22;
 
 	/**
 	 * The number of structural features of the '<em>List</em>' class.
@@ -1073,7 +1017,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int LIST_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>List</em>' class.
@@ -1082,7 +1026,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int LIST_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.MapImpl <em>Map</em>}' class.
@@ -1092,7 +1036,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getMap()
 	 * @generated
 	 */
-	int MAP = 25;
+	int MAP = 23;
 
 	/**
 	 * The number of structural features of the '<em>Map</em>' class.
@@ -1101,7 +1045,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int MAP_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Map</em>' class.
@@ -1110,7 +1054,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAP_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int MAP_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.FloatImpl <em>Float</em>}' class.
@@ -1120,7 +1064,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getFloat()
 	 * @generated
 	 */
-	int FLOAT = 26;
+	int FLOAT = 24;
 
 	/**
 	 * The number of structural features of the '<em>Float</em>' class.
@@ -1129,7 +1073,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOAT_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int FLOAT_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Float</em>' class.
@@ -1138,7 +1082,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOAT_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int FLOAT_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.LongImpl <em>Long</em>}' class.
@@ -1148,7 +1092,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getLong()
 	 * @generated
 	 */
-	int LONG = 27;
+	int LONG = 25;
 
 	/**
 	 * The number of structural features of the '<em>Long</em>' class.
@@ -1157,7 +1101,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LONG_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int LONG_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Long</em>' class.
@@ -1166,7 +1110,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LONG_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int LONG_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.DoubleImpl <em>Double</em>}' class.
@@ -1176,7 +1120,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getDouble()
 	 * @generated
 	 */
-	int DOUBLE = 28;
+	int DOUBLE = 26;
 
 	/**
 	 * The number of structural features of the '<em>Double</em>' class.
@@ -1185,7 +1129,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int DOUBLE_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Double</em>' class.
@@ -1194,7 +1138,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOUBLE_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int DOUBLE_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.StringImpl <em>String</em>}' class.
@@ -1204,7 +1148,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getString()
 	 * @generated
 	 */
-	int STRING = 29;
+	int STRING = 27;
 
 	/**
 	 * The number of structural features of the '<em>String</em>' class.
@@ -1213,7 +1157,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_FEATURE_COUNT = SIMPLE_PARAMETER_TYPE_FEATURE_COUNT + 0;
+	int STRING_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>String</em>' class.
@@ -1222,7 +1166,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_OPERATION_COUNT = SIMPLE_PARAMETER_TYPE_OPERATION_COUNT + 0;
+	int STRING_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link componentModel.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1232,7 +1176,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 30;
+	int PARAMETER = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1278,7 +1222,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getAssemblyViewType()
 	 * @generated
 	 */
-	int ASSEMBLY_VIEW_TYPE = 31;
+	int ASSEMBLY_VIEW_TYPE = 29;
 
 	/**
 	 * The number of structural features of the '<em>Assembly View Type</em>' class.
@@ -1306,7 +1250,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getEnvironmentViewType()
 	 * @generated
 	 */
-	int ENVIRONMENT_VIEW_TYPE = 32;
+	int ENVIRONMENT_VIEW_TYPE = 30;
 
 	/**
 	 * The number of structural features of the '<em>Environment View Type</em>' class.
@@ -1334,7 +1278,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getAllocationViewType()
 	 * @generated
 	 */
-	int ALLOCATION_VIEW_TYPE = 33;
+	int ALLOCATION_VIEW_TYPE = 31;
 
 	/**
 	 * The number of structural features of the '<em>Allocation View Type</em>' class.
@@ -1362,7 +1306,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getAssemblyViewPoint()
 	 * @generated
 	 */
-	int ASSEMBLY_VIEW_POINT = 34;
+	int ASSEMBLY_VIEW_POINT = 32;
 
 	/**
 	 * The feature id for the '<em><b>Viewtypes</b></em>' containment reference list.
@@ -1399,7 +1343,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getDeploymentViewPoint()
 	 * @generated
 	 */
-	int DEPLOYMENT_VIEW_POINT = 35;
+	int DEPLOYMENT_VIEW_POINT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Viewtypes</b></em>' containment reference list.
@@ -1427,6 +1371,34 @@ public interface ComponentModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEPLOYMENT_VIEW_POINT_OPERATION_COUNT = VIEW_POINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link componentModel.impl.ComplexTypeImpl <em>Complex Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentModel.impl.ComplexTypeImpl
+	 * @see componentModel.impl.ComponentModelPackageImpl#getComplexType()
+	 * @generated
+	 */
+	int COMPLEX_TYPE = 35;
+
+	/**
+	 * The number of structural features of the '<em>Complex Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Complex Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1908,34 +1880,14 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getVoid();
 
 	/**
-	 * Returns the meta object for class '{@link componentModel.ParameterType <em>Parameter Type</em>}'.
+	 * Returns the meta object for class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parameter Type</em>'.
-	 * @see componentModel.ParameterType
+	 * @return the meta object for class '<em>Simple Type</em>'.
+	 * @see componentModel.SimpleType
 	 * @generated
 	 */
-	EClass getParameterType();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.ComplexParameterType <em>Complex Parameter Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Complex Parameter Type</em>'.
-	 * @see componentModel.ComplexParameterType
-	 * @generated
-	 */
-	EClass getComplexParameterType();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.SimpleParameterType <em>Simple Parameter Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Simple Parameter Type</em>'.
-	 * @see componentModel.SimpleParameterType
-	 * @generated
-	 */
-	EClass getSimpleParameterType();
+	EClass getSimpleType();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.Boolean <em>Boolean</em>}'.
@@ -2128,6 +2080,16 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRepositoryViewType();
+
+	/**
+	 * Returns the meta object for class '{@link componentModel.ComplexType <em>Complex Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Complex Type</em>'.
+	 * @see componentModel.ComplexType
+	 * @generated
+	 */
+	EClass getComplexType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2547,34 +2509,14 @@ public interface ComponentModelPackage extends EPackage {
 		EClass VOID = eINSTANCE.getVoid();
 
 		/**
-		 * The meta object literal for the '{@link componentModel.impl.ParameterTypeImpl <em>Parameter Type</em>}' class.
+		 * The meta object literal for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.ParameterTypeImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getParameterType()
+		 * @see componentModel.impl.SimpleTypeImpl
+		 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleType()
 		 * @generated
 		 */
-		EClass PARAMETER_TYPE = eINSTANCE.getParameterType();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.ComplexParameterTypeImpl <em>Complex Parameter Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.ComplexParameterTypeImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getComplexParameterType()
-		 * @generated
-		 */
-		EClass COMPLEX_PARAMETER_TYPE = eINSTANCE.getComplexParameterType();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.SimpleParameterTypeImpl <em>Simple Parameter Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.SimpleParameterTypeImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleParameterType()
-		 * @generated
-		 */
-		EClass SIMPLE_PARAMETER_TYPE = eINSTANCE.getSimpleParameterType();
+		EClass SIMPLE_TYPE = eINSTANCE.getSimpleType();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.BooleanImpl <em>Boolean</em>}' class.
@@ -2761,6 +2703,16 @@ public interface ComponentModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REPOSITORY_VIEW_TYPE = eINSTANCE.getRepositoryViewType();
+
+		/**
+		 * The meta object literal for the '{@link componentModel.impl.ComplexTypeImpl <em>Complex Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentModel.impl.ComplexTypeImpl
+		 * @see componentModel.impl.ComponentModelPackageImpl#getComplexType()
+		 * @generated
+		 */
+		EClass COMPLEX_TYPE = eINSTANCE.getComplexType();
 
 	}
 

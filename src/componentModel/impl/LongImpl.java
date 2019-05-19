@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class LongImpl extends SimpleParameterTypeImpl implements componentModel.Long {
+public class LongImpl extends SimpleTypeImpl implements componentModel.Long {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

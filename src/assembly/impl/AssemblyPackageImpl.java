@@ -422,7 +422,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContext_AssemblyConnectors() {
+	public EReference getContext_NestedAssemblyConnectors() {
 		return (EReference)contextEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -434,6 +434,16 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	@Override
 	public EAttribute getContext_Name() {
 		return (EAttribute)contextEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContext_OutwardAssemblyConnectors() {
+		return (EReference)contextEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -643,8 +653,9 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		contextEClass = createEClass(CONTEXT);
 		createEReference(contextEClass, CONTEXT__REQUIRED_INTERFACES);
 		createEReference(contextEClass, CONTEXT__DELEGATION_CONNECTORS);
-		createEReference(contextEClass, CONTEXT__ASSEMBLY_CONNECTORS);
+		createEReference(contextEClass, CONTEXT__NESTED_ASSEMBLY_CONNECTORS);
 		createEAttribute(contextEClass, CONTEXT__NAME);
+		createEReference(contextEClass, CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS);
 
 		delegationConnectorEClass = createEClass(DELEGATION_CONNECTOR);
 		createEReference(delegationConnectorEClass, DELEGATION_CONNECTOR__INTER_FACE);
@@ -717,7 +728,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		initEClass(assemblyConnectorEClass, AssemblyConnector.class, "AssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyConnector_Providedrole(), this.getProvidedRole(), null, "providedrole", null, 1, 1, AssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssemblyConnector_Requiredrole(), this.getRequiredRole(), null, "requiredrole", null, 1, 1, AssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAssemblyConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, AssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAssemblyConnector_Name(), ecorePackage.getEString(), "name", null, 0, 1, AssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requiredDelegationConnectorEClass, RequiredDelegationConnector.class, "RequiredDelegationConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -735,8 +746,9 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		initEClass(contextEClass, Context.class, "Context", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContext_RequiredInterfaces(), theComponentModelPackage.getInterface(), null, "requiredInterfaces", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getContext_DelegationConnectors(), this.getDelegationConnector(), null, "delegationConnectors", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getContext_AssemblyConnectors(), this.getAssemblyConnector(), null, "assemblyConnectors", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getContext_NestedAssemblyConnectors(), this.getAssemblyConnector(), null, "nestedAssemblyConnectors", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_Name(), ecorePackage.getEString(), "name", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContext_OutwardAssemblyConnectors(), this.getAssemblyConnector(), null, "outwardAssemblyConnectors", null, 0, -1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(delegationConnectorEClass, DelegationConnector.class, "DelegationConnector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegationConnector_InterFace(), theComponentModelPackage.getInterface(), null, "interFace", null, 0, 1, DelegationConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -838,6 +850,12 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 			   "constraints", "roleCanOnlyBeProvided"
 		   });
 		addAnnotation
+		  (contextEClass,
+		   source,
+		   new String[] {
+			   "constraints", "contextIsPartOfOutwardAssemblyConnectors"
+		   });
+		addAnnotation
 		  (systemEClass,
 		   source,
 		   new String[] {
@@ -893,6 +911,12 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		   source,
 		   new String[] {
 			   "roleCanOnlyBeProvided", "self.role.oclIsKindOf(ProvidedRole)"
+		   });
+		addAnnotation
+		  (contextEClass,
+		   source,
+		   new String[] {
+			   "contextIsPartOfOutwardAssemblyConnectors", "\n\t\tself.outwardAssemblyConnectors -> forAll(aCon | aCon.providedrole.assemblyContext = self xor aCon.requiredrole.assemblyContext = self )"
 		   });
 		addAnnotation
 		  (systemEClass,

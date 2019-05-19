@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class IntImpl extends SimpleParameterTypeImpl implements Int {
+public class IntImpl extends SimpleTypeImpl implements Int {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

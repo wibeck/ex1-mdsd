@@ -8,7 +8,7 @@ import componentModel.AssemblyViewPoint;
 import componentModel.AssemblyViewType;
 import componentModel.Branch;
 import componentModel.Char;
-import componentModel.ComplexParameterType;
+import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
 import componentModel.Date;
@@ -22,13 +22,12 @@ import componentModel.InternalAction;
 import componentModel.List;
 import componentModel.Loop;
 import componentModel.Parameter;
-import componentModel.ParameterType;
 import componentModel.Repository;
 import componentModel.RepositoryViewType;
 import componentModel.Service;
 import componentModel.ServiceEffectSpecification;
 import componentModel.Signature;
-import componentModel.SimpleParameterType;
+import componentModel.SimpleType;
 import componentModel.SystemIndependentViewPoint;
 import componentModel.Type;
 import componentModel.ViewPoint;
@@ -150,12 +149,8 @@ public class ComponentModelValidator extends EObjectValidator {
 				return validateViewPoint((ViewPoint)value, diagnostics, context);
 			case ComponentModelPackage.VOID:
 				return validateVoid((componentModel.Void)value, diagnostics, context);
-			case ComponentModelPackage.PARAMETER_TYPE:
-				return validateParameterType((ParameterType)value, diagnostics, context);
-			case ComponentModelPackage.COMPLEX_PARAMETER_TYPE:
-				return validateComplexParameterType((ComplexParameterType)value, diagnostics, context);
-			case ComponentModelPackage.SIMPLE_PARAMETER_TYPE:
-				return validateSimpleParameterType((SimpleParameterType)value, diagnostics, context);
+			case ComponentModelPackage.SIMPLE_TYPE:
+				return validateSimpleType((SimpleType)value, diagnostics, context);
 			case ComponentModelPackage.BOOLEAN:
 				return validateBoolean((componentModel.Boolean)value, diagnostics, context);
 			case ComponentModelPackage.INT:
@@ -190,6 +185,8 @@ public class ComponentModelValidator extends EObjectValidator {
 				return validateDeploymentViewPoint((DeploymentViewPoint)value, diagnostics, context);
 			case ComponentModelPackage.REPOSITORY_VIEW_TYPE:
 				return validateRepositoryViewType((RepositoryViewType)value, diagnostics, context);
+			case ComponentModelPackage.COMPLEX_TYPE:
+				return validateComplexType((ComplexType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -433,26 +430,8 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateParameterType(ParameterType parameterType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameterType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComplexParameterType(ComplexParameterType complexParameterType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(complexParameterType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSimpleParameterType(SimpleParameterType simpleParameterType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(simpleParameterType, diagnostics, context);
+	public boolean validateSimpleType(SimpleType simpleType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(simpleType, diagnostics, context);
 	}
 
 	/**
@@ -685,6 +664,15 @@ public class ComponentModelValidator extends EObjectValidator {
 	 */
 	public boolean validateRepositoryViewType(RepositoryViewType repositoryViewType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(repositoryViewType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComplexType(ComplexType complexType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(complexType, diagnostics, context);
 	}
 
 	/**

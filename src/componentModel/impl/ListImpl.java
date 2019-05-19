@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ListImpl extends SimpleParameterTypeImpl implements List {
+public class ListImpl extends SimpleTypeImpl implements List {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

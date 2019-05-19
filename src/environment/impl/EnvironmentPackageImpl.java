@@ -16,10 +16,13 @@ import environment.EnvironmentFactory;
 import environment.EnvironmentPackage;
 import environment.Link;
 
+import environment.util.EnvironmentValidator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -121,6 +124,16 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		theAssemblyPackage.initializePackageContents();
 		theComponentModelPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theEnvironmentPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return EnvironmentValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theEnvironmentPackage.freeze();
 
@@ -197,6 +210,16 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	@Override
 	public EReference getContainer_Allocationcontext() {
 		return (EReference)containerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContainer_OutwardLinks() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -306,6 +329,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		containerEClass = createEClass(CONTAINER);
 		createEAttribute(containerEClass, CONTAINER__NAME);
 		createEReference(containerEClass, CONTAINER__ALLOCATIONCONTEXT);
+		createEReference(containerEClass, CONTAINER__OUTWARD_LINKS);
 
 		linkEClass = createEClass(LINK);
 		createEReference(linkEClass, LINK__CONTAINER);
@@ -361,6 +385,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		initEClass(containerEClass, environment.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContainer_Allocationcontext(), this.getAllocationContext(), this.getAllocationContext_Container(), "allocationcontext", null, 1, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getContainer_OutwardLinks(), this.getLink(), null, "outwardLinks", null, 0, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLink_Container(), this.getContainer(), null, "container", null, 2, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -377,6 +402,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		// Create annotations
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -393,6 +422,59 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		   new String[] {
 			   "assembly", "assembly.ecore#/",
 			   "cm", "componentModel.ecore#/"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });
+		addAnnotation
+		  (containerEClass,
+		   source,
+		   new String[] {
+			   "constraints", "containerPartOfOutwardLinks allocationOnSameContainerOrContainersLinked"
+		   });
+		addAnnotation
+		  (allocationContextEClass,
+		   source,
+		   new String[] {
+			   "constraints", "onlyTopLevelComponentsAllowedToBeAllocated"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation
+		  (containerEClass,
+		   source,
+		   new String[] {
+			   "containerPartOfOutwardLinks", "\n\t\tself.outwardLinks ->collect(container) -> includes(self)",
+			   "allocationOnSameContainerOrContainersLinked", "\n\t\tlet ProvidedAssemblyContexts =\n\t\tself.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(providedrole),\n\t\tRequiredAssemblyContexts =\n\t\tself.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(requiredrole)\n\t\tin self.allocationcontext -> collect(assemblycontext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))\n\t\txor self.outwardLinks ->exists(link | link.container ->collect(allocationcontext) -> collect(assemblycontext) \n\t\t-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts)))"
+		   });
+		addAnnotation
+		  (allocationContextEClass,
+		   source,
+		   new String[] {
+			   "onlyTopLevelComponentsAllowedToBeAllocated", "self.assemblycontext.ownerComponent = null"
 		   });
 	}
 

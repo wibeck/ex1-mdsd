@@ -21,7 +21,8 @@ import componentModel.AllocationViewType;
  * </ul>
  *
  * @see environment.EnvironmentPackage#getAllocationContext()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='onlyTopLevelComponentsAllowedToBeAllocated'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot onlyTopLevelComponentsAllowedToBeAllocated='self.assemblycontext.ownerComponent = null'"
  * @generated
  */
 public interface AllocationContext extends AllocationViewType {

@@ -4,7 +4,7 @@ package componentModel.impl;
 
 import componentModel.ComponentModelPackage;
 import componentModel.Parameter;
-import componentModel.ParameterType;
+import componentModel.Type;
 
 import java.lang.String;
 
@@ -59,7 +59,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @generated
 	 * @ordered
 	 */
-	protected ParameterType parameterType;
+	protected Type parameterType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,10 +109,10 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @generated
 	 */
 	@Override
-	public ParameterType getParameterType() {
+	public Type getParameterType() {
 		if (parameterType != null && parameterType.eIsProxy()) {
 			InternalEObject oldParameterType = (InternalEObject)parameterType;
-			parameterType = (ParameterType)eResolveProxy(oldParameterType);
+			parameterType = (Type)eResolveProxy(oldParameterType);
 			if (parameterType != oldParameterType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentModelPackage.PARAMETER__PARAMETER_TYPE, oldParameterType, parameterType));
@@ -126,7 +126,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ParameterType basicGetParameterType() {
+	public Type basicGetParameterType() {
 		return parameterType;
 	}
 
@@ -136,8 +136,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @generated
 	 */
 	@Override
-	public void setParameterType(ParameterType newParameterType) {
-		ParameterType oldParameterType = parameterType;
+	public void setParameterType(Type newParameterType) {
+		Type oldParameterType = parameterType;
 		parameterType = newParameterType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.PARAMETER__PARAMETER_TYPE, oldParameterType, parameterType));
@@ -172,7 +172,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				setName((String)newValue);
 				return;
 			case ComponentModelPackage.PARAMETER__PARAMETER_TYPE:
-				setParameterType((ParameterType)newValue);
+				setParameterType((Type)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,7 +190,7 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				setName(NAME_EDEFAULT);
 				return;
 			case ComponentModelPackage.PARAMETER__PARAMETER_TYPE:
-				setParameterType((ParameterType)null);
+				setParameterType((Type)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -13,5 +13,5 @@ package componentModel;
  * @model
  * @generated
  */
-public interface Long extends SimpleParameterType {
+public interface Long extends SimpleType {
 } // Long

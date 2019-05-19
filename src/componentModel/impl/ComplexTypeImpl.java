@@ -2,25 +2,25 @@
  */
 package componentModel.impl;
 
+import componentModel.ComplexType;
 import componentModel.ComponentModelPackage;
-import componentModel.SimpleParameterType;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Simple Parameter Type</b></em>'.
+ * An implementation of the model object '<em><b>Complex Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class SimpleParameterTypeImpl extends ParameterTypeImpl implements SimpleParameterType {
+public class ComplexTypeImpl extends TypeImpl implements ComplexType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SimpleParameterTypeImpl() {
+	protected ComplexTypeImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public abstract class SimpleParameterTypeImpl extends ParameterTypeImpl implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentModelPackage.Literals.SIMPLE_PARAMETER_TYPE;
+		return ComponentModelPackage.Literals.COMPLEX_TYPE;
 	}
 
-} //SimpleParameterTypeImpl
+} //ComplexTypeImpl

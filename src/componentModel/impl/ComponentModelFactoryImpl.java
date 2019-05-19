@@ -4,7 +4,7 @@ package componentModel.impl;
 
 import componentModel.Branch;
 import componentModel.Char;
-import componentModel.ComplexParameterType;
+import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
 import componentModel.ComponentModelPackage;
@@ -87,7 +87,6 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 			case ComponentModelPackage.SIGNATURE: return createSignature();
 			case ComponentModelPackage.SERVICE: return createService();
 			case ComponentModelPackage.VOID: return createVoid();
-			case ComponentModelPackage.COMPLEX_PARAMETER_TYPE: return createComplexParameterType();
 			case ComponentModelPackage.BOOLEAN: return createBoolean();
 			case ComponentModelPackage.INT: return createInt();
 			case ComponentModelPackage.CHAR: return createChar();
@@ -99,6 +98,7 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 			case ComponentModelPackage.DOUBLE: return createDouble();
 			case ComponentModelPackage.STRING: return createString();
 			case ComponentModelPackage.PARAMETER: return createParameter();
+			case ComponentModelPackage.COMPLEX_TYPE: return createComplexType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -242,17 +242,6 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public ComplexParameterType createComplexParameterType() {
-		ComplexParameterTypeImpl complexParameterType = new ComplexParameterTypeImpl();
-		return complexParameterType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public componentModel.Boolean createBoolean() {
 		BooleanImpl boolean_ = new BooleanImpl();
 		return boolean_;
@@ -366,6 +355,17 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ComplexType createComplexType() {
+		ComplexTypeImpl complexType = new ComplexTypeImpl();
+		return complexType;
 	}
 
 	/**

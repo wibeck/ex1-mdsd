@@ -17,10 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link environment.Container#getName <em>Name</em>}</li>
  *   <li>{@link environment.Container#getAllocationcontext <em>Allocationcontext</em>}</li>
+ *   <li>{@link environment.Container#getOutwardLinks <em>Outward Links</em>}</li>
  * </ul>
  *
  * @see environment.EnvironmentPackage#getContainer()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='containerPartOfOutwardLinks allocationOnSameContainerOrContainersLinked'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot containerPartOfOutwardLinks='\n\t\tself.outwardLinks -&gt;collect(container) -&gt; includes(self)' allocationOnSameContainerOrContainersLinked='\n\t\tlet ProvidedAssemblyContexts =\n\t\tself.allocationcontext -&gt; collect(assemblycontext) -&gt; collect(outwardAssemblyConnectors) -&gt; collect(providedrole),\n\t\tRequiredAssemblyContexts =\n\t\tself.allocationcontext -&gt; collect(assemblycontext) -&gt; collect(outwardAssemblyConnectors) -&gt; collect(requiredrole)\n\t\tin self.allocationcontext -&gt; collect(assemblycontext) -&gt; includesAll(ProvidedAssemblyContexts -&gt; union(RequiredAssemblyContexts))\n\t\txor self.outwardLinks -&gt;exists(link | link.container -&gt;collect(allocationcontext) -&gt; collect(assemblycontext) \n\t\t-&gt; includesAll(ProvidedAssemblyContexts -&gt; union(RequiredAssemblyContexts)))'"
  * @generated
  */
 public interface Container extends EObject {
@@ -59,5 +61,17 @@ public interface Container extends EObject {
 	 * @generated
 	 */
 	EList<AllocationContext> getAllocationcontext();
+
+	/**
+	 * Returns the value of the '<em><b>Outward Links</b></em>' reference list.
+	 * The list contents are of type {@link environment.Link}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outward Links</em>' reference list.
+	 * @see environment.EnvironmentPackage#getContainer_OutwardLinks()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Link> getOutwardLinks();
 
 } // Container
