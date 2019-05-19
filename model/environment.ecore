@@ -10,7 +10,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="componentModel.ecore#//EnvironmentViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false" upperBound="-1" eType="#//Container" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" ordered="false" upperBound="-1" eType="#//Link" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -21,7 +21,7 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="containerPartOfOutwardLinks" value="&#xA;&#x9;&#x9;self.outwardLinks ->collect(container) -> includes(self)"/>
-      <details key="allocationOnSameContainerOrContainersLinked" value="&#xA;&#x9;&#x9;let ProvidedAssemblyContexts =&#xA;&#x9;&#x9;self.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(providedrole),&#xA;&#x9;&#x9;RequiredAssemblyContexts =&#xA;&#x9;&#x9;self.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(requiredrole)&#xA;&#x9;&#x9;in self.allocationcontext -> collect(assemblycontext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))&#xA;&#x9;&#x9;xor self.outwardLinks -> collect(container) ->collect(allocationcontext) -> collect(assemblycontext) &#xA;&#x9;&#x9;-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))"/>
+      <details key="allocationOnSameContainerOrContainersLinked" value="&#xA;&#x9;&#x9;let ProvidedAssemblyContexts =&#xA;&#x9;&#x9;self.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(providedrole),&#xA;&#x9;&#x9;RequiredAssemblyContexts =&#xA;&#x9;&#x9;self.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(requiredrole)&#xA;&#x9;&#x9;in self.allocationcontext -> collect(assemblycontext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))&#xA;&#x9;&#x9;xor self.outwardLinks ->exists(link | link.container ->collect(allocationcontext) -> collect(assemblycontext) &#xA;&#x9;&#x9;-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts)))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocationcontext" ordered="false" lowerBound="1" upperBound="-1" eType="#//AllocationContext"
@@ -32,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false" lowerBound="2" upperBound="-1" eType="#//Container"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="componentModel.ecore#//AllocationViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationContext">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="onlyTopLevelComponentsAllowedToBeAllocated"/>
     </eAnnotations>
