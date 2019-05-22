@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cm:InterfaceServiceMapEntry xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cm="componentModel" name="mediaStoreMap">
-  <providedInterface href="repositoryVT.componentmodel#//@interface.1"/>
-  <service href="mediaStoreDownload.componentmodel#/"/>
-  <service href="mediaStoreUpload.componentmodel#/"/>
-</cm:InterfaceServiceMapEntry>

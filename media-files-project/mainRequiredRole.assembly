@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<assembly:RequiredRole xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assembly="assembly" name="mainCompositeComponentREquiredRole">
-  <assemblyContext href="mainCompComponent.assembly#/"/>
-  <interface href="repositoryVT.componentmodel#//@interface.3"/>
-</assembly:RequiredRole>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<assembly:ProvidedDelegationConnector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="assembly">
-  <interface href="repositoryVT.componentmodel#//@interface.0"/>
-  <role xsi:type="assembly:ProvidedRole" href="webGuiProvidedRole.assembly#/"/>
-</assembly:ProvidedDelegationConnector>

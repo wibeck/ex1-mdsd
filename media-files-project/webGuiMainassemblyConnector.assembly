@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<assembly:AssemblyConnector xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assembly="assembly">
-  <providedrole href="digitalWatermarkingProvidedrole.assembly#/"/>
-  <requiredrole href="MediaManagerRequiredRoleSound.assembly#/"/>
-</assembly:AssemblyConnector>
