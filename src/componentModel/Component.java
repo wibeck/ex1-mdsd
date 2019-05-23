@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link componentModel.Component#getName <em>Name</em>}</li>
  *   <li>{@link componentModel.Component#getInterfaceServiceMap <em>Interface Service Map</em>}</li>
- *   <li>{@link componentModel.Component#getServiceeffectspecification <em>Serviceeffectspecification</em>}</li>
+ *   <li>{@link componentModel.Component#getServiceEffectSpecification <em>Service Effect Specification</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getComponent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='servicesForEachSignatreOfRequiredInterfaces'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot servicesForEachSignatreOfRequiredInterfaces='self.interfaceServiceMap -&gt;select(entry | entry.service \n\t\t\t-&gt; select(service| service.correspondence -&gt; union(entry.providedInterface.signatures)\n\t\t))  -&gt; notEmpty()'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='servicesForEachSignatureOfProvidedInterfaces'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot servicesForEachSignatureOfProvidedInterfaces='self.interfaceServiceMap -&gt; forAll(entry | entry.services -&gt; \n\t\t\tcollect(correspondence) -&gt; intersection(entry.providedInterface.signatures) -&gt; size() \n\t\t\t=  entry.providedInterface.signatures -&gt; size())'"
  * @generated
  */
 public interface Component extends EObject {
@@ -63,25 +63,25 @@ public interface Component extends EObject {
 	EList<InterfaceServiceMapEntry> getInterfaceServiceMap();
 
 	/**
-	 * Returns the value of the '<em><b>Serviceeffectspecification</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Service Effect Specification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Serviceeffectspecification</em>' containment reference.
-	 * @see #setServiceeffectspecification(ServiceEffectSpecification)
-	 * @see componentModel.ComponentModelPackage#getComponent_Serviceeffectspecification()
+	 * @return the value of the '<em>Service Effect Specification</em>' containment reference.
+	 * @see #setServiceEffectSpecification(ServiceEffectSpecification)
+	 * @see componentModel.ComponentModelPackage#getComponent_ServiceEffectSpecification()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	ServiceEffectSpecification getServiceeffectspecification();
+	ServiceEffectSpecification getServiceEffectSpecification();
 
 	/**
-	 * Sets the value of the '{@link componentModel.Component#getServiceeffectspecification <em>Serviceeffectspecification</em>}' containment reference.
+	 * Sets the value of the '{@link componentModel.Component#getServiceEffectSpecification <em>Service Effect Specification</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Serviceeffectspecification</em>' containment reference.
-	 * @see #getServiceeffectspecification()
+	 * @param value the new value of the '<em>Service Effect Specification</em>' containment reference.
+	 * @see #getServiceEffectSpecification()
 	 * @generated
 	 */
-	void setServiceeffectspecification(ServiceEffectSpecification value);
+	void setServiceEffectSpecification(ServiceEffectSpecification value);
 
 } // Component

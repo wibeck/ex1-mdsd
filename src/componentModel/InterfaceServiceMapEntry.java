@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link componentModel.InterfaceServiceMapEntry#getProvidedInterface <em>Provided Interface</em>}</li>
- *   <li>{@link componentModel.InterfaceServiceMapEntry#getService <em>Service</em>}</li>
+ *   <li>{@link componentModel.InterfaceServiceMapEntry#getServices <em>Services</em>}</li>
  *   <li>{@link componentModel.InterfaceServiceMapEntry#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -34,7 +34,7 @@ public interface InterfaceServiceMapEntry extends EObject {
 	 * @return the value of the '<em>Provided Interface</em>' reference.
 	 * @see #setProvidedInterface(Interface)
 	 * @see componentModel.ComponentModelPackage#getInterfaceServiceMapEntry_ProvidedInterface()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	Interface getProvidedInterface();
@@ -50,16 +50,16 @@ public interface InterfaceServiceMapEntry extends EObject {
 	void setProvidedInterface(Interface value);
 
 	/**
-	 * Returns the value of the '<em><b>Service</b></em>' reference list.
+	 * Returns the value of the '<em><b>Services</b></em>' reference list.
 	 * The list contents are of type {@link componentModel.Service}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service</em>' reference list.
-	 * @see componentModel.ComponentModelPackage#getInterfaceServiceMapEntry_Service()
+	 * @return the value of the '<em>Services</em>' reference list.
+	 * @see componentModel.ComponentModelPackage#getInterfaceServiceMapEntry_Services()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<Service> getService();
+	EList<Service> getServices();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

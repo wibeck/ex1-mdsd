@@ -25,6 +25,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import root.RootPackage;
+import root.impl.RootPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,20 +111,24 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
-		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(registeredPackage instanceof AssemblyPackageImpl ? registeredPackage : AssemblyPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RootPackage.eNS_URI);
+		RootPackageImpl theRootPackage = (RootPackageImpl)(registeredPackage instanceof RootPackageImpl ? registeredPackage : RootPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ComponentModelPackage.eNS_URI);
 		ComponentModelPackageImpl theComponentModelPackage = (ComponentModelPackageImpl)(registeredPackage instanceof ComponentModelPackageImpl ? registeredPackage : ComponentModelPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
+		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(registeredPackage instanceof AssemblyPackageImpl ? registeredPackage : AssemblyPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEnvironmentPackage.createPackageContents();
-		theAssemblyPackage.createPackageContents();
+		theRootPackage.createPackageContents();
 		theComponentModelPackage.createPackageContents();
+		theAssemblyPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEnvironmentPackage.initializePackageContents();
-		theAssemblyPackage.initializePackageContents();
+		theRootPackage.initializePackageContents();
 		theComponentModelPackage.initializePackageContents();
+		theAssemblyPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -178,16 +184,6 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEnvironment_Name() {
-		return (EAttribute)environmentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getContainer() {
 		return containerEClass;
 	}
@@ -208,7 +204,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @generated
 	 */
 	@Override
-	public EReference getContainer_Allocationcontext() {
+	public EReference getContainer_AllocationContexts() {
 		return (EReference)containerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -268,7 +264,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @generated
 	 */
 	@Override
-	public EReference getAllocationContext_Assemblycontext() {
+	public EReference getAllocationContext_AssemblyContext() {
 		return (EReference)allocationContextEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -280,16 +276,6 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	@Override
 	public EReference getAllocationContext_Container() {
 		return (EReference)allocationContextEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAllocationContext_Name() {
-		return (EAttribute)allocationContextEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -324,11 +310,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		environmentEClass = createEClass(ENVIRONMENT);
 		createEReference(environmentEClass, ENVIRONMENT__CONTAINER);
 		createEReference(environmentEClass, ENVIRONMENT__LINK);
-		createEAttribute(environmentEClass, ENVIRONMENT__NAME);
 
 		containerEClass = createEClass(CONTAINER);
 		createEAttribute(containerEClass, CONTAINER__NAME);
-		createEReference(containerEClass, CONTAINER__ALLOCATIONCONTEXT);
+		createEReference(containerEClass, CONTAINER__ALLOCATION_CONTEXTS);
 		createEReference(containerEClass, CONTAINER__OUTWARD_LINKS);
 
 		linkEClass = createEClass(LINK);
@@ -336,9 +321,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		createEAttribute(linkEClass, LINK__NAME);
 
 		allocationContextEClass = createEClass(ALLOCATION_CONTEXT);
-		createEReference(allocationContextEClass, ALLOCATION_CONTEXT__ASSEMBLYCONTEXT);
+		createEReference(allocationContextEClass, ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT);
 		createEReference(allocationContextEClass, ALLOCATION_CONTEXT__CONTAINER);
-		createEAttribute(allocationContextEClass, ALLOCATION_CONTEXT__NAME);
 	}
 
 	/**
@@ -380,11 +364,10 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnvironment_Container(), this.getContainer(), null, "container", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEnvironment_Link(), this.getLink(), null, "link", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getEnvironment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerEClass, environment.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 0, 1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContainer_Allocationcontext(), this.getAllocationContext(), this.getAllocationContext_Container(), "allocationcontext", null, 1, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getContainer_AllocationContexts(), this.getAllocationContext(), this.getAllocationContext_Container(), "allocationContexts", null, 1, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getContainer_OutwardLinks(), this.getLink(), null, "outwardLinks", null, 0, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -392,9 +375,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		initEAttribute(getLink_Name(), ecorePackage.getEString(), "name", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(allocationContextEClass, AllocationContext.class, "AllocationContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAllocationContext_Assemblycontext(), theAssemblyPackage.getAssemblyContext(), null, "assemblycontext", null, 1, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAllocationContext_Container(), this.getContainer(), this.getContainer_Allocationcontext(), "container", null, 0, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAllocationContext_Name(), ecorePackage.getEString(), "name", null, 0, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAllocationContext_AssemblyContext(), theAssemblyPackage.getAssemblyContext(), null, "assemblyContext", null, 1, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAllocationContext_Container(), this.getContainer(), this.getContainer_AllocationContexts(), "container", null, 0, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -468,13 +450,13 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		   source,
 		   new String[] {
 			   "containerPartOfOutwardLinks", "\n\t\tself.outwardLinks ->collect(container) -> includes(self)",
-			   "allocationOnSameContainerOrContainersLinked", "\n\t\tlet ProvidedAssemblyContexts =\n\t\tself.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(providedrole),\n\t\tRequiredAssemblyContexts =\n\t\tself.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(requiredrole)\n\t\tin self.allocationcontext -> collect(assemblycontext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))\n\t\txor self.outwardLinks ->exists(link | link.container ->collect(allocationcontext) -> collect(assemblycontext) \n\t\t-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts)))"
+			   "allocationOnSameContainerOrContainersLinked", "\n\t\tlet ProvidedAssemblyContexts =\n\t\tself.allocationContexts -> collect(assemblyContext) -> collect(outwardAssemblyConnectors) -> collect(providedRole),\n\t\tRequiredAssemblyContexts =\n\t\tself.allocationContexts -> collect(assemblyContext) -> collect(outwardAssemblyConnectors) -> collect(requiredRole)\n\t\tin self.allocationContexts -> collect(assemblyContext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))\n\t\txor self.outwardLinks ->exists(link | link.container ->collect(allocationContexts) -> collect(assemblyContext) \n\t\t-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts)))"
 		   });
 		addAnnotation
 		  (allocationContextEClass,
 		   source,
 		   new String[] {
-			   "onlyTopLevelComponentsAllowedToBeAllocated", "self.assemblycontext.ownerComponent = null"
+			   "onlyTopLevelComponentsAllowedToBeAllocated", "self.assemblyContext.ownerComponent = null"
 		   });
 	}
 

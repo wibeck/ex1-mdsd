@@ -2,8 +2,6 @@
  */
 package componentModel;
 
-import java.lang.String;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -15,14 +13,12 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link componentModel.Repository#getComponent <em>Component</em>}</li>
- *   <li>{@link componentModel.Repository#getInterFace <em>Inter Face</em>}</li>
- *   <li>{@link componentModel.Repository#getName <em>Name</em>}</li>
+ *   <li>{@link componentModel.Repository#getComponents <em>Components</em>}</li>
+ *   <li>{@link componentModel.Repository#getInterFaces <em>Inter Faces</em>}</li>
  *   <li>{@link componentModel.Repository#getSignatures <em>Signatures</em>}</li>
  *   <li>{@link componentModel.Repository#getTypes <em>Types</em>}</li>
  *   <li>{@link componentModel.Repository#getServices <em>Services</em>}</li>
- *   <li>{@link componentModel.Repository#getInterfaceservicemapentry <em>Interfaceservicemapentry</em>}</li>
- *   <li>{@link componentModel.Repository#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link componentModel.Repository#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getRepository()
@@ -31,50 +27,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Repository extends RepositoryViewType {
 	/**
-	 * Returns the value of the '<em><b>Component</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
 	 * The list contents are of type {@link componentModel.Component}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getRepository_Component()
+	 * @return the value of the '<em>Components</em>' containment reference list.
+	 * @see componentModel.ComponentModelPackage#getRepository_Components()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Component> getComponent();
+	EList<Component> getComponents();
 
 	/**
-	 * Returns the value of the '<em><b>Inter Face</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Inter Faces</b></em>' containment reference list.
 	 * The list contents are of type {@link componentModel.Interface}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inter Face</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getRepository_InterFace()
+	 * @return the value of the '<em>Inter Faces</em>' containment reference list.
+	 * @see componentModel.ComponentModelPackage#getRepository_InterFaces()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Interface> getInterFace();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see componentModel.ComponentModelPackage#getRepository_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link componentModel.Repository#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
+	EList<Interface> getInterFaces();
 
 	/**
 	 * Returns the value of the '<em><b>Signatures</b></em>' containment reference list.
@@ -113,27 +87,15 @@ public interface Repository extends RepositoryViewType {
 	EList<Service> getServices();
 
 	/**
-	 * Returns the value of the '<em><b>Interfaceservicemapentry</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Interface Service Map Entries</b></em>' containment reference list.
 	 * The list contents are of type {@link componentModel.InterfaceServiceMapEntry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interfaceservicemapentry</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getRepository_Interfaceservicemapentry()
+	 * @return the value of the '<em>Interface Service Map Entries</em>' containment reference list.
+	 * @see componentModel.ComponentModelPackage#getRepository_InterfaceServiceMapEntries()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<InterfaceServiceMapEntry> getInterfaceservicemapentry();
-
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link componentModel.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getRepository_Parameters()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Parameter> getParameters();
+	EList<InterfaceServiceMapEntry> getInterfaceServiceMapEntries();
 
 } // Repository

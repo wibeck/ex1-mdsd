@@ -6,26 +6,17 @@ import componentModel.Component;
 import componentModel.ComponentModelPackage;
 import componentModel.Interface;
 import componentModel.InterfaceServiceMapEntry;
-import componentModel.Parameter;
 import componentModel.Repository;
 import componentModel.Service;
 import componentModel.Signature;
 import componentModel.Type;
-
-import java.lang.String;
-
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,58 +28,36 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link componentModel.impl.RepositoryImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link componentModel.impl.RepositoryImpl#getInterFace <em>Inter Face</em>}</li>
- *   <li>{@link componentModel.impl.RepositoryImpl#getName <em>Name</em>}</li>
+ *   <li>{@link componentModel.impl.RepositoryImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link componentModel.impl.RepositoryImpl#getInterFaces <em>Inter Faces</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getSignatures <em>Signatures</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getTypes <em>Types</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getServices <em>Services</em>}</li>
- *   <li>{@link componentModel.impl.RepositoryImpl#getInterfaceservicemapentry <em>Interfaceservicemapentry</em>}</li>
- *   <li>{@link componentModel.impl.RepositoryImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link componentModel.impl.RepositoryImpl#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository {
 	/**
-	 * The cached value of the '{@link #getComponent() <em>Component</em>}' containment reference list.
+	 * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponent()
+	 * @see #getComponents()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Component> component;
+	protected EList<Component> components;
 
 	/**
-	 * The cached value of the '{@link #getInterFace() <em>Inter Face</em>}' containment reference list.
+	 * The cached value of the '{@link #getInterFaces() <em>Inter Faces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInterFace()
+	 * @see #getInterFaces()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Interface> interFace;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected EList<Interface> interFaces;
 
 	/**
 	 * The cached value of the '{@link #getSignatures() <em>Signatures</em>}' containment reference list.
@@ -121,24 +90,14 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	protected EList<Service> services;
 
 	/**
-	 * The cached value of the '{@link #getInterfaceservicemapentry() <em>Interfaceservicemapentry</em>}' containment reference list.
+	 * The cached value of the '{@link #getInterfaceServiceMapEntries() <em>Interface Service Map Entries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInterfaceservicemapentry()
+	 * @see #getInterfaceServiceMapEntries()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InterfaceServiceMapEntry> interfaceservicemapentry;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> parameters;
+	protected EList<InterfaceServiceMapEntry> interfaceServiceMapEntries;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,11 +124,11 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @generated
 	 */
 	@Override
-	public EList<Component> getComponent() {
-		if (component == null) {
-			component = new EObjectContainmentEList<Component>(Component.class, this, ComponentModelPackage.REPOSITORY__COMPONENT);
+	public EList<Component> getComponents() {
+		if (components == null) {
+			components = new EObjectContainmentEList<Component>(Component.class, this, ComponentModelPackage.REPOSITORY__COMPONENTS);
 		}
-		return component;
+		return components;
 	}
 
 	/**
@@ -178,34 +137,11 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @generated
 	 */
 	@Override
-	public EList<Interface> getInterFace() {
-		if (interFace == null) {
-			interFace = new EObjectContainmentEList<Interface>(Interface.class, this, ComponentModelPackage.REPOSITORY__INTER_FACE);
+	public EList<Interface> getInterFaces() {
+		if (interFaces == null) {
+			interFaces = new EObjectContainmentEList<Interface>(Interface.class, this, ComponentModelPackage.REPOSITORY__INTER_FACES);
 		}
-		return interFace;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.REPOSITORY__NAME, oldName, name));
+		return interFaces;
 	}
 
 	/**
@@ -253,24 +189,11 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @generated
 	 */
 	@Override
-	public EList<InterfaceServiceMapEntry> getInterfaceservicemapentry() {
-		if (interfaceservicemapentry == null) {
-			interfaceservicemapentry = new EObjectContainmentEList<InterfaceServiceMapEntry>(InterfaceServiceMapEntry.class, this, ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY);
+	public EList<InterfaceServiceMapEntry> getInterfaceServiceMapEntries() {
+		if (interfaceServiceMapEntries == null) {
+			interfaceServiceMapEntries = new EObjectContainmentEList<InterfaceServiceMapEntry>(InterfaceServiceMapEntry.class, this, ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES);
 		}
-		return interfaceservicemapentry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ComponentModelPackage.REPOSITORY__PARAMETERS);
-		}
-		return parameters;
+		return interfaceServiceMapEntries;
 	}
 
 	/**
@@ -281,20 +204,18 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentModelPackage.REPOSITORY__COMPONENT:
-				return ((InternalEList<?>)getComponent()).basicRemove(otherEnd, msgs);
-			case ComponentModelPackage.REPOSITORY__INTER_FACE:
-				return ((InternalEList<?>)getInterFace()).basicRemove(otherEnd, msgs);
+			case ComponentModelPackage.REPOSITORY__COMPONENTS:
+				return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
+			case ComponentModelPackage.REPOSITORY__INTER_FACES:
+				return ((InternalEList<?>)getInterFaces()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				return ((InternalEList<?>)getSignatures()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__TYPES:
 				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
-			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
-				return ((InternalEList<?>)getInterfaceservicemapentry()).basicRemove(otherEnd, msgs);
-			case ComponentModelPackage.REPOSITORY__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
+				return ((InternalEList<?>)getInterfaceServiceMapEntries()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -307,22 +228,18 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentModelPackage.REPOSITORY__COMPONENT:
-				return getComponent();
-			case ComponentModelPackage.REPOSITORY__INTER_FACE:
-				return getInterFace();
-			case ComponentModelPackage.REPOSITORY__NAME:
-				return getName();
+			case ComponentModelPackage.REPOSITORY__COMPONENTS:
+				return getComponents();
+			case ComponentModelPackage.REPOSITORY__INTER_FACES:
+				return getInterFaces();
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				return getSignatures();
 			case ComponentModelPackage.REPOSITORY__TYPES:
 				return getTypes();
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return getServices();
-			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
-				return getInterfaceservicemapentry();
-			case ComponentModelPackage.REPOSITORY__PARAMETERS:
-				return getParameters();
+			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
+				return getInterfaceServiceMapEntries();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -336,16 +253,13 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentModelPackage.REPOSITORY__COMPONENT:
-				getComponent().clear();
-				getComponent().addAll((Collection<? extends Component>)newValue);
+			case ComponentModelPackage.REPOSITORY__COMPONENTS:
+				getComponents().clear();
+				getComponents().addAll((Collection<? extends Component>)newValue);
 				return;
-			case ComponentModelPackage.REPOSITORY__INTER_FACE:
-				getInterFace().clear();
-				getInterFace().addAll((Collection<? extends Interface>)newValue);
-				return;
-			case ComponentModelPackage.REPOSITORY__NAME:
-				setName((String)newValue);
+			case ComponentModelPackage.REPOSITORY__INTER_FACES:
+				getInterFaces().clear();
+				getInterFaces().addAll((Collection<? extends Interface>)newValue);
 				return;
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				getSignatures().clear();
@@ -359,13 +273,9 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				getServices().clear();
 				getServices().addAll((Collection<? extends Service>)newValue);
 				return;
-			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
-				getInterfaceservicemapentry().clear();
-				getInterfaceservicemapentry().addAll((Collection<? extends InterfaceServiceMapEntry>)newValue);
-				return;
-			case ComponentModelPackage.REPOSITORY__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
+			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
+				getInterfaceServiceMapEntries().clear();
+				getInterfaceServiceMapEntries().addAll((Collection<? extends InterfaceServiceMapEntry>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -379,14 +289,11 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentModelPackage.REPOSITORY__COMPONENT:
-				getComponent().clear();
+			case ComponentModelPackage.REPOSITORY__COMPONENTS:
+				getComponents().clear();
 				return;
-			case ComponentModelPackage.REPOSITORY__INTER_FACE:
-				getInterFace().clear();
-				return;
-			case ComponentModelPackage.REPOSITORY__NAME:
-				setName(NAME_EDEFAULT);
+			case ComponentModelPackage.REPOSITORY__INTER_FACES:
+				getInterFaces().clear();
 				return;
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				getSignatures().clear();
@@ -397,11 +304,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				getServices().clear();
 				return;
-			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
-				getInterfaceservicemapentry().clear();
-				return;
-			case ComponentModelPackage.REPOSITORY__PARAMETERS:
-				getParameters().clear();
+			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
+				getInterfaceServiceMapEntries().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -415,40 +319,20 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentModelPackage.REPOSITORY__COMPONENT:
-				return component != null && !component.isEmpty();
-			case ComponentModelPackage.REPOSITORY__INTER_FACE:
-				return interFace != null && !interFace.isEmpty();
-			case ComponentModelPackage.REPOSITORY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ComponentModelPackage.REPOSITORY__COMPONENTS:
+				return components != null && !components.isEmpty();
+			case ComponentModelPackage.REPOSITORY__INTER_FACES:
+				return interFaces != null && !interFaces.isEmpty();
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				return signatures != null && !signatures.isEmpty();
 			case ComponentModelPackage.REPOSITORY__TYPES:
 				return types != null && !types.isEmpty();
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return services != null && !services.isEmpty();
-			case ComponentModelPackage.REPOSITORY__INTERFACESERVICEMAPENTRY:
-				return interfaceservicemapentry != null && !interfaceservicemapentry.isEmpty();
-			case ComponentModelPackage.REPOSITORY__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
+			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
+				return interfaceServiceMapEntries != null && !interfaceServiceMapEntries.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RepositoryImpl

@@ -72,13 +72,13 @@ public interface Signature extends EObject {
 	void setReturnType(Type value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link componentModel.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' reference list.
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getSignature_Parameters()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Parameter> getParameters();

@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link componentModel.impl.ServiceImpl#getName <em>Name</em>}</li>
  *   <li>{@link componentModel.impl.ServiceImpl#getCorrespondence <em>Correspondence</em>}</li>
- *   <li>{@link componentModel.impl.ServiceImpl#getRequired <em>Required</em>}</li>
+ *   <li>{@link componentModel.impl.ServiceImpl#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,14 +69,14 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected EList<Signature> correspondence;
 
 	/**
-	 * The cached value of the '{@link #getRequired() <em>Required</em>}' reference list.
+	 * The cached value of the '{@link #getRequiredInterfaces() <em>Required Interfaces</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequired()
+	 * @see #getRequiredInterfaces()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Interface> required;
+	protected EList<Interface> requiredInterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,11 +139,11 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
-	public EList<Interface> getRequired() {
-		if (required == null) {
-			required = new EObjectResolvingEList<Interface>(Interface.class, this, ComponentModelPackage.SERVICE__REQUIRED);
+	public EList<Interface> getRequiredInterfaces() {
+		if (requiredInterfaces == null) {
+			requiredInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, ComponentModelPackage.SERVICE__REQUIRED_INTERFACES);
 		}
-		return required;
+		return requiredInterfaces;
 	}
 
 	/**
@@ -158,8 +158,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return getName();
 			case ComponentModelPackage.SERVICE__CORRESPONDENCE:
 				return getCorrespondence();
-			case ComponentModelPackage.SERVICE__REQUIRED:
-				return getRequired();
+			case ComponentModelPackage.SERVICE__REQUIRED_INTERFACES:
+				return getRequiredInterfaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,9 +180,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				getCorrespondence().clear();
 				getCorrespondence().addAll((Collection<? extends Signature>)newValue);
 				return;
-			case ComponentModelPackage.SERVICE__REQUIRED:
-				getRequired().clear();
-				getRequired().addAll((Collection<? extends Interface>)newValue);
+			case ComponentModelPackage.SERVICE__REQUIRED_INTERFACES:
+				getRequiredInterfaces().clear();
+				getRequiredInterfaces().addAll((Collection<? extends Interface>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,8 +202,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case ComponentModelPackage.SERVICE__CORRESPONDENCE:
 				getCorrespondence().clear();
 				return;
-			case ComponentModelPackage.SERVICE__REQUIRED:
-				getRequired().clear();
+			case ComponentModelPackage.SERVICE__REQUIRED_INTERFACES:
+				getRequiredInterfaces().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -221,8 +221,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentModelPackage.SERVICE__CORRESPONDENCE:
 				return correspondence != null && !correspondence.isEmpty();
-			case ComponentModelPackage.SERVICE__REQUIRED:
-				return required != null && !required.isEmpty();
+			case ComponentModelPackage.SERVICE__REQUIRED_INTERFACES:
+				return requiredInterfaces != null && !requiredInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -27,43 +27,22 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link environment.impl.AllocationContextImpl#getAssemblycontext <em>Assemblycontext</em>}</li>
+ *   <li>{@link environment.impl.AllocationContextImpl#getAssemblyContext <em>Assembly Context</em>}</li>
  *   <li>{@link environment.impl.AllocationContextImpl#getContainer <em>Container</em>}</li>
- *   <li>{@link environment.impl.AllocationContextImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AllocationContextImpl extends AllocationViewTypeImpl implements AllocationContext {
 	/**
-	 * The cached value of the '{@link #getAssemblycontext() <em>Assemblycontext</em>}' reference.
+	 * The cached value of the '{@link #getAssemblyContext() <em>Assembly Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssemblycontext()
+	 * @see #getAssemblyContext()
 	 * @generated
 	 * @ordered
 	 */
-	protected AssemblyContext assemblycontext;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected AssemblyContext assemblyContext;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,16 +69,16 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 * @generated
 	 */
 	@Override
-	public AssemblyContext getAssemblycontext() {
-		if (assemblycontext != null && assemblycontext.eIsProxy()) {
-			InternalEObject oldAssemblycontext = (InternalEObject)assemblycontext;
-			assemblycontext = (AssemblyContext)eResolveProxy(oldAssemblycontext);
-			if (assemblycontext != oldAssemblycontext) {
+	public AssemblyContext getAssemblyContext() {
+		if (assemblyContext != null && assemblyContext.eIsProxy()) {
+			InternalEObject oldAssemblyContext = (InternalEObject)assemblyContext;
+			assemblyContext = (AssemblyContext)eResolveProxy(oldAssemblyContext);
+			if (assemblyContext != oldAssemblyContext) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT, oldAssemblycontext, assemblycontext));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT, oldAssemblyContext, assemblyContext));
 			}
 		}
-		return assemblycontext;
+		return assemblyContext;
 	}
 
 	/**
@@ -107,8 +86,8 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyContext basicGetAssemblycontext() {
-		return assemblycontext;
+	public AssemblyContext basicGetAssemblyContext() {
+		return assemblyContext;
 	}
 
 	/**
@@ -117,11 +96,11 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	 * @generated
 	 */
 	@Override
-	public void setAssemblycontext(AssemblyContext newAssemblycontext) {
-		AssemblyContext oldAssemblycontext = assemblycontext;
-		assemblycontext = newAssemblycontext;
+	public void setAssemblyContext(AssemblyContext newAssemblyContext) {
+		AssemblyContext oldAssemblyContext = assemblyContext;
+		assemblyContext = newAssemblyContext;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT, oldAssemblycontext, assemblycontext));
+			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT, oldAssemblyContext, assemblyContext));
 	}
 
 	/**
@@ -159,35 +138,12 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newContainer != null)
-				msgs = ((InternalEObject)newContainer).eInverseAdd(this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, environment.Container.class, msgs);
+				msgs = ((InternalEObject)newContainer).eInverseAdd(this, EnvironmentPackage.CONTAINER__ALLOCATION_CONTEXTS, environment.Container.class, msgs);
 			msgs = basicSetContainer(newContainer, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER, newContainer, newContainer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.ALLOCATION_CONTEXT__NAME, oldName, name));
 	}
 
 	/**
@@ -229,7 +185,7 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
-				return eInternalContainer().eInverseRemove(this, EnvironmentPackage.CONTAINER__ALLOCATIONCONTEXT, environment.Container.class, msgs);
+				return eInternalContainer().eInverseRemove(this, EnvironmentPackage.CONTAINER__ALLOCATION_CONTEXTS, environment.Container.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -242,13 +198,11 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT:
-				if (resolve) return getAssemblycontext();
-				return basicGetAssemblycontext();
+			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
+				if (resolve) return getAssemblyContext();
+				return basicGetAssemblyContext();
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				return getContainer();
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,14 +215,11 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT:
-				setAssemblycontext((AssemblyContext)newValue);
+			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
+				setAssemblyContext((AssemblyContext)newValue);
 				return;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				setContainer((environment.Container)newValue);
-				return;
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,14 +233,11 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT:
-				setAssemblycontext((AssemblyContext)null);
+			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
+				setAssemblyContext((AssemblyContext)null);
 				return;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				setContainer((environment.Container)null);
-				return;
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -303,30 +251,12 @@ public class AllocationContextImpl extends AllocationViewTypeImpl implements All
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLYCONTEXT:
-				return assemblycontext != null;
+			case EnvironmentPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
+				return assemblyContext != null;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				return getContainer() != null;
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AllocationContextImpl

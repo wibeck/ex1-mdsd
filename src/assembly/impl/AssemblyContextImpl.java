@@ -8,13 +8,17 @@ import assembly.CompositeComponent;
 import assembly.ProvidedRole;
 import assembly.RequiredRole;
 
+import componentModel.AssemblyViewType;
 import componentModel.Component;
+import componentModel.ComponentModelPackage;
 import componentModel.Interface;
 
+import componentModel.ViewType;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +26,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +38,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link assembly.impl.AssemblyContextImpl#getName <em>Name</em>}</li>
  *   <li>{@link assembly.impl.AssemblyContextImpl#getInstantiates <em>Instantiates</em>}</li>
  *   <li>{@link assembly.impl.AssemblyContextImpl#getRequiredRoles <em>Required Roles</em>}</li>
  *   <li>{@link assembly.impl.AssemblyContextImpl#getProvidedRoles <em>Provided Roles</em>}</li>
@@ -43,6 +50,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class AssemblyContextImpl extends ContextImpl implements AssemblyContext {
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getInstantiates() <em>Instantiates</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +80,7 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	protected Component instantiates;
 
 	/**
-	 * The cached value of the '{@link #getRequiredRoles() <em>Required Roles</em>}' reference list.
+	 * The cached value of the '{@link #getRequiredRoles() <em>Required Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequiredRoles()
@@ -63,7 +90,7 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	protected EList<RequiredRole> requiredRoles;
 
 	/**
-	 * The cached value of the '{@link #getProvidedRoles() <em>Provided Roles</em>}' reference list.
+	 * The cached value of the '{@link #getProvidedRoles() <em>Provided Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProvidedRoles()
@@ -117,6 +144,29 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONTEXT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Component getInstantiates() {
 		if (instantiates != null && instantiates.eIsProxy()) {
 			InternalEObject oldInstantiates = (InternalEObject)instantiates;
@@ -159,7 +209,7 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	@Override
 	public EList<RequiredRole> getRequiredRoles() {
 		if (requiredRoles == null) {
-			requiredRoles = new EObjectResolvingEList<RequiredRole>(RequiredRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES);
+			requiredRoles = new EObjectContainmentEList<RequiredRole>(RequiredRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES);
 		}
 		return requiredRoles;
 	}
@@ -172,7 +222,7 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	@Override
 	public EList<ProvidedRole> getProvidedRoles() {
 		if (providedRoles == null) {
-			providedRoles = new EObjectResolvingEList<ProvidedRole>(ProvidedRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_ROLES);
+			providedRoles = new EObjectContainmentEList<ProvidedRole>(ProvidedRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_ROLES);
 		}
 		return providedRoles;
 	}
@@ -236,8 +286,26 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES:
+				return ((InternalEList<?>)getRequiredRoles()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_ROLES:
+				return ((InternalEList<?>)getProvidedRoles()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AssemblyPackage.ASSEMBLY_CONTEXT__NAME:
+				return getName();
 			case AssemblyPackage.ASSEMBLY_CONTEXT__INSTANTIATES:
 				if (resolve) return getInstantiates();
 				return basicGetInstantiates();
@@ -263,6 +331,9 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AssemblyPackage.ASSEMBLY_CONTEXT__NAME:
+				setName((String)newValue);
+				return;
 			case AssemblyPackage.ASSEMBLY_CONTEXT__INSTANTIATES:
 				setInstantiates((Component)newValue);
 				return;
@@ -293,6 +364,9 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AssemblyPackage.ASSEMBLY_CONTEXT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case AssemblyPackage.ASSEMBLY_CONTEXT__INSTANTIATES:
 				setInstantiates((Component)null);
 				return;
@@ -320,6 +394,8 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AssemblyPackage.ASSEMBLY_CONTEXT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AssemblyPackage.ASSEMBLY_CONTEXT__INSTANTIATES:
 				return instantiates != null;
 			case AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES:
@@ -332,6 +408,64 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 				return providedInterfaces != null && !providedInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ViewType.class) {
+			switch (derivedFeatureID) {
+				case AssemblyPackage.ASSEMBLY_CONTEXT__NAME: return ComponentModelPackage.VIEW_TYPE__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == AssemblyViewType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ViewType.class) {
+			switch (baseFeatureID) {
+				case ComponentModelPackage.VIEW_TYPE__NAME: return AssemblyPackage.ASSEMBLY_CONTEXT__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == AssemblyViewType.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //AssemblyContextImpl

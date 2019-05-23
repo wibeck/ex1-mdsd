@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link componentModel.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link componentModel.impl.ComponentImpl#getInterfaceServiceMap <em>Interface Service Map</em>}</li>
- *   <li>{@link componentModel.impl.ComponentImpl#getServiceeffectspecification <em>Serviceeffectspecification</em>}</li>
+ *   <li>{@link componentModel.impl.ComponentImpl#getServiceEffectSpecification <em>Service Effect Specification</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,14 +72,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	protected EList<InterfaceServiceMapEntry> interfaceServiceMap;
 
 	/**
-	 * The cached value of the '{@link #getServiceeffectspecification() <em>Serviceeffectspecification</em>}' containment reference.
+	 * The cached value of the '{@link #getServiceEffectSpecification() <em>Service Effect Specification</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getServiceeffectspecification()
+	 * @see #getServiceEffectSpecification()
 	 * @generated
 	 * @ordered
 	 */
-	protected ServiceEffectSpecification serviceeffectspecification;
+	protected ServiceEffectSpecification serviceEffectSpecification;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,8 +142,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @generated
 	 */
 	@Override
-	public ServiceEffectSpecification getServiceeffectspecification() {
-		return serviceeffectspecification;
+	public ServiceEffectSpecification getServiceEffectSpecification() {
+		return serviceEffectSpecification;
 	}
 
 	/**
@@ -151,11 +151,11 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetServiceeffectspecification(ServiceEffectSpecification newServiceeffectspecification, NotificationChain msgs) {
-		ServiceEffectSpecification oldServiceeffectspecification = serviceeffectspecification;
-		serviceeffectspecification = newServiceeffectspecification;
+	public NotificationChain basicSetServiceEffectSpecification(ServiceEffectSpecification newServiceEffectSpecification, NotificationChain msgs) {
+		ServiceEffectSpecification oldServiceEffectSpecification = serviceEffectSpecification;
+		serviceEffectSpecification = newServiceEffectSpecification;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION, oldServiceeffectspecification, newServiceeffectspecification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION, oldServiceEffectSpecification, newServiceEffectSpecification);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -167,18 +167,18 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @generated
 	 */
 	@Override
-	public void setServiceeffectspecification(ServiceEffectSpecification newServiceeffectspecification) {
-		if (newServiceeffectspecification != serviceeffectspecification) {
+	public void setServiceEffectSpecification(ServiceEffectSpecification newServiceEffectSpecification) {
+		if (newServiceEffectSpecification != serviceEffectSpecification) {
 			NotificationChain msgs = null;
-			if (serviceeffectspecification != null)
-				msgs = ((InternalEObject)serviceeffectspecification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION, null, msgs);
-			if (newServiceeffectspecification != null)
-				msgs = ((InternalEObject)newServiceeffectspecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION, null, msgs);
-			msgs = basicSetServiceeffectspecification(newServiceeffectspecification, msgs);
+			if (serviceEffectSpecification != null)
+				msgs = ((InternalEObject)serviceEffectSpecification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION, null, msgs);
+			if (newServiceEffectSpecification != null)
+				msgs = ((InternalEObject)newServiceEffectSpecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION, null, msgs);
+			msgs = basicSetServiceEffectSpecification(newServiceEffectSpecification, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION, newServiceeffectspecification, newServiceeffectspecification));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION, newServiceEffectSpecification, newServiceEffectSpecification));
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 		switch (featureID) {
 			case ComponentModelPackage.COMPONENT__INTERFACE_SERVICE_MAP:
 				return ((InternalEList<?>)getInterfaceServiceMap()).basicRemove(otherEnd, msgs);
-			case ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION:
-				return basicSetServiceeffectspecification(null, msgs);
+			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
+				return basicSetServiceEffectSpecification(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -209,8 +209,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 				return getName();
 			case ComponentModelPackage.COMPONENT__INTERFACE_SERVICE_MAP:
 				return getInterfaceServiceMap();
-			case ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION:
-				return getServiceeffectspecification();
+			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
+				return getServiceEffectSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,8 +231,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 				getInterfaceServiceMap().clear();
 				getInterfaceServiceMap().addAll((Collection<? extends InterfaceServiceMapEntry>)newValue);
 				return;
-			case ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION:
-				setServiceeffectspecification((ServiceEffectSpecification)newValue);
+			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
+				setServiceEffectSpecification((ServiceEffectSpecification)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -252,8 +252,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 			case ComponentModelPackage.COMPONENT__INTERFACE_SERVICE_MAP:
 				getInterfaceServiceMap().clear();
 				return;
-			case ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION:
-				setServiceeffectspecification((ServiceEffectSpecification)null);
+			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
+				setServiceEffectSpecification((ServiceEffectSpecification)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -271,8 +271,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentModelPackage.COMPONENT__INTERFACE_SERVICE_MAP:
 				return interfaceServiceMap != null && !interfaceServiceMap.isEmpty();
-			case ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION:
-				return serviceeffectspecification != null;
+			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
+				return serviceEffectSpecification != null;
 		}
 		return super.eIsSet(featureID);
 	}

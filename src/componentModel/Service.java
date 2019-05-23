@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link componentModel.Service#getName <em>Name</em>}</li>
  *   <li>{@link componentModel.Service#getCorrespondence <em>Correspondence</em>}</li>
- *   <li>{@link componentModel.Service#getRequired <em>Required</em>}</li>
+ *   <li>{@link componentModel.Service#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getService()
@@ -62,15 +62,15 @@ public interface Service extends EObject {
 	EList<Signature> getCorrespondence();
 
 	/**
-	 * Returns the value of the '<em><b>Required</b></em>' reference list.
+	 * Returns the value of the '<em><b>Required Interfaces</b></em>' reference list.
 	 * The list contents are of type {@link componentModel.Interface}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required</em>' reference list.
-	 * @see componentModel.ComponentModelPackage#getService_Required()
+	 * @return the value of the '<em>Required Interfaces</em>' reference list.
+	 * @see componentModel.ComponentModelPackage#getService_RequiredInterfaces()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<Interface> getRequired();
+	EList<Interface> getRequiredInterfaces();
 
 } // Service

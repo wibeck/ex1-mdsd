@@ -10,14 +10,15 @@ import assembly.DelegationConnector;
 import componentModel.Interface;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link assembly.impl.ContextImpl#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}</li>
- *   <li>{@link assembly.impl.ContextImpl#getName <em>Name</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}</li>
  * </ul>
  *
@@ -48,7 +48,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	protected EList<Interface> requiredInterfaces;
 
 	/**
-	 * The cached value of the '{@link #getDelegationConnectors() <em>Delegation Connectors</em>}' reference list.
+	 * The cached value of the '{@link #getDelegationConnectors() <em>Delegation Connectors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDelegationConnectors()
@@ -68,27 +68,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	protected EList<AssemblyConnector> nestedAssemblyConnectors;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getOutwardAssemblyConnectors() <em>Outward Assembly Connectors</em>}' reference list.
+	 * The cached value of the '{@link #getOutwardAssemblyConnectors() <em>Outward Assembly Connectors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutwardAssemblyConnectors()
@@ -137,7 +117,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public EList<DelegationConnector> getDelegationConnectors() {
 		if (delegationConnectors == null) {
-			delegationConnectors = new EObjectResolvingEList<DelegationConnector>(DelegationConnector.class, this, AssemblyPackage.CONTEXT__DELEGATION_CONNECTORS);
+			delegationConnectors = new EObjectContainmentEList<DelegationConnector>(DelegationConnector.class, this, AssemblyPackage.CONTEXT__DELEGATION_CONNECTORS);
 		}
 		return delegationConnectors;
 	}
@@ -161,34 +141,27 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.CONTEXT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<AssemblyConnector> getOutwardAssemblyConnectors() {
 		if (outwardAssemblyConnectors == null) {
-			outwardAssemblyConnectors = new EObjectResolvingEList<AssemblyConnector>(AssemblyConnector.class, this, AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS);
+			outwardAssemblyConnectors = new EObjectContainmentEList<AssemblyConnector>(AssemblyConnector.class, this, AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS);
 		}
 		return outwardAssemblyConnectors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AssemblyPackage.CONTEXT__DELEGATION_CONNECTORS:
+				return ((InternalEList<?>)getDelegationConnectors()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
+				return ((InternalEList<?>)getOutwardAssemblyConnectors()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -205,8 +178,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				return getDelegationConnectors();
 			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
 				return getNestedAssemblyConnectors();
-			case AssemblyPackage.CONTEXT__NAME:
-				return getName();
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				return getOutwardAssemblyConnectors();
 		}
@@ -234,9 +205,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				getNestedAssemblyConnectors().clear();
 				getNestedAssemblyConnectors().addAll((Collection<? extends AssemblyConnector>)newValue);
 				return;
-			case AssemblyPackage.CONTEXT__NAME:
-				setName((String)newValue);
-				return;
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				getOutwardAssemblyConnectors().clear();
 				getOutwardAssemblyConnectors().addAll((Collection<? extends AssemblyConnector>)newValue);
@@ -262,9 +230,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
 				getNestedAssemblyConnectors().clear();
 				return;
-			case AssemblyPackage.CONTEXT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				getOutwardAssemblyConnectors().clear();
 				return;
@@ -286,28 +251,10 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				return delegationConnectors != null && !delegationConnectors.isEmpty();
 			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
 				return nestedAssemblyConnectors != null && !nestedAssemblyConnectors.isEmpty();
-			case AssemblyPackage.CONTEXT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				return outwardAssemblyConnectors != null && !outwardAssemblyConnectors.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ContextImpl

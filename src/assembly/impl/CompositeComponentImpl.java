@@ -28,22 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link assembly.impl.CompositeComponentImpl#getEncapsulates <em>Encapsulates</em>}</li>
+ *   <li>{@link assembly.impl.CompositeComponentImpl#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CompositeComponentImpl extends ComponentImpl implements CompositeComponent {
 	/**
-	 * The cached value of the '{@link #getEncapsulates() <em>Encapsulates</em>}' containment reference list.
+	 * The cached value of the '{@link #getEncapsulatedAssemblyContexts() <em>Encapsulated Assembly Contexts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncapsulates()
+	 * @see #getEncapsulatedAssemblyContexts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AssemblyContext> encapsulates;
-
+	protected EList<AssemblyContext> encapsulatedAssemblyContexts;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,11 +68,11 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	 * @generated
 	 */
 	@Override
-	public EList<AssemblyContext> getEncapsulates() {
-		if (encapsulates == null) {
-			encapsulates = new EObjectContainmentEList<AssemblyContext>(AssemblyContext.class, this, AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATES);
+	public EList<AssemblyContext> getEncapsulatedAssemblyContexts() {
+		if (encapsulatedAssemblyContexts == null) {
+			encapsulatedAssemblyContexts = new EObjectContainmentEList<AssemblyContext>(AssemblyContext.class, this, AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS);
 		}
-		return encapsulates;
+		return encapsulatedAssemblyContexts;
 	}
 
 	/**
@@ -84,8 +83,8 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATES:
-				return ((InternalEList<?>)getEncapsulates()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				return ((InternalEList<?>)getEncapsulatedAssemblyContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +97,8 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATES:
-				return getEncapsulates();
+			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				return getEncapsulatedAssemblyContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +112,9 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATES:
-				getEncapsulates().clear();
-				getEncapsulates().addAll((Collection<? extends AssemblyContext>)newValue);
+			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				getEncapsulatedAssemblyContexts().clear();
+				getEncapsulatedAssemblyContexts().addAll((Collection<? extends AssemblyContext>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +128,8 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATES:
-				getEncapsulates().clear();
+			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				getEncapsulatedAssemblyContexts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,8 +143,8 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATES:
-				return encapsulates != null && !encapsulates.isEmpty();
+			case AssemblyPackage.COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				return encapsulatedAssemblyContexts != null && !encapsulatedAssemblyContexts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

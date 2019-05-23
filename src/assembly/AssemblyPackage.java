@@ -80,7 +80,7 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__REQUIRED_INTERFACES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,22 +98,13 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__NESTED_ASSEMBLY_CONNECTORS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__NAME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = 4;
+	int CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -122,7 +113,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 5;
+	int CONTEXT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -153,7 +144,7 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__REQUIRED_INTERFACES = CONTEXT__REQUIRED_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -171,16 +162,7 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__NESTED_ASSEMBLY_CONNECTORS = CONTEXT__NESTED_ASSEMBLY_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_CONTEXT__NAME = CONTEXT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -189,31 +171,40 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONTEXT__NAME = CONTEXT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Instantiates</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT__INSTANTIATES = CONTEXT_FEATURE_COUNT + 0;
+	int ASSEMBLY_CONTEXT__INSTANTIATES = CONTEXT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Required Roles</b></em>' reference list.
+	 * The feature id for the '<em><b>Required Roles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT__REQUIRED_ROLES = CONTEXT_FEATURE_COUNT + 1;
+	int ASSEMBLY_CONTEXT__REQUIRED_ROLES = CONTEXT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Provided Roles</b></em>' reference list.
+	 * The feature id for the '<em><b>Provided Roles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT__PROVIDED_ROLES = CONTEXT_FEATURE_COUNT + 2;
+	int ASSEMBLY_CONTEXT__PROVIDED_ROLES = CONTEXT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Owner Component</b></em>' reference.
@@ -222,7 +213,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT__OWNER_COMPONENT = CONTEXT_FEATURE_COUNT + 3;
+	int ASSEMBLY_CONTEXT__OWNER_COMPONENT = CONTEXT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Provided Interfaces</b></em>' reference list.
@@ -231,7 +222,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT__PROVIDED_INTERFACES = CONTEXT_FEATURE_COUNT + 4;
+	int ASSEMBLY_CONTEXT__PROVIDED_INTERFACES = CONTEXT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -240,7 +231,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 5;
+	int ASSEMBLY_CONTEXT_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -262,22 +253,22 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONNECTOR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Providedrole</b></em>' reference.
+	 * The feature id for the '<em><b>Provided Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR__PROVIDEDROLE = 0;
+	int ASSEMBLY_CONNECTOR__PROVIDED_ROLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Requiredrole</b></em>' reference.
+	 * The feature id for the '<em><b>Required Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR__REQUIREDROLE = 1;
+	int ASSEMBLY_CONNECTOR__REQUIRED_ROLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -656,7 +647,7 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__REQUIRED_INTERFACES = CONTEXT__REQUIRED_INTERFACES;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -674,16 +665,7 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__NESTED_ASSEMBLY_CONNECTORS = CONTEXT__NESTED_ASSEMBLY_CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__NAME = CONTEXT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -701,13 +683,22 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__PROVIDED_INTERFACES = CONTEXT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Encapsulated</b></em>' reference list.
+	 * The feature id for the '<em><b>Encapsulated Assembly Contexts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__ENCAPSULATED = CONTEXT_FEATURE_COUNT + 1;
+	int SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS = CONTEXT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__NAME = CONTEXT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -716,7 +707,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 2;
+	int SYSTEM_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -756,22 +747,22 @@ public interface AssemblyPackage extends EPackage {
 	int COMPOSITE_COMPONENT__INTERFACE_SERVICE_MAP = ComponentModelPackage.COMPONENT__INTERFACE_SERVICE_MAP;
 
 	/**
-	 * The feature id for the '<em><b>Serviceeffectspecification</b></em>' containment reference.
+	 * The feature id for the '<em><b>Service Effect Specification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_COMPONENT__SERVICEEFFECTSPECIFICATION = ComponentModelPackage.COMPONENT__SERVICEEFFECTSPECIFICATION;
+	int COMPOSITE_COMPONENT__SERVICE_EFFECT_SPECIFICATION = ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION;
 
 	/**
-	 * The feature id for the '<em><b>Encapsulates</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Encapsulated Assembly Contexts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_COMPONENT__ENCAPSULATES = ComponentModelPackage.COMPONENT_FEATURE_COUNT + 0;
+	int COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS = ComponentModelPackage.COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Composite Component</em>' class.
@@ -847,13 +838,22 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT_ENVIRONMENT__ROLES = 4;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_ENVIRONMENT__NAME = 5;
+
+	/**
 	 * The number of structural features of the '<em>Context Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_ENVIRONMENT_FEATURE_COUNT = 5;
+	int CONTEXT_ENVIRONMENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Context Environment</em>' class.
@@ -887,10 +887,10 @@ public interface AssemblyPackage extends EPackage {
 	EReference getAssemblyContext_Instantiates();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.AssemblyContext#getRequiredRoles <em>Required Roles</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.AssemblyContext#getRequiredRoles <em>Required Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Required Roles</em>'.
+	 * @return the meta object for the containment reference list '<em>Required Roles</em>'.
 	 * @see assembly.AssemblyContext#getRequiredRoles()
 	 * @see #getAssemblyContext()
 	 * @generated
@@ -898,10 +898,10 @@ public interface AssemblyPackage extends EPackage {
 	EReference getAssemblyContext_RequiredRoles();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.AssemblyContext#getProvidedRoles <em>Provided Roles</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.AssemblyContext#getProvidedRoles <em>Provided Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Provided Roles</em>'.
+	 * @return the meta object for the containment reference list '<em>Provided Roles</em>'.
 	 * @see assembly.AssemblyContext#getProvidedRoles()
 	 * @see #getAssemblyContext()
 	 * @generated
@@ -941,26 +941,26 @@ public interface AssemblyPackage extends EPackage {
 	EClass getAssemblyConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link assembly.AssemblyConnector#getProvidedrole <em>Providedrole</em>}'.
+	 * Returns the meta object for the reference '{@link assembly.AssemblyConnector#getProvidedRole <em>Provided Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Providedrole</em>'.
-	 * @see assembly.AssemblyConnector#getProvidedrole()
+	 * @return the meta object for the reference '<em>Provided Role</em>'.
+	 * @see assembly.AssemblyConnector#getProvidedRole()
 	 * @see #getAssemblyConnector()
 	 * @generated
 	 */
-	EReference getAssemblyConnector_Providedrole();
+	EReference getAssemblyConnector_ProvidedRole();
 
 	/**
-	 * Returns the meta object for the reference '{@link assembly.AssemblyConnector#getRequiredrole <em>Requiredrole</em>}'.
+	 * Returns the meta object for the reference '{@link assembly.AssemblyConnector#getRequiredRole <em>Required Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Requiredrole</em>'.
-	 * @see assembly.AssemblyConnector#getRequiredrole()
+	 * @return the meta object for the reference '<em>Required Role</em>'.
+	 * @see assembly.AssemblyConnector#getRequiredRole()
 	 * @see #getAssemblyConnector()
 	 * @generated
 	 */
-	EReference getAssemblyConnector_Requiredrole();
+	EReference getAssemblyConnector_RequiredRole();
 
 	/**
 	 * Returns the meta object for the attribute '{@link assembly.AssemblyConnector#getName <em>Name</em>}'.
@@ -1078,10 +1078,10 @@ public interface AssemblyPackage extends EPackage {
 	EReference getContext_RequiredInterfaces();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Delegation Connectors</em>'.
+	 * @return the meta object for the containment reference list '<em>Delegation Connectors</em>'.
 	 * @see assembly.Context#getDelegationConnectors()
 	 * @see #getContext()
 	 * @generated
@@ -1100,21 +1100,10 @@ public interface AssemblyPackage extends EPackage {
 	EReference getContext_NestedAssemblyConnectors();
 
 	/**
-	 * Returns the meta object for the attribute '{@link assembly.Context#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see assembly.Context#getName()
-	 * @see #getContext()
-	 * @generated
-	 */
-	EAttribute getContext_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outward Assembly Connectors</em>'.
+	 * @return the meta object for the containment reference list '<em>Outward Assembly Connectors</em>'.
 	 * @see assembly.Context#getOutwardAssemblyConnectors()
 	 * @see #getContext()
 	 * @generated
@@ -1186,15 +1175,26 @@ public interface AssemblyPackage extends EPackage {
 	EReference getSystem_ProvidedInterfaces();
 
 	/**
-	 * Returns the meta object for the reference list '{@link assembly.System#getEncapsulated <em>Encapsulated</em>}'.
+	 * Returns the meta object for the reference list '{@link assembly.System#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Encapsulated</em>'.
-	 * @see assembly.System#getEncapsulated()
+	 * @return the meta object for the reference list '<em>Encapsulated Assembly Contexts</em>'.
+	 * @see assembly.System#getEncapsulatedAssemblyContexts()
 	 * @see #getSystem()
 	 * @generated
 	 */
-	EReference getSystem_Encapsulated();
+	EReference getSystem_EncapsulatedAssemblyContexts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assembly.System#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see assembly.System#getName()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EAttribute getSystem_Name();
 
 	/**
 	 * Returns the meta object for class '{@link assembly.CompositeComponent <em>Composite Component</em>}'.
@@ -1207,15 +1207,15 @@ public interface AssemblyPackage extends EPackage {
 	EClass getCompositeComponent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link assembly.CompositeComponent#getEncapsulates <em>Encapsulates</em>}'.
+	 * Returns the meta object for the containment reference list '{@link assembly.CompositeComponent#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Encapsulates</em>'.
-	 * @see assembly.CompositeComponent#getEncapsulates()
+	 * @return the meta object for the containment reference list '<em>Encapsulated Assembly Contexts</em>'.
+	 * @see assembly.CompositeComponent#getEncapsulatedAssemblyContexts()
 	 * @see #getCompositeComponent()
 	 * @generated
 	 */
-	EReference getCompositeComponent_Encapsulates();
+	EReference getCompositeComponent_EncapsulatedAssemblyContexts();
 
 	/**
 	 * Returns the meta object for class '{@link assembly.ContextEnvironment <em>Context Environment</em>}'.
@@ -1283,6 +1283,17 @@ public interface AssemblyPackage extends EPackage {
 	EReference getContextEnvironment_Roles();
 
 	/**
+	 * Returns the meta object for the attribute '{@link assembly.ContextEnvironment#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see assembly.ContextEnvironment#getName()
+	 * @see #getContextEnvironment()
+	 * @generated
+	 */
+	EAttribute getContextEnvironment_Name();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1324,7 +1335,7 @@ public interface AssemblyPackage extends EPackage {
 		EReference ASSEMBLY_CONTEXT__INSTANTIATES = eINSTANCE.getAssemblyContext_Instantiates();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Roles</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Required Roles</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1332,7 +1343,7 @@ public interface AssemblyPackage extends EPackage {
 		EReference ASSEMBLY_CONTEXT__REQUIRED_ROLES = eINSTANCE.getAssemblyContext_RequiredRoles();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided Roles</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Provided Roles</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1366,20 +1377,20 @@ public interface AssemblyPackage extends EPackage {
 		EClass ASSEMBLY_CONNECTOR = eINSTANCE.getAssemblyConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Providedrole</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Provided Role</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSEMBLY_CONNECTOR__PROVIDEDROLE = eINSTANCE.getAssemblyConnector_Providedrole();
+		EReference ASSEMBLY_CONNECTOR__PROVIDED_ROLE = eINSTANCE.getAssemblyConnector_ProvidedRole();
 
 		/**
-		 * The meta object literal for the '<em><b>Requiredrole</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Required Role</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSEMBLY_CONNECTOR__REQUIREDROLE = eINSTANCE.getAssemblyConnector_Requiredrole();
+		EReference ASSEMBLY_CONNECTOR__REQUIRED_ROLE = eINSTANCE.getAssemblyConnector_RequiredRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1482,7 +1493,7 @@ public interface AssemblyPackage extends EPackage {
 		EReference CONTEXT__REQUIRED_INTERFACES = eINSTANCE.getContext_RequiredInterfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Delegation Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Delegation Connectors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1498,15 +1509,7 @@ public interface AssemblyPackage extends EPackage {
 		EReference CONTEXT__NESTED_ASSEMBLY_CONNECTORS = eINSTANCE.getContext_NestedAssemblyConnectors();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTEXT__NAME = eINSTANCE.getContext_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Outward Assembly Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Outward Assembly Connectors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1566,12 +1569,20 @@ public interface AssemblyPackage extends EPackage {
 		EReference SYSTEM__PROVIDED_INTERFACES = eINSTANCE.getSystem_ProvidedInterfaces();
 
 		/**
-		 * The meta object literal for the '<em><b>Encapsulated</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Encapsulated Assembly Contexts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SYSTEM__ENCAPSULATED = eINSTANCE.getSystem_Encapsulated();
+		EReference SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS = eINSTANCE.getSystem_EncapsulatedAssemblyContexts();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
 
 		/**
 		 * The meta object literal for the '{@link assembly.impl.CompositeComponentImpl <em>Composite Component</em>}' class.
@@ -1584,12 +1595,12 @@ public interface AssemblyPackage extends EPackage {
 		EClass COMPOSITE_COMPONENT = eINSTANCE.getCompositeComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Encapsulates</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Encapsulated Assembly Contexts</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPOSITE_COMPONENT__ENCAPSULATES = eINSTANCE.getCompositeComponent_Encapsulates();
+		EReference COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS = eINSTANCE.getCompositeComponent_EncapsulatedAssemblyContexts();
 
 		/**
 		 * The meta object literal for the '{@link assembly.impl.ContextEnvironmentImpl <em>Context Environment</em>}' class.
@@ -1640,6 +1651,14 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTEXT_ENVIRONMENT__ROLES = eINSTANCE.getContextEnvironment_Roles();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_ENVIRONMENT__NAME = eINSTANCE.getContextEnvironment_Name();
 
 	}
 

@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link assembly.impl.AssemblyConnectorImpl#getProvidedrole <em>Providedrole</em>}</li>
- *   <li>{@link assembly.impl.AssemblyConnectorImpl#getRequiredrole <em>Requiredrole</em>}</li>
+ *   <li>{@link assembly.impl.AssemblyConnectorImpl#getProvidedRole <em>Provided Role</em>}</li>
+ *   <li>{@link assembly.impl.AssemblyConnectorImpl#getRequiredRole <em>Required Role</em>}</li>
  *   <li>{@link assembly.impl.AssemblyConnectorImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -31,24 +31,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implements AssemblyConnector {
 	/**
-	 * The cached value of the '{@link #getProvidedrole() <em>Providedrole</em>}' reference.
+	 * The cached value of the '{@link #getProvidedRole() <em>Provided Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidedrole()
+	 * @see #getProvidedRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected ProvidedRole providedrole;
+	protected ProvidedRole providedRole;
 
 	/**
-	 * The cached value of the '{@link #getRequiredrole() <em>Requiredrole</em>}' reference.
+	 * The cached value of the '{@link #getRequiredRole() <em>Required Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequiredrole()
+	 * @see #getRequiredRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected RequiredRole requiredrole;
+	protected RequiredRole requiredRole;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -95,16 +95,16 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public ProvidedRole getProvidedrole() {
-		if (providedrole != null && providedrole.eIsProxy()) {
-			InternalEObject oldProvidedrole = (InternalEObject)providedrole;
-			providedrole = (ProvidedRole)eResolveProxy(oldProvidedrole);
-			if (providedrole != oldProvidedrole) {
+	public ProvidedRole getProvidedRole() {
+		if (providedRole != null && providedRole.eIsProxy()) {
+			InternalEObject oldProvidedRole = (InternalEObject)providedRole;
+			providedRole = (ProvidedRole)eResolveProxy(oldProvidedRole);
+			if (providedRole != oldProvidedRole) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, oldProvidedrole, providedrole));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDED_ROLE, oldProvidedRole, providedRole));
 			}
 		}
-		return providedrole;
+		return providedRole;
 	}
 
 	/**
@@ -112,8 +112,8 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProvidedRole basicGetProvidedrole() {
-		return providedrole;
+	public ProvidedRole basicGetProvidedRole() {
+		return providedRole;
 	}
 
 	/**
@@ -122,11 +122,11 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public void setProvidedrole(ProvidedRole newProvidedrole) {
-		ProvidedRole oldProvidedrole = providedrole;
-		providedrole = newProvidedrole;
+	public void setProvidedRole(ProvidedRole newProvidedRole) {
+		ProvidedRole oldProvidedRole = providedRole;
+		providedRole = newProvidedRole;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE, oldProvidedrole, providedrole));
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDED_ROLE, oldProvidedRole, providedRole));
 	}
 
 	/**
@@ -135,16 +135,16 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public RequiredRole getRequiredrole() {
-		if (requiredrole != null && requiredrole.eIsProxy()) {
-			InternalEObject oldRequiredrole = (InternalEObject)requiredrole;
-			requiredrole = (RequiredRole)eResolveProxy(oldRequiredrole);
-			if (requiredrole != oldRequiredrole) {
+	public RequiredRole getRequiredRole() {
+		if (requiredRole != null && requiredRole.eIsProxy()) {
+			InternalEObject oldRequiredRole = (InternalEObject)requiredRole;
+			requiredRole = (RequiredRole)eResolveProxy(oldRequiredRole);
+			if (requiredRole != oldRequiredRole) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, oldRequiredrole, requiredrole));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIRED_ROLE, oldRequiredRole, requiredRole));
 			}
 		}
-		return requiredrole;
+		return requiredRole;
 	}
 
 	/**
@@ -152,8 +152,8 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RequiredRole basicGetRequiredrole() {
-		return requiredrole;
+	public RequiredRole basicGetRequiredRole() {
+		return requiredRole;
 	}
 
 	/**
@@ -162,11 +162,11 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public void setRequiredrole(RequiredRole newRequiredrole) {
-		RequiredRole oldRequiredrole = requiredrole;
-		requiredrole = newRequiredrole;
+	public void setRequiredRole(RequiredRole newRequiredRole) {
+		RequiredRole oldRequiredRole = requiredRole;
+		requiredRole = newRequiredRole;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE, oldRequiredrole, requiredrole));
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIRED_ROLE, oldRequiredRole, requiredRole));
 	}
 
 	/**
@@ -200,12 +200,12 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE:
-				if (resolve) return getProvidedrole();
-				return basicGetProvidedrole();
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE:
-				if (resolve) return getRequiredrole();
-				return basicGetRequiredrole();
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDED_ROLE:
+				if (resolve) return getProvidedRole();
+				return basicGetProvidedRole();
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIRED_ROLE:
+				if (resolve) return getRequiredRole();
+				return basicGetRequiredRole();
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__NAME:
 				return getName();
 		}
@@ -220,11 +220,11 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE:
-				setProvidedrole((ProvidedRole)newValue);
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDED_ROLE:
+				setProvidedRole((ProvidedRole)newValue);
 				return;
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE:
-				setRequiredrole((RequiredRole)newValue);
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIRED_ROLE:
+				setRequiredRole((RequiredRole)newValue);
 				return;
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__NAME:
 				setName((String)newValue);
@@ -241,11 +241,11 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE:
-				setProvidedrole((ProvidedRole)null);
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDED_ROLE:
+				setProvidedRole((ProvidedRole)null);
 				return;
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE:
-				setRequiredrole((RequiredRole)null);
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIRED_ROLE:
+				setRequiredRole((RequiredRole)null);
 				return;
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__NAME:
 				setName(NAME_EDEFAULT);
@@ -262,10 +262,10 @@ public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDEDROLE:
-				return providedrole != null;
-			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIREDROLE:
-				return requiredrole != null;
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__PROVIDED_ROLE:
+				return providedRole != null;
+			case AssemblyPackage.ASSEMBLY_CONNECTOR__REQUIRED_ROLE:
+				return requiredRole != null;
 			case AssemblyPackage.ASSEMBLY_CONNECTOR__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

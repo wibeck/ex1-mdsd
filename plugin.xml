@@ -26,6 +26,14 @@ null
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated editor -->
       <package
+            uri="root"
+            class="root.RootPackage"
+            genModel="model/editor.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated editor -->
+      <package
             uri="env"
             class="environment.EnvironmentPackage"
             genModel="model/editor.genmodel"/>

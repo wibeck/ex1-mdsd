@@ -166,11 +166,11 @@ public class EnvironmentValidator extends EObjectValidator {
 	 */
 	protected static final String CONTAINER__ALLOCATION_ON_SAME_CONTAINER_OR_CONTAINERS_LINKED__EEXPRESSION = "\n" +
 		"\t\tlet ProvidedAssemblyContexts =\n" +
-		"\t\tself.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(providedrole),\n" +
+		"\t\tself.allocationContexts -> collect(assemblyContext) -> collect(outwardAssemblyConnectors) -> collect(providedRole),\n" +
 		"\t\tRequiredAssemblyContexts =\n" +
-		"\t\tself.allocationcontext -> collect(assemblycontext) -> collect(outwardAssemblyConnectors) -> collect(requiredrole)\n" +
-		"\t\tin self.allocationcontext -> collect(assemblycontext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))\n" +
-		"\t\txor self.outwardLinks ->exists(link | link.container ->collect(allocationcontext) -> collect(assemblycontext) \n" +
+		"\t\tself.allocationContexts -> collect(assemblyContext) -> collect(outwardAssemblyConnectors) -> collect(requiredRole)\n" +
+		"\t\tin self.allocationContexts -> collect(assemblyContext) -> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts))\n" +
+		"\t\txor self.outwardLinks ->exists(link | link.container ->collect(allocationContexts) -> collect(assemblyContext) \n" +
 		"\t\t-> includesAll(ProvidedAssemblyContexts -> union(RequiredAssemblyContexts)))";
 
 	/**
@@ -228,7 +228,7 @@ public class EnvironmentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ALLOCATION_CONTEXT__ONLY_TOP_LEVEL_COMPONENTS_ALLOWED_TO_BE_ALLOCATED__EEXPRESSION = "self.assemblycontext.ownerComponent = null";
+	protected static final String ALLOCATION_CONTEXT__ONLY_TOP_LEVEL_COMPONENTS_ALLOWED_TO_BE_ALLOCATED__EEXPRESSION = "self.assemblyContext.ownerComponent = null";
 
 	/**
 	 * Validates the onlyTopLevelComponentsAllowedToBeAllocated constraint of '<em>Allocation Context</em>'.

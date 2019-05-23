@@ -12,7 +12,7 @@ package componentModel;
  * @see componentModel.ComponentModelPackage#getDeploymentViewPoint()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DeploymentVPonlyHasDeploymentVT'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot DeploymentVPonlyHasDeploymentVT='self.viewtypes -&gt; forAll(vt | vt.oclIsKindOf(componentModel::EnvironmentViewType) \n\t\t\tor vt.oclIsKindOf(componentModel::AllocationViewType))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot DeploymentVPonlyHasDeploymentVT='self.viewTypes -&gt; forAll(vt | vt.oclIsKindOf(componentModel::EnvironmentViewType) \n\t\t\tor vt.oclIsKindOf(componentModel::AllocationViewType))'"
  * @generated
  */
 public interface DeploymentViewPoint extends ViewPoint {

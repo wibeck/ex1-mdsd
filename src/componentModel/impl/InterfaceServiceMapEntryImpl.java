@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link componentModel.impl.InterfaceServiceMapEntryImpl#getProvidedInterface <em>Provided Interface</em>}</li>
- *   <li>{@link componentModel.impl.InterfaceServiceMapEntryImpl#getService <em>Service</em>}</li>
+ *   <li>{@link componentModel.impl.InterfaceServiceMapEntryImpl#getServices <em>Services</em>}</li>
  *   <li>{@link componentModel.impl.InterfaceServiceMapEntryImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -50,14 +50,14 @@ public class InterfaceServiceMapEntryImpl extends MinimalEObjectImpl.Container i
 	protected Interface providedInterface;
 
 	/**
-	 * The cached value of the '{@link #getService() <em>Service</em>}' reference list.
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getService()
+	 * @see #getServices()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Service> service;
+	protected EList<Service> services;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -144,11 +144,11 @@ public class InterfaceServiceMapEntryImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
-	public EList<Service> getService() {
-		if (service == null) {
-			service = new EObjectResolvingEList<Service>(Service.class, this, ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICE);
+	public EList<Service> getServices() {
+		if (services == null) {
+			services = new EObjectResolvingEList<Service>(Service.class, this, ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICES);
 		}
-		return service;
+		return services;
 	}
 
 	/**
@@ -185,8 +185,8 @@ public class InterfaceServiceMapEntryImpl extends MinimalEObjectImpl.Container i
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE:
 				if (resolve) return getProvidedInterface();
 				return basicGetProvidedInterface();
-			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICE:
-				return getService();
+			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICES:
+				return getServices();
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__NAME:
 				return getName();
 		}
@@ -205,9 +205,9 @@ public class InterfaceServiceMapEntryImpl extends MinimalEObjectImpl.Container i
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE:
 				setProvidedInterface((Interface)newValue);
 				return;
-			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICE:
-				getService().clear();
-				getService().addAll((Collection<? extends Service>)newValue);
+			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICES:
+				getServices().clear();
+				getServices().addAll((Collection<? extends Service>)newValue);
 				return;
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__NAME:
 				setName((String)newValue);
@@ -227,8 +227,8 @@ public class InterfaceServiceMapEntryImpl extends MinimalEObjectImpl.Container i
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE:
 				setProvidedInterface((Interface)null);
 				return;
-			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICE:
-				getService().clear();
+			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICES:
+				getServices().clear();
 				return;
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__NAME:
 				setName(NAME_EDEFAULT);
@@ -247,8 +247,8 @@ public class InterfaceServiceMapEntryImpl extends MinimalEObjectImpl.Container i
 		switch (featureID) {
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE:
 				return providedInterface != null;
-			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICE:
-				return service != null && !service.isEmpty();
+			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__SERVICES:
+				return services != null && !services.isEmpty();
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

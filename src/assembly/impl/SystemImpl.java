@@ -9,10 +9,12 @@ import componentModel.Interface;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -24,7 +26,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link assembly.impl.SystemImpl#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
- *   <li>{@link assembly.impl.SystemImpl#getEncapsulated <em>Encapsulated</em>}</li>
+ *   <li>{@link assembly.impl.SystemImpl#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}</li>
+ *   <li>{@link assembly.impl.SystemImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,14 +44,34 @@ public class SystemImpl extends ContextImpl implements assembly.System {
 	protected EList<Interface> providedInterfaces;
 
 	/**
-	 * The cached value of the '{@link #getEncapsulated() <em>Encapsulated</em>}' reference list.
+	 * The cached value of the '{@link #getEncapsulatedAssemblyContexts() <em>Encapsulated Assembly Contexts</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEncapsulated()
+	 * @see #getEncapsulatedAssemblyContexts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AssemblyContext> encapsulated;
+	protected EList<AssemblyContext> encapsulatedAssemblyContexts;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -88,11 +111,34 @@ public class SystemImpl extends ContextImpl implements assembly.System {
 	 * @generated
 	 */
 	@Override
-	public EList<AssemblyContext> getEncapsulated() {
-		if (encapsulated == null) {
-			encapsulated = new EObjectResolvingEList<AssemblyContext>(AssemblyContext.class, this, AssemblyPackage.SYSTEM__ENCAPSULATED);
+	public EList<AssemblyContext> getEncapsulatedAssemblyContexts() {
+		if (encapsulatedAssemblyContexts == null) {
+			encapsulatedAssemblyContexts = new EObjectResolvingEList<AssemblyContext>(AssemblyContext.class, this, AssemblyPackage.SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS);
 		}
-		return encapsulated;
+		return encapsulatedAssemblyContexts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.SYSTEM__NAME, oldName, name));
 	}
 
 	/**
@@ -105,8 +151,10 @@ public class SystemImpl extends ContextImpl implements assembly.System {
 		switch (featureID) {
 			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
 				return getProvidedInterfaces();
-			case AssemblyPackage.SYSTEM__ENCAPSULATED:
-				return getEncapsulated();
+			case AssemblyPackage.SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				return getEncapsulatedAssemblyContexts();
+			case AssemblyPackage.SYSTEM__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,9 +172,12 @@ public class SystemImpl extends ContextImpl implements assembly.System {
 				getProvidedInterfaces().clear();
 				getProvidedInterfaces().addAll((Collection<? extends Interface>)newValue);
 				return;
-			case AssemblyPackage.SYSTEM__ENCAPSULATED:
-				getEncapsulated().clear();
-				getEncapsulated().addAll((Collection<? extends AssemblyContext>)newValue);
+			case AssemblyPackage.SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				getEncapsulatedAssemblyContexts().clear();
+				getEncapsulatedAssemblyContexts().addAll((Collection<? extends AssemblyContext>)newValue);
+				return;
+			case AssemblyPackage.SYSTEM__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -143,8 +194,11 @@ public class SystemImpl extends ContextImpl implements assembly.System {
 			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
 				getProvidedInterfaces().clear();
 				return;
-			case AssemblyPackage.SYSTEM__ENCAPSULATED:
-				getEncapsulated().clear();
+			case AssemblyPackage.SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				getEncapsulatedAssemblyContexts().clear();
+				return;
+			case AssemblyPackage.SYSTEM__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -160,10 +214,28 @@ public class SystemImpl extends ContextImpl implements assembly.System {
 		switch (featureID) {
 			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
 				return providedInterfaces != null && !providedInterfaces.isEmpty();
-			case AssemblyPackage.SYSTEM__ENCAPSULATED:
-				return encapsulated != null && !encapsulated.isEmpty();
+			case AssemblyPackage.SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS:
+				return encapsulatedAssemblyContexts != null && !encapsulatedAssemblyContexts.isEmpty();
+			case AssemblyPackage.SYSTEM__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SystemImpl

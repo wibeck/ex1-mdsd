@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see assembly.AssemblyPackage#getAssemblyContext()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='reqInterfacesFromRequiredRoles providedInterfacesFromProvidedRoles onlyDelegationConnectorsIfComposite providedRoleForProvidedInterfaceExists requiredRoleForRequiredInterfaceExists'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot reqInterfacesFromRequiredRoles='self.requiredInterfaces = self.requiredRoles -&gt; collect(interFace)' providedInterfacesFromProvidedRoles='self.providedInterfaces = self.providedRoles -&gt; collect(interFace)' onlyDelegationConnectorsIfComposite='if self.instantiates.oclIsKindOf(CompositeComponent) \n\t\tthen self.delegationConnectors -&gt; size() &gt; 0 else self.delegationConnectors -&gt; size() = 0 endif' providedRoleForProvidedInterfaceExists='if self.instantiates.oclIsKindOf(CompositeComponent) then \n\t\tself.instantiates.oclAsType(CompositeComponent).encapsulates -&gt; collect(providedRoles) \n\t\t-&gt; exists(role | self.providedInterfaces -&gt; includes(role.interFace)) else true endif' requiredRoleForRequiredInterfaceExists='if self.instantiates.oclIsKindOf(CompositeComponent) then \n\t\tself.instantiates.oclAsType(CompositeComponent).encapsulates -&gt; collect(requiredRoles) \n\t\t-&gt; exists(role | self.requiredInterfaces -&gt; includes(role.interFace)) else true endif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot reqInterfacesFromRequiredRoles='self.requiredInterfaces = self.requiredRoles -&gt; collect(interFace)' providedInterfacesFromProvidedRoles='self.providedInterfaces = self.providedRoles -&gt; collect(interFace)' onlyDelegationConnectorsIfComposite='if self.instantiates.oclIsKindOf(CompositeComponent) \n\t\tthen self.delegationConnectors -&gt; size() &gt; 0 else self.delegationConnectors -&gt; size() = 0 endif' providedRoleForProvidedInterfaceExists='if self.instantiates.oclIsKindOf(CompositeComponent) then \n\t\tself.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -&gt; collect(providedRoles) \n\t\t-&gt; forAll(role | self.providedInterfaces -&gt; includes(role.interFace)) else true endif' requiredRoleForRequiredInterfaceExists='if self.instantiates.oclIsKindOf(CompositeComponent) then \n\t\tself.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -&gt; collect(requiredRoles) \n\t\t-&gt; forAll(role | self.requiredInterfaces -&gt; includes(role.interFace)) else true endif'"
  * @generated
  */
 public interface AssemblyContext extends Context, AssemblyViewType {
@@ -53,25 +53,25 @@ public interface AssemblyContext extends Context, AssemblyViewType {
 	void setInstantiates(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Required Roles</b></em>' reference list.
+	 * Returns the value of the '<em><b>Required Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link assembly.RequiredRole}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Required Roles</em>' reference list.
+	 * @return the value of the '<em>Required Roles</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getAssemblyContext_RequiredRoles()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<RequiredRole> getRequiredRoles();
 
 	/**
-	 * Returns the value of the '<em><b>Provided Roles</b></em>' reference list.
+	 * Returns the value of the '<em><b>Provided Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link assembly.ProvidedRole}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provided Roles</em>' reference list.
+	 * @return the value of the '<em>Provided Roles</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getAssemblyContext_ProvidedRoles()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<ProvidedRole> getProvidedRoles();

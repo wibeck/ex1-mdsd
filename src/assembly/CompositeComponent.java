@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link assembly.CompositeComponent#getEncapsulates <em>Encapsulates</em>}</li>
+ *   <li>{@link assembly.CompositeComponent#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getCompositeComponent()
@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface CompositeComponent extends Component {
 	/**
-	 * Returns the value of the '<em><b>Encapsulates</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Encapsulated Assembly Contexts</b></em>' containment reference list.
 	 * The list contents are of type {@link assembly.AssemblyContext}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Encapsulates</em>' containment reference list.
-	 * @see assembly.AssemblyPackage#getCompositeComponent_Encapsulates()
+	 * @return the value of the '<em>Encapsulated Assembly Contexts</em>' containment reference list.
+	 * @see assembly.AssemblyPackage#getCompositeComponent_EncapsulatedAssemblyContexts()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<AssemblyContext> getEncapsulates();
+	EList<AssemblyContext> getEncapsulatedAssemblyContexts();
 
 } // CompositeComponent

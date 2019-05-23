@@ -217,7 +217,7 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYSTEM_INDEPENDENT_VIEW_POINT__SYS_INDEPENDENT_VP_ONLY_HAS_REPOSITORY_VT__EEXPRESSION = "self.viewtypes -> forAll(vt | vt.oclIsKindOf(componentModel::RepositoryViewType) )";
+	protected static final String SYSTEM_INDEPENDENT_VIEW_POINT__SYS_INDEPENDENT_VP_ONLY_HAS_REPOSITORY_VT__EEXPRESSION = "self.viewTypes -> forAll(vt | vt.oclIsKindOf(componentModel::RepositoryViewType) )";
 
 	/**
 	 * Validates the SysIndependentVPOnlyHasRepositoryVT constraint of '<em>System Independent View Point</em>'.
@@ -264,27 +264,27 @@ public class ComponentModelValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_servicesForEachSignatreOfRequiredInterfaces(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_servicesForEachSignatureOfProvidedInterfaces(component, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the servicesForEachSignatreOfRequiredInterfaces constraint of '<em>Component</em>'.
+	 * The cached validation expression for the servicesForEachSignatureOfProvidedInterfaces constraint of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT__SERVICES_FOR_EACH_SIGNATRE_OF_REQUIRED_INTERFACES__EEXPRESSION = "self.interfaceServiceMap ->select(entry | entry.service \n" +
-		"\t\t\t-> select(service| service.correspondence -> union(entry.providedInterface.signatures)\n" +
-		"\t\t))  -> notEmpty()";
+	protected static final String COMPONENT__SERVICES_FOR_EACH_SIGNATURE_OF_PROVIDED_INTERFACES__EEXPRESSION = "self.interfaceServiceMap -> forAll(entry | entry.services -> \n" +
+		"\t\t\tcollect(correspondence) -> intersection(entry.providedInterface.signatures) -> size() \n" +
+		"\t\t\t=  entry.providedInterface.signatures -> size())";
 
 	/**
-	 * Validates the servicesForEachSignatreOfRequiredInterfaces constraint of '<em>Component</em>'.
+	 * Validates the servicesForEachSignatureOfProvidedInterfaces constraint of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponent_servicesForEachSignatreOfRequiredInterfaces(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComponent_servicesForEachSignatureOfProvidedInterfaces(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentModelPackage.Literals.COMPONENT,
@@ -292,8 +292,8 @@ public class ComponentModelValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "servicesForEachSignatreOfRequiredInterfaces",
-				 COMPONENT__SERVICES_FOR_EACH_SIGNATRE_OF_REQUIRED_INTERFACES__EEXPRESSION,
+				 "servicesForEachSignatureOfProvidedInterfaces",
+				 COMPONENT__SERVICES_FOR_EACH_SIGNATURE_OF_PROVIDED_INTERFACES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -585,7 +585,7 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_VIEW_POINT__ASSEMLBY_VPONLY_HAS_ASSEMBLY_VT__EEXPRESSION = "self.viewtypes -> forAll(vt | vt.oclIsKindOf(componentModel::AssemblyViewType))";
+	protected static final String ASSEMBLY_VIEW_POINT__ASSEMLBY_VPONLY_HAS_ASSEMBLY_VT__EEXPRESSION = "self.viewTypes -> forAll(vt | vt.oclIsKindOf(componentModel::AssemblyViewType))";
 
 	/**
 	 * Validates the assemlbyVPonlyHasAssemblyVT constraint of '<em>Assembly View Point</em>'.
@@ -633,7 +633,7 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DEPLOYMENT_VIEW_POINT__DEPLOYMENT_VPONLY_HAS_DEPLOYMENT_VT__EEXPRESSION = "self.viewtypes -> forAll(vt | vt.oclIsKindOf(componentModel::EnvironmentViewType) \n" +
+	protected static final String DEPLOYMENT_VIEW_POINT__DEPLOYMENT_VPONLY_HAS_DEPLOYMENT_VT__EEXPRESSION = "self.viewTypes -> forAll(vt | vt.oclIsKindOf(componentModel::EnvironmentViewType) \n" +
 		"\t\t\tor vt.oclIsKindOf(componentModel::AllocationViewType))";
 
 	/**

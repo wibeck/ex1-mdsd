@@ -70,13 +70,22 @@ public interface ComponentModelPackage extends EPackage {
 	int VIEW_POINT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Viewtypes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_POINT__VIEWTYPES = 0;
+	int VIEW_POINT__VIEW_TYPES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_POINT__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>View Point</em>' class.
@@ -85,7 +94,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_POINT_FEATURE_COUNT = 1;
+	int VIEW_POINT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>View Point</em>' class.
@@ -107,13 +116,22 @@ public interface ComponentModelPackage extends EPackage {
 	int SYSTEM_INDEPENDENT_VIEW_POINT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Viewtypes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_INDEPENDENT_VIEW_POINT__VIEWTYPES = VIEW_POINT__VIEWTYPES;
+	int SYSTEM_INDEPENDENT_VIEW_POINT__VIEW_TYPES = VIEW_POINT__VIEW_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_INDEPENDENT_VIEW_POINT__NAME = VIEW_POINT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>System Independent View Point</em>' class.
@@ -144,13 +162,22 @@ public interface ComponentModelPackage extends EPackage {
 	int VIEW_TYPE = 11;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_TYPE__NAME = 0;
+
+	/**
 	 * The number of structural features of the '<em>View Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_TYPE_FEATURE_COUNT = 0;
+	int VIEW_TYPE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>View Type</em>' class.
@@ -170,6 +197,15 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	int REPOSITORY_VIEW_TYPE = 34;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY_VIEW_TYPE__NAME = VIEW_TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Repository View Type</em>' class.
@@ -200,31 +236,31 @@ public interface ComponentModelPackage extends EPackage {
 	int REPOSITORY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__COMPONENT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Inter Face</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__INTER_FACE = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__NAME = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 2;
+	int REPOSITORY__NAME = REPOSITORY_VIEW_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY__COMPONENTS = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Inter Faces</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY__INTER_FACES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Signatures</b></em>' containment reference list.
@@ -233,7 +269,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__SIGNATURES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 3;
+	int REPOSITORY__SIGNATURES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
@@ -242,7 +278,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__TYPES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 4;
+	int REPOSITORY__TYPES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
@@ -251,25 +287,16 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__SERVICES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 5;
+	int REPOSITORY__SERVICES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Interfaceservicemapentry</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Interface Service Map Entries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__INTERFACESERVICEMAPENTRY = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__PARAMETERS = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 7;
+	int REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -278,7 +305,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 8;
+	int REPOSITORY_FEATURE_COUNT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Repository</em>' class.
@@ -318,13 +345,13 @@ public interface ComponentModelPackage extends EPackage {
 	int COMPONENT__INTERFACE_SERVICE_MAP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Serviceeffectspecification</b></em>' containment reference.
+	 * The feature id for the '<em><b>Service Effect Specification</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__SERVICEEFFECTSPECIFICATION = 2;
+	int COMPONENT__SERVICE_EFFECT_SPECIFICATION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -364,13 +391,13 @@ public interface ComponentModelPackage extends EPackage {
 	int INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference list.
+	 * The feature id for the '<em><b>Services</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_SERVICE_MAP_ENTRY__SERVICE = 1;
+	int INTERFACE_SERVICE_MAP_ENTRY__SERVICES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -732,7 +759,7 @@ public interface ComponentModelPackage extends EPackage {
 	int SIGNATURE__RETURN_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -815,13 +842,13 @@ public interface ComponentModelPackage extends EPackage {
 	int SERVICE__CORRESPONDENCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Required</b></em>' reference list.
+	 * The feature id for the '<em><b>Required Interfaces</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__REQUIRED = 2;
+	int SERVICE__REQUIRED_INTERFACES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -1234,6 +1261,15 @@ public interface ComponentModelPackage extends EPackage {
 	int ASSEMBLY_VIEW_TYPE = 29;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_VIEW_TYPE__NAME = VIEW_TYPE__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Assembly View Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1260,6 +1296,15 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	int ENVIRONMENT_VIEW_TYPE = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_VIEW_TYPE__NAME = VIEW_TYPE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Environment View Type</em>' class.
@@ -1290,6 +1335,15 @@ public interface ComponentModelPackage extends EPackage {
 	int ALLOCATION_VIEW_TYPE = 31;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_VIEW_TYPE__NAME = VIEW_TYPE__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Allocation View Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1318,13 +1372,22 @@ public interface ComponentModelPackage extends EPackage {
 	int ASSEMBLY_VIEW_POINT = 32;
 
 	/**
-	 * The feature id for the '<em><b>Viewtypes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_VIEW_POINT__VIEWTYPES = VIEW_POINT__VIEWTYPES;
+	int ASSEMBLY_VIEW_POINT__VIEW_TYPES = VIEW_POINT__VIEW_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_VIEW_POINT__NAME = VIEW_POINT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Assembly View Point</em>' class.
@@ -1355,13 +1418,22 @@ public interface ComponentModelPackage extends EPackage {
 	int DEPLOYMENT_VIEW_POINT = 33;
 
 	/**
-	 * The feature id for the '<em><b>Viewtypes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOYMENT_VIEW_POINT__VIEWTYPES = VIEW_POINT__VIEWTYPES;
+	int DEPLOYMENT_VIEW_POINT__VIEW_TYPES = VIEW_POINT__VIEW_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOYMENT_VIEW_POINT__NAME = VIEW_POINT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Deployment View Point</em>' class.
@@ -1431,37 +1503,26 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getRepository();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getComponent <em>Component</em>}'.
+	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getComponents <em>Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Component</em>'.
-	 * @see componentModel.Repository#getComponent()
+	 * @return the meta object for the containment reference list '<em>Components</em>'.
+	 * @see componentModel.Repository#getComponents()
 	 * @see #getRepository()
 	 * @generated
 	 */
-	EReference getRepository_Component();
+	EReference getRepository_Components();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getInterFace <em>Inter Face</em>}'.
+	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getInterFaces <em>Inter Faces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Inter Face</em>'.
-	 * @see componentModel.Repository#getInterFace()
+	 * @return the meta object for the containment reference list '<em>Inter Faces</em>'.
+	 * @see componentModel.Repository#getInterFaces()
 	 * @see #getRepository()
 	 * @generated
 	 */
-	EReference getRepository_InterFace();
-
-	/**
-	 * Returns the meta object for the attribute '{@link componentModel.Repository#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see componentModel.Repository#getName()
-	 * @see #getRepository()
-	 * @generated
-	 */
-	EAttribute getRepository_Name();
+	EReference getRepository_InterFaces();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getSignatures <em>Signatures</em>}'.
@@ -1497,26 +1558,15 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getRepository_Services();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getInterfaceservicemapentry <em>Interfaceservicemapentry</em>}'.
+	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Interfaceservicemapentry</em>'.
-	 * @see componentModel.Repository#getInterfaceservicemapentry()
+	 * @return the meta object for the containment reference list '<em>Interface Service Map Entries</em>'.
+	 * @see componentModel.Repository#getInterfaceServiceMapEntries()
 	 * @see #getRepository()
 	 * @generated
 	 */
-	EReference getRepository_Interfaceservicemapentry();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see componentModel.Repository#getParameters()
-	 * @see #getRepository()
-	 * @generated
-	 */
-	EReference getRepository_Parameters();
+	EReference getRepository_InterfaceServiceMapEntries();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.Component <em>Component</em>}'.
@@ -1551,15 +1601,15 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getComponent_InterfaceServiceMap();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link componentModel.Component#getServiceeffectspecification <em>Serviceeffectspecification</em>}'.
+	 * Returns the meta object for the containment reference '{@link componentModel.Component#getServiceEffectSpecification <em>Service Effect Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Serviceeffectspecification</em>'.
-	 * @see componentModel.Component#getServiceeffectspecification()
+	 * @return the meta object for the containment reference '<em>Service Effect Specification</em>'.
+	 * @see componentModel.Component#getServiceEffectSpecification()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_Serviceeffectspecification();
+	EReference getComponent_ServiceEffectSpecification();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.InterfaceServiceMapEntry <em>Interface Service Map Entry</em>}'.
@@ -1583,15 +1633,15 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getInterfaceServiceMapEntry_ProvidedInterface();
 
 	/**
-	 * Returns the meta object for the reference list '{@link componentModel.InterfaceServiceMapEntry#getService <em>Service</em>}'.
+	 * Returns the meta object for the reference list '{@link componentModel.InterfaceServiceMapEntry#getServices <em>Services</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Service</em>'.
-	 * @see componentModel.InterfaceServiceMapEntry#getService()
+	 * @return the meta object for the reference list '<em>Services</em>'.
+	 * @see componentModel.InterfaceServiceMapEntry#getServices()
 	 * @see #getInterfaceServiceMapEntry()
 	 * @generated
 	 */
-	EReference getInterfaceServiceMapEntry_Service();
+	EReference getInterfaceServiceMapEntry_Services();
 
 	/**
 	 * Returns the meta object for the attribute '{@link componentModel.InterfaceServiceMapEntry#getName <em>Name</em>}'.
@@ -1773,6 +1823,17 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getViewType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link componentModel.ViewType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentModel.ViewType#getName()
+	 * @see #getViewType()
+	 * @generated
+	 */
+	EAttribute getViewType_Name();
+
+	/**
 	 * Returns the meta object for class '{@link componentModel.Signature <em>Signature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1805,10 +1866,10 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getSignature_ReturnType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link componentModel.Signature#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link componentModel.Signature#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
 	 * @see componentModel.Signature#getParameters()
 	 * @see #getSignature()
 	 * @generated
@@ -1858,15 +1919,15 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getService_Correspondence();
 
 	/**
-	 * Returns the meta object for the reference list '{@link componentModel.Service#getRequired <em>Required</em>}'.
+	 * Returns the meta object for the reference list '{@link componentModel.Service#getRequiredInterfaces <em>Required Interfaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Required</em>'.
-	 * @see componentModel.Service#getRequired()
+	 * @return the meta object for the reference list '<em>Required Interfaces</em>'.
+	 * @see componentModel.Service#getRequiredInterfaces()
 	 * @see #getService()
 	 * @generated
 	 */
-	EReference getService_Required();
+	EReference getService_RequiredInterfaces();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.ViewPoint <em>View Point</em>}'.
@@ -1879,15 +1940,26 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getViewPoint();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link componentModel.ViewPoint#getViewtypes <em>Viewtypes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link componentModel.ViewPoint#getViewTypes <em>View Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Viewtypes</em>'.
-	 * @see componentModel.ViewPoint#getViewtypes()
+	 * @return the meta object for the containment reference list '<em>View Types</em>'.
+	 * @see componentModel.ViewPoint#getViewTypes()
 	 * @see #getViewPoint()
 	 * @generated
 	 */
-	EReference getViewPoint_Viewtypes();
+	EReference getViewPoint_ViewTypes();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentModel.ViewPoint#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentModel.ViewPoint#getName()
+	 * @see #getViewPoint()
+	 * @generated
+	 */
+	EAttribute getViewPoint_Name();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.Void <em>Void</em>}'.
@@ -2155,28 +2227,20 @@ public interface ComponentModelPackage extends EPackage {
 		EClass REPOSITORY = eINSTANCE.getRepository();
 
 		/**
-		 * The meta object literal for the '<em><b>Component</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPOSITORY__COMPONENT = eINSTANCE.getRepository_Component();
+		EReference REPOSITORY__COMPONENTS = eINSTANCE.getRepository_Components();
 
 		/**
-		 * The meta object literal for the '<em><b>Inter Face</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Inter Faces</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPOSITORY__INTER_FACE = eINSTANCE.getRepository_InterFace();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REPOSITORY__NAME = eINSTANCE.getRepository_Name();
+		EReference REPOSITORY__INTER_FACES = eINSTANCE.getRepository_InterFaces();
 
 		/**
 		 * The meta object literal for the '<em><b>Signatures</b></em>' containment reference list feature.
@@ -2203,20 +2267,12 @@ public interface ComponentModelPackage extends EPackage {
 		EReference REPOSITORY__SERVICES = eINSTANCE.getRepository_Services();
 
 		/**
-		 * The meta object literal for the '<em><b>Interfaceservicemapentry</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Interface Service Map Entries</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPOSITORY__INTERFACESERVICEMAPENTRY = eINSTANCE.getRepository_Interfaceservicemapentry();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REPOSITORY__PARAMETERS = eINSTANCE.getRepository_Parameters();
+		EReference REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES = eINSTANCE.getRepository_InterfaceServiceMapEntries();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.ComponentImpl <em>Component</em>}' class.
@@ -2245,12 +2301,12 @@ public interface ComponentModelPackage extends EPackage {
 		EReference COMPONENT__INTERFACE_SERVICE_MAP = eINSTANCE.getComponent_InterfaceServiceMap();
 
 		/**
-		 * The meta object literal for the '<em><b>Serviceeffectspecification</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Service Effect Specification</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__SERVICEEFFECTSPECIFICATION = eINSTANCE.getComponent_Serviceeffectspecification();
+		EReference COMPONENT__SERVICE_EFFECT_SPECIFICATION = eINSTANCE.getComponent_ServiceEffectSpecification();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.InterfaceServiceMapEntryImpl <em>Interface Service Map Entry</em>}' class.
@@ -2271,12 +2327,12 @@ public interface ComponentModelPackage extends EPackage {
 		EReference INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE = eINSTANCE.getInterfaceServiceMapEntry_ProvidedInterface();
 
 		/**
-		 * The meta object literal for the '<em><b>Service</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Services</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERFACE_SERVICE_MAP_ENTRY__SERVICE = eINSTANCE.getInterfaceServiceMapEntry_Service();
+		EReference INTERFACE_SERVICE_MAP_ENTRY__SERVICES = eINSTANCE.getInterfaceServiceMapEntry_Services();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2431,6 +2487,14 @@ public interface ComponentModelPackage extends EPackage {
 		EClass VIEW_TYPE = eINSTANCE.getViewType();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIEW_TYPE__NAME = eINSTANCE.getViewType_Name();
+
+		/**
 		 * The meta object literal for the '{@link componentModel.impl.SignatureImpl <em>Signature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2457,7 +2521,7 @@ public interface ComponentModelPackage extends EPackage {
 		EReference SIGNATURE__RETURN_TYPE = eINSTANCE.getSignature_ReturnType();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2501,12 +2565,12 @@ public interface ComponentModelPackage extends EPackage {
 		EReference SERVICE__CORRESPONDENCE = eINSTANCE.getService_Correspondence();
 
 		/**
-		 * The meta object literal for the '<em><b>Required</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Required Interfaces</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SERVICE__REQUIRED = eINSTANCE.getService_Required();
+		EReference SERVICE__REQUIRED_INTERFACES = eINSTANCE.getService_RequiredInterfaces();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.ViewPointImpl <em>View Point</em>}' class.
@@ -2519,12 +2583,20 @@ public interface ComponentModelPackage extends EPackage {
 		EClass VIEW_POINT = eINSTANCE.getViewPoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Viewtypes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>View Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VIEW_POINT__VIEWTYPES = eINSTANCE.getViewPoint_Viewtypes();
+		EReference VIEW_POINT__VIEW_TYPES = eINSTANCE.getViewPoint_ViewTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIEW_POINT__NAME = eINSTANCE.getViewPoint_Name();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.VoidImpl <em>Void</em>}' class.

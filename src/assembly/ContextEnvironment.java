@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link assembly.ContextEnvironment#getAssemblyContexts <em>Assembly Contexts</em>}</li>
  *   <li>{@link assembly.ContextEnvironment#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.ContextEnvironment#getRoles <em>Roles</em>}</li>
+ *   <li>{@link assembly.ContextEnvironment#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getContextEnvironment()
@@ -86,5 +87,27 @@ public interface ContextEnvironment extends EObject {
 	 * @generated
 	 */
 	EList<Role> getRoles();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see assembly.AssemblyPackage#getContextEnvironment_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link assembly.ContextEnvironment#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // ContextEnvironment

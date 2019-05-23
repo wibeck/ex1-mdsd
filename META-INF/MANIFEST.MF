@@ -17,7 +17,10 @@ Export-Package: .,
  componentModel.util,
  environment,
  environment.impl,
- environment.util
+ environment.util,
+ root,
+ root.impl,
+ root.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

@@ -256,8 +256,8 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String ASSEMBLY_CONTEXT__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS__EEXPRESSION = "if self.instantiates.oclIsKindOf(CompositeComponent) then \n" +
-		"\t\tself.instantiates.oclAsType(CompositeComponent).encapsulates -> collect(providedRoles) \n" +
-		"\t\t-> exists(role | self.providedInterfaces -> includes(role.interFace)) else true endif";
+		"\t\tself.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -> collect(providedRoles) \n" +
+		"\t\t-> forAll(role | self.providedInterfaces -> includes(role.interFace)) else true endif";
 
 	/**
 	 * Validates the providedRoleForProvidedInterfaceExists constraint of '<em>Context</em>'.
@@ -287,8 +287,8 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String ASSEMBLY_CONTEXT__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS__EEXPRESSION = "if self.instantiates.oclIsKindOf(CompositeComponent) then \n" +
-		"\t\tself.instantiates.oclAsType(CompositeComponent).encapsulates -> collect(requiredRoles) \n" +
-		"\t\t-> exists(role | self.requiredInterfaces -> includes(role.interFace)) else true endif";
+		"\t\tself.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -> collect(requiredRoles) \n" +
+		"\t\t-> forAll(role | self.requiredInterfaces -> includes(role.interFace)) else true endif";
 
 	/**
 	 * Validates the requiredRoleForRequiredInterfaceExists constraint of '<em>Context</em>'.
@@ -337,7 +337,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_CONTEXTS_NOT_EQUAL__EEXPRESSION = "(not (self.providedrole.assemblyContext = self.requiredrole.assemblyContext)) = true";
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_CONTEXTS_NOT_EQUAL__EEXPRESSION = "(not (self.providedRole.assemblyContext = self.requiredRole.assemblyContext)) = true";
 
 	/**
 	 * Validates the assemblyContextsNotEqual constraint of '<em>Connector</em>'.
@@ -366,7 +366,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONNECTOR__PROVIDED_ROLE_HAS_REQUIRED_INTERFACE__EEXPRESSION = "self.providedrole.interFace = self.requiredrole.interFace";
+	protected static final String ASSEMBLY_CONNECTOR__PROVIDED_ROLE_HAS_REQUIRED_INTERFACE__EEXPRESSION = "self.providedRole.interFace = self.requiredRole.interFace";
 
 	/**
 	 * Validates the providedRoleHasRequiredInterface constraint of '<em>Connector</em>'.
@@ -462,7 +462,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REQUIRED_ROLE__REQUIRED_INTERFACE_FROM_SERVICE_THAT_REQUIRES_IT__EEXPRESSION = "self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.service -> select(service| service.required \n" +
+	protected static final String REQUIRED_ROLE__REQUIRED_INTERFACE_FROM_SERVICE_THAT_REQUIRES_IT__EEXPRESSION = "self.assemblyContext.instantiates.interfaceServiceMap ->exists(entry | entry.services -> select(service| service.requiredInterfaces \n" +
 		"\t\t-> includes(self.interFace)))  -> notEmpty() and not (self.assemblyContext.instantiates = null)";
 
 	/**
@@ -617,7 +617,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String CONTEXT__CONTEXT_IS_PART_OF_OUTWARD_ASSEMBLY_CONNECTORS__EEXPRESSION = "\n" +
-		"\t\tself.outwardAssemblyConnectors -> forAll(aCon | aCon.providedrole.assemblyContext = self xor aCon.requiredrole.assemblyContext = self )";
+		"\t\tself.outwardAssemblyConnectors -> forAll(aCon | aCon.providedRole.assemblyContext = self xor aCon.requiredRole.assemblyContext = self )";
 
 	/**
 	 * Validates the contextIsPartOfOutwardAssemblyConnectors constraint of '<em>Context</em>'.
@@ -677,7 +677,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String SYSTEM__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS__EEXPRESSION = "\n" +
-		"\t\tself.encapsulated -> collect(providedRoles) -> exists(role | providedInterfaces -> includes(role.interFace))";
+		"\t\tself.encapsulatedAssemblyContexts -> collect(providedRoles) -> forAll(role | providedInterfaces -> includes(role.interFace))";
 
 	/**
 	 * Validates the providedRoleForProvidedInterfaceExists constraint of '<em>System</em>'.
@@ -707,7 +707,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String SYSTEM__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS__EEXPRESSION = "\n" +
-		"\t\tself.encapsulated -> collect(requiredRoles) -> exists(role | requiredInterfaces -> includes(role.interFace))";
+		"\t\tself.encapsulatedAssemblyContexts -> collect(requiredRoles) -> forAll(role | requiredInterfaces -> includes(role.interFace))";
 
 	/**
 	 * Validates the requiredRoleForRequiredInterfaceExists constraint of '<em>System</em>'.
@@ -745,7 +745,7 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(compositeComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(compositeComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(compositeComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentModelValidator.validateComponent_servicesForEachSignatreOfRequiredInterfaces(compositeComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentModelValidator.validateComponent_servicesForEachSignatureOfProvidedInterfaces(compositeComponent, diagnostics, context);
 		return result;
 	}
 

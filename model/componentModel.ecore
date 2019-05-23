@@ -28,10 +28,7 @@
       <details key="constraints" value="servicesForEachSignatureOfProvidedInterfaces"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="invariant servicesForEachSignatureOfProvidedInterfaces: self.interfaceServiceMap ->select(entry | entry.services&#xA;-> select(service| service.correspondence -> union(entry.providedInterface.signatures)&#xA;))  -> notEmpty();"/>
-      </eAnnotations>
-      <details key="servicesForEachSignatureOfProvidedInterfaces" value="self.interfaceServiceMap -> forAll((services -> &#xA;&#x9;&#x9;&#x9;collect(correspondence) -> intersection(providedInterface.signatures) -> size()) &#xA;&#x9;&#x9;&#x9;=  (providedInterface.signatures -> size()))"/>
+      <details key="servicesForEachSignatureOfProvidedInterfaces" value="self.interfaceServiceMap -> forAll(entry | entry.services -> &#xA;&#x9;&#x9;&#x9;collect(correspondence) -> intersection(entry.providedInterface.signatures) -> size() &#xA;&#x9;&#x9;&#x9;=  entry.providedInterface.signatures -> size())"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMap" ordered="false" lowerBound="1" upperBound="-1" eType="#//InterfaceServiceMapEntry"
