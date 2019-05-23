@@ -16,6 +16,9 @@ import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
 import componentModel.ComponentModelPackage;
+import componentModel.ConcreteAssemblyViewPoint;
+import componentModel.ConcreteDeploymentViewPoint;
+import componentModel.ConcreteSystemIndependentViewPoint;
 import componentModel.Date;
 import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
@@ -313,6 +316,27 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	private EClass complexTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass concreteSystemIndependentViewPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass concreteDeploymentViewPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass concreteAssemblyViewPointEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1075,6 +1099,36 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
+	public EClass getConcreteSystemIndependentViewPoint() {
+		return concreteSystemIndependentViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getConcreteDeploymentViewPoint() {
+		return concreteDeploymentViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getConcreteAssemblyViewPoint() {
+		return concreteAssemblyViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ComponentModelFactory getComponentModelFactory() {
 		return (ComponentModelFactory)getEFactoryInstance();
 	}
@@ -1200,6 +1254,12 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		repositoryViewTypeEClass = createEClass(REPOSITORY_VIEW_TYPE);
 
 		complexTypeEClass = createEClass(COMPLEX_TYPE);
+
+		concreteSystemIndependentViewPointEClass = createEClass(CONCRETE_SYSTEM_INDEPENDENT_VIEW_POINT);
+
+		concreteDeploymentViewPointEClass = createEClass(CONCRETE_DEPLOYMENT_VIEW_POINT);
+
+		concreteAssemblyViewPointEClass = createEClass(CONCRETE_ASSEMBLY_VIEW_POINT);
 	}
 
 	/**
@@ -1255,6 +1315,9 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		deploymentViewPointEClass.getESuperTypes().add(this.getViewPoint());
 		repositoryViewTypeEClass.getESuperTypes().add(this.getViewType());
 		complexTypeEClass.getESuperTypes().add(this.getType());
+		concreteSystemIndependentViewPointEClass.getESuperTypes().add(this.getSystemIndependentViewPoint());
+		concreteDeploymentViewPointEClass.getESuperTypes().add(this.getDeploymentViewPoint());
+		concreteAssemblyViewPointEClass.getESuperTypes().add(this.getAssemblyViewPoint());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemIndependentViewPointEClass, SystemIndependentViewPoint.class, "SystemIndependentViewPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1359,6 +1422,12 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		initEClass(repositoryViewTypeEClass, RepositoryViewType.class, "RepositoryViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(complexTypeEClass, ComplexType.class, "ComplexType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(concreteSystemIndependentViewPointEClass, ConcreteSystemIndependentViewPoint.class, "ConcreteSystemIndependentViewPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(concreteDeploymentViewPointEClass, ConcreteDeploymentViewPoint.class, "ConcreteDeploymentViewPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(concreteAssemblyViewPointEClass, ConcreteAssemblyViewPoint.class, "ConcreteAssemblyViewPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

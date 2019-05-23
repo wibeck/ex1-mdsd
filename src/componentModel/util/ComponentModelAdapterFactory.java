@@ -11,6 +11,9 @@ import componentModel.Char;
 import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
+import componentModel.ConcreteAssemblyViewPoint;
+import componentModel.ConcreteDeploymentViewPoint;
+import componentModel.ConcreteSystemIndependentViewPoint;
 import componentModel.Date;
 import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
@@ -240,6 +243,18 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseComplexType(ComplexType object) {
 				return createComplexTypeAdapter();
+			}
+			@Override
+			public Adapter caseConcreteSystemIndependentViewPoint(ConcreteSystemIndependentViewPoint object) {
+				return createConcreteSystemIndependentViewPointAdapter();
+			}
+			@Override
+			public Adapter caseConcreteDeploymentViewPoint(ConcreteDeploymentViewPoint object) {
+				return createConcreteDeploymentViewPointAdapter();
+			}
+			@Override
+			public Adapter caseConcreteAssemblyViewPoint(ConcreteAssemblyViewPoint object) {
+				return createConcreteAssemblyViewPointAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -762,6 +777,48 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComplexTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.ConcreteSystemIndependentViewPoint <em>Concrete System Independent View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.ConcreteSystemIndependentViewPoint
+	 * @generated
+	 */
+	public Adapter createConcreteSystemIndependentViewPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.ConcreteDeploymentViewPoint <em>Concrete Deployment View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.ConcreteDeploymentViewPoint
+	 * @generated
+	 */
+	public Adapter createConcreteDeploymentViewPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.ConcreteAssemblyViewPoint <em>Concrete Assembly View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.ConcreteAssemblyViewPoint
+	 * @generated
+	 */
+	public Adapter createConcreteAssemblyViewPointAdapter() {
 		return null;
 	}
 

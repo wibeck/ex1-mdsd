@@ -129,7 +129,7 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRootClass_Environments() {
+	public EReference getRootClass_ViewPoints() {
 		return (EReference)rootClassEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -139,18 +139,8 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRootClass_Repositories() {
+	public EReference getRootClass_ContextEnvironments() {
 		return (EReference)rootClassEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRootClass_ContextEnvironment() {
-		return (EReference)rootClassEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -183,9 +173,8 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 
 		// Create classes and their features
 		rootClassEClass = createEClass(ROOT_CLASS);
-		createEReference(rootClassEClass, ROOT_CLASS__ENVIRONMENTS);
-		createEReference(rootClassEClass, ROOT_CLASS__REPOSITORIES);
-		createEReference(rootClassEClass, ROOT_CLASS__CONTEXT_ENVIRONMENT);
+		createEReference(rootClassEClass, ROOT_CLASS__VIEW_POINTS);
+		createEReference(rootClassEClass, ROOT_CLASS__CONTEXT_ENVIRONMENTS);
 	}
 
 	/**
@@ -212,7 +201,6 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
 		ComponentModelPackage theComponentModelPackage = (ComponentModelPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentModelPackage.eNS_URI);
 		AssemblyPackage theAssemblyPackage = (AssemblyPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
 
@@ -224,9 +212,8 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(rootClassEClass, RootClass.class, "RootClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRootClass_Environments(), theEnvironmentPackage.getEnvironment(), null, "environments", null, 1, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRootClass_Repositories(), theComponentModelPackage.getRepository(), null, "repositories", null, 1, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRootClass_ContextEnvironment(), theAssemblyPackage.getContextEnvironment(), null, "contextEnvironment", null, 1, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRootClass_ViewPoints(), theComponentModelPackage.getViewPoint(), null, "viewPoints", null, 1, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRootClass_ContextEnvironments(), theAssemblyPackage.getContextEnvironment(), null, "contextEnvironments", null, 0, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

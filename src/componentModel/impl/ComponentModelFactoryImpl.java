@@ -8,6 +8,9 @@ import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
 import componentModel.ComponentModelPackage;
+import componentModel.ConcreteAssemblyViewPoint;
+import componentModel.ConcreteDeploymentViewPoint;
+import componentModel.ConcreteSystemIndependentViewPoint;
 import componentModel.Date;
 import componentModel.ExternalCall;
 import componentModel.Int;
@@ -99,6 +102,9 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 			case ComponentModelPackage.STRING: return createString();
 			case ComponentModelPackage.PARAMETER: return createParameter();
 			case ComponentModelPackage.COMPLEX_TYPE: return createComplexType();
+			case ComponentModelPackage.CONCRETE_SYSTEM_INDEPENDENT_VIEW_POINT: return createConcreteSystemIndependentViewPoint();
+			case ComponentModelPackage.CONCRETE_DEPLOYMENT_VIEW_POINT: return createConcreteDeploymentViewPoint();
+			case ComponentModelPackage.CONCRETE_ASSEMBLY_VIEW_POINT: return createConcreteAssemblyViewPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -366,6 +372,39 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	public ComplexType createComplexType() {
 		ComplexTypeImpl complexType = new ComplexTypeImpl();
 		return complexType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConcreteSystemIndependentViewPoint createConcreteSystemIndependentViewPoint() {
+		ConcreteSystemIndependentViewPointImpl concreteSystemIndependentViewPoint = new ConcreteSystemIndependentViewPointImpl();
+		return concreteSystemIndependentViewPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConcreteDeploymentViewPoint createConcreteDeploymentViewPoint() {
+		ConcreteDeploymentViewPointImpl concreteDeploymentViewPoint = new ConcreteDeploymentViewPointImpl();
+		return concreteDeploymentViewPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConcreteAssemblyViewPoint createConcreteAssemblyViewPoint() {
+		ConcreteAssemblyViewPointImpl concreteAssemblyViewPoint = new ConcreteAssemblyViewPointImpl();
+		return concreteAssemblyViewPoint;
 	}
 
 	/**

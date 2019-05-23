@@ -6,9 +6,8 @@
   <foreignModel>root.ecore</foreignModel>
   <genPackages prefix="Root" disposableProviderFactory="true" ecorePackage="root.ecore#/">
     <genClasses ecoreClass="root.ecore#//RootClass">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/environments"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/repositories"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/contextEnvironment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/viewPoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/contextEnvironments"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Environment" disposableProviderFactory="true" ecorePackage="environment.ecore#/">
@@ -112,6 +111,9 @@
     <genClasses image="false" ecoreClass="componentModel.ecore#//DeploymentViewPoint"/>
     <genClasses image="false" ecoreClass="componentModel.ecore#//RepositoryViewType"/>
     <genClasses ecoreClass="componentModel.ecore#//ComplexType"/>
+    <genClasses ecoreClass="componentModel.ecore#//ConcreteSystemIndependentViewPoint"/>
+    <genClasses ecoreClass="componentModel.ecore#//ConcreteDeploymentViewPoint"/>
+    <genClasses ecoreClass="componentModel.ecore#//ConcreteAssemblyViewPoint"/>
   </genPackages>
   <genPackages prefix="Assembly" disposableProviderFactory="true" ecorePackage="assembly.ecore#/">
     <genClasses ecoreClass="assembly.ecore#//AssemblyContext">

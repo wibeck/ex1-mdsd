@@ -238,6 +238,33 @@ public interface ComponentModelFactory extends EFactory {
 	ComplexType createComplexType();
 
 	/**
+	 * Returns a new object of class '<em>Concrete System Independent View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concrete System Independent View Point</em>'.
+	 * @generated
+	 */
+	ConcreteSystemIndependentViewPoint createConcreteSystemIndependentViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>Concrete Deployment View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concrete Deployment View Point</em>'.
+	 * @generated
+	 */
+	ConcreteDeploymentViewPoint createConcreteDeploymentViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>Concrete Assembly View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concrete Assembly View Point</em>'.
+	 * @generated
+	 */
+	ConcreteAssemblyViewPoint createConcreteAssemblyViewPoint();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
