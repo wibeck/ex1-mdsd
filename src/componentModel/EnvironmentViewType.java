@@ -10,7 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getEnvironmentViewType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EnvironmentViewType extends ViewType {

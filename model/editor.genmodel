@@ -9,7 +9,6 @@
     <genClasses ecoreClass="root.ecore#//RootClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/viewPoints"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/contextEnvironments"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/environments"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Environment" disposableProviderFactory="true" ecorePackage="environment.ecore#/">

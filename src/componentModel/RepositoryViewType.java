@@ -10,7 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getRepositoryViewType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface RepositoryViewType extends ViewType {

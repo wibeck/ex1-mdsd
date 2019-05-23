@@ -10,7 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getAllocationViewType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface AllocationViewType extends ViewType {

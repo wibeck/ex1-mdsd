@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SimpleTypeImpl extends TypeImpl implements SimpleType {
+public abstract class SimpleTypeImpl extends TypeImpl implements SimpleType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

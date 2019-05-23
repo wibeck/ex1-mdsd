@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AllocationViewTypeImpl extends ViewTypeImpl implements AllocationViewType {
+public abstract class AllocationViewTypeImpl extends ViewTypeImpl implements AllocationViewType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

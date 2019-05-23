@@ -101,7 +101,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Void" eSuperTypes="#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" abstract="true" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="Boolean" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Char" eSuperTypes="#//SimpleType"/>
@@ -117,9 +117,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterType" lowerBound="1"
         eType="#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" eSuperTypes="#//ViewType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewType" eSuperTypes="#//ViewType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" eSuperTypes="#//ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" abstract="true" eSuperTypes="#//ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewType" abstract="true"
+      eSuperTypes="#//ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationViewType" abstract="true"
+      eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewPoint" eSuperTypes="#//ViewPoint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="assemlbyVPonlyHasAssemblyVT"/>
@@ -136,6 +138,7 @@
       <details key="DeploymentVPonlyHasDeploymentVT" value="self.viewTypes -> forAll(vt | vt.oclIsKindOf(componentModel::EnvironmentViewType) &#xA;&#x9;&#x9;&#x9;or vt.oclIsKindOf(componentModel::AllocationViewType))"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" eSuperTypes="#//ViewType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RepositoryViewType" abstract="true"
+      eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexType" eSuperTypes="#//Type"/>
 </ecore:EPackage>

@@ -139,15 +139,6 @@ public interface ComponentModelFactory extends EFactory {
 	Void createVoid();
 
 	/**
-	 * Returns a new object of class '<em>Simple Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Simple Type</em>'.
-	 * @generated
-	 */
-	SimpleType createSimpleType();
-
-	/**
 	 * Returns a new object of class '<em>Boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,33 +238,6 @@ public interface ComponentModelFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
-	 * Returns a new object of class '<em>Assembly View Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Assembly View Type</em>'.
-	 * @generated
-	 */
-	AssemblyViewType createAssemblyViewType();
-
-	/**
-	 * Returns a new object of class '<em>Environment View Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Environment View Type</em>'.
-	 * @generated
-	 */
-	EnvironmentViewType createEnvironmentViewType();
-
-	/**
-	 * Returns a new object of class '<em>Allocation View Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Allocation View Type</em>'.
-	 * @generated
-	 */
-	AllocationViewType createAllocationViewType();
-
-	/**
 	 * Returns a new object of class '<em>Assembly View Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,15 +254,6 @@ public interface ComponentModelFactory extends EFactory {
 	 * @generated
 	 */
 	DeploymentViewPoint createDeploymentViewPoint();
-
-	/**
-	 * Returns a new object of class '<em>Repository View Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Repository View Type</em>'.
-	 * @generated
-	 */
-	RepositoryViewType createRepositoryViewType();
 
 	/**
 	 * Returns a new object of class '<em>Complex Type</em>'.

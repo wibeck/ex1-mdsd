@@ -7,7 +7,5 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextEnvironments" ordered="false"
         upperBound="-1" eType="ecore:EClass assembly.ecore#//ContextEnvironment" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="environments" upperBound="-1"
-        eType="ecore:EClass environment.ecore#//Environment" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
