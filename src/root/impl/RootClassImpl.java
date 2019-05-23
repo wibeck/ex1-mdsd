@@ -3,7 +3,11 @@
 package root.impl;
 
 import assembly.ContextEnvironment;
+
 import componentModel.ViewPoint;
+
+import environment.Environment;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,6 +35,7 @@ import root.RootPackage;
  * <ul>
  *   <li>{@link root.impl.RootClassImpl#getViewPoints <em>View Points</em>}</li>
  *   <li>{@link root.impl.RootClassImpl#getContextEnvironments <em>Context Environments</em>}</li>
+ *   <li>{@link root.impl.RootClassImpl#getEnvironments <em>Environments</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +60,16 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 	 * @ordered
 	 */
 	protected EList<ContextEnvironment> contextEnvironments;
+
+	/**
+	 * The cached value of the '{@link #getEnvironments() <em>Environments</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnvironments()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Environment> environments;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -107,12 +122,27 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 	 * @generated
 	 */
 	@Override
+	public EList<Environment> getEnvironments() {
+		if (environments == null) {
+			environments = new EObjectContainmentEList<Environment>(Environment.class, this, RootPackage.ROOT_CLASS__ENVIRONMENTS);
+		}
+		return environments;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RootPackage.ROOT_CLASS__VIEW_POINTS:
 				return ((InternalEList<?>)getViewPoints()).basicRemove(otherEnd, msgs);
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				return ((InternalEList<?>)getContextEnvironments()).basicRemove(otherEnd, msgs);
+			case RootPackage.ROOT_CLASS__ENVIRONMENTS:
+				return ((InternalEList<?>)getEnvironments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -129,6 +159,8 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				return getViewPoints();
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				return getContextEnvironments();
+			case RootPackage.ROOT_CLASS__ENVIRONMENTS:
+				return getEnvironments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +182,10 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				getContextEnvironments().clear();
 				getContextEnvironments().addAll((Collection<? extends ContextEnvironment>)newValue);
 				return;
+			case RootPackage.ROOT_CLASS__ENVIRONMENTS:
+				getEnvironments().clear();
+				getEnvironments().addAll((Collection<? extends Environment>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,6 +204,9 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				getContextEnvironments().clear();
 				return;
+			case RootPackage.ROOT_CLASS__ENVIRONMENTS:
+				getEnvironments().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +223,8 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				return viewPoints != null && !viewPoints.isEmpty();
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				return contextEnvironments != null && !contextEnvironments.isEmpty();
+			case RootPackage.ROOT_CLASS__ENVIRONMENTS:
+				return environments != null && !environments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

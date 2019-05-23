@@ -38,4 +38,5 @@ null
             class="environment.EnvironmentPackage"
             genModel="model/editor.genmodel"/>
    </extension>
+
 </plugin>

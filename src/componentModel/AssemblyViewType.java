@@ -10,7 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getAssemblyViewType()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface AssemblyViewType extends ViewType {

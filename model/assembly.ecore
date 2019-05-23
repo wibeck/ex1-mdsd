@@ -120,16 +120,14 @@
         ordered="false" upperBound="-1" eType="#//AssemblyContext" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContextEnvironment">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="systems" ordered="false"
-        upperBound="-1" eType="#//System" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositeComponents" ordered="false"
         upperBound="-1" eType="#//CompositeComponent" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContexts" upperBound="-1"
-        eType="#//AssemblyContext"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" ordered="false"
         upperBound="-1" eType="#//DelegationConnector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
         eType="#//Role" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="#//Context" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

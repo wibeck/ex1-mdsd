@@ -2,9 +2,9 @@
  */
 package assembly.impl;
 
-import assembly.AssemblyContext;
 import assembly.AssemblyPackage;
 import assembly.CompositeComponent;
+import assembly.Context;
 import assembly.ContextEnvironment;
 import assembly.DelegationConnector;
 import assembly.Role;
@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,27 +33,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link assembly.impl.ContextEnvironmentImpl#getSystems <em>Systems</em>}</li>
  *   <li>{@link assembly.impl.ContextEnvironmentImpl#getCompositeComponents <em>Composite Components</em>}</li>
- *   <li>{@link assembly.impl.ContextEnvironmentImpl#getAssemblyContexts <em>Assembly Contexts</em>}</li>
  *   <li>{@link assembly.impl.ContextEnvironmentImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.impl.ContextEnvironmentImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link assembly.impl.ContextEnvironmentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link assembly.impl.ContextEnvironmentImpl#getContexts <em>Contexts</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container implements ContextEnvironment {
-	/**
-	 * The cached value of the '{@link #getSystems() <em>Systems</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSystems()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<assembly.System> systems;
-
 	/**
 	 * The cached value of the '{@link #getCompositeComponents() <em>Composite Components</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -64,16 +52,6 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<CompositeComponent> compositeComponents;
-
-	/**
-	 * The cached value of the '{@link #getAssemblyContexts() <em>Assembly Contexts</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssemblyContexts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AssemblyContext> assemblyContexts;
 
 	/**
 	 * The cached value of the '{@link #getDelegationConnectors() <em>Delegation Connectors</em>}' containment reference list.
@@ -116,6 +94,16 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContexts() <em>Contexts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContexts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Context> contexts;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,37 +128,11 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EList<assembly.System> getSystems() {
-		if (systems == null) {
-			systems = new EObjectContainmentEList<assembly.System>(assembly.System.class, this, AssemblyPackage.CONTEXT_ENVIRONMENT__SYSTEMS);
-		}
-		return systems;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<CompositeComponent> getCompositeComponents() {
 		if (compositeComponents == null) {
 			compositeComponents = new EObjectContainmentEList<CompositeComponent>(CompositeComponent.class, this, AssemblyPackage.CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS);
 		}
 		return compositeComponents;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<AssemblyContext> getAssemblyContexts() {
-		if (assemblyContexts == null) {
-			assemblyContexts = new EObjectResolvingEList<AssemblyContext>(AssemblyContext.class, this, AssemblyPackage.CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS);
-		}
-		return assemblyContexts;
 	}
 
 	/**
@@ -228,16 +190,29 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public EList<Context> getContexts() {
+		if (contexts == null) {
+			contexts = new EObjectContainmentEList<Context>(Context.class, this, AssemblyPackage.CONTEXT_ENVIRONMENT__CONTEXTS);
+		}
+		return contexts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__SYSTEMS:
-				return ((InternalEList<?>)getSystems()).basicRemove(otherEnd, msgs);
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS:
 				return ((InternalEList<?>)getCompositeComponents()).basicRemove(otherEnd, msgs);
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS:
 				return ((InternalEList<?>)getDelegationConnectors()).basicRemove(otherEnd, msgs);
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.CONTEXT_ENVIRONMENT__CONTEXTS:
+				return ((InternalEList<?>)getContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,18 +225,16 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__SYSTEMS:
-				return getSystems();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS:
 				return getCompositeComponents();
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS:
-				return getAssemblyContexts();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS:
 				return getDelegationConnectors();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__ROLES:
 				return getRoles();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__NAME:
 				return getName();
+			case AssemblyPackage.CONTEXT_ENVIRONMENT__CONTEXTS:
+				return getContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,17 +248,9 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__SYSTEMS:
-				getSystems().clear();
-				getSystems().addAll((Collection<? extends assembly.System>)newValue);
-				return;
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS:
 				getCompositeComponents().clear();
 				getCompositeComponents().addAll((Collection<? extends CompositeComponent>)newValue);
-				return;
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS:
-				getAssemblyContexts().clear();
-				getAssemblyContexts().addAll((Collection<? extends AssemblyContext>)newValue);
 				return;
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS:
 				getDelegationConnectors().clear();
@@ -297,6 +262,10 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__NAME:
 				setName((String)newValue);
+				return;
+			case AssemblyPackage.CONTEXT_ENVIRONMENT__CONTEXTS:
+				getContexts().clear();
+				getContexts().addAll((Collection<? extends Context>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -310,14 +279,8 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__SYSTEMS:
-				getSystems().clear();
-				return;
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS:
 				getCompositeComponents().clear();
-				return;
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS:
-				getAssemblyContexts().clear();
 				return;
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS:
 				getDelegationConnectors().clear();
@@ -327,6 +290,9 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case AssemblyPackage.CONTEXT_ENVIRONMENT__CONTEXTS:
+				getContexts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -340,18 +306,16 @@ public class ContextEnvironmentImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__SYSTEMS:
-				return systems != null && !systems.isEmpty();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS:
 				return compositeComponents != null && !compositeComponents.isEmpty();
-			case AssemblyPackage.CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS:
-				return assemblyContexts != null && !assemblyContexts.isEmpty();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS:
 				return delegationConnectors != null && !delegationConnectors.isEmpty();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__ROLES:
 				return roles != null && !roles.isEmpty();
 			case AssemblyPackage.CONTEXT_ENVIRONMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case AssemblyPackage.CONTEXT_ENVIRONMENT__CONTEXTS:
+				return contexts != null && !contexts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

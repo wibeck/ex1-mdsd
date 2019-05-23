@@ -3,6 +3,7 @@
 package componentModel;
 
 import java.lang.String;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ViewType extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -44,4 +44,5 @@ public interface ViewType extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
 } // ViewType

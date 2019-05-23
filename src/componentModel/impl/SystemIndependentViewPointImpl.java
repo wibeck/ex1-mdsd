@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class SystemIndependentViewPointImpl extends ViewPointImpl implements SystemIndependentViewPoint {
+public class SystemIndependentViewPointImpl extends ViewPointImpl implements SystemIndependentViewPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

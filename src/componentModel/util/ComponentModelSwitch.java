@@ -11,9 +11,6 @@ import componentModel.Char;
 import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
-import componentModel.ConcreteAssemblyViewPoint;
-import componentModel.ConcreteDeploymentViewPoint;
-import componentModel.ConcreteSystemIndependentViewPoint;
 import componentModel.Date;
 import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
@@ -348,30 +345,6 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 				ComplexType complexType = (ComplexType)theEObject;
 				T result = caseComplexType(complexType);
 				if (result == null) result = caseType(complexType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.CONCRETE_SYSTEM_INDEPENDENT_VIEW_POINT: {
-				ConcreteSystemIndependentViewPoint concreteSystemIndependentViewPoint = (ConcreteSystemIndependentViewPoint)theEObject;
-				T result = caseConcreteSystemIndependentViewPoint(concreteSystemIndependentViewPoint);
-				if (result == null) result = caseSystemIndependentViewPoint(concreteSystemIndependentViewPoint);
-				if (result == null) result = caseViewPoint(concreteSystemIndependentViewPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.CONCRETE_DEPLOYMENT_VIEW_POINT: {
-				ConcreteDeploymentViewPoint concreteDeploymentViewPoint = (ConcreteDeploymentViewPoint)theEObject;
-				T result = caseConcreteDeploymentViewPoint(concreteDeploymentViewPoint);
-				if (result == null) result = caseDeploymentViewPoint(concreteDeploymentViewPoint);
-				if (result == null) result = caseViewPoint(concreteDeploymentViewPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.CONCRETE_ASSEMBLY_VIEW_POINT: {
-				ConcreteAssemblyViewPoint concreteAssemblyViewPoint = (ConcreteAssemblyViewPoint)theEObject;
-				T result = caseConcreteAssemblyViewPoint(concreteAssemblyViewPoint);
-				if (result == null) result = caseAssemblyViewPoint(concreteAssemblyViewPoint);
-				if (result == null) result = caseViewPoint(concreteAssemblyViewPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -916,51 +889,6 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComplexType(ComplexType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Concrete System Independent View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Concrete System Independent View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConcreteSystemIndependentViewPoint(ConcreteSystemIndependentViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Concrete Deployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Concrete Deployment View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConcreteDeploymentViewPoint(ConcreteDeploymentViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Concrete Assembly View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Concrete Assembly View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConcreteAssemblyViewPoint(ConcreteAssemblyViewPoint object) {
 		return null;
 	}
 

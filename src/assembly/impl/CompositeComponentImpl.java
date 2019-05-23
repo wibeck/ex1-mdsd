@@ -43,6 +43,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	 * @ordered
 	 */
 	protected EList<AssemblyContext> encapsulatedAssemblyContexts;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

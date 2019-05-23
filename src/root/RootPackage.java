@@ -84,13 +84,22 @@ public interface RootPackage extends EPackage {
 	int ROOT_CLASS__CONTEXT_ENVIRONMENTS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Environments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CLASS__ENVIRONMENTS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CLASS_FEATURE_COUNT = 2;
+	int ROOT_CLASS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Class</em>' class.
@@ -133,6 +142,17 @@ public interface RootPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRootClass_ContextEnvironments();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link root.RootClass#getEnvironments <em>Environments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Environments</em>'.
+	 * @see root.RootClass#getEnvironments()
+	 * @see #getRootClass()
+	 * @generated
+	 */
+	EReference getRootClass_Environments();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -182,6 +202,14 @@ public interface RootPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOT_CLASS__CONTEXT_ENVIRONMENTS = eINSTANCE.getRootClass_ContextEnvironments();
+
+		/**
+		 * The meta object literal for the '<em><b>Environments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOT_CLASS__ENVIRONMENTS = eINSTANCE.getRootClass_Environments();
 
 	}
 

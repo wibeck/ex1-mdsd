@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class EnvironmentViewTypeImpl extends ViewTypeImpl implements EnvironmentViewType {
+public class EnvironmentViewTypeImpl extends ViewTypeImpl implements EnvironmentViewType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

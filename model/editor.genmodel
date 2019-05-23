@@ -4,10 +4,12 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>root.ecore</foreignModel>
+  <foreignModel>environment.ecore</foreignModel>
   <genPackages prefix="Root" disposableProviderFactory="true" ecorePackage="root.ecore#/">
     <genClasses ecoreClass="root.ecore#//RootClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/viewPoints"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/contextEnvironments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/environments"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Environment" disposableProviderFactory="true" ecorePackage="environment.ecore#/">
@@ -111,9 +113,6 @@
     <genClasses image="false" ecoreClass="componentModel.ecore#//DeploymentViewPoint"/>
     <genClasses image="false" ecoreClass="componentModel.ecore#//RepositoryViewType"/>
     <genClasses ecoreClass="componentModel.ecore#//ComplexType"/>
-    <genClasses ecoreClass="componentModel.ecore#//ConcreteSystemIndependentViewPoint"/>
-    <genClasses ecoreClass="componentModel.ecore#//ConcreteDeploymentViewPoint"/>
-    <genClasses ecoreClass="componentModel.ecore#//ConcreteAssemblyViewPoint"/>
   </genPackages>
   <genPackages prefix="Assembly" disposableProviderFactory="true" ecorePackage="assembly.ecore#/">
     <genClasses ecoreClass="assembly.ecore#//AssemblyContext">
@@ -157,12 +156,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//CompositeComponent/encapsulatedAssemblyContexts"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//ContextEnvironment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/systems"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/compositeComponents"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/assemblyContexts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/delegationConnectors"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/roles"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//ContextEnvironment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/contexts"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

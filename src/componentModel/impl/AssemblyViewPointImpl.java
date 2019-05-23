@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class AssemblyViewPointImpl extends ViewPointImpl implements AssemblyViewPoint {
+public class AssemblyViewPointImpl extends ViewPointImpl implements AssemblyViewPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

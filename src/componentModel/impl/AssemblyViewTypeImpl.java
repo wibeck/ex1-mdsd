@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class AssemblyViewTypeImpl extends ViewTypeImpl implements AssemblyViewType {
+public class AssemblyViewTypeImpl extends ViewTypeImpl implements AssemblyViewType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

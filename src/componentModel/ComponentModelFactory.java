@@ -22,6 +22,15 @@ public interface ComponentModelFactory extends EFactory {
 	ComponentModelFactory eINSTANCE = componentModel.impl.ComponentModelFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>System Independent View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>System Independent View Point</em>'.
+	 * @generated
+	 */
+	SystemIndependentViewPoint createSystemIndependentViewPoint();
+
+	/**
 	 * Returns a new object of class '<em>Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +139,15 @@ public interface ComponentModelFactory extends EFactory {
 	Void createVoid();
 
 	/**
+	 * Returns a new object of class '<em>Simple Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Type</em>'.
+	 * @generated
+	 */
+	SimpleType createSimpleType();
+
+	/**
 	 * Returns a new object of class '<em>Boolean</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +247,60 @@ public interface ComponentModelFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
+	 * Returns a new object of class '<em>Assembly View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assembly View Type</em>'.
+	 * @generated
+	 */
+	AssemblyViewType createAssemblyViewType();
+
+	/**
+	 * Returns a new object of class '<em>Environment View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment View Type</em>'.
+	 * @generated
+	 */
+	EnvironmentViewType createEnvironmentViewType();
+
+	/**
+	 * Returns a new object of class '<em>Allocation View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Allocation View Type</em>'.
+	 * @generated
+	 */
+	AllocationViewType createAllocationViewType();
+
+	/**
+	 * Returns a new object of class '<em>Assembly View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assembly View Point</em>'.
+	 * @generated
+	 */
+	AssemblyViewPoint createAssemblyViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>Deployment View Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Deployment View Point</em>'.
+	 * @generated
+	 */
+	DeploymentViewPoint createDeploymentViewPoint();
+
+	/**
+	 * Returns a new object of class '<em>Repository View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Repository View Type</em>'.
+	 * @generated
+	 */
+	RepositoryViewType createRepositoryViewType();
+
+	/**
 	 * Returns a new object of class '<em>Complex Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,33 +308,6 @@ public interface ComponentModelFactory extends EFactory {
 	 * @generated
 	 */
 	ComplexType createComplexType();
-
-	/**
-	 * Returns a new object of class '<em>Concrete System Independent View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Concrete System Independent View Point</em>'.
-	 * @generated
-	 */
-	ConcreteSystemIndependentViewPoint createConcreteSystemIndependentViewPoint();
-
-	/**
-	 * Returns a new object of class '<em>Concrete Deployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Concrete Deployment View Point</em>'.
-	 * @generated
-	 */
-	ConcreteDeploymentViewPoint createConcreteDeploymentViewPoint();
-
-	/**
-	 * Returns a new object of class '<em>Concrete Assembly View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Concrete Assembly View Point</em>'.
-	 * @generated
-	 */
-	ConcreteAssemblyViewPoint createConcreteAssemblyViewPoint();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -10,8 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getSystemIndependentViewPoint()
- * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SysIndependentVPOnlyHasRepositoryVT'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SysIndependentVPOnlyHasRepositoryVT'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot SysIndependentVPOnlyHasRepositoryVT='self.viewTypes -&gt; forAll(vt | vt.oclIsKindOf(componentModel::RepositoryViewType) )'"
  * @generated
  */

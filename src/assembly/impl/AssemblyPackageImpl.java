@@ -33,7 +33,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import root.RootPackage;
+
 import root.impl.RootPackageImpl;
 
 /**
@@ -558,7 +560,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContextEnvironment_Systems() {
+	public EReference getContextEnvironment_CompositeComponents() {
 		return (EReference)contextEnvironmentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -568,7 +570,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContextEnvironment_CompositeComponents() {
+	public EReference getContextEnvironment_DelegationConnectors() {
 		return (EReference)contextEnvironmentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -578,7 +580,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContextEnvironment_AssemblyContexts() {
+	public EReference getContextEnvironment_Roles() {
 		return (EReference)contextEnvironmentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -588,28 +590,18 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContextEnvironment_DelegationConnectors() {
-		return (EReference)contextEnvironmentEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getContextEnvironment_Roles() {
-		return (EReference)contextEnvironmentEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getContextEnvironment_Name() {
-		return (EAttribute)contextEnvironmentEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)contextEnvironmentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContextEnvironment_Contexts() {
+		return (EReference)contextEnvironmentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -686,12 +678,11 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		createEReference(compositeComponentEClass, COMPOSITE_COMPONENT__ENCAPSULATED_ASSEMBLY_CONTEXTS);
 
 		contextEnvironmentEClass = createEClass(CONTEXT_ENVIRONMENT);
-		createEReference(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__SYSTEMS);
 		createEReference(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS);
-		createEReference(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS);
 		createEReference(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS);
 		createEReference(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__ROLES);
 		createEAttribute(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__NAME);
+		createEReference(contextEnvironmentEClass, CONTEXT_ENVIRONMENT__CONTEXTS);
 	}
 
 	/**
@@ -780,12 +771,11 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		initEReference(getCompositeComponent_EncapsulatedAssemblyContexts(), this.getAssemblyContext(), null, "encapsulatedAssemblyContexts", null, 0, -1, CompositeComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(contextEnvironmentEClass, ContextEnvironment.class, "ContextEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContextEnvironment_Systems(), this.getSystem(), null, "systems", null, 0, -1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getContextEnvironment_CompositeComponents(), this.getCompositeComponent(), null, "compositeComponents", null, 0, -1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getContextEnvironment_AssemblyContexts(), this.getAssemblyContext(), null, "assemblyContexts", null, 0, -1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextEnvironment_DelegationConnectors(), this.getDelegationConnector(), null, "delegationConnectors", null, 0, -1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getContextEnvironment_Roles(), this.getRole(), null, "roles", null, 0, -1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextEnvironment_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContextEnvironment_Contexts(), this.getContext(), null, "contexts", null, 0, -1, ContextEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

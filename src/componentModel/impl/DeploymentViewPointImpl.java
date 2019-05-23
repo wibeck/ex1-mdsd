@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class DeploymentViewPointImpl extends ViewPointImpl implements DeploymentViewPoint {
+public class DeploymentViewPointImpl extends ViewPointImpl implements DeploymentViewPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -11,9 +11,6 @@ import componentModel.Char;
 import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
-import componentModel.ConcreteAssemblyViewPoint;
-import componentModel.ConcreteDeploymentViewPoint;
-import componentModel.ConcreteSystemIndependentViewPoint;
 import componentModel.Date;
 import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
@@ -190,12 +187,6 @@ public class ComponentModelValidator extends EObjectValidator {
 				return validateRepositoryViewType((RepositoryViewType)value, diagnostics, context);
 			case ComponentModelPackage.COMPLEX_TYPE:
 				return validateComplexType((ComplexType)value, diagnostics, context);
-			case ComponentModelPackage.CONCRETE_SYSTEM_INDEPENDENT_VIEW_POINT:
-				return validateConcreteSystemIndependentViewPoint((ConcreteSystemIndependentViewPoint)value, diagnostics, context);
-			case ComponentModelPackage.CONCRETE_DEPLOYMENT_VIEW_POINT:
-				return validateConcreteDeploymentViewPoint((ConcreteDeploymentViewPoint)value, diagnostics, context);
-			case ComponentModelPackage.CONCRETE_ASSEMBLY_VIEW_POINT:
-				return validateConcreteAssemblyViewPoint((ConcreteAssemblyViewPoint)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -682,63 +673,6 @@ public class ComponentModelValidator extends EObjectValidator {
 	 */
 	public boolean validateComplexType(ComplexType complexType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(complexType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConcreteSystemIndependentViewPoint(ConcreteSystemIndependentViewPoint concreteSystemIndependentViewPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(concreteSystemIndependentViewPoint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concreteSystemIndependentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSystemIndependentViewPoint_SysIndependentVPOnlyHasRepositoryVT(concreteSystemIndependentViewPoint, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConcreteDeploymentViewPoint(ConcreteDeploymentViewPoint concreteDeploymentViewPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(concreteDeploymentViewPoint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDeploymentViewPoint_DeploymentVPonlyHasDeploymentVT(concreteDeploymentViewPoint, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConcreteAssemblyViewPoint(ConcreteAssemblyViewPoint concreteAssemblyViewPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(concreteAssemblyViewPoint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concreteAssemblyViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyViewPoint_assemlbyVPonlyHasAssemblyVT(concreteAssemblyViewPoint, diagnostics, context);
-		return result;
 	}
 
 	/**

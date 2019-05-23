@@ -25,7 +25,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import root.RootPackage;
+
 import root.impl.RootPackageImpl;
 
 /**

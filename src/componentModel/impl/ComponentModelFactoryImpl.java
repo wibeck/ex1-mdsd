@@ -2,16 +2,18 @@
  */
 package componentModel.impl;
 
+import componentModel.AllocationViewType;
+import componentModel.AssemblyViewPoint;
+import componentModel.AssemblyViewType;
 import componentModel.Branch;
 import componentModel.Char;
 import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
 import componentModel.ComponentModelPackage;
-import componentModel.ConcreteAssemblyViewPoint;
-import componentModel.ConcreteDeploymentViewPoint;
-import componentModel.ConcreteSystemIndependentViewPoint;
 import componentModel.Date;
+import componentModel.DeploymentViewPoint;
+import componentModel.EnvironmentViewType;
 import componentModel.ExternalCall;
 import componentModel.Int;
 import componentModel.Interface;
@@ -22,9 +24,12 @@ import componentModel.Loop;
 import componentModel.Map;
 import componentModel.Parameter;
 import componentModel.Repository;
+import componentModel.RepositoryViewType;
 import componentModel.Service;
 import componentModel.ServiceEffectSpecification;
 import componentModel.Signature;
+import componentModel.SimpleType;
+import componentModel.SystemIndependentViewPoint;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -78,6 +83,7 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ComponentModelPackage.SYSTEM_INDEPENDENT_VIEW_POINT: return createSystemIndependentViewPoint();
 			case ComponentModelPackage.REPOSITORY: return createRepository();
 			case ComponentModelPackage.COMPONENT: return createComponent();
 			case ComponentModelPackage.INTERFACE_SERVICE_MAP_ENTRY: return createInterfaceServiceMapEntry();
@@ -90,6 +96,7 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 			case ComponentModelPackage.SIGNATURE: return createSignature();
 			case ComponentModelPackage.SERVICE: return createService();
 			case ComponentModelPackage.VOID: return createVoid();
+			case ComponentModelPackage.SIMPLE_TYPE: return createSimpleType();
 			case ComponentModelPackage.BOOLEAN: return createBoolean();
 			case ComponentModelPackage.INT: return createInt();
 			case ComponentModelPackage.CHAR: return createChar();
@@ -101,13 +108,27 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 			case ComponentModelPackage.DOUBLE: return createDouble();
 			case ComponentModelPackage.STRING: return createString();
 			case ComponentModelPackage.PARAMETER: return createParameter();
+			case ComponentModelPackage.ASSEMBLY_VIEW_TYPE: return createAssemblyViewType();
+			case ComponentModelPackage.ENVIRONMENT_VIEW_TYPE: return createEnvironmentViewType();
+			case ComponentModelPackage.ALLOCATION_VIEW_TYPE: return createAllocationViewType();
+			case ComponentModelPackage.ASSEMBLY_VIEW_POINT: return createAssemblyViewPoint();
+			case ComponentModelPackage.DEPLOYMENT_VIEW_POINT: return createDeploymentViewPoint();
+			case ComponentModelPackage.REPOSITORY_VIEW_TYPE: return createRepositoryViewType();
 			case ComponentModelPackage.COMPLEX_TYPE: return createComplexType();
-			case ComponentModelPackage.CONCRETE_SYSTEM_INDEPENDENT_VIEW_POINT: return createConcreteSystemIndependentViewPoint();
-			case ComponentModelPackage.CONCRETE_DEPLOYMENT_VIEW_POINT: return createConcreteDeploymentViewPoint();
-			case ComponentModelPackage.CONCRETE_ASSEMBLY_VIEW_POINT: return createConcreteAssemblyViewPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SystemIndependentViewPoint createSystemIndependentViewPoint() {
+		SystemIndependentViewPointImpl systemIndependentViewPoint = new SystemIndependentViewPointImpl();
+		return systemIndependentViewPoint;
 	}
 
 	/**
@@ -248,6 +269,17 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * @generated
 	 */
 	@Override
+	public SimpleType createSimpleType() {
+		SimpleTypeImpl simpleType = new SimpleTypeImpl();
+		return simpleType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public componentModel.Boolean createBoolean() {
 		BooleanImpl boolean_ = new BooleanImpl();
 		return boolean_;
@@ -369,42 +401,75 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * @generated
 	 */
 	@Override
+	public AssemblyViewType createAssemblyViewType() {
+		AssemblyViewTypeImpl assemblyViewType = new AssemblyViewTypeImpl();
+		return assemblyViewType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnvironmentViewType createEnvironmentViewType() {
+		EnvironmentViewTypeImpl environmentViewType = new EnvironmentViewTypeImpl();
+		return environmentViewType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AllocationViewType createAllocationViewType() {
+		AllocationViewTypeImpl allocationViewType = new AllocationViewTypeImpl();
+		return allocationViewType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AssemblyViewPoint createAssemblyViewPoint() {
+		AssemblyViewPointImpl assemblyViewPoint = new AssemblyViewPointImpl();
+		return assemblyViewPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DeploymentViewPoint createDeploymentViewPoint() {
+		DeploymentViewPointImpl deploymentViewPoint = new DeploymentViewPointImpl();
+		return deploymentViewPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RepositoryViewType createRepositoryViewType() {
+		RepositoryViewTypeImpl repositoryViewType = new RepositoryViewTypeImpl();
+		return repositoryViewType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ComplexType createComplexType() {
 		ComplexTypeImpl complexType = new ComplexTypeImpl();
 		return complexType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ConcreteSystemIndependentViewPoint createConcreteSystemIndependentViewPoint() {
-		ConcreteSystemIndependentViewPointImpl concreteSystemIndependentViewPoint = new ConcreteSystemIndependentViewPointImpl();
-		return concreteSystemIndependentViewPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ConcreteDeploymentViewPoint createConcreteDeploymentViewPoint() {
-		ConcreteDeploymentViewPointImpl concreteDeploymentViewPoint = new ConcreteDeploymentViewPointImpl();
-		return concreteDeploymentViewPoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ConcreteAssemblyViewPoint createConcreteAssemblyViewPoint() {
-		ConcreteAssemblyViewPointImpl concreteAssemblyViewPoint = new ConcreteAssemblyViewPointImpl();
-		return concreteAssemblyViewPoint;
 	}
 
 	/**

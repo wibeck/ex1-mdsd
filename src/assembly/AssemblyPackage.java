@@ -793,31 +793,13 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT_ENVIRONMENT = 11;
 
 	/**
-	 * The feature id for the '<em><b>Systems</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_ENVIRONMENT__SYSTEMS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Composite Components</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Assembly Contexts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS = 2;
+	int CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Delegation Connectors</b></em>' containment reference list.
@@ -826,7 +808,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS = 3;
+	int CONTEXT_ENVIRONMENT__DELEGATION_CONNECTORS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -835,7 +817,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_ENVIRONMENT__ROLES = 4;
+	int CONTEXT_ENVIRONMENT__ROLES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -844,7 +826,16 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_ENVIRONMENT__NAME = 5;
+	int CONTEXT_ENVIRONMENT__NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_ENVIRONMENT__CONTEXTS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Context Environment</em>' class.
@@ -853,7 +844,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_ENVIRONMENT_FEATURE_COUNT = 6;
+	int CONTEXT_ENVIRONMENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Context Environment</em>' class.
@@ -1228,17 +1219,6 @@ public interface AssemblyPackage extends EPackage {
 	EClass getContextEnvironment();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link assembly.ContextEnvironment#getSystems <em>Systems</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Systems</em>'.
-	 * @see assembly.ContextEnvironment#getSystems()
-	 * @see #getContextEnvironment()
-	 * @generated
-	 */
-	EReference getContextEnvironment_Systems();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link assembly.ContextEnvironment#getCompositeComponents <em>Composite Components</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1248,17 +1228,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getContextEnvironment_CompositeComponents();
-
-	/**
-	 * Returns the meta object for the reference list '{@link assembly.ContextEnvironment#getAssemblyContexts <em>Assembly Contexts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Assembly Contexts</em>'.
-	 * @see assembly.ContextEnvironment#getAssemblyContexts()
-	 * @see #getContextEnvironment()
-	 * @generated
-	 */
-	EReference getContextEnvironment_AssemblyContexts();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link assembly.ContextEnvironment#getDelegationConnectors <em>Delegation Connectors</em>}'.
@@ -1292,6 +1261,17 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContextEnvironment_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link assembly.ContextEnvironment#getContexts <em>Contexts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Contexts</em>'.
+	 * @see assembly.ContextEnvironment#getContexts()
+	 * @see #getContextEnvironment()
+	 * @generated
+	 */
+	EReference getContextEnvironment_Contexts();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1613,28 +1593,12 @@ public interface AssemblyPackage extends EPackage {
 		EClass CONTEXT_ENVIRONMENT = eINSTANCE.getContextEnvironment();
 
 		/**
-		 * The meta object literal for the '<em><b>Systems</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTEXT_ENVIRONMENT__SYSTEMS = eINSTANCE.getContextEnvironment_Systems();
-
-		/**
 		 * The meta object literal for the '<em><b>Composite Components</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CONTEXT_ENVIRONMENT__COMPOSITE_COMPONENTS = eINSTANCE.getContextEnvironment_CompositeComponents();
-
-		/**
-		 * The meta object literal for the '<em><b>Assembly Contexts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTEXT_ENVIRONMENT__ASSEMBLY_CONTEXTS = eINSTANCE.getContextEnvironment_AssemblyContexts();
 
 		/**
 		 * The meta object literal for the '<em><b>Delegation Connectors</b></em>' containment reference list feature.
@@ -1659,6 +1623,14 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT_ENVIRONMENT__NAME = eINSTANCE.getContextEnvironment_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT_ENVIRONMENT__CONTEXTS = eINSTANCE.getContextEnvironment_Contexts();
 
 	}
 

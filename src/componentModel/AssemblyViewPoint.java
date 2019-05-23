@@ -10,8 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getAssemblyViewPoint()
- * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='assemlbyVPonlyHasAssemblyVT'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='assemlbyVPonlyHasAssemblyVT'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot assemlbyVPonlyHasAssemblyVT='self.viewTypes -&gt; forAll(vt | vt.oclIsKindOf(componentModel::AssemblyViewType))'"
  * @generated
  */

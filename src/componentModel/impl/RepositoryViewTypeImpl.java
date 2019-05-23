@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class RepositoryViewTypeImpl extends ViewTypeImpl implements RepositoryViewType {
+public class RepositoryViewTypeImpl extends ViewTypeImpl implements RepositoryViewType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
