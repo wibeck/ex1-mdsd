@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link root.RootClass#getViewPoints <em>View Points</em>}</li>
  *   <li>{@link root.RootClass#getContextEnvironments <em>Context Environments</em>}</li>
+ *   <li>{@link root.RootClass#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see root.RootPackage#getRootClass()
@@ -50,5 +51,27 @@ public interface RootClass extends EObject {
 	 * @generated
 	 */
 	EList<ContextEnvironment> getContextEnvironments();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see root.RootPackage#getRootClass_Name()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link root.RootClass#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // RootClass

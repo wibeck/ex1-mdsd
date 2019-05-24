@@ -2,6 +2,7 @@
  */
 package root;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -84,13 +85,22 @@ public interface RootPackage extends EPackage {
 	int ROOT_CLASS__CONTEXT_ENVIRONMENTS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOT_CLASS__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CLASS_FEATURE_COUNT = 2;
+	int ROOT_CLASS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Class</em>' class.
@@ -133,6 +143,17 @@ public interface RootPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRootClass_ContextEnvironments();
+
+	/**
+	 * Returns the meta object for the attribute '{@link root.RootClass#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see root.RootClass#getName()
+	 * @see #getRootClass()
+	 * @generated
+	 */
+	EAttribute getRootClass_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -182,6 +203,14 @@ public interface RootPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOT_CLASS__CONTEXT_ENVIRONMENTS = eINSTANCE.getRootClass_ContextEnvironments();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOT_CLASS__NAME = eINSTANCE.getRootClass_Name();
 
 	}
 

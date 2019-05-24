@@ -7,6 +7,7 @@ import assembly.ContextEnvironment;
 import componentModel.ViewPoint;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,6 +34,7 @@ import root.RootPackage;
  * <ul>
  *   <li>{@link root.impl.RootClassImpl#getViewPoints <em>View Points</em>}</li>
  *   <li>{@link root.impl.RootClassImpl#getContextEnvironments <em>Context Environments</em>}</li>
+ *   <li>{@link root.impl.RootClassImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,6 +59,26 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 	 * @ordered
 	 */
 	protected EList<ContextEnvironment> contextEnvironments;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +131,29 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RootPackage.ROOT_CLASS__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RootPackage.ROOT_CLASS__VIEW_POINTS:
@@ -130,6 +176,8 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				return getViewPoints();
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				return getContextEnvironments();
+			case RootPackage.ROOT_CLASS__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,6 +199,9 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				getContextEnvironments().clear();
 				getContextEnvironments().addAll((Collection<? extends ContextEnvironment>)newValue);
 				return;
+			case RootPackage.ROOT_CLASS__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,6 +220,9 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				getContextEnvironments().clear();
 				return;
+			case RootPackage.ROOT_CLASS__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -185,8 +239,26 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				return viewPoints != null && !viewPoints.isEmpty();
 			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
 				return contextEnvironments != null && !contextEnvironments.isEmpty();
+			case RootPackage.ROOT_CLASS__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //RootClassImpl
