@@ -32,7 +32,7 @@ public interface DelegationConnector extends EObject {
 	 * @return the value of the '<em>Inter Face</em>' reference.
 	 * @see #setInterFace(Interface)
 	 * @see assembly.AssemblyPackage#getDelegationConnector_InterFace()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	Interface getInterFace();
@@ -54,7 +54,7 @@ public interface DelegationConnector extends EObject {
 	 * @return the value of the '<em>Role</em>' reference.
 	 * @see #setRole(Role)
 	 * @see assembly.AssemblyPackage#getDelegationConnector_Role()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	Role getRole();

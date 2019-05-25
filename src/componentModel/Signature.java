@@ -54,7 +54,7 @@ public interface Signature extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getSignature_Parameters()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
@@ -66,7 +66,7 @@ public interface Signature extends EObject {
 	 * @return the value of the '<em>Return Type</em>' reference.
 	 * @see #setReturnType(Type)
 	 * @see componentModel.ComponentModelPackage#getSignature_ReturnType()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	Type getReturnType();

@@ -16,15 +16,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//RepositoryViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" ordered="false"
-        upperBound="-1" eType="#//Component" containment="true"/>
+        upperBound="-1" eType="#//Component" containment="true" eKeys="#//Component/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interFaces" ordered="false"
-        upperBound="-1" eType="#//Interface" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
-        eType="#//Signature" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="#//Service" containment="true"/>
+        upperBound="-1" eType="#//Interface" containment="true" eKeys="#//Interface/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" ordered="false"
+        upperBound="-1" eType="#//Signature" containment="true" eKeys="#//Signature/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
+        upperBound="-1" eType="#//Service" containment="true" eKeys="#//Service/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMapEntries"
-        upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"/>
+        ordered="false" upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"
+        eKeys="#//InterfaceServiceMapEntry/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -34,9 +35,11 @@
       <details key="servicesForEachSignatureOfProvidedInterfaces" value="self.interfaceServiceMap -> forAll(entry | entry.services -> &#xA;&#x9;&#x9;&#x9;collect(correspondence) -> intersection(entry.providedInterface.signatures) -> size() &#xA;&#x9;&#x9;&#x9;=  entry.providedInterface.signatures -> size())"/>
       <details key="requiredInterfacesResultFromServices" value="self. requiredInterfaces -> includesAll(self.interfaceServiceMap -> &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;collect(services) -> collect(requiredInterfaces) -> asSet()) "/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMap" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"/>
+        lowerBound="1" upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"
+        eKeys="#//InterfaceServiceMapEntry/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceEffectSpecification"
         lowerBound="1" eType="#//ServiceEffectSpecification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false"
@@ -46,7 +49,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
         eType="#//Interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Service"/>
+        lowerBound="1" upperBound="-1" eType="#//Service" eKeys="#//Service/name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceEffectSpecification">
@@ -76,7 +79,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Signature"/>
+        lowerBound="1" upperBound="-1" eType="#//Signature" eKeys="#//Signature/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewType" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -84,20 +87,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="Signature">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" ordered="false"
-        upperBound="-1" eType="#//Parameter" containment="true"/>
+        upperBound="-1" eType="#//Parameter" containment="true" eKeys="#//Parameter/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
         eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="correspondence" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Signature"/>
+        lowerBound="1" upperBound="-1" eType="#//Signature" eKeys="#//Signature/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false"
-        upperBound="-1" eType="#//Interface"/>
+        upperBound="-1" eType="#//Interface" eKeys="#//Interface/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewPoint" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="viewTypes" ordered="false"
-        upperBound="-1" eType="#//ViewType" containment="true"/>
+        upperBound="-1" eType="#//ViewType" containment="true" eKeys="#//ViewType/name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">

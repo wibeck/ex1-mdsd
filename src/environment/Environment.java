@@ -31,7 +31,7 @@ public interface Environment extends EnvironmentViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Container</em>' containment reference list.
 	 * @see environment.EnvironmentPackage#getEnvironment_Container()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Container> getContainer();
@@ -43,7 +43,7 @@ public interface Environment extends EnvironmentViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Link</em>' containment reference list.
 	 * @see environment.EnvironmentPackage#getEnvironment_Link()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Link> getLink();

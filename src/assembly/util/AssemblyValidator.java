@@ -156,8 +156,8 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateAssemblyContext_reqInterfacesFromRequiredRoles(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyContext_providedInterfacesFromProvidedRoles(assemblyContext, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyContext_onlyDelegationConnectorsIfComposite(assemblyContext, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyContext_providedRoleForProvidedInterfaceExists(assemblyContext, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyContext_requiredRoleForRequiredInterfaceExists(assemblyContext, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyContext_providedRoleForProvidedInterfaceExistsAndIsConnected(assemblyContext, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyContext_requiredRoleForRequiredInterfaceExistsAndIsConnected(assemblyContext, diagnostics, context);
 		return result;
 	}
 
@@ -250,22 +250,25 @@ public class AssemblyValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the providedRoleForProvidedInterfaceExists constraint of '<em>Context</em>'.
+	 * The cached validation expression for the providedRoleForProvidedInterfaceExistsAndIsConnected constraint of '<em>Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONTEXT__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS__EEXPRESSION = "if self.instantiates.oclIsKindOf(CompositeComponent) then \n" +
-		"\t\tself.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -> collect(providedRoles) \n" +
-		"\t\t-> forAll(role | self.providedInterfaces -> includes(role.interFace)) else true endif";
+	protected static final String ASSEMBLY_CONTEXT__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION = "\n" +
+		"\t\t\tif self.instantiates.oclIsKindOf(CompositeComponent) then \n" +
+		"\t\t\tself.providedInterfaces -> forAll(interFace | self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts \n" +
+		"\t\t\t\t-> collect(providedRoles) -> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | \n" +
+		"\t\t\t\t\tconnector.role = role and connector.interFace = interFace and connector.oclIsKindOf(assembly::ProvidedDelegationConnector)\n" +
+		"\t\t\t\t))) else true endif";
 
 	/**
-	 * Validates the providedRoleForProvidedInterfaceExists constraint of '<em>Context</em>'.
+	 * Validates the providedRoleForProvidedInterfaceExistsAndIsConnected constraint of '<em>Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssemblyContext_providedRoleForProvidedInterfaceExists(AssemblyContext assemblyContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAssemblyContext_providedRoleForProvidedInterfaceExistsAndIsConnected(AssemblyContext assemblyContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(AssemblyPackage.Literals.ASSEMBLY_CONTEXT,
@@ -273,30 +276,32 @@ public class AssemblyValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "providedRoleForProvidedInterfaceExists",
-				 ASSEMBLY_CONTEXT__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS__EEXPRESSION,
+				 "providedRoleForProvidedInterfaceExistsAndIsConnected",
+				 ASSEMBLY_CONTEXT__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the requiredRoleForRequiredInterfaceExists constraint of '<em>Context</em>'.
+	 * The cached validation expression for the requiredRoleForRequiredInterfaceExistsAndIsConnected constraint of '<em>Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONTEXT__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS__EEXPRESSION = "if self.instantiates.oclIsKindOf(CompositeComponent) then \n" +
-		"\t\tself.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -> collect(requiredRoles) \n" +
-		"\t\t-> forAll(role | self.requiredInterfaces -> includes(role.interFace)) else true endif";
+	protected static final String ASSEMBLY_CONTEXT__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION = "if self.instantiates.oclIsKindOf(CompositeComponent) then \n" +
+		"\t\tself.requiredInterfaces -> forAll(interFace | self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts \n" +
+		"\t\t\t\t-> collect(requiredRoles) -> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | \n" +
+		"\t\t\t\t\tconnector.role = role and connector.interFace = interFace and connector.oclIsKindOf(assembly::RequiredDelegationConnector)\n" +
+		"\t\t\t\t))) else true endif";
 
 	/**
-	 * Validates the requiredRoleForRequiredInterfaceExists constraint of '<em>Context</em>'.
+	 * Validates the requiredRoleForRequiredInterfaceExistsAndIsConnected constraint of '<em>Context</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssemblyContext_requiredRoleForRequiredInterfaceExists(AssemblyContext assemblyContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAssemblyContext_requiredRoleForRequiredInterfaceExistsAndIsConnected(AssemblyContext assemblyContext, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(AssemblyPackage.Literals.ASSEMBLY_CONTEXT,
@@ -304,8 +309,8 @@ public class AssemblyValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "requiredRoleForRequiredInterfaceExists",
-				 ASSEMBLY_CONTEXT__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS__EEXPRESSION,
+				 "requiredRoleForRequiredInterfaceExistsAndIsConnected",
+				 ASSEMBLY_CONTEXT__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -665,27 +670,29 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(system, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(system, diagnostics, context);
 		if (result || diagnostics != null) result &= validateContext_contextIsPartOfOutwardAssemblyConnectors(system, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSystem_providedRoleForProvidedInterfaceExists(system, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSystem_requiredRoleForRequiredInterfaceExists(system, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSystem_providedRoleForProvidedInterfaceExistsAndIsConnected(system, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSystem_requiredRoleForRequiredInterfaceExistsAndIsConnected(system, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the providedRoleForProvidedInterfaceExists constraint of '<em>System</em>'.
+	 * The cached validation expression for the providedRoleForProvidedInterfaceExistsAndIsConnected constraint of '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYSTEM__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS__EEXPRESSION = "\n" +
-		"\t\tself.encapsulatedAssemblyContexts -> collect(providedRoles) -> forAll(role | providedInterfaces -> includes(role.interFace))";
+	protected static final String SYSTEM__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION = "\n" +
+		"\t\tself.providedInterfaces -> forAll(interFace | self.encapsulatedAssemblyContexts -> collect(providedRoles) \n" +
+		"\t\t\t-> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | connector.role = role \n" +
+		"\t\t\t\tand connector.interFace = interFace and connector.oclIsKindOf(assembly::ProvidedDelegationConnector)) ))";
 
 	/**
-	 * Validates the providedRoleForProvidedInterfaceExists constraint of '<em>System</em>'.
+	 * Validates the providedRoleForProvidedInterfaceExistsAndIsConnected constraint of '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSystem_providedRoleForProvidedInterfaceExists(assembly.System system, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSystem_providedRoleForProvidedInterfaceExistsAndIsConnected(assembly.System system, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(AssemblyPackage.Literals.SYSTEM,
@@ -693,29 +700,31 @@ public class AssemblyValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "providedRoleForProvidedInterfaceExists",
-				 SYSTEM__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS__EEXPRESSION,
+				 "providedRoleForProvidedInterfaceExistsAndIsConnected",
+				 SYSTEM__PROVIDED_ROLE_FOR_PROVIDED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the requiredRoleForRequiredInterfaceExists constraint of '<em>System</em>'.
+	 * The cached validation expression for the requiredRoleForRequiredInterfaceExistsAndIsConnected constraint of '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYSTEM__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS__EEXPRESSION = "\n" +
-		"\t\tself.encapsulatedAssemblyContexts -> collect(requiredRoles) -> forAll(role | requiredInterfaces -> includes(role.interFace))";
+	protected static final String SYSTEM__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION = "\n" +
+		"\t\tself.requiredInterfaces -> forAll(interFace | self.encapsulatedAssemblyContexts -> collect(requiredRoles) \n" +
+		"\t\t\t-> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | connector.role = role \n" +
+		"\t\t\t\tand connector.interFace = interFace and connector.oclIsKindOf(assembly::RequiredDelegationConnector)) ))";
 
 	/**
-	 * Validates the requiredRoleForRequiredInterfaceExists constraint of '<em>System</em>'.
+	 * Validates the requiredRoleForRequiredInterfaceExistsAndIsConnected constraint of '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSystem_requiredRoleForRequiredInterfaceExists(assembly.System system, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSystem_requiredRoleForRequiredInterfaceExistsAndIsConnected(assembly.System system, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(AssemblyPackage.Literals.SYSTEM,
@@ -723,8 +732,8 @@ public class AssemblyValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "requiredRoleForRequiredInterfaceExists",
-				 SYSTEM__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS__EEXPRESSION,
+				 "requiredRoleForRequiredInterfaceExistsAndIsConnected",
+				 SYSTEM__REQUIRED_ROLE_FOR_REQUIRED_INTERFACE_EXISTS_AND_IS_CONNECTED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -746,6 +755,7 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(compositeComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(compositeComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentModelValidator.validateComponent_servicesForEachSignatureOfProvidedInterfaces(compositeComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentModelValidator.validateComponent_requiredInterfacesResultFromServices(compositeComponent, diagnostics, context);
 		return result;
 	}
 

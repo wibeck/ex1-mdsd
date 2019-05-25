@@ -38,7 +38,7 @@ public interface Context extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Interfaces</em>' reference list.
 	 * @see assembly.AssemblyPackage#getContext_RequiredInterfaces()
-	 * @model ordered="false"
+	 * @model keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Interface> getRequiredInterfaces();
@@ -50,7 +50,7 @@ public interface Context extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delegation Connectors</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContext_DelegationConnectors()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<DelegationConnector> getDelegationConnectors();
@@ -62,7 +62,7 @@ public interface Context extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nested Assembly Connectors</em>' reference list.
 	 * @see assembly.AssemblyPackage#getContext_NestedAssemblyConnectors()
-	 * @model ordered="false"
+	 * @model keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<AssemblyConnector> getNestedAssemblyConnectors();
@@ -74,7 +74,7 @@ public interface Context extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outward Assembly Connectors</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContext_OutwardAssemblyConnectors()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<AssemblyConnector> getOutwardAssemblyConnectors();
@@ -86,7 +86,7 @@ public interface Context extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provided Interfaces</em>' reference list.
 	 * @see assembly.AssemblyPackage#getContext_ProvidedInterfaces()
-	 * @model required="true" ordered="false"
+	 * @model keys="name" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Interface> getProvidedInterfaces();

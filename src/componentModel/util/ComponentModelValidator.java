@@ -216,6 +216,7 @@ public class ComponentModelValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_servicesForEachSignatureOfProvidedInterfaces(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_requiredInterfacesResultFromServices(component, diagnostics, context);
 		return result;
 	}
 
@@ -245,6 +246,36 @@ public class ComponentModelValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "servicesForEachSignatureOfProvidedInterfaces",
 				 COMPONENT__SERVICES_FOR_EACH_SIGNATURE_OF_PROVIDED_INTERFACES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the requiredInterfacesResultFromServices constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT__REQUIRED_INTERFACES_RESULT_FROM_SERVICES__EEXPRESSION = "self. requiredInterfaces -> includesAll(self.interfaceServiceMap -> \n" +
+		"\t\t\t\t\t\t\t\t\t\t\t\t\t\tcollect(services) -> collect(requiredInterfaces) -> asSet()) ";
+
+	/**
+	 * Validates the requiredInterfacesResultFromServices constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponent_requiredInterfacesResultFromServices(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentModelPackage.Literals.COMPONENT,
+				 component,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "requiredInterfacesResultFromServices",
+				 COMPONENT__REQUIRED_INTERFACES_RESULT_FROM_SERVICES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -383,7 +414,7 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PARAMETER__VOID_NOT_PARAMETER_TYPE__EEXPRESSION = "self.parameterType <> CBSDataType::VOID ";
+	protected static final String PARAMETER__VOID_NOT_PARAMETER_TYPE__EEXPRESSION = "self.parameterType.typeName <> CBSDataType::VOID ";
 
 	/**
 	 * Validates the VoidNotParameterType constraint of '<em>Parameter</em>'.

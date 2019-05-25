@@ -36,7 +36,7 @@ public interface RootClass extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View Points</em>' containment reference list.
 	 * @see root.RootPackage#getRootClass_ViewPoints()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" keys="name" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<ViewPoint> getViewPoints();
@@ -48,7 +48,7 @@ public interface RootClass extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Context Environments</em>' containment reference list.
 	 * @see root.RootPackage#getRootClass_ContextEnvironments()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<ContextEnvironment> getContextEnvironments();

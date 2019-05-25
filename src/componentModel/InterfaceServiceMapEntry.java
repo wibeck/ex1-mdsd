@@ -54,7 +54,7 @@ public interface InterfaceServiceMapEntry extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Services</em>' reference list.
 	 * @see componentModel.ComponentModelPackage#getInterfaceServiceMapEntry_Services()
-	 * @model required="true" ordered="false"
+	 * @model keys="name" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Service> getServices();

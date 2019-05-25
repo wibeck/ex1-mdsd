@@ -30,7 +30,7 @@ public interface Type extends EObject {
 	 * @see componentModel.CBSDataType
 	 * @see #setTypeName(CBSDataType)
 	 * @see componentModel.ComponentModelPackage#getType_TypeName()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	CBSDataType getTypeName();

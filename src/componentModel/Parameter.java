@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see componentModel.ComponentModelPackage#getParameter()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='VoidNotParameterType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot VoidNotParameterType='self.parameterType &lt;&gt; CBSDataType::VOID '"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot VoidNotParameterType='self.parameterType.typeName &lt;&gt; CBSDataType::VOID '"
  * @generated
  */
 public interface Parameter extends EObject {
@@ -52,7 +52,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Parameter Type</em>' reference.
 	 * @see #setParameterType(Type)
 	 * @see componentModel.ComponentModelPackage#getParameter_ParameterType()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	Type getParameterType();

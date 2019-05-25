@@ -34,7 +34,7 @@ public interface ContextEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Composite Components</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContextEnvironment_CompositeComponents()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<CompositeComponent> getCompositeComponents();
@@ -46,7 +46,7 @@ public interface ContextEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delegation Connectors</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContextEnvironment_DelegationConnectors()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<DelegationConnector> getDelegationConnectors();
@@ -58,7 +58,7 @@ public interface ContextEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContextEnvironment_Roles()
-	 * @model containment="true"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getRoles();
@@ -92,7 +92,7 @@ public interface ContextEnvironment extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contexts</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContextEnvironment_Contexts()
-	 * @model containment="true"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Context> getContexts();

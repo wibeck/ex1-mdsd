@@ -31,7 +31,7 @@ public interface ViewPoint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>View Types</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getViewPoint_ViewTypes()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<ViewType> getViewTypes();

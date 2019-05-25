@@ -30,7 +30,7 @@ public interface CompositeComponent extends Component {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Encapsulated Assembly Contexts</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getCompositeComponent_EncapsulatedAssemblyContexts()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<AssemblyContext> getEncapsulatedAssemblyContexts();

@@ -12,9 +12,9 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="componentModel.ecore#//EnvironmentViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false"
-        upperBound="-1" eType="#//Container" containment="true"/>
+        upperBound="-1" eType="#//Container" containment="true" eKeys="#//Container/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" ordered="false" upperBound="-1"
-        eType="#//Link" containment="true"/>
+        eType="#//Link" containment="true" eKeys="#//Link/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -26,13 +26,14 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" ordered="false"
-        upperBound="-1" eType="#//AllocationContext" containment="true" eOpposite="#//AllocationContext/container"/>
+        upperBound="-1" eType="#//AllocationContext" containment="true" eOpposite="#//AllocationContext/container"
+        eKeys="componentModel.ecore#//ViewType/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outwardLinks" ordered="false"
-        upperBound="-1" eType="#//Link"/>
+        upperBound="-1" eType="#//Link" eKeys="#//Link/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link">
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" ordered="false"
-        lowerBound="2" upperBound="-1" eType="#//Container"/>
+        lowerBound="2" upperBound="-1" eType="#//Container" eKeys="#//Container/name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="componentModel.ecore#//AllocationViewType">

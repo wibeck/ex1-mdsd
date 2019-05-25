@@ -4,9 +4,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="RootClass">
     <eStructuralFeatures xsi:type="ecore:EReference" name="viewPoints" ordered="false"
         lowerBound="1" upperBound="-1" eType="ecore:EClass componentModel.ecore#//ViewPoint"
-        containment="true"/>
+        containment="true" eKeys="componentModel.ecore#//ViewPoint/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextEnvironments" ordered="false"
-        upperBound="-1" eType="ecore:EClass assembly.ecore#//ContextEnvironment" containment="true"/>
+        upperBound="-1" eType="ecore:EClass assembly.ecore#//ContextEnvironment" containment="true"
+        eKeys="assembly.ecore#//ContextEnvironment/name"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

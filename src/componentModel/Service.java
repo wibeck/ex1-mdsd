@@ -54,7 +54,7 @@ public interface Service extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Correspondence</em>' reference list.
 	 * @see componentModel.ComponentModelPackage#getService_Correspondence()
-	 * @model required="true" ordered="false"
+	 * @model keys="name" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Signature> getCorrespondence();
@@ -66,7 +66,7 @@ public interface Service extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Interfaces</em>' reference list.
 	 * @see componentModel.ComponentModelPackage#getService_RequiredInterfaces()
-	 * @model ordered="false"
+	 * @model keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Interface> getRequiredInterfaces();

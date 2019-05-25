@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getComponent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='servicesForEachSignatureOfProvidedInterfaces'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot servicesForEachSignatureOfProvidedInterfaces='self.interfaceServiceMap -&gt; forAll(entry | entry.services -&gt; \n\t\t\tcollect(correspondence) -&gt; intersection(entry.providedInterface.signatures) -&gt; size() \n\t\t\t=  entry.providedInterface.signatures -&gt; size())'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='servicesForEachSignatureOfProvidedInterfaces requiredInterfacesResultFromServices'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot servicesForEachSignatureOfProvidedInterfaces='self.interfaceServiceMap -&gt; forAll(entry | entry.services -&gt; \n\t\t\tcollect(correspondence) -&gt; intersection(entry.providedInterface.signatures) -&gt; size() \n\t\t\t=  entry.providedInterface.signatures -&gt; size())' requiredInterfacesResultFromServices='self. requiredInterfaces -&gt; includesAll(self.interfaceServiceMap -&gt; \n\t\t\t\t\t\t\t\t\t\t\t\t\t\tcollect(services) -&gt; collect(requiredInterfaces) -&gt; asSet()) '"
  * @generated
  */
 public interface Component extends EObject {
@@ -56,7 +56,7 @@ public interface Component extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Service Map</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getComponent_InterfaceServiceMap()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" keys="name" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<InterfaceServiceMapEntry> getInterfaceServiceMap();
@@ -68,7 +68,7 @@ public interface Component extends EObject {
 	 * @return the value of the '<em>Service Effect Specification</em>' containment reference.
 	 * @see #setServiceEffectSpecification(ServiceEffectSpecification)
 	 * @see componentModel.ComponentModelPackage#getComponent_ServiceEffectSpecification()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ServiceEffectSpecification getServiceEffectSpecification();

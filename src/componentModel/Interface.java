@@ -53,7 +53,7 @@ public interface Interface extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Signatures</em>' reference list.
 	 * @see componentModel.ComponentModelPackage#getInterface_Signatures()
-	 * @model required="true" ordered="false"
+	 * @model keys="name" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Signature> getSignatures();

@@ -32,7 +32,7 @@ public interface Repository extends RepositoryViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Components</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getRepository_Components()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Component> getComponents();
@@ -44,7 +44,7 @@ public interface Repository extends RepositoryViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inter Faces</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getRepository_InterFaces()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Interface> getInterFaces();
@@ -56,7 +56,7 @@ public interface Repository extends RepositoryViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Signatures</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getRepository_Signatures()
-	 * @model containment="true"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Signature> getSignatures();
@@ -68,7 +68,7 @@ public interface Repository extends RepositoryViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Services</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getRepository_Services()
-	 * @model containment="true"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<Service> getServices();
@@ -80,7 +80,7 @@ public interface Repository extends RepositoryViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interface Service Map Entries</em>' containment reference list.
 	 * @see componentModel.ComponentModelPackage#getRepository_InterfaceServiceMapEntries()
-	 * @model containment="true"
+	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
 	EList<InterfaceServiceMapEntry> getInterfaceServiceMapEntries();

@@ -31,7 +31,7 @@ public interface Link extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Container</em>' reference list.
 	 * @see environment.EnvironmentPackage#getLink_Container()
-	 * @model lower="2" ordered="false"
+	 * @model keys="name" lower="2" ordered="false"
 	 * @generated
 	 */
 	EList<Container> getContainer();
