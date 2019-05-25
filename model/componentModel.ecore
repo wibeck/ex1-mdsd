@@ -28,17 +28,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="servicesForEachSignatureOfProvidedInterfaces"/>
+      <details key="constraints" value="servicesForEachSignatureOfProvidedInterfaces requiredInterfacesResultFromServices"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="servicesForEachSignatureOfProvidedInterfaces" value="self.interfaceServiceMap -> forAll(entry | entry.services -> &#xA;&#x9;&#x9;&#x9;collect(correspondence) -> intersection(entry.providedInterface.signatures) -> size() &#xA;&#x9;&#x9;&#x9;=  entry.providedInterface.signatures -> size())"/>
+      <details key="requiredInterfacesResultFromServices" value="self. requiredInterfaces -> includesAll(self.interfaceServiceMap -> &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;collect(services) -> collect(requiredInterfaces) -> asSet()) "/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMap" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceEffectSpecification"
-        ordered="false" lowerBound="1" eType="#//ServiceEffectSpecification" containment="true"/>
+        lowerBound="1" eType="#//ServiceEffectSpecification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false"
         upperBound="-1" eType="#//Interface" eKeys="#//Interface/name"/>
   </eClassifiers>
@@ -59,8 +59,7 @@
         eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
@@ -86,8 +85,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" ordered="false"
         upperBound="-1" eType="#//Parameter" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" ordered="false"
-        lowerBound="1" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
+        eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -106,11 +105,11 @@
       <details key="constraints" value="VoidNotParameterType"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="VoidNotParameterType" value="self.parameterType &lt;> CBSDataType::VOID "/>
+      <details key="VoidNotParameterType" value="self.parameterType.typeName &lt;> CBSDataType::VOID "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterType" ordered="false"
-        lowerBound="1" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterType" lowerBound="1"
+        eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyViewType" abstract="true" eSuperTypes="#//ViewType"/>
   <eClassifiers xsi:type="ecore:EClass" name="EnvironmentViewType" abstract="true"
@@ -150,8 +149,8 @@
     <eLiterals name="COMPLEX_TYPE" value="11" literal=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" ordered="false"
-        lowerBound="1" eType="#//CBSDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" lowerBound="1"
+        eType="#//CBSDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleType" eSuperTypes="#//Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexType" eSuperTypes="#//Type"/>

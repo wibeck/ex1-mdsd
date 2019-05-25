@@ -11,14 +11,14 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context componentModel.ecore#//AssemblyViewType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="reqInterfacesFromRequiredRoles providedInterfacesFromProvidedRoles onlyDelegationConnectorsIfComposite providedRoleForProvidedInterfaceExists requiredRoleForRequiredInterfaceExists"/>
+      <details key="constraints" value="reqInterfacesFromRequiredRoles providedInterfacesFromProvidedRoles onlyDelegationConnectorsIfComposite providedRoleForProvidedInterfaceExistsAndIsConnected requiredRoleForRequiredInterfaceExistsAndIsConnected"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="reqInterfacesFromRequiredRoles" value="self.requiredInterfaces = self.requiredRoles -> collect(interFace)"/>
       <details key="providedInterfacesFromProvidedRoles" value="self.providedInterfaces = self.providedRoles -> collect(interFace)"/>
       <details key="onlyDelegationConnectorsIfComposite" value="if self.instantiates.oclIsKindOf(CompositeComponent) &#xA;&#x9;&#x9;then self.delegationConnectors -> size() > 0 else self.delegationConnectors -> size() = 0 endif"/>
-      <details key="providedRoleForProvidedInterfaceExists" value="if self.instantiates.oclIsKindOf(CompositeComponent) then &#xA;&#x9;&#x9;self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -> collect(providedRoles) &#xA;&#x9;&#x9;-> forAll(role | self.providedInterfaces -> includes(role.interFace)) else true endif"/>
-      <details key="requiredRoleForRequiredInterfaceExists" value="if self.instantiates.oclIsKindOf(CompositeComponent) then &#xA;&#x9;&#x9;self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts -> collect(requiredRoles) &#xA;&#x9;&#x9;-> forAll(role | self.requiredInterfaces -> includes(role.interFace)) else true endif"/>
+      <details key="providedRoleForProvidedInterfaceExistsAndIsConnected" value="&#xA;&#x9;&#x9;&#x9;if self.instantiates.oclIsKindOf(CompositeComponent) then &#xA;&#x9;&#x9;&#x9;self.providedInterfaces -> forAll(interFace | self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts &#xA;&#x9;&#x9;&#x9;&#x9;-> collect(providedRoles) -> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.role = role and connector.interFace = interFace and connector.oclIsKindOf(assembly::ProvidedDelegationConnector)&#xA;&#x9;&#x9;&#x9;&#x9;))) else true endif"/>
+      <details key="requiredRoleForRequiredInterfaceExistsAndIsConnected" value="if self.instantiates.oclIsKindOf(CompositeComponent) then &#xA;&#x9;&#x9;self.requiredInterfaces -> forAll(interFace | self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts &#xA;&#x9;&#x9;&#x9;&#x9;-> collect(requiredRoles) -> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.role = role and connector.interFace = interFace and connector.oclIsKindOf(assembly::RequiredDelegationConnector)&#xA;&#x9;&#x9;&#x9;&#x9;))) else true endif"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" ordered="false"
         lowerBound="1" eType="ecore:EClass componentModel.ecore#//Component"/>
@@ -26,7 +26,8 @@
         upperBound="-1" eType="#//RequiredRole" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//ProvidedRole" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="#//CompositeComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" ordered="false"
+        eType="#//CompositeComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -99,19 +100,18 @@
         lowerBound="1" upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interFace" ordered="false"
-        lowerBound="1" eType="ecore:EClass componentModel.ecore#//Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="role" ordered="false" lowerBound="1"
-        eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interFace" lowerBound="1"
+        eType="ecore:EClass componentModel.ecore#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Context">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="providedRoleForProvidedInterfaceExists requiredRoleForRequiredInterfaceExists"/>
+      <details key="constraints" value="providedRoleForProvidedInterfaceExistsAndIsConnected requiredRoleForRequiredInterfaceExistsAndIsConnected"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="providedRoleForProvidedInterfaceExists" value="&#xA;&#x9;&#x9;self.encapsulatedAssemblyContexts -> collect(providedRoles) -> forAll(role | providedInterfaces -> includes(role.interFace))"/>
-      <details key="requiredRoleForRequiredInterfaceExists" value="&#xA;&#x9;&#x9;self.encapsulatedAssemblyContexts -> collect(requiredRoles) -> forAll(role | requiredInterfaces -> includes(role.interFace))"/>
+      <details key="providedRoleForProvidedInterfaceExistsAndIsConnected" value="&#xA;&#x9;&#x9;self.providedInterfaces -> forAll(interFace | self.encapsulatedAssemblyContexts -> collect(providedRoles) &#xA;&#x9;&#x9;&#x9;-> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | connector.role = role &#xA;&#x9;&#x9;&#x9;&#x9;and connector.interFace = interFace and connector.oclIsKindOf(assembly::ProvidedDelegationConnector)) ))"/>
+      <details key="requiredRoleForRequiredInterfaceExistsAndIsConnected" value="&#xA;&#x9;&#x9;self.requiredInterfaces -> forAll(interFace | self.encapsulatedAssemblyContexts -> collect(requiredRoles) &#xA;&#x9;&#x9;&#x9;-> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | connector.role = role &#xA;&#x9;&#x9;&#x9;&#x9;and connector.interFace = interFace and connector.oclIsKindOf(assembly::RequiredDelegationConnector)) ))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedAssemblyContexts"
         ordered="false" upperBound="-1" eType="#//AssemblyContext"/>
