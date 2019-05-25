@@ -2,8 +2,6 @@
  */
 package componentModel;
 
-import java.lang.String;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -30,7 +28,7 @@ public interface Action extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see componentModel.ComponentModelPackage#getAction_Name()
-	 * @model
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getName();

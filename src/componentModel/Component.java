@@ -2,8 +2,6 @@
  */
 package componentModel;
 
-import java.lang.String;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -20,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link componentModel.Component#getName <em>Name</em>}</li>
  *   <li>{@link componentModel.Component#getInterfaceServiceMap <em>Interface Service Map</em>}</li>
  *   <li>{@link componentModel.Component#getServiceEffectSpecification <em>Service Effect Specification</em>}</li>
+ *   <li>{@link componentModel.Component#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getComponent()
@@ -35,7 +34,7 @@ public interface Component extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see componentModel.ComponentModelPackage#getComponent_Name()
-	 * @model
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getName();
@@ -69,7 +68,7 @@ public interface Component extends EObject {
 	 * @return the value of the '<em>Service Effect Specification</em>' containment reference.
 	 * @see #setServiceEffectSpecification(ServiceEffectSpecification)
 	 * @see componentModel.ComponentModelPackage#getComponent_ServiceEffectSpecification()
-	 * @model containment="true" required="true"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	ServiceEffectSpecification getServiceEffectSpecification();
@@ -83,5 +82,17 @@ public interface Component extends EObject {
 	 * @generated
 	 */
 	void setServiceEffectSpecification(ServiceEffectSpecification value);
+
+	/**
+	 * Returns the value of the '<em><b>Required Interfaces</b></em>' reference list.
+	 * The list contents are of type {@link componentModel.Interface}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Required Interfaces</em>' reference list.
+	 * @see componentModel.ComponentModelPackage#getComponent_RequiredInterfaces()
+	 * @model keys="name" ordered="false"
+	 * @generated
+	 */
+	EList<Interface> getRequiredInterfaces();
 
 } // Component

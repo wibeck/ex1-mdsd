@@ -6,8 +6,6 @@ import componentModel.Action;
 import componentModel.ComponentModelPackage;
 import componentModel.ServiceEffectSpecification;
 
-import java.lang.String;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

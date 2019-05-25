@@ -54,7 +54,7 @@ public interface Role extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see assembly.AssemblyPackage#getRole_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -76,7 +76,7 @@ public interface Role extends EObject {
 	 * @return the value of the '<em>Inter Face</em>' reference.
 	 * @see #setInterFace(Interface)
 	 * @see assembly.AssemblyPackage#getRole_InterFace()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Interface getInterFace();

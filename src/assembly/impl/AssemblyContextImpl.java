@@ -11,7 +11,6 @@ import assembly.RequiredRole;
 import componentModel.AssemblyViewType;
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
-import componentModel.Interface;
 import componentModel.ViewType;
 
 import java.util.Collection;
@@ -27,7 +26,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -43,7 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link assembly.impl.AssemblyContextImpl#getRequiredRoles <em>Required Roles</em>}</li>
  *   <li>{@link assembly.impl.AssemblyContextImpl#getProvidedRoles <em>Provided Roles</em>}</li>
  *   <li>{@link assembly.impl.AssemblyContextImpl#getOwnerComponent <em>Owner Component</em>}</li>
- *   <li>{@link assembly.impl.AssemblyContextImpl#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,16 +105,6 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	 * @ordered
 	 */
 	protected CompositeComponent ownerComponent;
-
-	/**
-	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProvidedInterfaces()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Interface> providedInterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,19 +260,6 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 	 * @generated
 	 */
 	@Override
-	public EList<Interface> getProvidedInterfaces() {
-		if (providedInterfaces == null) {
-			providedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_INTERFACES);
-		}
-		return providedInterfaces;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES:
@@ -316,8 +290,6 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 			case AssemblyPackage.ASSEMBLY_CONTEXT__OWNER_COMPONENT:
 				if (resolve) return getOwnerComponent();
 				return basicGetOwnerComponent();
-			case AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_INTERFACES:
-				return getProvidedInterfaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -348,10 +320,6 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 			case AssemblyPackage.ASSEMBLY_CONTEXT__OWNER_COMPONENT:
 				setOwnerComponent((CompositeComponent)newValue);
 				return;
-			case AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_INTERFACES:
-				getProvidedInterfaces().clear();
-				getProvidedInterfaces().addAll((Collection<? extends Interface>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -379,9 +347,6 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 			case AssemblyPackage.ASSEMBLY_CONTEXT__OWNER_COMPONENT:
 				setOwnerComponent((CompositeComponent)null);
 				return;
-			case AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_INTERFACES:
-				getProvidedInterfaces().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -404,8 +369,6 @@ public class AssemblyContextImpl extends ContextImpl implements AssemblyContext 
 				return providedRoles != null && !providedRoles.isEmpty();
 			case AssemblyPackage.ASSEMBLY_CONTEXT__OWNER_COMPONENT:
 				return ownerComponent != null;
-			case AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_INTERFACES:
-				return providedInterfaces != null && !providedInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

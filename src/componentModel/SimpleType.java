@@ -10,7 +10,7 @@ package componentModel;
  *
  *
  * @see componentModel.ComponentModelPackage#getSimpleType()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface SimpleType extends Type {

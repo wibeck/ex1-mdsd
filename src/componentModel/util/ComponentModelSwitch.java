@@ -2,37 +2,7 @@
  */
 package componentModel.util;
 
-import componentModel.Action;
-import componentModel.AllocationViewType;
-import componentModel.AssemblyViewPoint;
-import componentModel.AssemblyViewType;
-import componentModel.Branch;
-import componentModel.Char;
-import componentModel.ComplexType;
-import componentModel.Component;
-import componentModel.ComponentModelPackage;
-import componentModel.Date;
-import componentModel.DeploymentViewPoint;
-import componentModel.EnvironmentViewType;
-import componentModel.ExternalCall;
-import componentModel.Int;
-import componentModel.Interface;
-import componentModel.InterfaceServiceMapEntry;
-import componentModel.InternalAction;
-import componentModel.List;
-import componentModel.Loop;
-import componentModel.Map;
-import componentModel.Parameter;
-import componentModel.Repository;
-import componentModel.RepositoryViewType;
-import componentModel.Service;
-import componentModel.ServiceEffectSpecification;
-import componentModel.Signature;
-import componentModel.SimpleType;
-import componentModel.SystemIndependentViewPoint;
-import componentModel.Type;
-import componentModel.ViewPoint;
-import componentModel.ViewType;
+import componentModel.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -181,12 +151,6 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentModelPackage.TYPE: {
-				Type type = (Type)theEObject;
-				T result = caseType(type);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ComponentModelPackage.SERVICE: {
 				Service service = (Service)theEObject;
 				T result = caseService(service);
@@ -196,100 +160,6 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 			case ComponentModelPackage.VIEW_POINT: {
 				ViewPoint viewPoint = (ViewPoint)theEObject;
 				T result = caseViewPoint(viewPoint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.VOID: {
-				componentModel.Void void_ = (componentModel.Void)theEObject;
-				T result = caseVoid(void_);
-				if (result == null) result = caseType(void_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.SIMPLE_TYPE: {
-				SimpleType simpleType = (SimpleType)theEObject;
-				T result = caseSimpleType(simpleType);
-				if (result == null) result = caseType(simpleType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.BOOLEAN: {
-				componentModel.Boolean boolean_ = (componentModel.Boolean)theEObject;
-				T result = caseBoolean(boolean_);
-				if (result == null) result = caseSimpleType(boolean_);
-				if (result == null) result = caseType(boolean_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.INT: {
-				Int int_ = (Int)theEObject;
-				T result = caseInt(int_);
-				if (result == null) result = caseSimpleType(int_);
-				if (result == null) result = caseType(int_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.CHAR: {
-				Char char_ = (Char)theEObject;
-				T result = caseChar(char_);
-				if (result == null) result = caseSimpleType(char_);
-				if (result == null) result = caseType(char_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.DATE: {
-				Date date = (Date)theEObject;
-				T result = caseDate(date);
-				if (result == null) result = caseSimpleType(date);
-				if (result == null) result = caseType(date);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.LIST: {
-				List list = (List)theEObject;
-				T result = caseList(list);
-				if (result == null) result = caseSimpleType(list);
-				if (result == null) result = caseType(list);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.MAP: {
-				Map map = (Map)theEObject;
-				T result = caseMap(map);
-				if (result == null) result = caseSimpleType(map);
-				if (result == null) result = caseType(map);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.FLOAT: {
-				componentModel.Float float_ = (componentModel.Float)theEObject;
-				T result = caseFloat(float_);
-				if (result == null) result = caseSimpleType(float_);
-				if (result == null) result = caseType(float_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.LONG: {
-				componentModel.Long long_ = (componentModel.Long)theEObject;
-				T result = caseLong(long_);
-				if (result == null) result = caseSimpleType(long_);
-				if (result == null) result = caseType(long_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.DOUBLE: {
-				componentModel.Double double_ = (componentModel.Double)theEObject;
-				T result = caseDouble(double_);
-				if (result == null) result = caseSimpleType(double_);
-				if (result == null) result = caseType(double_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentModelPackage.STRING: {
-				componentModel.String string = (componentModel.String)theEObject;
-				T result = caseString(string);
-				if (result == null) result = caseSimpleType(string);
-				if (result == null) result = caseType(string);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -338,6 +208,19 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 				RepositoryViewType repositoryViewType = (RepositoryViewType)theEObject;
 				T result = caseRepositoryViewType(repositoryViewType);
 				if (result == null) result = caseViewType(repositoryViewType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentModelPackage.TYPE: {
+				Type type = (Type)theEObject;
+				T result = caseType(type);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentModelPackage.SIMPLE_TYPE: {
+				SimpleType simpleType = (SimpleType)theEObject;
+				T result = caseSimpleType(simpleType);
+				if (result == null) result = caseType(simpleType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -548,21 +431,6 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseType(Type object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -589,186 +457,6 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseViewPoint(ViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Void</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Void</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVoid(componentModel.Void object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Simple Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Simple Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSimpleType(SimpleType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Boolean</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Boolean</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBoolean(componentModel.Boolean object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Int</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Int</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInt(Int object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Char</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Char</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChar(Char object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Date</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Date</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDate(Date object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseList(List object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Map</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMap(Map object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Float</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Float</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFloat(componentModel.Float object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Long</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Long</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLong(componentModel.Long object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Double</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Double</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDouble(componentModel.Double object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseString(componentModel.String object) {
 		return null;
 	}
 
@@ -874,6 +562,36 @@ public class ComponentModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRepositoryViewType(RepositoryViewType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseType(Type object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpleType(SimpleType object) {
 		return null;
 	}
 

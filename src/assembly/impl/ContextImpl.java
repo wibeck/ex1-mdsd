@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link assembly.impl.ContextImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}</li>
+ *   <li>{@link assembly.impl.ContextImpl#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,6 +81,16 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<AssemblyConnector> outwardAssemblyConnectors;
+
+	/**
+	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProvidedInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> providedInterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,6 +169,19 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public EList<Interface> getProvidedInterfaces() {
+		if (providedInterfaces == null) {
+			providedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, AssemblyPackage.CONTEXT__PROVIDED_INTERFACES);
+		}
+		return providedInterfaces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case AssemblyPackage.CONTEXT__DELEGATION_CONNECTORS:
@@ -184,6 +208,8 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				return getNestedAssemblyConnectors();
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				return getOutwardAssemblyConnectors();
+			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
+				return getProvidedInterfaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,6 +239,10 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				getOutwardAssemblyConnectors().clear();
 				getOutwardAssemblyConnectors().addAll((Collection<? extends AssemblyConnector>)newValue);
 				return;
+			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
+				getProvidedInterfaces().clear();
+				getProvidedInterfaces().addAll((Collection<? extends Interface>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -237,6 +267,9 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				getOutwardAssemblyConnectors().clear();
 				return;
+			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
+				getProvidedInterfaces().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -257,6 +290,8 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				return nestedAssemblyConnectors != null && !nestedAssemblyConnectors.isEmpty();
 			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
 				return outwardAssemblyConnectors != null && !outwardAssemblyConnectors.isEmpty();
+			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
+				return providedInterfaces != null && !providedInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

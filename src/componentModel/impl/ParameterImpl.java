@@ -6,8 +6,6 @@ import componentModel.ComponentModelPackage;
 import componentModel.Parameter;
 import componentModel.Type;
 
-import java.lang.String;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;

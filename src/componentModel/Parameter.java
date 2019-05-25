@@ -2,8 +2,6 @@
  */
 package componentModel;
 
-import java.lang.String;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,7 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getParameter()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='VoidNotParameterType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot VoidNotParameterType='self.parameterType &lt;&gt; CBSDataType::VOID '"
  * @generated
  */
 public interface Parameter extends EObject {
@@ -31,7 +30,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see componentModel.ComponentModelPackage#getParameter_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -53,7 +52,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Parameter Type</em>' reference.
 	 * @see #setParameterType(Type)
 	 * @see componentModel.ComponentModelPackage#getParameter_ParameterType()
-	 * @model required="true"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Type getParameterType();

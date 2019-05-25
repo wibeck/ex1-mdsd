@@ -2,36 +2,7 @@
  */
 package componentModel.util;
 
-import componentModel.Action;
-import componentModel.AllocationViewType;
-import componentModel.AssemblyViewPoint;
-import componentModel.AssemblyViewType;
-import componentModel.Branch;
-import componentModel.Char;
-import componentModel.ComplexType;
-import componentModel.Component;
-import componentModel.ComponentModelPackage;
-import componentModel.Date;
-import componentModel.DeploymentViewPoint;
-import componentModel.EnvironmentViewType;
-import componentModel.ExternalCall;
-import componentModel.Int;
-import componentModel.Interface;
-import componentModel.InterfaceServiceMapEntry;
-import componentModel.InternalAction;
-import componentModel.List;
-import componentModel.Loop;
-import componentModel.Parameter;
-import componentModel.Repository;
-import componentModel.RepositoryViewType;
-import componentModel.Service;
-import componentModel.ServiceEffectSpecification;
-import componentModel.Signature;
-import componentModel.SimpleType;
-import componentModel.SystemIndependentViewPoint;
-import componentModel.Type;
-import componentModel.ViewPoint;
-import componentModel.ViewType;
+import componentModel.*;
 
 import java.util.Map;
 
@@ -141,36 +112,10 @@ public class ComponentModelValidator extends EObjectValidator {
 				return validateViewType((ViewType)value, diagnostics, context);
 			case ComponentModelPackage.SIGNATURE:
 				return validateSignature((Signature)value, diagnostics, context);
-			case ComponentModelPackage.TYPE:
-				return validateType((Type)value, diagnostics, context);
 			case ComponentModelPackage.SERVICE:
 				return validateService((Service)value, diagnostics, context);
 			case ComponentModelPackage.VIEW_POINT:
 				return validateViewPoint((ViewPoint)value, diagnostics, context);
-			case ComponentModelPackage.VOID:
-				return validateVoid((componentModel.Void)value, diagnostics, context);
-			case ComponentModelPackage.SIMPLE_TYPE:
-				return validateSimpleType((SimpleType)value, diagnostics, context);
-			case ComponentModelPackage.BOOLEAN:
-				return validateBoolean((componentModel.Boolean)value, diagnostics, context);
-			case ComponentModelPackage.INT:
-				return validateInt((Int)value, diagnostics, context);
-			case ComponentModelPackage.CHAR:
-				return validateChar((Char)value, diagnostics, context);
-			case ComponentModelPackage.DATE:
-				return validateDate((Date)value, diagnostics, context);
-			case ComponentModelPackage.LIST:
-				return validateList((List)value, diagnostics, context);
-			case ComponentModelPackage.MAP:
-				return validateMap((componentModel.Map)value, diagnostics, context);
-			case ComponentModelPackage.FLOAT:
-				return validateFloat((componentModel.Float)value, diagnostics, context);
-			case ComponentModelPackage.LONG:
-				return validateLong((componentModel.Long)value, diagnostics, context);
-			case ComponentModelPackage.DOUBLE:
-				return validateDouble((componentModel.Double)value, diagnostics, context);
-			case ComponentModelPackage.STRING:
-				return validateString((componentModel.String)value, diagnostics, context);
 			case ComponentModelPackage.PARAMETER:
 				return validateParameter((Parameter)value, diagnostics, context);
 			case ComponentModelPackage.ASSEMBLY_VIEW_TYPE:
@@ -185,8 +130,14 @@ public class ComponentModelValidator extends EObjectValidator {
 				return validateDeploymentViewPoint((DeploymentViewPoint)value, diagnostics, context);
 			case ComponentModelPackage.REPOSITORY_VIEW_TYPE:
 				return validateRepositoryViewType((RepositoryViewType)value, diagnostics, context);
+			case ComponentModelPackage.TYPE:
+				return validateType((Type)value, diagnostics, context);
+			case ComponentModelPackage.SIMPLE_TYPE:
+				return validateSimpleType((SimpleType)value, diagnostics, context);
 			case ComponentModelPackage.COMPLEX_TYPE:
 				return validateComplexType((ComplexType)value, diagnostics, context);
+			case ComponentModelPackage.CBS_DATA_TYPE:
+				return validateCBSDataType((CBSDataType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -394,15 +345,6 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateType(Type type, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(type, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateService(Service service, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(service, diagnostics, context);
 	}
@@ -421,116 +363,47 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVoid(componentModel.Void void_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(void_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSimpleType(SimpleType simpleType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(simpleType, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateBoolean(componentModel.Boolean boolean_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(boolean_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateInt(Int int_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(int_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateChar(Char char_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(char_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDate(Date date, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(date, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateList(List list, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(list, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMap(componentModel.Map map, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(map, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFloat(componentModel.Float float_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(float_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateLong(componentModel.Long long_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(long_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDouble(componentModel.Double double_, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(double_, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateString(componentModel.String string, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(string, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateParameter(Parameter parameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(parameter, diagnostics, context);
+		if (!validate_NoCircularContainment(parameter, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(parameter, diagnostics, context);
+		if (result || diagnostics != null) result &= validateParameter_VoidNotParameterType(parameter, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the VoidNotParameterType constraint of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PARAMETER__VOID_NOT_PARAMETER_TYPE__EEXPRESSION = "self.parameterType <> CBSDataType::VOID ";
+
+	/**
+	 * Validates the VoidNotParameterType constraint of '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateParameter_VoidNotParameterType(Parameter parameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentModelPackage.Literals.PARAMETER,
+				 parameter,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "VoidNotParameterType",
+				 PARAMETER__VOID_NOT_PARAMETER_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -671,8 +544,35 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateType(Type type, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(type, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSimpleType(SimpleType simpleType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(simpleType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateComplexType(ComplexType complexType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(complexType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCBSDataType(CBSDataType cbsDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

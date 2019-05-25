@@ -7,8 +7,6 @@ import componentModel.Parameter;
 import componentModel.Signature;
 import componentModel.Type;
 
-import java.lang.String;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,8 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link componentModel.impl.SignatureImpl#getName <em>Name</em>}</li>
- *   <li>{@link componentModel.impl.SignatureImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link componentModel.impl.SignatureImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link componentModel.impl.SignatureImpl#getReturnType <em>Return Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,16 +60,6 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Type returnType;
-
-	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,6 +68,16 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Type returnType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,6 +127,19 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * @generated
 	 */
 	@Override
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ComponentModelPackage.SIGNATURE__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Type getReturnType() {
 		if (returnType != null && returnType.eIsProxy()) {
 			InternalEObject oldReturnType = (InternalEObject)returnType;
@@ -169,19 +180,6 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * @generated
 	 */
 	@Override
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ComponentModelPackage.SIGNATURE__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentModelPackage.SIGNATURE__PARAMETERS:
@@ -200,11 +198,11 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 		switch (featureID) {
 			case ComponentModelPackage.SIGNATURE__NAME:
 				return getName();
+			case ComponentModelPackage.SIGNATURE__PARAMETERS:
+				return getParameters();
 			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
 				if (resolve) return getReturnType();
 				return basicGetReturnType();
-			case ComponentModelPackage.SIGNATURE__PARAMETERS:
-				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,12 +219,12 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 			case ComponentModelPackage.SIGNATURE__NAME:
 				setName((String)newValue);
 				return;
-			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
-				setReturnType((Type)newValue);
-				return;
 			case ComponentModelPackage.SIGNATURE__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
+				setReturnType((Type)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,11 +241,11 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 			case ComponentModelPackage.SIGNATURE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
-				setReturnType((Type)null);
-				return;
 			case ComponentModelPackage.SIGNATURE__PARAMETERS:
 				getParameters().clear();
+				return;
+			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
+				setReturnType((Type)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -263,10 +261,10 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 		switch (featureID) {
 			case ComponentModelPackage.SIGNATURE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
-				return returnType != null;
 			case ComponentModelPackage.SIGNATURE__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
+				return returnType != null;
 		}
 		return super.eIsSet(featureID);
 	}

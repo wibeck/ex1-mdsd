@@ -11,22 +11,18 @@ import componentModel.AllocationViewType;
 import componentModel.AssemblyViewPoint;
 import componentModel.AssemblyViewType;
 import componentModel.Branch;
-import componentModel.Char;
+import componentModel.CBSDataType;
 import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
 import componentModel.ComponentModelPackage;
-import componentModel.Date;
 import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
 import componentModel.ExternalCall;
-import componentModel.Int;
 import componentModel.Interface;
 import componentModel.InterfaceServiceMapEntry;
 import componentModel.InternalAction;
-import componentModel.List;
 import componentModel.Loop;
-import componentModel.Map;
 import componentModel.Parameter;
 import componentModel.Repository;
 import componentModel.RepositoryViewType;
@@ -47,6 +43,7 @@ import environment.impl.EnvironmentPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -160,13 +157,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass typeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass serviceEClass = null;
 
 	/**
@@ -175,90 +165,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	private EClass viewPointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass voidEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass simpleTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass booleanEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass intEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass charEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dateEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass listEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mapEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass floatEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass longEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass doubleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -314,7 +220,28 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass typeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass simpleTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass complexTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum cbsDataTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -457,7 +384,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EReference getRepository_Types() {
+	public EReference getRepository_Services() {
 		return (EReference)repositoryEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -467,18 +394,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EReference getRepository_Services() {
-		return (EReference)repositoryEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getRepository_InterfaceServiceMapEntries() {
-		return (EReference)repositoryEClass.getEStructuralFeatures().get(5);
+		return (EReference)repositoryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -519,6 +436,16 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	@Override
 	public EReference getComponent_ServiceEffectSpecification() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_RequiredInterfaces() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -757,7 +684,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EReference getSignature_ReturnType() {
+	public EReference getSignature_Parameters() {
 		return (EReference)signatureEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -767,18 +694,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EReference getSignature_Parameters() {
+	public EReference getSignature_ReturnType() {
 		return (EReference)signatureEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getType() {
-		return typeEClass;
 	}
 
 	/**
@@ -849,126 +766,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	@Override
 	public EAttribute getViewPoint_Name() {
 		return (EAttribute)viewPointEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getVoid() {
-		return voidEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSimpleType() {
-		return simpleTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getBoolean() {
-		return booleanEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getInt() {
-		return intEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getChar() {
-		return charEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDate() {
-		return dateEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getList() {
-		return listEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMap() {
-		return mapEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getFloat() {
-		return floatEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getLong() {
-		return longEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDouble() {
-		return doubleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getString() {
-		return stringEClass;
 	}
 
 	/**
@@ -1067,8 +864,48 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
+	public EClass getType() {
+		return typeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getType_TypeName() {
+		return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSimpleType() {
+		return simpleTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getComplexType() {
 		return complexTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCBSDataType() {
+		return cbsDataTypeEEnum;
 	}
 
 	/**
@@ -1106,7 +943,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		createEReference(repositoryEClass, REPOSITORY__COMPONENTS);
 		createEReference(repositoryEClass, REPOSITORY__INTER_FACES);
 		createEReference(repositoryEClass, REPOSITORY__SIGNATURES);
-		createEReference(repositoryEClass, REPOSITORY__TYPES);
 		createEReference(repositoryEClass, REPOSITORY__SERVICES);
 		createEReference(repositoryEClass, REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES);
 
@@ -1114,6 +950,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		createEAttribute(componentEClass, COMPONENT__NAME);
 		createEReference(componentEClass, COMPONENT__INTERFACE_SERVICE_MAP);
 		createEReference(componentEClass, COMPONENT__SERVICE_EFFECT_SPECIFICATION);
+		createEReference(componentEClass, COMPONENT__REQUIRED_INTERFACES);
 
 		interfaceServiceMapEntryEClass = createEClass(INTERFACE_SERVICE_MAP_ENTRY);
 		createEReference(interfaceServiceMapEntryEClass, INTERFACE_SERVICE_MAP_ENTRY__PROVIDED_INTERFACE);
@@ -1147,10 +984,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
 		signatureEClass = createEClass(SIGNATURE);
 		createEAttribute(signatureEClass, SIGNATURE__NAME);
-		createEReference(signatureEClass, SIGNATURE__RETURN_TYPE);
 		createEReference(signatureEClass, SIGNATURE__PARAMETERS);
-
-		typeEClass = createEClass(TYPE);
+		createEReference(signatureEClass, SIGNATURE__RETURN_TYPE);
 
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__NAME);
@@ -1160,30 +995,6 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		viewPointEClass = createEClass(VIEW_POINT);
 		createEReference(viewPointEClass, VIEW_POINT__VIEW_TYPES);
 		createEAttribute(viewPointEClass, VIEW_POINT__NAME);
-
-		voidEClass = createEClass(VOID);
-
-		simpleTypeEClass = createEClass(SIMPLE_TYPE);
-
-		booleanEClass = createEClass(BOOLEAN);
-
-		intEClass = createEClass(INT);
-
-		charEClass = createEClass(CHAR);
-
-		dateEClass = createEClass(DATE);
-
-		listEClass = createEClass(LIST);
-
-		mapEClass = createEClass(MAP);
-
-		floatEClass = createEClass(FLOAT);
-
-		longEClass = createEClass(LONG);
-
-		doubleEClass = createEClass(DOUBLE);
-
-		stringEClass = createEClass(STRING);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -1201,7 +1012,15 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
 		repositoryViewTypeEClass = createEClass(REPOSITORY_VIEW_TYPE);
 
+		typeEClass = createEClass(TYPE);
+		createEAttribute(typeEClass, TYPE__TYPE_NAME);
+
+		simpleTypeEClass = createEClass(SIMPLE_TYPE);
+
 		complexTypeEClass = createEClass(COMPLEX_TYPE);
+
+		// Create enums
+		cbsDataTypeEEnum = createEEnum(CBS_DATA_TYPE);
 	}
 
 	/**
@@ -1238,24 +1057,13 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		loopEClass.getESuperTypes().add(this.getAction());
 		externalCallEClass.getESuperTypes().add(this.getAction());
 		internalActionEClass.getESuperTypes().add(this.getAction());
-		voidEClass.getESuperTypes().add(this.getType());
-		simpleTypeEClass.getESuperTypes().add(this.getType());
-		booleanEClass.getESuperTypes().add(this.getSimpleType());
-		intEClass.getESuperTypes().add(this.getSimpleType());
-		charEClass.getESuperTypes().add(this.getSimpleType());
-		dateEClass.getESuperTypes().add(this.getSimpleType());
-		listEClass.getESuperTypes().add(this.getSimpleType());
-		mapEClass.getESuperTypes().add(this.getSimpleType());
-		floatEClass.getESuperTypes().add(this.getSimpleType());
-		longEClass.getESuperTypes().add(this.getSimpleType());
-		doubleEClass.getESuperTypes().add(this.getSimpleType());
-		stringEClass.getESuperTypes().add(this.getSimpleType());
 		assemblyViewTypeEClass.getESuperTypes().add(this.getViewType());
 		environmentViewTypeEClass.getESuperTypes().add(this.getViewType());
 		allocationViewTypeEClass.getESuperTypes().add(this.getViewType());
 		assemblyViewPointEClass.getESuperTypes().add(this.getViewPoint());
 		deploymentViewPointEClass.getESuperTypes().add(this.getViewPoint());
 		repositoryViewTypeEClass.getESuperTypes().add(this.getViewType());
+		simpleTypeEClass.getESuperTypes().add(this.getType());
 		complexTypeEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes, features, and operations; add parameters
@@ -1265,29 +1073,30 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		initEReference(getRepository_Components(), this.getComponent(), null, "components", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRepository_InterFaces(), this.getInterface(), null, "interFaces", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRepository_Signatures(), this.getSignature(), null, "signatures", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRepository_Types(), this.getType(), null, "types", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRepository_Services(), this.getService(), null, "services", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRepository_InterfaceServiceMapEntries(), this.getInterfaceServiceMapEntry(), null, "interfaceServiceMapEntries", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getComponent_InterfaceServiceMap(), this.getInterfaceServiceMapEntry(), null, "interfaceServiceMap", null, 1, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getComponent_ServiceEffectSpecification(), this.getServiceEffectSpecification(), null, "serviceEffectSpecification", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ServiceEffectSpecification(), this.getServiceEffectSpecification(), null, "serviceEffectSpecification", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getComponent_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		getComponent_RequiredInterfaces().getEKeys().add(this.getInterface_Name());
 
 		initEClass(interfaceServiceMapEntryEClass, InterfaceServiceMapEntry.class, "InterfaceServiceMapEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceServiceMapEntry_ProvidedInterface(), this.getInterface(), null, "providedInterface", null, 1, 1, InterfaceServiceMapEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInterfaceServiceMapEntry_Services(), this.getService(), null, "services", null, 1, -1, InterfaceServiceMapEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getInterfaceServiceMapEntry_Name(), ecorePackage.getEString(), "name", null, 0, 1, InterfaceServiceMapEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterfaceServiceMapEntry_Name(), ecorePackage.getEString(), "name", null, 1, 1, InterfaceServiceMapEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEffectSpecificationEClass, ServiceEffectSpecification.class, "ServiceEffectSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceEffectSpecification_Actions(), this.getAction(), null, "actions", null, 0, -1, ServiceEffectSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getServiceEffectSpecification_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceEffectSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getServiceEffectSpecification_Name(), ecorePackage.getEString(), "name", null, 1, 1, ServiceEffectSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(branchEClass, Branch.class, "Branch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBranch_Actions(), this.getAction(), null, "actions", null, 0, -1, Branch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_Actions(), this.getAction(), null, "actions", null, 0, -1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1298,55 +1107,29 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		initEClass(internalActionEClass, InternalAction.class, "InternalAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInterface_Name(), ecorePackage.getEString(), "name", null, 0, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterface_Name(), ecorePackage.getEString(), "name", null, 1, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInterface_Signatures(), this.getSignature(), null, "signatures", null, 1, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(viewTypeEClass, ViewType.class, "ViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getViewType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ViewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getViewType_Name(), ecorePackage.getEString(), "name", null, 1, 1, ViewType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signatureEClass, Signature.class, "Signature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSignature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSignature_ReturnType(), this.getType(), null, "returnType", null, 1, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSignature_Name(), ecorePackage.getEString(), "name", null, 1, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSignature_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSignature_ReturnType(), this.getType(), null, "returnType", null, 1, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getService_Name(), ecorePackage.getEString(), "name", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getService_Name(), ecorePackage.getEString(), "name", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getService_Correspondence(), this.getSignature(), null, "correspondence", null, 1, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getService_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(viewPointEClass, ViewPoint.class, "ViewPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getViewPoint_ViewTypes(), this.getViewType(), null, "viewTypes", null, 0, -1, ViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getViewPoint_Name(), ecorePackage.getEString(), "name", null, 0, 1, ViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(voidEClass, componentModel.Void.class, "Void", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(simpleTypeEClass, SimpleType.class, "SimpleType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(booleanEClass, componentModel.Boolean.class, "Boolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(intEClass, Int.class, "Int", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(charEClass, Char.class, "Char", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(dateEClass, Date.class, "Date", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(mapEClass, Map.class, "Map", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(floatEClass, componentModel.Float.class, "Float", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(longEClass, componentModel.Long.class, "Long", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(doubleEClass, componentModel.Double.class, "Double", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(stringEClass, componentModel.String.class, "String", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getViewPoint_Name(), ecorePackage.getEString(), "name", null, 1, 1, ViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameter_ParameterType(), this.getType(), null, "parameterType", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_ParameterType(), this.getType(), null, "parameterType", null, 1, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assemblyViewTypeEClass, AssemblyViewType.class, "AssemblyViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1360,7 +1143,27 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 
 		initEClass(repositoryViewTypeEClass, RepositoryViewType.class, "RepositoryViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getType_TypeName(), this.getCBSDataType(), "typeName", null, 1, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(simpleTypeEClass, SimpleType.class, "SimpleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(complexTypeEClass, ComplexType.class, "ComplexType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(cbsDataTypeEEnum, CBSDataType.class, "CBSDataType");
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.BOOLEAN);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.INT);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.CHAR);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.DATE);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.LIST);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.MAP);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.FLOAT);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.LONG);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.DOUBLE);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.STRING);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.VOID);
+		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.COMPLEX_TYPE);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1403,6 +1206,12 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 			   "constraints", "servicesForEachSignatureOfProvidedInterfaces"
 		   });
 		addAnnotation
+		  (parameterEClass,
+		   source,
+		   new String[] {
+			   "constraints", "VoidNotParameterType"
+		   });
+		addAnnotation
 		  (assemblyViewPointEClass,
 		   source,
 		   new String[] {
@@ -1435,6 +1244,12 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		   source,
 		   new String[] {
 			   "servicesForEachSignatureOfProvidedInterfaces", "self.interfaceServiceMap -> forAll(entry | entry.services -> \n\t\t\tcollect(correspondence) -> intersection(entry.providedInterface.signatures) -> size() \n\t\t\t=  entry.providedInterface.signatures -> size())"
+		   });
+		addAnnotation
+		  (parameterEClass,
+		   source,
+		   new String[] {
+			   "VoidNotParameterType", "self.parameterType <> CBSDataType::VOID "
 		   });
 		addAnnotation
 		  (assemblyViewPointEClass,

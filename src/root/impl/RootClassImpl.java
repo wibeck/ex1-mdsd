@@ -5,6 +5,7 @@ package root.impl;
 import assembly.ContextEnvironment;
 
 import componentModel.ViewPoint;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

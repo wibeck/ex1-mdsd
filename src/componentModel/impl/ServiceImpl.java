@@ -7,8 +7,6 @@ import componentModel.Interface;
 import componentModel.Service;
 import componentModel.Signature;
 
-import java.lang.String;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

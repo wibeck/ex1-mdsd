@@ -4,10 +4,9 @@ package componentModel.impl;
 
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
+import componentModel.Interface;
 import componentModel.InterfaceServiceMapEntry;
 import componentModel.ServiceEffectSpecification;
-
-import java.lang.String;
 
 import java.util.Collection;
 
@@ -23,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentModel.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link componentModel.impl.ComponentImpl#getInterfaceServiceMap <em>Interface Service Map</em>}</li>
  *   <li>{@link componentModel.impl.ComponentImpl#getServiceEffectSpecification <em>Service Effect Specification</em>}</li>
+ *   <li>{@link componentModel.impl.ComponentImpl#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,6 +81,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @ordered
 	 */
 	protected ServiceEffectSpecification serviceEffectSpecification;
+
+	/**
+	 * The cached value of the '{@link #getRequiredInterfaces() <em>Required Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> requiredInterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,6 +198,19 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @generated
 	 */
 	@Override
+	public EList<Interface> getRequiredInterfaces() {
+		if (requiredInterfaces == null) {
+			requiredInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, ComponentModelPackage.COMPONENT__REQUIRED_INTERFACES);
+		}
+		return requiredInterfaces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentModelPackage.COMPONENT__INTERFACE_SERVICE_MAP:
@@ -211,6 +235,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 				return getInterfaceServiceMap();
 			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
 				return getServiceEffectSpecification();
+			case ComponentModelPackage.COMPONENT__REQUIRED_INTERFACES:
+				return getRequiredInterfaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,6 +260,10 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
 				setServiceEffectSpecification((ServiceEffectSpecification)newValue);
 				return;
+			case ComponentModelPackage.COMPONENT__REQUIRED_INTERFACES:
+				getRequiredInterfaces().clear();
+				getRequiredInterfaces().addAll((Collection<? extends Interface>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -255,6 +285,9 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
 				setServiceEffectSpecification((ServiceEffectSpecification)null);
 				return;
+			case ComponentModelPackage.COMPONENT__REQUIRED_INTERFACES:
+				getRequiredInterfaces().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -273,6 +306,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
 				return interfaceServiceMap != null && !interfaceServiceMap.isEmpty();
 			case ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION:
 				return serviceEffectSpecification != null;
+			case ComponentModelPackage.COMPONENT__REQUIRED_INTERFACES:
+				return requiredInterfaces != null && !requiredInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

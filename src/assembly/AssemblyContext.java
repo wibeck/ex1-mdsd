@@ -4,7 +4,6 @@ package assembly;
 
 import componentModel.AssemblyViewType;
 import componentModel.Component;
-import componentModel.Interface;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -21,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link assembly.AssemblyContext#getRequiredRoles <em>Required Roles</em>}</li>
  *   <li>{@link assembly.AssemblyContext#getProvidedRoles <em>Provided Roles</em>}</li>
  *   <li>{@link assembly.AssemblyContext#getOwnerComponent <em>Owner Component</em>}</li>
- *   <li>{@link assembly.AssemblyContext#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getAssemblyContext()
@@ -37,7 +35,7 @@ public interface AssemblyContext extends Context, AssemblyViewType {
 	 * @return the value of the '<em>Instantiates</em>' reference.
 	 * @see #setInstantiates(Component)
 	 * @see assembly.AssemblyPackage#getAssemblyContext_Instantiates()
-	 * @model
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Component getInstantiates();
@@ -71,7 +69,7 @@ public interface AssemblyContext extends Context, AssemblyViewType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provided Roles</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getAssemblyContext_ProvidedRoles()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<ProvidedRole> getProvidedRoles();
@@ -97,17 +95,5 @@ public interface AssemblyContext extends Context, AssemblyViewType {
 	 * @generated
 	 */
 	void setOwnerComponent(CompositeComponent value);
-
-	/**
-	 * Returns the value of the '<em><b>Provided Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link componentModel.Interface}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provided Interfaces</em>' reference list.
-	 * @see assembly.AssemblyPackage#getAssemblyContext_ProvidedInterfaces()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	EList<Interface> getProvidedInterfaces();
 
 } // AssemblyContext

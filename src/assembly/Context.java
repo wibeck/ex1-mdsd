@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.Context#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}</li>
  *   <li>{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}</li>
+ *   <li>{@link assembly.Context#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getContext()
@@ -77,5 +78,17 @@ public interface Context extends EObject {
 	 * @generated
 	 */
 	EList<AssemblyConnector> getOutwardAssemblyConnectors();
+
+	/**
+	 * Returns the value of the '<em><b>Provided Interfaces</b></em>' reference list.
+	 * The list contents are of type {@link componentModel.Interface}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provided Interfaces</em>' reference list.
+	 * @see assembly.AssemblyPackage#getContext_ProvidedInterfaces()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Interface> getProvidedInterfaces();
 
 } // Context

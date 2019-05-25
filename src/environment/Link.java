@@ -43,7 +43,7 @@ public interface Link extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see environment.EnvironmentPackage#getLink_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

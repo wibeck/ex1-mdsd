@@ -9,7 +9,6 @@ import componentModel.InterfaceServiceMapEntry;
 import componentModel.Repository;
 import componentModel.Service;
 import componentModel.Signature;
-import componentModel.Type;
 
 import java.util.Collection;
 
@@ -34,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentModel.impl.RepositoryImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getInterFaces <em>Inter Faces</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getSignatures <em>Signatures</em>}</li>
- *   <li>{@link componentModel.impl.RepositoryImpl#getTypes <em>Types</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getServices <em>Services</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}</li>
  * </ul>
@@ -71,16 +69,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @ordered
 	 */
 	protected EList<Signature> signatures;
-
-	/**
-	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTypes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Type> types;
 
 	/**
 	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
@@ -166,19 +154,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @generated
 	 */
 	@Override
-	public EList<Type> getTypes() {
-		if (types == null) {
-			types = new EObjectContainmentEList<Type>(Type.class, this, ComponentModelPackage.REPOSITORY__TYPES);
-		}
-		return types;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Service> getServices() {
 		if (services == null) {
 			services = new EObjectContainmentEList<Service>(Service.class, this, ComponentModelPackage.REPOSITORY__SERVICES);
@@ -213,8 +188,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return ((InternalEList<?>)getInterFaces()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				return ((InternalEList<?>)getSignatures()).basicRemove(otherEnd, msgs);
-			case ComponentModelPackage.REPOSITORY__TYPES:
-				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
@@ -237,8 +210,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return getInterFaces();
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				return getSignatures();
-			case ComponentModelPackage.REPOSITORY__TYPES:
-				return getTypes();
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return getServices();
 			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
@@ -267,10 +238,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				getSignatures().clear();
 				getSignatures().addAll((Collection<? extends Signature>)newValue);
-				return;
-			case ComponentModelPackage.REPOSITORY__TYPES:
-				getTypes().clear();
-				getTypes().addAll((Collection<? extends Type>)newValue);
 				return;
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				getServices().clear();
@@ -301,9 +268,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				getSignatures().clear();
 				return;
-			case ComponentModelPackage.REPOSITORY__TYPES:
-				getTypes().clear();
-				return;
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				getServices().clear();
 				return;
@@ -328,8 +292,6 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return interFaces != null && !interFaces.isEmpty();
 			case ComponentModelPackage.REPOSITORY__SIGNATURES:
 				return signatures != null && !signatures.isEmpty();
-			case ComponentModelPackage.REPOSITORY__TYPES:
-				return types != null && !types.isEmpty();
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return services != null && !services.isEmpty();
 			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:

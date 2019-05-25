@@ -33,7 +33,7 @@ public interface Container extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see environment.EnvironmentPackage#getContainer_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -57,7 +57,7 @@ public interface Container extends EObject {
 	 * @return the value of the '<em>Allocation Contexts</em>' containment reference list.
 	 * @see environment.EnvironmentPackage#getContainer_AllocationContexts()
 	 * @see environment.AllocationContext#getContainer
-	 * @model opposite="container" containment="true" required="true" ordered="false"
+	 * @model opposite="container" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<AllocationContext> getAllocationContexts();

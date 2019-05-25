@@ -6,8 +6,6 @@ import componentModel.ComponentModelPackage;
 import componentModel.ViewPoint;
 import componentModel.ViewType;
 
-import java.lang.String;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

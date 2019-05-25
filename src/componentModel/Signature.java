@@ -2,8 +2,6 @@
  */
 package componentModel;
 
-import java.lang.String;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -18,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link componentModel.Signature#getName <em>Name</em>}</li>
- *   <li>{@link componentModel.Signature#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link componentModel.Signature#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link componentModel.Signature#getReturnType <em>Return Type</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getSignature()
@@ -34,7 +32,7 @@ public interface Signature extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see componentModel.ComponentModelPackage#getSignature_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -50,13 +48,25 @@ public interface Signature extends EObject {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link componentModel.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see componentModel.ComponentModelPackage#getSignature_Parameters()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Parameter> getParameters();
+
+	/**
 	 * Returns the value of the '<em><b>Return Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Return Type</em>' reference.
 	 * @see #setReturnType(Type)
 	 * @see componentModel.ComponentModelPackage#getSignature_ReturnType()
-	 * @model required="true"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Type getReturnType();
@@ -70,17 +80,5 @@ public interface Signature extends EObject {
 	 * @generated
 	 */
 	void setReturnType(Type value);
-
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link componentModel.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getSignature_Parameters()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<Parameter> getParameters();
 
 } // Signature

@@ -70,7 +70,7 @@ public interface ContextEnvironment extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see assembly.AssemblyPackage#getContextEnvironment_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

@@ -2,10 +2,9 @@
  */
 package componentModel;
 
-import java.lang.String;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -67,7 +66,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getViewPoint()
 	 * @generated
 	 */
-	int VIEW_POINT = 15;
+	int VIEW_POINT = 14;
 
 	/**
 	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
@@ -196,7 +195,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getRepositoryViewType()
 	 * @generated
 	 */
-	int REPOSITORY_VIEW_TYPE = 34;
+	int REPOSITORY_VIEW_TYPE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -272,22 +271,13 @@ public interface ComponentModelPackage extends EPackage {
 	int REPOSITORY__SIGNATURES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__TYPES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Services</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__SERVICES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 4;
+	int REPOSITORY__SERVICES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Interface Service Map Entries</b></em>' containment reference list.
@@ -296,7 +286,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 5;
+	int REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -305,7 +295,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 6;
+	int REPOSITORY_FEATURE_COUNT = REPOSITORY_VIEW_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Repository</em>' class.
@@ -354,13 +344,22 @@ public interface ComponentModelPackage extends EPackage {
 	int COMPONENT__SERVICE_EFFECT_SPECIFICATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Required Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__REQUIRED_INTERFACES = 3;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = 3;
+	int COMPONENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -750,22 +749,22 @@ public interface ComponentModelPackage extends EPackage {
 	int SIGNATURE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Return Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIGNATURE__RETURN_TYPE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNATURE__PARAMETERS = 2;
+	int SIGNATURE__PARAMETERS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Return Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNATURE__RETURN_TYPE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Signature</em>' class.
@@ -786,34 +785,6 @@ public interface ComponentModelPackage extends EPackage {
 	int SIGNATURE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link componentModel.impl.TypeImpl <em>Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.TypeImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getType()
-	 * @generated
-	 */
-	int TYPE = 13;
-
-	/**
-	 * The number of structural features of the '<em>Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link componentModel.impl.ServiceImpl <em>Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -821,7 +792,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 14;
+	int SERVICE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -869,342 +840,6 @@ public interface ComponentModelPackage extends EPackage {
 	int SERVICE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link componentModel.impl.VoidImpl <em>Void</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.VoidImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getVoid()
-	 * @generated
-	 */
-	int VOID = 16;
-
-	/**
-	 * The number of structural features of the '<em>Void</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VOID_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Void</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VOID_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.SimpleTypeImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleType()
-	 * @generated
-	 */
-	int SIMPLE_TYPE = 17;
-
-	/**
-	 * The number of structural features of the '<em>Simple Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Simple Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.BooleanImpl <em>Boolean</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.BooleanImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getBoolean()
-	 * @generated
-	 */
-	int BOOLEAN = 18;
-
-	/**
-	 * The number of structural features of the '<em>Boolean</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Boolean</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.IntImpl <em>Int</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.IntImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getInt()
-	 * @generated
-	 */
-	int INT = 19;
-
-	/**
-	 * The number of structural features of the '<em>Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.CharImpl <em>Char</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.CharImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getChar()
-	 * @generated
-	 */
-	int CHAR = 20;
-
-	/**
-	 * The number of structural features of the '<em>Char</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHAR_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Char</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHAR_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.DateImpl <em>Date</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.DateImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getDate()
-	 * @generated
-	 */
-	int DATE = 21;
-
-	/**
-	 * The number of structural features of the '<em>Date</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Date</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.ListImpl <em>List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.ListImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getList()
-	 * @generated
-	 */
-	int LIST = 22;
-
-	/**
-	 * The number of structural features of the '<em>List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.MapImpl <em>Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.MapImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getMap()
-	 * @generated
-	 */
-	int MAP = 23;
-
-	/**
-	 * The number of structural features of the '<em>Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MAP_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.FloatImpl <em>Float</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.FloatImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getFloat()
-	 * @generated
-	 */
-	int FLOAT = 24;
-
-	/**
-	 * The number of structural features of the '<em>Float</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Float</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.LongImpl <em>Long</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.LongImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getLong()
-	 * @generated
-	 */
-	int LONG = 25;
-
-	/**
-	 * The number of structural features of the '<em>Long</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Long</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.DoubleImpl <em>Double</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.DoubleImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getDouble()
-	 * @generated
-	 */
-	int DOUBLE = 26;
-
-	/**
-	 * The number of structural features of the '<em>Double</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Double</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link componentModel.impl.StringImpl <em>String</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see componentModel.impl.StringImpl
-	 * @see componentModel.impl.ComponentModelPackageImpl#getString()
-	 * @generated
-	 */
-	int STRING = 27;
-
-	/**
-	 * The number of structural features of the '<em>String</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_FEATURE_COUNT = SIMPLE_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>String</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_OPERATION_COUNT = SIMPLE_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link componentModel.impl.ParameterImpl <em>Parameter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1212,7 +847,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 28;
+	int PARAMETER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1258,7 +893,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getAssemblyViewType()
 	 * @generated
 	 */
-	int ASSEMBLY_VIEW_TYPE = 29;
+	int ASSEMBLY_VIEW_TYPE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1295,7 +930,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getEnvironmentViewType()
 	 * @generated
 	 */
-	int ENVIRONMENT_VIEW_TYPE = 30;
+	int ENVIRONMENT_VIEW_TYPE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1332,7 +967,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getAllocationViewType()
 	 * @generated
 	 */
-	int ALLOCATION_VIEW_TYPE = 31;
+	int ALLOCATION_VIEW_TYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1369,7 +1004,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getAssemblyViewPoint()
 	 * @generated
 	 */
-	int ASSEMBLY_VIEW_POINT = 32;
+	int ASSEMBLY_VIEW_POINT = 19;
 
 	/**
 	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
@@ -1415,7 +1050,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getDeploymentViewPoint()
 	 * @generated
 	 */
-	int DEPLOYMENT_VIEW_POINT = 33;
+	int DEPLOYMENT_VIEW_POINT = 20;
 
 	/**
 	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
@@ -1454,6 +1089,80 @@ public interface ComponentModelPackage extends EPackage {
 	int DEPLOYMENT_VIEW_POINT_OPERATION_COUNT = VIEW_POINT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link componentModel.impl.TypeImpl <em>Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentModel.impl.TypeImpl
+	 * @see componentModel.impl.ComponentModelPackageImpl#getType()
+	 * @generated
+	 */
+	int TYPE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__TYPE_NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentModel.impl.SimpleTypeImpl
+	 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleType()
+	 * @generated
+	 */
+	int SIMPLE_TYPE = 23;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_TYPE__TYPE_NAME = TYPE__TYPE_NAME;
+
+	/**
+	 * The number of structural features of the '<em>Simple Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Simple Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link componentModel.impl.ComplexTypeImpl <em>Complex Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1461,7 +1170,16 @@ public interface ComponentModelPackage extends EPackage {
 	 * @see componentModel.impl.ComponentModelPackageImpl#getComplexType()
 	 * @generated
 	 */
-	int COMPLEX_TYPE = 35;
+	int COMPLEX_TYPE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_TYPE__TYPE_NAME = TYPE__TYPE_NAME;
 
 	/**
 	 * The number of structural features of the '<em>Complex Type</em>' class.
@@ -1480,6 +1198,16 @@ public interface ComponentModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link componentModel.CBSDataType <em>CBS Data Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentModel.CBSDataType
+	 * @see componentModel.impl.ComponentModelPackageImpl#getCBSDataType()
+	 * @generated
+	 */
+	int CBS_DATA_TYPE = 25;
 
 
 	/**
@@ -1534,17 +1262,6 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRepository_Signatures();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getTypes <em>Types</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Types</em>'.
-	 * @see componentModel.Repository#getTypes()
-	 * @see #getRepository()
-	 * @generated
-	 */
-	EReference getRepository_Types();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link componentModel.Repository#getServices <em>Services</em>}'.
@@ -1610,6 +1327,17 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponent_ServiceEffectSpecification();
+
+	/**
+	 * Returns the meta object for the reference list '{@link componentModel.Component#getRequiredInterfaces <em>Required Interfaces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Required Interfaces</em>'.
+	 * @see componentModel.Component#getRequiredInterfaces()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_RequiredInterfaces();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.InterfaceServiceMapEntry <em>Interface Service Map Entry</em>}'.
@@ -1855,17 +1583,6 @@ public interface ComponentModelPackage extends EPackage {
 	EAttribute getSignature_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentModel.Signature#getReturnType <em>Return Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Return Type</em>'.
-	 * @see componentModel.Signature#getReturnType()
-	 * @see #getSignature()
-	 * @generated
-	 */
-	EReference getSignature_ReturnType();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link componentModel.Signature#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1877,14 +1594,15 @@ public interface ComponentModelPackage extends EPackage {
 	EReference getSignature_Parameters();
 
 	/**
-	 * Returns the meta object for class '{@link componentModel.Type <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link componentModel.Signature#getReturnType <em>Return Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type</em>'.
-	 * @see componentModel.Type
+	 * @return the meta object for the reference '<em>Return Type</em>'.
+	 * @see componentModel.Signature#getReturnType()
+	 * @see #getSignature()
 	 * @generated
 	 */
-	EClass getType();
+	EReference getSignature_ReturnType();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.Service <em>Service</em>}'.
@@ -1960,126 +1678,6 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getViewPoint_Name();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Void <em>Void</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Void</em>'.
-	 * @see componentModel.Void
-	 * @generated
-	 */
-	EClass getVoid();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Simple Type</em>'.
-	 * @see componentModel.SimpleType
-	 * @generated
-	 */
-	EClass getSimpleType();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Boolean <em>Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Boolean</em>'.
-	 * @see componentModel.Boolean
-	 * @generated
-	 */
-	EClass getBoolean();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Int <em>Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Int</em>'.
-	 * @see componentModel.Int
-	 * @generated
-	 */
-	EClass getInt();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Char <em>Char</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Char</em>'.
-	 * @see componentModel.Char
-	 * @generated
-	 */
-	EClass getChar();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Date <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Date</em>'.
-	 * @see componentModel.Date
-	 * @generated
-	 */
-	EClass getDate();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.List <em>List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>List</em>'.
-	 * @see componentModel.List
-	 * @generated
-	 */
-	EClass getList();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Map <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Map</em>'.
-	 * @see componentModel.Map
-	 * @generated
-	 */
-	EClass getMap();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Float <em>Float</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Float</em>'.
-	 * @see componentModel.Float
-	 * @generated
-	 */
-	EClass getFloat();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Long <em>Long</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Long</em>'.
-	 * @see componentModel.Long
-	 * @generated
-	 */
-	EClass getLong();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.Double <em>Double</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Double</em>'.
-	 * @see componentModel.Double
-	 * @generated
-	 */
-	EClass getDouble();
-
-	/**
-	 * Returns the meta object for class '{@link componentModel.String <em>String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String</em>'.
-	 * @see componentModel.String
-	 * @generated
-	 */
-	EClass getString();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.Parameter <em>Parameter</em>}'.
@@ -2174,6 +1772,37 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getRepositoryViewType();
 
 	/**
+	 * Returns the meta object for class '{@link componentModel.Type <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type</em>'.
+	 * @see componentModel.Type
+	 * @generated
+	 */
+	EClass getType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentModel.Type#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see componentModel.Type#getTypeName()
+	 * @see #getType()
+	 * @generated
+	 */
+	EAttribute getType_TypeName();
+
+	/**
+	 * Returns the meta object for class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Simple Type</em>'.
+	 * @see componentModel.SimpleType
+	 * @generated
+	 */
+	EClass getSimpleType();
+
+	/**
 	 * Returns the meta object for class '{@link componentModel.ComplexType <em>Complex Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2182,6 +1811,16 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComplexType();
+
+	/**
+	 * Returns the meta object for enum '{@link componentModel.CBSDataType <em>CBS Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>CBS Data Type</em>'.
+	 * @see componentModel.CBSDataType
+	 * @generated
+	 */
+	EEnum getCBSDataType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2251,14 +1890,6 @@ public interface ComponentModelPackage extends EPackage {
 		EReference REPOSITORY__SIGNATURES = eINSTANCE.getRepository_Signatures();
 
 		/**
-		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REPOSITORY__TYPES = eINSTANCE.getRepository_Types();
-
-		/**
 		 * The meta object literal for the '<em><b>Services</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2307,6 +1938,14 @@ public interface ComponentModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT__SERVICE_EFFECT_SPECIFICATION = eINSTANCE.getComponent_ServiceEffectSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Interfaces</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__REQUIRED_INTERFACES = eINSTANCE.getComponent_RequiredInterfaces();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.InterfaceServiceMapEntryImpl <em>Interface Service Map Entry</em>}' class.
@@ -2513,14 +2152,6 @@ public interface ComponentModelPackage extends EPackage {
 		EAttribute SIGNATURE__NAME = eINSTANCE.getSignature_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SIGNATURE__RETURN_TYPE = eINSTANCE.getSignature_ReturnType();
-
-		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2529,14 +2160,12 @@ public interface ComponentModelPackage extends EPackage {
 		EReference SIGNATURE__PARAMETERS = eINSTANCE.getSignature_Parameters();
 
 		/**
-		 * The meta object literal for the '{@link componentModel.impl.TypeImpl <em>Type</em>}' class.
+		 * The meta object literal for the '<em><b>Return Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.TypeImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getType()
 		 * @generated
 		 */
-		EClass TYPE = eINSTANCE.getType();
+		EReference SIGNATURE__RETURN_TYPE = eINSTANCE.getSignature_ReturnType();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.ServiceImpl <em>Service</em>}' class.
@@ -2597,126 +2226,6 @@ public interface ComponentModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VIEW_POINT__NAME = eINSTANCE.getViewPoint_Name();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.VoidImpl <em>Void</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.VoidImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getVoid()
-		 * @generated
-		 */
-		EClass VOID = eINSTANCE.getVoid();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.SimpleTypeImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleType()
-		 * @generated
-		 */
-		EClass SIMPLE_TYPE = eINSTANCE.getSimpleType();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.BooleanImpl <em>Boolean</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.BooleanImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getBoolean()
-		 * @generated
-		 */
-		EClass BOOLEAN = eINSTANCE.getBoolean();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.IntImpl <em>Int</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.IntImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getInt()
-		 * @generated
-		 */
-		EClass INT = eINSTANCE.getInt();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.CharImpl <em>Char</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.CharImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getChar()
-		 * @generated
-		 */
-		EClass CHAR = eINSTANCE.getChar();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.DateImpl <em>Date</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.DateImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getDate()
-		 * @generated
-		 */
-		EClass DATE = eINSTANCE.getDate();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.ListImpl <em>List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.ListImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getList()
-		 * @generated
-		 */
-		EClass LIST = eINSTANCE.getList();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.MapImpl <em>Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.MapImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getMap()
-		 * @generated
-		 */
-		EClass MAP = eINSTANCE.getMap();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.FloatImpl <em>Float</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.FloatImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getFloat()
-		 * @generated
-		 */
-		EClass FLOAT = eINSTANCE.getFloat();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.LongImpl <em>Long</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.LongImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getLong()
-		 * @generated
-		 */
-		EClass LONG = eINSTANCE.getLong();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.DoubleImpl <em>Double</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.DoubleImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getDouble()
-		 * @generated
-		 */
-		EClass DOUBLE = eINSTANCE.getDouble();
-
-		/**
-		 * The meta object literal for the '{@link componentModel.impl.StringImpl <em>String</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see componentModel.impl.StringImpl
-		 * @see componentModel.impl.ComponentModelPackageImpl#getString()
-		 * @generated
-		 */
-		EClass STRING = eINSTANCE.getString();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -2805,6 +2314,34 @@ public interface ComponentModelPackage extends EPackage {
 		EClass REPOSITORY_VIEW_TYPE = eINSTANCE.getRepositoryViewType();
 
 		/**
+		 * The meta object literal for the '{@link componentModel.impl.TypeImpl <em>Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentModel.impl.TypeImpl
+		 * @see componentModel.impl.ComponentModelPackageImpl#getType()
+		 * @generated
+		 */
+		EClass TYPE = eINSTANCE.getType();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TYPE__TYPE_NAME = eINSTANCE.getType_TypeName();
+
+		/**
+		 * The meta object literal for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentModel.impl.SimpleTypeImpl
+		 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleType()
+		 * @generated
+		 */
+		EClass SIMPLE_TYPE = eINSTANCE.getSimpleType();
+
+		/**
 		 * The meta object literal for the '{@link componentModel.impl.ComplexTypeImpl <em>Complex Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2813,6 +2350,16 @@ public interface ComponentModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPLEX_TYPE = eINSTANCE.getComplexType();
+
+		/**
+		 * The meta object literal for the '{@link componentModel.CBSDataType <em>CBS Data Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentModel.CBSDataType
+		 * @see componentModel.impl.ComponentModelPackageImpl#getCBSDataType()
+		 * @generated
+		 */
+		EEnum CBS_DATA_TYPE = eINSTANCE.getCBSDataType();
 
 	}
 

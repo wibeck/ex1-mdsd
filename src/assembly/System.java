@@ -2,8 +2,6 @@
  */
 package assembly;
 
-import componentModel.Interface;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -15,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link assembly.System#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  *   <li>{@link assembly.System#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}</li>
  *   <li>{@link assembly.System#getName <em>Name</em>}</li>
  * </ul>
@@ -26,18 +23,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface System extends Context {
-	/**
-	 * Returns the value of the '<em><b>Provided Interfaces</b></em>' reference list.
-	 * The list contents are of type {@link componentModel.Interface}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provided Interfaces</em>' reference list.
-	 * @see assembly.AssemblyPackage#getSystem_ProvidedInterfaces()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	EList<Interface> getProvidedInterfaces();
-
 	/**
 	 * Returns the value of the '<em><b>Encapsulated Assembly Contexts</b></em>' reference list.
 	 * The list contents are of type {@link assembly.AssemblyContext}.
@@ -57,7 +42,7 @@ public interface System extends Context {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see assembly.AssemblyPackage#getSystem_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

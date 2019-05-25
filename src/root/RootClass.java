@@ -5,6 +5,7 @@ package root;
 import assembly.ContextEnvironment;
 
 import componentModel.ViewPoint;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +60,7 @@ public interface RootClass extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see root.RootPackage#getRootClass_Name()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getName();

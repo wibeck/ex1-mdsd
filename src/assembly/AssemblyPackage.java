@@ -107,13 +107,22 @@ public interface AssemblyPackage extends EPackage {
 	int CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Provided Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__PROVIDED_INTERFACES = 4;
+
+	/**
 	 * The number of structural features of the '<em>Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 4;
+	int CONTEXT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -171,6 +180,15 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Provided Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONTEXT__PROVIDED_INTERFACES = CONTEXT__PROVIDED_INTERFACES;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -216,22 +234,13 @@ public interface AssemblyPackage extends EPackage {
 	int ASSEMBLY_CONTEXT__OWNER_COMPONENT = CONTEXT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Provided Interfaces</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_CONTEXT__PROVIDED_INTERFACES = CONTEXT_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONTEXT_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 6;
+	int ASSEMBLY_CONTEXT_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -680,7 +689,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__PROVIDED_INTERFACES = CONTEXT_FEATURE_COUNT + 0;
+	int SYSTEM__PROVIDED_INTERFACES = CONTEXT__PROVIDED_INTERFACES;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated Assembly Contexts</b></em>' reference list.
@@ -689,7 +698,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS = CONTEXT_FEATURE_COUNT + 1;
+	int SYSTEM__ENCAPSULATED_ASSEMBLY_CONTEXTS = CONTEXT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -698,7 +707,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__NAME = CONTEXT_FEATURE_COUNT + 2;
+	int SYSTEM__NAME = CONTEXT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -707,7 +716,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 3;
+	int SYSTEM_FEATURE_COUNT = CONTEXT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -754,6 +763,15 @@ public interface AssemblyPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_COMPONENT__SERVICE_EFFECT_SPECIFICATION = ComponentModelPackage.COMPONENT__SERVICE_EFFECT_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Required Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_COMPONENT__REQUIRED_INTERFACES = ComponentModelPackage.COMPONENT__REQUIRED_INTERFACES;
 
 	/**
 	 * The feature id for the '<em><b>Encapsulated Assembly Contexts</b></em>' containment reference list.
@@ -909,17 +927,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssemblyContext_OwnerComponent();
-
-	/**
-	 * Returns the meta object for the reference list '{@link assembly.AssemblyContext#getProvidedInterfaces <em>Provided Interfaces</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Provided Interfaces</em>'.
-	 * @see assembly.AssemblyContext#getProvidedInterfaces()
-	 * @see #getAssemblyContext()
-	 * @generated
-	 */
-	EReference getAssemblyContext_ProvidedInterfaces();
 
 	/**
 	 * Returns the meta object for class '{@link assembly.AssemblyConnector <em>Connector</em>}'.
@@ -1102,6 +1109,17 @@ public interface AssemblyPackage extends EPackage {
 	EReference getContext_OutwardAssemblyConnectors();
 
 	/**
+	 * Returns the meta object for the reference list '{@link assembly.Context#getProvidedInterfaces <em>Provided Interfaces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Provided Interfaces</em>'.
+	 * @see assembly.Context#getProvidedInterfaces()
+	 * @see #getContext()
+	 * @generated
+	 */
+	EReference getContext_ProvidedInterfaces();
+
+	/**
 	 * Returns the meta object for class '{@link assembly.DelegationConnector <em>Delegation Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1153,17 +1171,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSystem();
-
-	/**
-	 * Returns the meta object for the reference list '{@link assembly.System#getProvidedInterfaces <em>Provided Interfaces</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Provided Interfaces</em>'.
-	 * @see assembly.System#getProvidedInterfaces()
-	 * @see #getSystem()
-	 * @generated
-	 */
-	EReference getSystem_ProvidedInterfaces();
 
 	/**
 	 * Returns the meta object for the reference list '{@link assembly.System#getEncapsulatedAssemblyContexts <em>Encapsulated Assembly Contexts</em>}'.
@@ -1339,14 +1346,6 @@ public interface AssemblyPackage extends EPackage {
 		EReference ASSEMBLY_CONTEXT__OWNER_COMPONENT = eINSTANCE.getAssemblyContext_OwnerComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Provided Interfaces</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSEMBLY_CONTEXT__PROVIDED_INTERFACES = eINSTANCE.getAssemblyContext_ProvidedInterfaces();
-
-		/**
 		 * The meta object literal for the '{@link assembly.impl.AssemblyConnectorImpl <em>Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1497,6 +1496,14 @@ public interface AssemblyPackage extends EPackage {
 		EReference CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS = eINSTANCE.getContext_OutwardAssemblyConnectors();
 
 		/**
+		 * The meta object literal for the '<em><b>Provided Interfaces</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT__PROVIDED_INTERFACES = eINSTANCE.getContext_ProvidedInterfaces();
+
+		/**
 		 * The meta object literal for the '{@link assembly.impl.DelegationConnectorImpl <em>Delegation Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1539,14 +1546,6 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SYSTEM = eINSTANCE.getSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>Provided Interfaces</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYSTEM__PROVIDED_INTERFACES = eINSTANCE.getSystem_ProvidedInterfaces();
 
 		/**
 		 * The meta object literal for the '<em><b>Encapsulated Assembly Contexts</b></em>' reference list feature.

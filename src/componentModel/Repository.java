@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link componentModel.Repository#getComponents <em>Components</em>}</li>
  *   <li>{@link componentModel.Repository#getInterFaces <em>Inter Faces</em>}</li>
  *   <li>{@link componentModel.Repository#getSignatures <em>Signatures</em>}</li>
- *   <li>{@link componentModel.Repository#getTypes <em>Types</em>}</li>
  *   <li>{@link componentModel.Repository#getServices <em>Services</em>}</li>
  *   <li>{@link componentModel.Repository#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}</li>
  * </ul>
@@ -61,18 +60,6 @@ public interface Repository extends RepositoryViewType {
 	 * @generated
 	 */
 	EList<Signature> getSignatures();
-
-	/**
-	 * Returns the value of the '<em><b>Types</b></em>' containment reference list.
-	 * The list contents are of type {@link componentModel.Type}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Types</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getRepository_Types()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Type> getTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.

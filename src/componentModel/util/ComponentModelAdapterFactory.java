@@ -2,37 +2,7 @@
  */
 package componentModel.util;
 
-import componentModel.Action;
-import componentModel.AllocationViewType;
-import componentModel.AssemblyViewPoint;
-import componentModel.AssemblyViewType;
-import componentModel.Branch;
-import componentModel.Char;
-import componentModel.ComplexType;
-import componentModel.Component;
-import componentModel.ComponentModelPackage;
-import componentModel.Date;
-import componentModel.DeploymentViewPoint;
-import componentModel.EnvironmentViewType;
-import componentModel.ExternalCall;
-import componentModel.Int;
-import componentModel.Interface;
-import componentModel.InterfaceServiceMapEntry;
-import componentModel.InternalAction;
-import componentModel.List;
-import componentModel.Loop;
-import componentModel.Map;
-import componentModel.Parameter;
-import componentModel.Repository;
-import componentModel.RepositoryViewType;
-import componentModel.Service;
-import componentModel.ServiceEffectSpecification;
-import componentModel.Signature;
-import componentModel.SimpleType;
-import componentModel.SystemIndependentViewPoint;
-import componentModel.Type;
-import componentModel.ViewPoint;
-import componentModel.ViewType;
+import componentModel.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -150,64 +120,12 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 				return createSignatureAdapter();
 			}
 			@Override
-			public Adapter caseType(Type object) {
-				return createTypeAdapter();
-			}
-			@Override
 			public Adapter caseService(Service object) {
 				return createServiceAdapter();
 			}
 			@Override
 			public Adapter caseViewPoint(ViewPoint object) {
 				return createViewPointAdapter();
-			}
-			@Override
-			public Adapter caseVoid(componentModel.Void object) {
-				return createVoidAdapter();
-			}
-			@Override
-			public Adapter caseSimpleType(SimpleType object) {
-				return createSimpleTypeAdapter();
-			}
-			@Override
-			public Adapter caseBoolean(componentModel.Boolean object) {
-				return createBooleanAdapter();
-			}
-			@Override
-			public Adapter caseInt(Int object) {
-				return createIntAdapter();
-			}
-			@Override
-			public Adapter caseChar(Char object) {
-				return createCharAdapter();
-			}
-			@Override
-			public Adapter caseDate(Date object) {
-				return createDateAdapter();
-			}
-			@Override
-			public Adapter caseList(List object) {
-				return createListAdapter();
-			}
-			@Override
-			public Adapter caseMap(Map object) {
-				return createMapAdapter();
-			}
-			@Override
-			public Adapter caseFloat(componentModel.Float object) {
-				return createFloatAdapter();
-			}
-			@Override
-			public Adapter caseLong(componentModel.Long object) {
-				return createLongAdapter();
-			}
-			@Override
-			public Adapter caseDouble(componentModel.Double object) {
-				return createDoubleAdapter();
-			}
-			@Override
-			public Adapter caseString(componentModel.String object) {
-				return createStringAdapter();
 			}
 			@Override
 			public Adapter caseParameter(Parameter object) {
@@ -236,6 +154,14 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRepositoryViewType(RepositoryViewType object) {
 				return createRepositoryViewTypeAdapter();
+			}
+			@Override
+			public Adapter caseType(Type object) {
+				return createTypeAdapter();
+			}
+			@Override
+			public Adapter caseSimpleType(SimpleType object) {
+				return createSimpleTypeAdapter();
 			}
 			@Override
 			public Adapter caseComplexType(ComplexType object) {
@@ -444,20 +370,6 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Type <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Type
-	 * @generated
-	 */
-	public Adapter createTypeAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link componentModel.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -482,174 +394,6 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createViewPointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Void <em>Void</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Void
-	 * @generated
-	 */
-	public Adapter createVoidAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.SimpleType
-	 * @generated
-	 */
-	public Adapter createSimpleTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Boolean <em>Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Boolean
-	 * @generated
-	 */
-	public Adapter createBooleanAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Int <em>Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Int
-	 * @generated
-	 */
-	public Adapter createIntAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Char <em>Char</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Char
-	 * @generated
-	 */
-	public Adapter createCharAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Date <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Date
-	 * @generated
-	 */
-	public Adapter createDateAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.List <em>List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.List
-	 * @generated
-	 */
-	public Adapter createListAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Map <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Map
-	 * @generated
-	 */
-	public Adapter createMapAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Float <em>Float</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Float
-	 * @generated
-	 */
-	public Adapter createFloatAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Long <em>Long</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Long
-	 * @generated
-	 */
-	public Adapter createLongAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.Double <em>Double</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.Double
-	 * @generated
-	 */
-	public Adapter createDoubleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.String <em>String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see componentModel.String
-	 * @generated
-	 */
-	public Adapter createStringAdapter() {
 		return null;
 	}
 
@@ -748,6 +492,34 @@ public class ComponentModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRepositoryViewTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.Type <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.Type
+	 * @generated
+	 */
+	public Adapter createTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.SimpleType
+	 * @generated
+	 */
+	public Adapter createSimpleTypeAdapter() {
 		return null;
 	}
 
