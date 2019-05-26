@@ -11,7 +11,6 @@ import componentModel.AllocationViewType;
 import componentModel.AssemblyViewPoint;
 import componentModel.AssemblyViewType;
 import componentModel.Branch;
-import componentModel.CBSDataType;
 import componentModel.ComplexType;
 import componentModel.Component;
 import componentModel.ComponentModelFactory;
@@ -29,6 +28,7 @@ import componentModel.RepositoryViewType;
 import componentModel.Service;
 import componentModel.ServiceEffectSpecification;
 import componentModel.Signature;
+import componentModel.SimpleDataType;
 import componentModel.SimpleType;
 import componentModel.SystemIndependentViewPoint;
 import componentModel.Type;
@@ -241,7 +241,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum cbsDataTypeEEnum = null;
+	private EEnum simpleDataTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -874,8 +874,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EAttribute getType_TypeName() {
-		return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+	public EClass getSimpleType() {
+		return simpleTypeEClass;
 	}
 
 	/**
@@ -884,8 +884,8 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EClass getSimpleType() {
-		return simpleTypeEClass;
+	public EAttribute getSimpleType_TypeName() {
+		return (EAttribute)simpleTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -904,8 +904,18 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public EEnum getCBSDataType() {
-		return cbsDataTypeEEnum;
+	public EAttribute getComplexType_Name() {
+		return (EAttribute)complexTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getSimpleDataType() {
+		return simpleDataTypeEEnum;
 	}
 
 	/**
@@ -1013,14 +1023,15 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		repositoryViewTypeEClass = createEClass(REPOSITORY_VIEW_TYPE);
 
 		typeEClass = createEClass(TYPE);
-		createEAttribute(typeEClass, TYPE__TYPE_NAME);
 
 		simpleTypeEClass = createEClass(SIMPLE_TYPE);
+		createEAttribute(simpleTypeEClass, SIMPLE_TYPE__TYPE_NAME);
 
 		complexTypeEClass = createEClass(COMPLEX_TYPE);
+		createEAttribute(complexTypeEClass, COMPLEX_TYPE__NAME);
 
 		// Create enums
-		cbsDataTypeEEnum = createEEnum(CBS_DATA_TYPE);
+		simpleDataTypeEEnum = createEEnum(SIMPLE_DATA_TYPE);
 	}
 
 	/**
@@ -1082,7 +1093,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		getRepository_InterfaceServiceMapEntries().getEKeys().add(this.getInterfaceServiceMapEntry_Name());
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_InterfaceServiceMap(), this.getInterfaceServiceMapEntry(), null, "interfaceServiceMap", null, 1, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		getComponent_InterfaceServiceMap().getEKeys().add(this.getInterfaceServiceMapEntry_Name());
 		initEReference(getComponent_ServiceEffectSpecification(), this.getServiceEffectSpecification(), null, "serviceEffectSpecification", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1156,26 +1167,26 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		initEClass(repositoryViewTypeEClass, RepositoryViewType.class, "RepositoryViewType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getType_TypeName(), this.getCBSDataType(), "typeName", null, 1, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simpleTypeEClass, SimpleType.class, "SimpleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSimpleType_TypeName(), this.getSimpleDataType(), "typeName", null, 1, 1, SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(complexTypeEClass, ComplexType.class, "ComplexType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComplexType_Name(), ecorePackage.getEString(), "name", null, 1, 1, ComplexType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(cbsDataTypeEEnum, CBSDataType.class, "CBSDataType");
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.BOOLEAN);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.INT);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.CHAR);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.DATE);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.LIST);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.MAP);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.FLOAT);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.LONG);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.DOUBLE);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.STRING);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.VOID);
-		addEEnumLiteral(cbsDataTypeEEnum, CBSDataType.COMPLEX_TYPE);
+		initEEnum(simpleDataTypeEEnum, SimpleDataType.class, "SimpleDataType");
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.BOOLEAN);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.INT);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.CHAR);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.DATE);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.LIST);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.MAP);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.FLOAT);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.LONG);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.DOUBLE);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.STRING);
+		addEEnumLiteral(simpleDataTypeEEnum, SimpleDataType.VOID);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1262,7 +1273,7 @@ public class ComponentModelPackageImpl extends EPackageImpl implements Component
 		  (parameterEClass,
 		   source,
 		   new String[] {
-			   "VoidNotParameterType", "self.parameterType.typeName <> CBSDataType::VOID "
+			   "VoidNotParameterType", "if self.parameterType.oclIsKindOf(SimpleType) then self.parameterType.oclAsType(SimpleType) \n\t\t\t\t\t\t\t\t\t\t<> SimpleDataType::VOID else true endif"
 		   });
 		addAnnotation
 		  (assemblyViewPointEClass,

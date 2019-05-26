@@ -136,8 +136,8 @@ public class ComponentModelValidator extends EObjectValidator {
 				return validateSimpleType((SimpleType)value, diagnostics, context);
 			case ComponentModelPackage.COMPLEX_TYPE:
 				return validateComplexType((ComplexType)value, diagnostics, context);
-			case ComponentModelPackage.CBS_DATA_TYPE:
-				return validateCBSDataType((CBSDataType)value, diagnostics, context);
+			case ComponentModelPackage.SIMPLE_DATA_TYPE:
+				return validateSimpleDataType((SimpleDataType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -414,7 +414,8 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PARAMETER__VOID_NOT_PARAMETER_TYPE__EEXPRESSION = "self.parameterType.typeName <> CBSDataType::VOID ";
+	protected static final String PARAMETER__VOID_NOT_PARAMETER_TYPE__EEXPRESSION = "if self.parameterType.oclIsKindOf(SimpleType) then self.parameterType.oclAsType(SimpleType) \n" +
+		"\t\t\t\t\t\t\t\t\t\t<> SimpleDataType::VOID else true endif";
 
 	/**
 	 * Validates the VoidNotParameterType constraint of '<em>Parameter</em>'.
@@ -602,7 +603,7 @@ public class ComponentModelValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCBSDataType(CBSDataType cbsDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSimpleDataType(SimpleDataType simpleDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

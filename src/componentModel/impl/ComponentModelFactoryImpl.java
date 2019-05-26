@@ -87,8 +87,8 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ComponentModelPackage.CBS_DATA_TYPE:
-				return createCBSDataTypeFromString(eDataType, initialValue);
+			case ComponentModelPackage.SIMPLE_DATA_TYPE:
+				return createSimpleDataTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -102,8 +102,8 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ComponentModelPackage.CBS_DATA_TYPE:
-				return convertCBSDataTypeToString(eDataType, instanceValue);
+			case ComponentModelPackage.SIMPLE_DATA_TYPE:
+				return convertSimpleDataTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -301,8 +301,8 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CBSDataType createCBSDataTypeFromString(EDataType eDataType, String initialValue) {
-		CBSDataType result = CBSDataType.get(initialValue);
+	public SimpleDataType createSimpleDataTypeFromString(EDataType eDataType, String initialValue) {
+		SimpleDataType result = SimpleDataType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -312,7 +312,7 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertCBSDataTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertSimpleDataTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

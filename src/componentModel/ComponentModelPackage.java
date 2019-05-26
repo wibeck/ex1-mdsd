@@ -1099,22 +1099,13 @@ public interface ComponentModelPackage extends EPackage {
 	int TYPE = 22;
 
 	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE__TYPE_NAME = 0;
-
-	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = 1;
+	int TYPE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -1142,7 +1133,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_TYPE__TYPE_NAME = TYPE__TYPE_NAME;
+	int SIMPLE_TYPE__TYPE_NAME = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Simple Type</em>' class.
@@ -1151,7 +1142,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+	int SIMPLE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Simple Type</em>' class.
@@ -1173,13 +1164,13 @@ public interface ComponentModelPackage extends EPackage {
 	int COMPLEX_TYPE = 24;
 
 	/**
-	 * The feature id for the '<em><b>Type Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_TYPE__TYPE_NAME = TYPE__TYPE_NAME;
+	int COMPLEX_TYPE__NAME = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Complex Type</em>' class.
@@ -1188,7 +1179,7 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+	int COMPLEX_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Complex Type</em>' class.
@@ -1200,14 +1191,14 @@ public interface ComponentModelPackage extends EPackage {
 	int COMPLEX_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link componentModel.CBSDataType <em>CBS Data Type</em>}' enum.
+	 * The meta object id for the '{@link componentModel.SimpleDataType <em>Simple Data Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentModel.CBSDataType
-	 * @see componentModel.impl.ComponentModelPackageImpl#getCBSDataType()
+	 * @see componentModel.SimpleDataType
+	 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleDataType()
 	 * @generated
 	 */
-	int CBS_DATA_TYPE = 25;
+	int SIMPLE_DATA_TYPE = 25;
 
 
 	/**
@@ -1782,17 +1773,6 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link componentModel.Type#getTypeName <em>Type Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Name</em>'.
-	 * @see componentModel.Type#getTypeName()
-	 * @see #getType()
-	 * @generated
-	 */
-	EAttribute getType_TypeName();
-
-	/**
 	 * Returns the meta object for class '{@link componentModel.SimpleType <em>Simple Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1801,6 +1781,17 @@ public interface ComponentModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSimpleType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentModel.SimpleType#getTypeName <em>Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Name</em>'.
+	 * @see componentModel.SimpleType#getTypeName()
+	 * @see #getSimpleType()
+	 * @generated
+	 */
+	EAttribute getSimpleType_TypeName();
 
 	/**
 	 * Returns the meta object for class '{@link componentModel.ComplexType <em>Complex Type</em>}'.
@@ -1813,14 +1804,25 @@ public interface ComponentModelPackage extends EPackage {
 	EClass getComplexType();
 
 	/**
-	 * Returns the meta object for enum '{@link componentModel.CBSDataType <em>CBS Data Type</em>}'.
+	 * Returns the meta object for the attribute '{@link componentModel.ComplexType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>CBS Data Type</em>'.
-	 * @see componentModel.CBSDataType
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentModel.ComplexType#getName()
+	 * @see #getComplexType()
 	 * @generated
 	 */
-	EEnum getCBSDataType();
+	EAttribute getComplexType_Name();
+
+	/**
+	 * Returns the meta object for enum '{@link componentModel.SimpleDataType <em>Simple Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Simple Data Type</em>'.
+	 * @see componentModel.SimpleDataType
+	 * @generated
+	 */
+	EEnum getSimpleDataType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2324,14 +2326,6 @@ public interface ComponentModelPackage extends EPackage {
 		EClass TYPE = eINSTANCE.getType();
 
 		/**
-		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TYPE__TYPE_NAME = eINSTANCE.getType_TypeName();
-
-		/**
 		 * The meta object literal for the '{@link componentModel.impl.SimpleTypeImpl <em>Simple Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2340,6 +2334,14 @@ public interface ComponentModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SIMPLE_TYPE = eINSTANCE.getSimpleType();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE_TYPE__TYPE_NAME = eINSTANCE.getSimpleType_TypeName();
 
 		/**
 		 * The meta object literal for the '{@link componentModel.impl.ComplexTypeImpl <em>Complex Type</em>}' class.
@@ -2352,14 +2354,22 @@ public interface ComponentModelPackage extends EPackage {
 		EClass COMPLEX_TYPE = eINSTANCE.getComplexType();
 
 		/**
-		 * The meta object literal for the '{@link componentModel.CBSDataType <em>CBS Data Type</em>}' enum.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentModel.CBSDataType
-		 * @see componentModel.impl.ComponentModelPackageImpl#getCBSDataType()
 		 * @generated
 		 */
-		EEnum CBS_DATA_TYPE = eINSTANCE.getCBSDataType();
+		EAttribute COMPLEX_TYPE__NAME = eINSTANCE.getComplexType_Name();
+
+		/**
+		 * The meta object literal for the '{@link componentModel.SimpleDataType <em>Simple Data Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentModel.SimpleDataType
+		 * @see componentModel.impl.ComponentModelPackageImpl#getSimpleDataType()
+		 * @generated
+		 */
+		EEnum SIMPLE_DATA_TYPE = eINSTANCE.getSimpleDataType();
 
 	}
 

@@ -32,19 +32,18 @@
     </genClasses>
   </genPackages>
   <genPackages prefix="ComponentModel" disposableProviderFactory="true" ecorePackage="componentModel.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="componentModel.ecore#//CBSDataType">
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/BOOLEAN"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/INT"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/CHAR"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/DATE"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/LIST"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/MAP"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/FLOAT"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/LONG"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/DOUBLE"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/STRING"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/VOID"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//CBSDataType/COMPLEX_TYPE"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="componentModel.ecore#//SimpleDataType">
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/LIST"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/MAP"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/VOID"/>
     </genEnums>
     <genClasses image="false" ecoreClass="componentModel.ecore#//SystemIndependentViewPoint"/>
     <genClasses ecoreClass="componentModel.ecore#//Repository">
@@ -113,11 +112,13 @@
     <genClasses image="false" ecoreClass="componentModel.ecore#//AssemblyViewPoint"/>
     <genClasses image="false" ecoreClass="componentModel.ecore#//DeploymentViewPoint"/>
     <genClasses image="false" ecoreClass="componentModel.ecore#//RepositoryViewType"/>
-    <genClasses image="false" ecoreClass="componentModel.ecore#//Type">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//Type/typeName"/>
+    <genClasses image="false" ecoreClass="componentModel.ecore#//Type"/>
+    <genClasses image="false" ecoreClass="componentModel.ecore#//SimpleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//SimpleType/typeName"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="componentModel.ecore#//SimpleType"/>
-    <genClasses ecoreClass="componentModel.ecore#//ComplexType"/>
+    <genClasses ecoreClass="componentModel.ecore#//ComplexType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//ComplexType/name"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Assembly" disposableProviderFactory="true" ecorePackage="assembly.ecore#/">
     <genClasses ecoreClass="assembly.ecore#//AssemblyContext">

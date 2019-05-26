@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see componentModel.ComponentModelPackage#getParameter()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='VoidNotParameterType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot VoidNotParameterType='self.parameterType.typeName &lt;&gt; CBSDataType::VOID '"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot VoidNotParameterType='if self.parameterType.oclIsKindOf(SimpleType) then self.parameterType.oclAsType(SimpleType) \n\t\t\t\t\t\t\t\t\t\t&lt;&gt; SimpleDataType::VOID else true endif'"
  * @generated
  */
 public interface Parameter extends EObject {

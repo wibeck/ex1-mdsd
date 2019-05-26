@@ -10,14 +10,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>CBS Data Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Simple Data Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see componentModel.ComponentModelPackage#getCBSDataType()
+ * @see componentModel.ComponentModelPackage#getSimpleDataType()
  * @model
  * @generated
  */
-public enum CBSDataType implements Enumerator {
+public enum SimpleDataType implements Enumerator {
 	/**
 	 * The '<em><b>BOOLEAN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -126,17 +126,7 @@ public enum CBSDataType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VOID(10, "VOID", "Void"),
-
-	/**
-	 * The '<em><b>COMPLEX TYPE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #COMPLEX_TYPE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	COMPLEX_TYPE(11, "COMPLEX_TYPE", "");
+	VOID(10, "VOID", "Void");
 
 	/**
 	 * The '<em><b>BOOLEAN</b></em>' literal value.
@@ -260,24 +250,13 @@ public enum CBSDataType implements Enumerator {
 	public static final int VOID_VALUE = 10;
 
 	/**
-	 * The '<em><b>COMPLEX TYPE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #COMPLEX_TYPE
-	 * @model literal=""
-	 * @generated
-	 * @ordered
-	 */
-	public static final int COMPLEX_TYPE_VALUE = 11;
-
-	/**
-	 * An array of all the '<em><b>CBS Data Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Simple Data Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final CBSDataType[] VALUES_ARRAY =
-		new CBSDataType[] {
+	private static final SimpleDataType[] VALUES_ARRAY =
+		new SimpleDataType[] {
 			BOOLEAN,
 			INT,
 			CHAR,
@@ -289,28 +268,27 @@ public enum CBSDataType implements Enumerator {
 			DOUBLE,
 			STRING,
 			VOID,
-			COMPLEX_TYPE,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>CBS Data Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Simple Data Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<CBSDataType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<SimpleDataType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>CBS Data Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Simple Data Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static CBSDataType get(String literal) {
+	public static SimpleDataType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			CBSDataType result = VALUES_ARRAY[i];
+			SimpleDataType result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -319,16 +297,16 @@ public enum CBSDataType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>CBS Data Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Simple Data Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static CBSDataType getByName(String name) {
+	public static SimpleDataType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			CBSDataType result = VALUES_ARRAY[i];
+			SimpleDataType result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -337,14 +315,14 @@ public enum CBSDataType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>CBS Data Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Simple Data Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static CBSDataType get(int value) {
+	public static SimpleDataType get(int value) {
 		switch (value) {
 			case BOOLEAN_VALUE: return BOOLEAN;
 			case INT_VALUE: return INT;
@@ -357,7 +335,6 @@ public enum CBSDataType implements Enumerator {
 			case DOUBLE_VALUE: return DOUBLE;
 			case STRING_VALUE: return STRING;
 			case VOID_VALUE: return VOID;
-			case COMPLEX_TYPE_VALUE: return COMPLEX_TYPE;
 		}
 		return null;
 	}
@@ -389,7 +366,7 @@ public enum CBSDataType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private CBSDataType(int value, String name, String literal) {
+	private SimpleDataType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -436,4 +413,4 @@ public enum CBSDataType implements Enumerator {
 		return literal;
 	}
 	
-} //CBSDataType
+} //SimpleDataType

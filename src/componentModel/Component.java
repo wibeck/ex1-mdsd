@@ -34,7 +34,7 @@ public interface Component extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see componentModel.ComponentModelPackage#getComponent_Name()
-	 * @model required="true" ordered="false"
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
