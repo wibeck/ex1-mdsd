@@ -2,8 +2,6 @@
  */
 package environment.util;
 
-import componentModel.util.ComponentModelValidator;
-
 import environment.*;
 
 import java.util.Map;
@@ -59,14 +57,6 @@ public class EnvironmentValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
-	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentModelValidator componentModelValidator;
-
-	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,7 +64,6 @@ public class EnvironmentValidator extends EObjectValidator {
 	 */
 	public EnvironmentValidator() {
 		super();
-		componentModelValidator = ComponentModelValidator.INSTANCE;
 	}
 
 	/**
@@ -105,10 +94,6 @@ public class EnvironmentValidator extends EObjectValidator {
 				return validateLink((Link)value, diagnostics, context);
 			case EnvironmentPackage.ALLOCATION_CONTEXT:
 				return validateAllocationContext((AllocationContext)value, diagnostics, context);
-			case EnvironmentPackage.ALLOCATION_ENVIRONMENT:
-				return validateAllocationEnvironment((AllocationEnvironment)value, diagnostics, context);
-			case EnvironmentPackage.CONCRETE_DEPLOYMENT_VIEW_POINT:
-				return validateConcreteDeploymentViewPoint((ConcreteDeploymentViewPoint)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -264,34 +249,6 @@ public class EnvironmentValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAllocationEnvironment(AllocationEnvironment allocationEnvironment, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(allocationEnvironment, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConcreteDeploymentViewPoint(ConcreteDeploymentViewPoint concreteDeploymentViewPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(concreteDeploymentViewPoint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(concreteDeploymentViewPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= componentModelValidator.validateDeploymentViewPoint_DeploymentVPonlyHasDeploymentVT(concreteDeploymentViewPoint, diagnostics, context);
-		return result;
 	}
 
 	/**

@@ -4,7 +4,7 @@ package environment;
 
 import assembly.AssemblyContext;
 
-import org.eclipse.emf.ecore.EObject;
+import componentModel.AllocationViewType;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link environment.AllocationContext#getAssemblyContext <em>Assembly Context</em>}</li>
  *   <li>{@link environment.AllocationContext#getContainer <em>Container</em>}</li>
- *   <li>{@link environment.AllocationContext#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see environment.EnvironmentPackage#getAllocationContext()
@@ -25,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot onlyTopLevelComponentsAllowedToBeAllocated='self.assemblyContext.ownerComponent = null'"
  * @generated
  */
-public interface AllocationContext extends EObject {
+public interface AllocationContext extends AllocationViewType {
 	/**
 	 * Returns the value of the '<em><b>Assembly Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -71,27 +70,5 @@ public interface AllocationContext extends EObject {
 	 * @generated
 	 */
 	void setContainer(Container value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see environment.EnvironmentPackage#getAllocationContext_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link environment.AllocationContext#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 } // AllocationContext

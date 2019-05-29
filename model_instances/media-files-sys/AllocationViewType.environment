@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:env="env" name="AllocationEnvironment">
+  <container name="ApplicationServer" outwardLinks="//@link[name='mainLink']">
+    <allocationContexts name="alloc_acWebGUI">
+      <assemblyContext href="AssemblyViewType.assembly#//@contexts.1"/>
+    </allocationContexts>
+    <allocationContexts name="alloc_acMediaStore">
+      <assemblyContext href="AssemblyViewType.assembly#//@contexts.2"/>
+    </allocationContexts>
+  </container>
+  <container name="DatabaseServer" outwardLinks="//@link[name='mainLink']">
+    <allocationContexts name="alloc_acPoolingAudioDB">
+      <assemblyContext href="AssemblyViewType.assembly#//@contexts.3"/>
+    </allocationContexts>
+  </container>
+  <link container="//@container[name='ApplicationServer'] //@container[name='DatabaseServer']" name="mainLink"/>
+</env:Environment>

@@ -58,24 +58,6 @@ public interface EnvironmentFactory extends EFactory {
 	AllocationContext createAllocationContext();
 
 	/**
-	 * Returns a new object of class '<em>Allocation Environment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Allocation Environment</em>'.
-	 * @generated
-	 */
-	AllocationEnvironment createAllocationEnvironment();
-
-	/**
-	 * Returns a new object of class '<em>Concrete Deployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Concrete Deployment View Point</em>'.
-	 * @generated
-	 */
-	ConcreteDeploymentViewPoint createConcreteDeploymentViewPoint();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -3,9 +3,7 @@
 package environment.util;
 
 import componentModel.AllocationViewType;
-import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
-import componentModel.ViewPoint;
 import componentModel.ViewType;
 
 import environment.*;
@@ -95,22 +93,8 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 			case EnvironmentPackage.ALLOCATION_CONTEXT: {
 				AllocationContext allocationContext = (AllocationContext)theEObject;
 				T result = caseAllocationContext(allocationContext);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EnvironmentPackage.ALLOCATION_ENVIRONMENT: {
-				AllocationEnvironment allocationEnvironment = (AllocationEnvironment)theEObject;
-				T result = caseAllocationEnvironment(allocationEnvironment);
-				if (result == null) result = caseAllocationViewType(allocationEnvironment);
-				if (result == null) result = caseViewType(allocationEnvironment);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case EnvironmentPackage.CONCRETE_DEPLOYMENT_VIEW_POINT: {
-				ConcreteDeploymentViewPoint concreteDeploymentViewPoint = (ConcreteDeploymentViewPoint)theEObject;
-				T result = caseConcreteDeploymentViewPoint(concreteDeploymentViewPoint);
-				if (result == null) result = caseDeploymentViewPoint(concreteDeploymentViewPoint);
-				if (result == null) result = caseViewPoint(concreteDeploymentViewPoint);
+				if (result == null) result = caseAllocationViewType(allocationContext);
+				if (result == null) result = caseViewType(allocationContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -179,36 +163,6 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Allocation Environment</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Allocation Environment</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAllocationEnvironment(AllocationEnvironment object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Concrete Deployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Concrete Deployment View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConcreteDeploymentViewPoint(ConcreteDeploymentViewPoint object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>View Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -250,36 +204,6 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAllocationViewType(AllocationViewType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseViewPoint(ViewPoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Deployment View Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Deployment View Point</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDeploymentViewPoint(DeploymentViewPoint object) {
 		return null;
 	}
 

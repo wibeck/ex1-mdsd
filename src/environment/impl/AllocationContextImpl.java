@@ -4,6 +4,8 @@ package environment.impl;
 
 import assembly.AssemblyContext;
 
+import componentModel.impl.AllocationViewTypeImpl;
+
 import environment.AllocationContext;
 import environment.EnvironmentPackage;
 
@@ -14,7 +16,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -28,12 +29,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link environment.impl.AllocationContextImpl#getAssemblyContext <em>Assembly Context</em>}</li>
  *   <li>{@link environment.impl.AllocationContextImpl#getContainer <em>Container</em>}</li>
- *   <li>{@link environment.impl.AllocationContextImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AllocationContextImpl extends MinimalEObjectImpl.Container implements AllocationContext {
+public class AllocationContextImpl extends AllocationViewTypeImpl implements AllocationContext {
 	/**
 	 * The cached value of the '{@link #getAssemblyContext() <em>Assembly Context</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -43,26 +43,6 @@ public class AllocationContextImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected AssemblyContext assemblyContext;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,29 +152,6 @@ public class AllocationContextImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.ALLOCATION_CONTEXT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
@@ -246,8 +203,6 @@ public class AllocationContextImpl extends MinimalEObjectImpl.Container implemen
 				return basicGetAssemblyContext();
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				return getContainer();
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,9 +220,6 @@ public class AllocationContextImpl extends MinimalEObjectImpl.Container implemen
 				return;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				setContainer((environment.Container)newValue);
-				return;
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,9 +239,6 @@ public class AllocationContextImpl extends MinimalEObjectImpl.Container implemen
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				setContainer((environment.Container)null);
 				return;
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -306,26 +255,8 @@ public class AllocationContextImpl extends MinimalEObjectImpl.Container implemen
 				return assemblyContext != null;
 			case EnvironmentPackage.ALLOCATION_CONTEXT__CONTAINER:
 				return getContainer() != null;
-			case EnvironmentPackage.ALLOCATION_CONTEXT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AllocationContextImpl
