@@ -4,8 +4,8 @@ package componentModel.impl;
 
 import componentModel.Component;
 import componentModel.ComponentModelPackage;
+import componentModel.DataType;
 import componentModel.Interface;
-import componentModel.InterfaceServiceMapEntry;
 import componentModel.Repository;
 import componentModel.Service;
 import componentModel.Signature;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link componentModel.impl.RepositoryImpl#getInterFaces <em>Inter Faces</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getSignatures <em>Signatures</em>}</li>
  *   <li>{@link componentModel.impl.RepositoryImpl#getServices <em>Services</em>}</li>
- *   <li>{@link componentModel.impl.RepositoryImpl#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}</li>
+ *   <li>{@link componentModel.impl.RepositoryImpl#getDataTypes <em>Data Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,14 +81,14 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	protected EList<Service> services;
 
 	/**
-	 * The cached value of the '{@link #getInterfaceServiceMapEntries() <em>Interface Service Map Entries</em>}' containment reference list.
+	 * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInterfaceServiceMapEntries()
+	 * @see #getDataTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InterfaceServiceMapEntry> interfaceServiceMapEntries;
+	protected EList<DataType> dataTypes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,11 +167,11 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 	 * @generated
 	 */
 	@Override
-	public EList<InterfaceServiceMapEntry> getInterfaceServiceMapEntries() {
-		if (interfaceServiceMapEntries == null) {
-			interfaceServiceMapEntries = new EObjectContainmentEList<InterfaceServiceMapEntry>(InterfaceServiceMapEntry.class, this, ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES);
+	public EList<DataType> getDataTypes() {
+		if (dataTypes == null) {
+			dataTypes = new EObjectContainmentEList<DataType>(DataType.class, this, ComponentModelPackage.REPOSITORY__DATA_TYPES);
 		}
-		return interfaceServiceMapEntries;
+		return dataTypes;
 	}
 
 	/**
@@ -190,8 +190,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return ((InternalEList<?>)getSignatures()).basicRemove(otherEnd, msgs);
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
-			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
-				return ((InternalEList<?>)getInterfaceServiceMapEntries()).basicRemove(otherEnd, msgs);
+			case ComponentModelPackage.REPOSITORY__DATA_TYPES:
+				return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -212,8 +212,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return getSignatures();
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return getServices();
-			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
-				return getInterfaceServiceMapEntries();
+			case ComponentModelPackage.REPOSITORY__DATA_TYPES:
+				return getDataTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,9 +243,9 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				getServices().clear();
 				getServices().addAll((Collection<? extends Service>)newValue);
 				return;
-			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
-				getInterfaceServiceMapEntries().clear();
-				getInterfaceServiceMapEntries().addAll((Collection<? extends InterfaceServiceMapEntry>)newValue);
+			case ComponentModelPackage.REPOSITORY__DATA_TYPES:
+				getDataTypes().clear();
+				getDataTypes().addAll((Collection<? extends DataType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,8 +271,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				getServices().clear();
 				return;
-			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
-				getInterfaceServiceMapEntries().clear();
+			case ComponentModelPackage.REPOSITORY__DATA_TYPES:
+				getDataTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -294,8 +294,8 @@ public class RepositoryImpl extends RepositoryViewTypeImpl implements Repository
 				return signatures != null && !signatures.isEmpty();
 			case ComponentModelPackage.REPOSITORY__SERVICES:
 				return services != null && !services.isEmpty();
-			case ComponentModelPackage.REPOSITORY__INTERFACE_SERVICE_MAP_ENTRIES:
-				return interfaceServiceMapEntries != null && !interfaceServiceMapEntries.isEmpty();
+			case ComponentModelPackage.REPOSITORY__DATA_TYPES:
+				return dataTypes != null && !dataTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

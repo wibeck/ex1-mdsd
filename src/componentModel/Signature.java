@@ -2,6 +2,8 @@
  */
 package componentModel;
 
+import java.lang.String;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -64,12 +66,12 @@ public interface Signature extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Return Type</em>' reference.
-	 * @see #setReturnType(Type)
+	 * @see #setReturnType(DataType)
 	 * @see componentModel.ComponentModelPackage#getSignature_ReturnType()
 	 * @model required="true"
 	 * @generated
 	 */
-	Type getReturnType();
+	DataType getReturnType();
 
 	/**
 	 * Sets the value of the '{@link componentModel.Signature#getReturnType <em>Return Type</em>}' reference.
@@ -79,6 +81,6 @@ public interface Signature extends EObject {
 	 * @see #getReturnType()
 	 * @generated
 	 */
-	void setReturnType(Type value);
+	void setReturnType(DataType value);
 
 } // Signature

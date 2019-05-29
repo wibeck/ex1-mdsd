@@ -15,6 +15,7 @@ import assembly.RequiredDelegationConnector;
 import assembly.RequiredRole;
 import assembly.Role;
 
+import componentModel.AllocationViewType;
 import componentModel.AssemblyViewType;
 import componentModel.Component;
 import componentModel.ViewType;
@@ -135,12 +136,16 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 				return createViewTypeAdapter();
 			}
 			@Override
-			public Adapter caseAssemblyViewType(AssemblyViewType object) {
-				return createAssemblyViewTypeAdapter();
+			public Adapter caseAllocationViewType(AllocationViewType object) {
+				return createAllocationViewTypeAdapter();
 			}
 			@Override
 			public Adapter caseComponent(Component object) {
 				return createComponentAdapter();
+			}
+			@Override
+			public Adapter caseAssemblyViewType(AssemblyViewType object) {
+				return createAssemblyViewTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -345,16 +350,16 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentModel.AssemblyViewType <em>Assembly View Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentModel.AllocationViewType <em>Allocation View Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentModel.AssemblyViewType
+	 * @see componentModel.AllocationViewType
 	 * @generated
 	 */
-	public Adapter createAssemblyViewTypeAdapter() {
+	public Adapter createAllocationViewTypeAdapter() {
 		return null;
 	}
 
@@ -369,6 +374,20 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.AssemblyViewType <em>Assembly View Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.AssemblyViewType
+	 * @generated
+	 */
+	public Adapter createAssemblyViewTypeAdapter() {
 		return null;
 	}
 

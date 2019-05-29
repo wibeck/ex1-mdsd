@@ -3,26 +3,24 @@
 package componentModel.impl;
 
 import componentModel.ComponentModelPackage;
-import componentModel.Type;
+import componentModel.Map;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type</b></em>'.
+ * An implementation of the model object '<em><b>Map</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class TypeImpl extends MinimalEObjectImpl.Container implements Type {
+public class MapImpl extends SimpleTypeImpl implements Map {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TypeImpl() {
+	protected MapImpl() {
 		super();
 	}
 
@@ -33,7 +31,7 @@ public abstract class TypeImpl extends MinimalEObjectImpl.Container implements T
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentModelPackage.Literals.TYPE;
+		return ComponentModelPackage.Literals.MAP;
 	}
 
-} //TypeImpl
+} //MapImpl

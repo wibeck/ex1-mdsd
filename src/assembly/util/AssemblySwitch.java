@@ -15,6 +15,7 @@ import assembly.RequiredDelegationConnector;
 import assembly.RequiredRole;
 import assembly.Role;
 
+import componentModel.AllocationViewType;
 import componentModel.AssemblyViewType;
 import componentModel.Component;
 import componentModel.ViewType;
@@ -85,8 +86,6 @@ public class AssemblySwitch<T> extends Switch<T> {
 				AssemblyContext assemblyContext = (AssemblyContext)theEObject;
 				T result = caseAssemblyContext(assemblyContext);
 				if (result == null) result = caseContext(assemblyContext);
-				if (result == null) result = caseAssemblyViewType(assemblyContext);
-				if (result == null) result = caseViewType(assemblyContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -146,6 +145,8 @@ public class AssemblySwitch<T> extends Switch<T> {
 				assembly.System system = (assembly.System)theEObject;
 				T result = caseSystem(system);
 				if (result == null) result = caseContext(system);
+				if (result == null) result = caseAllocationViewType(system);
+				if (result == null) result = caseViewType(system);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -159,6 +160,8 @@ public class AssemblySwitch<T> extends Switch<T> {
 			case AssemblyPackage.CONTEXT_ENVIRONMENT: {
 				ContextEnvironment contextEnvironment = (ContextEnvironment)theEObject;
 				T result = caseContextEnvironment(contextEnvironment);
+				if (result == null) result = caseAssemblyViewType(contextEnvironment);
+				if (result == null) result = caseViewType(contextEnvironment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -362,17 +365,17 @@ public class AssemblySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Assembly View Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Allocation View Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Assembly View Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Allocation View Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAssemblyViewType(AssemblyViewType object) {
+	public T caseAllocationViewType(AllocationViewType object) {
 		return null;
 	}
 
@@ -388,6 +391,21 @@ public class AssemblySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponent(Component object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly View Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssemblyViewType(AssemblyViewType object) {
 		return null;
 	}
 

@@ -2,10 +2,31 @@
  */
 package componentModel.impl;
 
-import componentModel.*;
+import componentModel.AssemblyViewPoint;
+import componentModel.Branch;
+import componentModel.Char;
+import componentModel.ComplexType;
+import componentModel.Component;
+import componentModel.ComponentModelFactory;
+import componentModel.ComponentModelPackage;
+import componentModel.Date;
+import componentModel.DeploymentViewPoint;
+import componentModel.ExternalCall;
+import componentModel.Int;
+import componentModel.Interface;
+import componentModel.InterfaceServiceMapEntry;
+import componentModel.InternalAction;
+import componentModel.List;
+import componentModel.Loop;
+import componentModel.Map;
+import componentModel.Parameter;
+import componentModel.Repository;
+import componentModel.Service;
+import componentModel.ServiceEffectSpecification;
+import componentModel.Signature;
+import componentModel.SystemIndependentViewPoint;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -72,40 +93,20 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 			case ComponentModelPackage.PARAMETER: return createParameter();
 			case ComponentModelPackage.ASSEMBLY_VIEW_POINT: return createAssemblyViewPoint();
 			case ComponentModelPackage.DEPLOYMENT_VIEW_POINT: return createDeploymentViewPoint();
-			case ComponentModelPackage.SIMPLE_TYPE: return createSimpleType();
+			case ComponentModelPackage.VOID: return createVoid();
 			case ComponentModelPackage.COMPLEX_TYPE: return createComplexType();
+			case ComponentModelPackage.BOOLEAN: return createBoolean();
+			case ComponentModelPackage.INT: return createInt();
+			case ComponentModelPackage.CHAR: return createChar();
+			case ComponentModelPackage.DATE: return createDate();
+			case ComponentModelPackage.LIST: return createList();
+			case ComponentModelPackage.MAP: return createMap();
+			case ComponentModelPackage.FLOAT: return createFloat();
+			case ComponentModelPackage.LONG: return createLong();
+			case ComponentModelPackage.DOUBLE: return createDouble();
+			case ComponentModelPackage.STRING: return createString();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ComponentModelPackage.SIMPLE_DATA_TYPE:
-				return createSimpleDataTypeFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ComponentModelPackage.SIMPLE_DATA_TYPE:
-				return convertSimpleDataTypeToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -280,9 +281,9 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * @generated
 	 */
 	@Override
-	public SimpleType createSimpleType() {
-		SimpleTypeImpl simpleType = new SimpleTypeImpl();
-		return simpleType;
+	public componentModel.Void createVoid() {
+		VoidImpl void_ = new VoidImpl();
+		return void_;
 	}
 
 	/**
@@ -301,10 +302,10 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SimpleDataType createSimpleDataTypeFromString(EDataType eDataType, String initialValue) {
-		SimpleDataType result = SimpleDataType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	@Override
+	public componentModel.Boolean createBoolean() {
+		BooleanImpl boolean_ = new BooleanImpl();
+		return boolean_;
 	}
 
 	/**
@@ -312,8 +313,98 @@ public class ComponentModelFactoryImpl extends EFactoryImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertSimpleDataTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	@Override
+	public Int createInt() {
+		IntImpl int_ = new IntImpl();
+		return int_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Char createChar() {
+		CharImpl char_ = new CharImpl();
+		return char_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date createDate() {
+		DateImpl date = new DateImpl();
+		return date;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List createList() {
+		ListImpl list = new ListImpl();
+		return list;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Map createMap() {
+		MapImpl map = new MapImpl();
+		return map;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public componentModel.Float createFloat() {
+		FloatImpl float_ = new FloatImpl();
+		return float_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public componentModel.Long createLong() {
+		LongImpl long_ = new LongImpl();
+		return long_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public componentModel.Double createDouble() {
+		DoubleImpl double_ = new DoubleImpl();
+		return double_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public componentModel.String createString() {
+		StringImpl string = new StringImpl();
+		return string;
 	}
 
 	/**

@@ -3,9 +3,11 @@
 package componentModel.impl;
 
 import componentModel.ComponentModelPackage;
+import componentModel.DataType;
 import componentModel.Parameter;
 import componentModel.Signature;
-import componentModel.Type;
+
+import java.lang.String;
 
 import java.util.Collection;
 
@@ -77,7 +79,7 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * @generated
 	 * @ordered
 	 */
-	protected Type returnType;
+	protected DataType returnType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,10 +142,10 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * @generated
 	 */
 	@Override
-	public Type getReturnType() {
+	public DataType getReturnType() {
 		if (returnType != null && returnType.eIsProxy()) {
 			InternalEObject oldReturnType = (InternalEObject)returnType;
-			returnType = (Type)eResolveProxy(oldReturnType);
+			returnType = (DataType)eResolveProxy(oldReturnType);
 			if (returnType != oldReturnType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentModelPackage.SIGNATURE__RETURN_TYPE, oldReturnType, returnType));
@@ -157,7 +159,7 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Type basicGetReturnType() {
+	public DataType basicGetReturnType() {
 		return returnType;
 	}
 
@@ -167,8 +169,8 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 	 * @generated
 	 */
 	@Override
-	public void setReturnType(Type newReturnType) {
-		Type oldReturnType = returnType;
+	public void setReturnType(DataType newReturnType) {
+		DataType oldReturnType = returnType;
 		returnType = newReturnType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentModelPackage.SIGNATURE__RETURN_TYPE, oldReturnType, returnType));
@@ -224,7 +226,7 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
-				setReturnType((Type)newValue);
+				setReturnType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,7 +247,7 @@ public class SignatureImpl extends MinimalEObjectImpl.Container implements Signa
 				getParameters().clear();
 				return;
 			case ComponentModelPackage.SIGNATURE__RETURN_TYPE:
-				setReturnType((Type)null);
+				setReturnType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);

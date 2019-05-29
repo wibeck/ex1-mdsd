@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link assembly.impl.ContextImpl#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}</li>
- *   <li>{@link assembly.impl.ContextImpl#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}</li>
  *   <li>{@link assembly.impl.ContextImpl#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  * </ul>
  *
@@ -63,7 +62,7 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	protected EList<DelegationConnector> delegationConnectors;
 
 	/**
-	 * The cached value of the '{@link #getNestedAssemblyConnectors() <em>Nested Assembly Connectors</em>}' reference list.
+	 * The cached value of the '{@link #getNestedAssemblyConnectors() <em>Nested Assembly Connectors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNestedAssemblyConnectors()
@@ -71,16 +70,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EList<AssemblyConnector> nestedAssemblyConnectors;
-
-	/**
-	 * The cached value of the '{@link #getOutwardAssemblyConnectors() <em>Outward Assembly Connectors</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutwardAssemblyConnectors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AssemblyConnector> outwardAssemblyConnectors;
 
 	/**
 	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
@@ -145,22 +134,9 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public EList<AssemblyConnector> getNestedAssemblyConnectors() {
 		if (nestedAssemblyConnectors == null) {
-			nestedAssemblyConnectors = new EObjectResolvingEList<AssemblyConnector>(AssemblyConnector.class, this, AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS);
+			nestedAssemblyConnectors = new EObjectContainmentEList<AssemblyConnector>(AssemblyConnector.class, this, AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS);
 		}
 		return nestedAssemblyConnectors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<AssemblyConnector> getOutwardAssemblyConnectors() {
-		if (outwardAssemblyConnectors == null) {
-			outwardAssemblyConnectors = new EObjectContainmentEList<AssemblyConnector>(AssemblyConnector.class, this, AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS);
-		}
-		return outwardAssemblyConnectors;
 	}
 
 	/**
@@ -186,8 +162,8 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case AssemblyPackage.CONTEXT__DELEGATION_CONNECTORS:
 				return ((InternalEList<?>)getDelegationConnectors()).basicRemove(otherEnd, msgs);
-			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
-				return ((InternalEList<?>)getOutwardAssemblyConnectors()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
+				return ((InternalEList<?>)getNestedAssemblyConnectors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -206,8 +182,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				return getDelegationConnectors();
 			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
 				return getNestedAssemblyConnectors();
-			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
-				return getOutwardAssemblyConnectors();
 			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
 				return getProvidedInterfaces();
 		}
@@ -235,10 +209,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				getNestedAssemblyConnectors().clear();
 				getNestedAssemblyConnectors().addAll((Collection<? extends AssemblyConnector>)newValue);
 				return;
-			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
-				getOutwardAssemblyConnectors().clear();
-				getOutwardAssemblyConnectors().addAll((Collection<? extends AssemblyConnector>)newValue);
-				return;
 			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
 				getProvidedInterfaces().clear();
 				getProvidedInterfaces().addAll((Collection<? extends Interface>)newValue);
@@ -264,9 +234,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
 				getNestedAssemblyConnectors().clear();
 				return;
-			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
-				getOutwardAssemblyConnectors().clear();
-				return;
 			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
 				getProvidedInterfaces().clear();
 				return;
@@ -288,8 +255,6 @@ public abstract class ContextImpl extends MinimalEObjectImpl.Container implement
 				return delegationConnectors != null && !delegationConnectors.isEmpty();
 			case AssemblyPackage.CONTEXT__NESTED_ASSEMBLY_CONNECTORS:
 				return nestedAssemblyConnectors != null && !nestedAssemblyConnectors.isEmpty();
-			case AssemblyPackage.CONTEXT__OUTWARD_ASSEMBLY_CONNECTORS:
-				return outwardAssemblyConnectors != null && !outwardAssemblyConnectors.isEmpty();
 			case AssemblyPackage.CONTEXT__PROVIDED_INTERFACES:
 				return providedInterfaces != null && !providedInterfaces.isEmpty();
 		}

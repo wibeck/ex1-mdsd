@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cm:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cm="http://www.example.org/componentModel" name="MediaFilesRepository">
+  <components name="WebGUI" requiredInterfaces="//@interFaces[name='IMediaStore']">
+    <interfaceServiceMap providedInterface="//@interFaces[name='IHTTP']" services="//@services[name='serviceWebGUI_HTTPDownload'] //@services[name='serviceWebGUI_HTTPUpload']" name="entryIHTTP_servWebGUI"/>
+    <serviceEffectSpecification name="SEFF_WebGUI"/>
+  </components>
+  <components name="MediaManager" requiredInterfaces="//@interFaces[name='ISound%20'] //@interFaces[name='IAudioDB']">
+    <interfaceServiceMap providedInterface="//@interFaces[name='IMediaStore']" services="//@services[name='serviceMediaManager_download'] //@services[name='serviceMediaManager_upload']" name="entryIMediaStore_servMediaManager"/>
+    <serviceEffectSpecification name="SEFF_MediaManager"/>
+  </components>
+  <components name="DigitalWatermarking">
+    <interfaceServiceMap providedInterface="//@interFaces[name='ISound%20']" services="//@services[name='serviceDigitalWatermarking_watermark']" name="entryISound_servDigitalWatermarking"/>
+    <serviceEffectSpecification name="SEFF_DigitalWatermarking"/>
+  </components>
+  <components name="DBCache" requiredInterfaces="//@interFaces[name='IAudioDB']">
+    <interfaceServiceMap providedInterface="//@interFaces[name='IAudioDB']" services="//@services[name='serviceDBCache_queryDB'] //@services[name='serviceDBCache_addFile']" name="entryIAudioDB_servDBCache"/>
+    <serviceEffectSpecification name="SEFF_DBCache"/>
+  </components>
+  <components name="PoolingAudioDB">
+    <interfaceServiceMap providedInterface="//@interFaces[name='IAudioDB']" services="//@services[name='servicePoolingAudioDB_queryDB'] //@services[name='servicePoolingAudioDB_addFile']" name="entryIAudioDB_servPoolingAudioDB"/>
+    <serviceEffectSpecification name="SEFF_PoolingAudioDB"/>
+  </components>
+  <interFaces name="IHTTP" signatures="//@signatures[name='HTTPDownload'] //@signatures[name='HTTPUpload']"/>
+  <interFaces name="IMediaStore" signatures="//@signatures[name='download'] //@signatures[name='upload']"/>
+  <interFaces name="ISound " signatures="//@signatures[name='watermark']"/>
+  <interFaces name="IAudioDB" signatures="//@signatures[name='queryDB'] //@signatures[name='addFile']"/>
+  <signatures name="HTTPDownload" returnType="//@dataTypes[name='void']"/>
+  <signatures name="HTTPUpload" returnType="//@dataTypes[name='void']"/>
+  <signatures name="download" returnType="//@dataTypes[name='void']"/>
+  <signatures name="upload" returnType="//@dataTypes[name='void']"/>
+  <signatures name="watermark" returnType="//@dataTypes[name='void']"/>
+  <signatures name="queryDB" returnType="//@dataTypes[name='void']"/>
+  <signatures name="addFile" returnType="//@dataTypes[name='void']"/>
+  <services name="serviceWebGUI_HTTPDownload" correspondence="//@signatures[name='HTTPDownload']"/>
+  <services name="serviceWebGUI_HTTPUpload" correspondence="//@signatures[name='HTTPUpload']"/>
+  <services name="serviceMediaManager_download" correspondence="//@signatures[name='download']"/>
+  <services name="serviceMediaManager_upload" correspondence="//@signatures[name='upload']"/>
+  <services name="serviceDigitalWatermarking_watermark" correspondence="//@signatures[name='watermark']"/>
+  <services name="serviceDBCache_queryDB" correspondence="//@signatures[name='queryDB']"/>
+  <services name="serviceDBCache_addFile" correspondence="//@signatures[name='addFile']"/>
+  <services name="servicePoolingAudioDB_queryDB" correspondence="//@signatures[name='queryDB']"/>
+  <services name="servicePoolingAudioDB_addFile" correspondence="//@signatures[name='addFile']"/>
+  <dataTypes xsi:type="cm:Void" name="void"/>
+</cm:Repository>

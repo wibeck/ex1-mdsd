@@ -8,6 +8,8 @@ import componentModel.Interface;
 import componentModel.InterfaceServiceMapEntry;
 import componentModel.ServiceEffectSpecification;
 
+import java.lang.String;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

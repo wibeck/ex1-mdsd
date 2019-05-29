@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link componentModel.Repository#getInterFaces <em>Inter Faces</em>}</li>
  *   <li>{@link componentModel.Repository#getSignatures <em>Signatures</em>}</li>
  *   <li>{@link componentModel.Repository#getServices <em>Services</em>}</li>
- *   <li>{@link componentModel.Repository#getInterfaceServiceMapEntries <em>Interface Service Map Entries</em>}</li>
+ *   <li>{@link componentModel.Repository#getDataTypes <em>Data Types</em>}</li>
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getRepository()
@@ -74,15 +74,15 @@ public interface Repository extends RepositoryViewType {
 	EList<Service> getServices();
 
 	/**
-	 * Returns the value of the '<em><b>Interface Service Map Entries</b></em>' containment reference list.
-	 * The list contents are of type {@link componentModel.InterfaceServiceMapEntry}.
+	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
+	 * The list contents are of type {@link componentModel.DataType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interface Service Map Entries</em>' containment reference list.
-	 * @see componentModel.ComponentModelPackage#getRepository_InterfaceServiceMapEntries()
+	 * @return the value of the '<em>Data Types</em>' containment reference list.
+	 * @see componentModel.ComponentModelPackage#getRepository_DataTypes()
 	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
-	EList<InterfaceServiceMapEntry> getInterfaceServiceMapEntries();
+	EList<DataType> getDataTypes();
 
 } // Repository

@@ -2,6 +2,8 @@
  */
 package componentModel;
 
+import java.lang.String;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -53,7 +55,7 @@ public interface Interface extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Signatures</em>' reference list.
 	 * @see componentModel.ComponentModelPackage#getInterface_Signatures()
-	 * @model keys="name" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Signature> getSignatures();

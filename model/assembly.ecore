@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assembly" nsURI="assembly" nsPrefix="assembly">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assembly" nsURI="http://www.example.org/assembly" nsPrefix="assembly">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="cm" value="componentModel.ecore#/"/>
   </eAnnotations>
@@ -9,9 +9,9 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context componentModel.ecore#//AssemblyViewType">
+  <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//Context">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="reqInterfacesFromRequiredRoles providedInterfacesFromProvidedRoles onlyDelegationConnectorsIfComposite providedRoleForProvidedInterfaceExistsAndIsConnected requiredRoleForRequiredInterfaceExistsAndIsConnected"/>
+      <details key="constraints" value="reqInterfacesFromRequiredRoles providedInterfacesFromProvidedRoles onlyDelegationConnectorsIfComposite providedRoleForProvidedInterfaceExistsAndIsConnected requiredRoleForRequiredInterfaceExistsAndIsConnected assemblyContextIsPartOfOutwardAssemblyConnectors"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="reqInterfacesFromRequiredRoles" value="self.requiredInterfaces = self.requiredRoles -> collect(interFace)"/>
@@ -19,16 +19,19 @@
       <details key="onlyDelegationConnectorsIfComposite" value="if self.instantiates.oclIsKindOf(CompositeComponent) &#xA;&#x9;&#x9;then self.delegationConnectors -> size() > 0 else self.delegationConnectors -> size() = 0 endif"/>
       <details key="providedRoleForProvidedInterfaceExistsAndIsConnected" value="&#xA;&#x9;&#x9;&#x9;if self.instantiates.oclIsKindOf(CompositeComponent) then &#xA;&#x9;&#x9;&#x9;self.providedInterfaces -> forAll(interFace | self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts &#xA;&#x9;&#x9;&#x9;&#x9;-> collect(providedRoles) -> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.role = role and connector.interFace = interFace and connector.oclIsKindOf(assembly::ProvidedDelegationConnector)&#xA;&#x9;&#x9;&#x9;&#x9;))) else true endif"/>
       <details key="requiredRoleForRequiredInterfaceExistsAndIsConnected" value="if self.instantiates.oclIsKindOf(CompositeComponent) then &#xA;&#x9;&#x9;self.requiredInterfaces -> forAll(interFace | self.instantiates.oclAsType(CompositeComponent).encapsulatedAssemblyContexts &#xA;&#x9;&#x9;&#x9;&#x9;-> collect(requiredRoles) -> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.role = role and connector.interFace = interFace and connector.oclIsKindOf(assembly::RequiredDelegationConnector)&#xA;&#x9;&#x9;&#x9;&#x9;))) else true endif"/>
+      <details key="assemblyContextIsPartOfOutwardAssemblyConnectors" value="&#xA;&#x9;&#x9;self.outwardAssemblyConnectors -> forAll(aCon | aCon.providedRole.assemblyContext = self xor aCon.requiredRole.assemblyContext = self )"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" ordered="false"
-        lowerBound="1" eType="ecore:EClass componentModel.ecore#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instantiates" lowerBound="1"
+        eType="ecore:EClass componentModel.ecore#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" ordered="false"
         upperBound="-1" eType="#//RequiredRole" containment="true" eKeys="#//Role/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//ProvidedRole" containment="true"
         eKeys="#//Role/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" ordered="false"
-        eType="#//CompositeComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerComponent" eType="#//CompositeComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outwardAssemblyConnectors"
+        ordered="false" upperBound="-1" eType="#//AssemblyConnector" eKeys="#//AssemblyConnector/name"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -83,19 +86,11 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Context" abstract="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="contextIsPartOfOutwardAssemblyConnectors"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="contextIsPartOfOutwardAssemblyConnectors" value="&#xA;&#x9;&#x9;self.outwardAssemblyConnectors -> forAll(aCon | aCon.providedRole.assemblyContext = self xor aCon.requiredRole.assemblyContext = self )"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" ordered="false"
         upperBound="-1" eType="ecore:EClass componentModel.ecore#//Interface" eKeys="componentModel.ecore#//Interface/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" ordered="false"
         upperBound="-1" eType="#//DelegationConnector" containment="true" eKeys="#//DelegationConnector/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nestedAssemblyConnectors"
-        ordered="false" upperBound="-1" eType="#//AssemblyConnector" eKeys="#//AssemblyConnector/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outwardAssemblyConnectors"
         ordered="false" upperBound="-1" eType="#//AssemblyConnector" containment="true"
         eKeys="#//AssemblyConnector/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" ordered="false"
@@ -108,7 +103,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//Role"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Context">
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Context componentModel.ecore#//AllocationViewType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="providedRoleForProvidedInterfaceExistsAndIsConnected requiredRoleForRequiredInterfaceExistsAndIsConnected"/>
     </eAnnotations>
@@ -117,23 +112,21 @@
       <details key="requiredRoleForRequiredInterfaceExistsAndIsConnected" value="&#xA;&#x9;&#x9;self.requiredInterfaces -> forAll(interFace | self.encapsulatedAssemblyContexts -> collect(requiredRoles) &#xA;&#x9;&#x9;&#x9;-> exists(role | role.interFace = interFace and self.delegationConnectors -> exists(connector | connector.role = role &#xA;&#x9;&#x9;&#x9;&#x9;and connector.interFace = interFace and connector.oclIsKindOf(assembly::RequiredDelegationConnector)) ))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedAssemblyContexts"
-        ordered="false" upperBound="-1" eType="#//AssemblyContext" eKeys="componentModel.ecore#//ViewType/name"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        ordered="false" upperBound="-1" eType="#//AssemblyContext" containment="true"
+        eKeys="#//AssemblyContext/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compositeComponents" ordered="false"
+        upperBound="-1" eType="#//CompositeComponent" containment="true" eKeys="componentModel.ecore#//Component/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="componentModel.ecore#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="encapsulatedAssemblyContexts"
-        ordered="false" upperBound="-1" eType="#//AssemblyContext" containment="true"
-        eKeys="componentModel.ecore#//ViewType/name"/>
+        ordered="false" upperBound="-1" eType="#//AssemblyContext" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContextEnvironment">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="compositeComponents" ordered="false"
-        upperBound="-1" eType="#//CompositeComponent" containment="true" eKeys="componentModel.ecore#//Component/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors" ordered="false"
-        upperBound="-1" eType="#//DelegationConnector" containment="true" eKeys="#//DelegationConnector/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" ordered="false"
-        upperBound="-1" eType="#//Role" containment="true" eKeys="#//Role/name"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextEnvironment" eSuperTypes="componentModel.ecore#//AssemblyViewType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" ordered="false"
         upperBound="-1" eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors" upperBound="-1"
+        eType="#//AssemblyConnector" containment="true" eKeys="#//AssemblyConnector/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" ordered="false"
+        upperBound="-1" eType="#//Role" containment="true" eKeys="#//Role/name"/>
   </eClassifiers>
 </ecore:EPackage>

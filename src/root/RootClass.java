@@ -2,8 +2,6 @@
  */
 package root;
 
-import assembly.ContextEnvironment;
-
 import componentModel.ViewPoint;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link root.RootClass#getViewPoints <em>View Points</em>}</li>
- *   <li>{@link root.RootClass#getContextEnvironments <em>Context Environments</em>}</li>
  *   <li>{@link root.RootClass#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -40,18 +37,6 @@ public interface RootClass extends EObject {
 	 * @generated
 	 */
 	EList<ViewPoint> getViewPoints();
-
-	/**
-	 * Returns the value of the '<em><b>Context Environments</b></em>' containment reference list.
-	 * The list contents are of type {@link assembly.ContextEnvironment}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context Environments</em>' containment reference list.
-	 * @see root.RootPackage#getRootClass_ContextEnvironments()
-	 * @model containment="true" keys="name" ordered="false"
-	 * @generated
-	 */
-	EList<ContextEnvironment> getContextEnvironments();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

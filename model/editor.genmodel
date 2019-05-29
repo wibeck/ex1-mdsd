@@ -8,7 +8,6 @@
   <genPackages prefix="Root" disposableProviderFactory="true" ecorePackage="root.ecore#/">
     <genClasses ecoreClass="root.ecore#//RootClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/viewPoints"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference root.ecore#//RootClass/contextEnvironments"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute root.ecore#//RootClass/name"/>
     </genClasses>
   </genPackages>
@@ -32,26 +31,13 @@
     </genClasses>
   </genPackages>
   <genPackages prefix="ComponentModel" disposableProviderFactory="true" ecorePackage="componentModel.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="componentModel.ecore#//SimpleDataType">
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/BOOLEAN"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/INT"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/CHAR"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/DATE"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/LIST"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/MAP"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/FLOAT"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/LONG"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/DOUBLE"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/STRING"/>
-      <genEnumLiterals ecoreEnumLiteral="componentModel.ecore#//SimpleDataType/VOID"/>
-    </genEnums>
     <genClasses image="false" ecoreClass="componentModel.ecore#//SystemIndependentViewPoint"/>
     <genClasses ecoreClass="componentModel.ecore#//Repository">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/interFaces"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/signatures"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/services"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/interfaceServiceMapEntries"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentModel.ecore#//Repository/dataTypes"/>
     </genClasses>
     <genClasses ecoreClass="componentModel.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//Component/name"/>
@@ -112,13 +98,23 @@
     <genClasses image="false" ecoreClass="componentModel.ecore#//AssemblyViewPoint"/>
     <genClasses image="false" ecoreClass="componentModel.ecore#//DeploymentViewPoint"/>
     <genClasses image="false" ecoreClass="componentModel.ecore#//RepositoryViewType"/>
-    <genClasses image="false" ecoreClass="componentModel.ecore#//Type"/>
-    <genClasses image="false" ecoreClass="componentModel.ecore#//SimpleType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//SimpleType/typeName"/>
+    <genClasses image="false" ecoreClass="componentModel.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//DataType/name"/>
     </genClasses>
-    <genClasses ecoreClass="componentModel.ecore#//ComplexType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentModel.ecore#//ComplexType/name"/>
-    </genClasses>
+    <genClasses ecoreClass="componentModel.ecore#//Void"/>
+    <genClasses image="false" ecoreClass="componentModel.ecore#//ParameterType"/>
+    <genClasses ecoreClass="componentModel.ecore#//ComplexType"/>
+    <genClasses image="false" ecoreClass="componentModel.ecore#//SimpleType"/>
+    <genClasses ecoreClass="componentModel.ecore#//Boolean"/>
+    <genClasses ecoreClass="componentModel.ecore#//Int"/>
+    <genClasses ecoreClass="componentModel.ecore#//Char"/>
+    <genClasses ecoreClass="componentModel.ecore#//Date"/>
+    <genClasses ecoreClass="componentModel.ecore#//List"/>
+    <genClasses ecoreClass="componentModel.ecore#//Map"/>
+    <genClasses ecoreClass="componentModel.ecore#//Float"/>
+    <genClasses ecoreClass="componentModel.ecore#//Long"/>
+    <genClasses ecoreClass="componentModel.ecore#//Double"/>
+    <genClasses ecoreClass="componentModel.ecore#//String"/>
   </genPackages>
   <genPackages prefix="Assembly" disposableProviderFactory="true" ecorePackage="assembly.ecore#/">
     <genClasses ecoreClass="assembly.ecore#//AssemblyContext">
@@ -126,6 +122,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyContext/requiredRoles"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyContext/providedRoles"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyContext/ownerComponent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyContext/outwardAssemblyConnectors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//AssemblyContext/name"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//AssemblyConnector">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//AssemblyConnector/providedRole"/>
@@ -145,7 +143,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//Context/requiredInterfaces"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//Context/delegationConnectors"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//Context/nestedAssemblyConnectors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//Context/outwardAssemblyConnectors"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//Context/providedInterfaces"/>
     </genClasses>
     <genClasses image="false" ecoreClass="assembly.ecore#//DelegationConnector">
@@ -155,17 +152,15 @@
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//System">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference assembly.ecore#//System/encapsulatedAssemblyContexts"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//System/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//System/compositeComponents"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//CompositeComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//CompositeComponent/encapsulatedAssemblyContexts"/>
     </genClasses>
     <genClasses ecoreClass="assembly.ecore#//ContextEnvironment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/compositeComponents"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/delegationConnectors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/roles"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute assembly.ecore#//ContextEnvironment/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/contexts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/assemblyConnectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference assembly.ecore#//ContextEnvironment/roles"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

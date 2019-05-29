@@ -1,0 +1,17 @@
+/**
+ */
+package componentModel;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>String</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see componentModel.ComponentModelPackage#getString()
+ * @model
+ * @generated
+ */
+public interface String extends SimpleType {
+} // String

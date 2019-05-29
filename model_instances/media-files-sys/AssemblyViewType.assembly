@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly:ContextEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://www.example.org/assembly" name="MediaFilesAssemblyEnvironment">
+  <contexts xsi:type="assembly:System" name="MediaFiles">
+    <delegationConnectors xsi:type="assembly:ProvidedDelegationConnector" role="//@contexts.0/@encapsulatedAssemblyContexts[name='acWebGUI']/@providedRoles[name='provRole_webGUIHTTP']" name="sysProvidedDelegationIHTTP">
+      <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IHTTP']"/>
+    </delegationConnectors>
+    <providedInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IHTTP']"/>
+    <encapsulatedAssemblyContexts name="acWebGUI">
+      <requiredInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IMediaStore']"/>
+      <providedInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IHTTP']"/>
+      <instantiates href="RepositoryViewType.componentmodel#//@components[name='WebGUI']"/>
+      <requiredRoles assemblyContext="//@contexts.0/@encapsulatedAssemblyContexts[name='acWebGUI']" name="reqRole_WebGUIMediaStore">
+        <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IMediaStore']"/>
+      </requiredRoles>
+      <providedRoles assemblyContext="//@contexts.0/@encapsulatedAssemblyContexts[name='acWebGUI']" name="provRole_webGUIHTTP">
+        <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IHTTP']"/>
+      </providedRoles>
+    </encapsulatedAssemblyContexts>
+    <compositeComponents name="MediaStore">
+      <interfaceServiceMap name="entryIMediaStore_servMediaStore">
+        <providedInterface href="RepositoryViewType.componentmodel#//@interFaces[name='IMediaStore']"/>
+        <services href="RepositoryViewType.componentmodel#//@services[name='serviceMediaManager_download']"/>
+        <services href="RepositoryViewType.componentmodel#//@services[name='serviceMediaManager_upload']"/>
+      </interfaceServiceMap>
+      <serviceEffectSpecification name="SEFF_MediaStore"/>
+      <requiredInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IAudioDB']"/>
+      <encapsulatedAssemblyContexts ownerComponent="//@contexts.0/@compositeComponents[name='MediaStore']" name="acDBCache">
+        <requiredInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IAudioDB']"/>
+        <providedInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IAudioDB']"/>
+        <instantiates href="RepositoryViewType.componentmodel#//@components[name='DBCache']"/>
+        <requiredRoles assemblyContext="//@contexts.0/@compositeComponents[name='MediaStore']/@encapsulatedAssemblyContexts.0" name="reqRole_DBCacheIAudioDB">
+          <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IAudioDB']"/>
+        </requiredRoles>
+        <providedRoles assemblyContext="//@contexts.0/@compositeComponents[name='MediaStore']/@encapsulatedAssemblyContexts.0" name="provRole_DBCacheIAudioDB">
+          <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IAudioDB']"/>
+        </providedRoles>
+      </encapsulatedAssemblyContexts>
+      <encapsulatedAssemblyContexts ownerComponent="//@contexts.0/@compositeComponents[name='MediaStore']" name="acMediaManager">
+        <requiredInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='ISound%20']"/>
+        <providedInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='IMediaStore']"/>
+        <instantiates href="RepositoryViewType.componentmodel#//@components[name='MediaManager']"/>
+        <requiredRoles assemblyContext="//@contexts.0/@compositeComponents[name='MediaStore']/@encapsulatedAssemblyContexts.1" name="reqRole_MediaManagerISound">
+          <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='ISound%20']"/>
+        </requiredRoles>
+        <requiredRoles assemblyContext="//@contexts.0/@compositeComponents[name='MediaStore']/@encapsulatedAssemblyContexts.1" name="reqRole_MediaManagerIAudioDB">
+          <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IAudioDB']"/>
+        </requiredRoles>
+        <providedRoles assemblyContext="//@contexts.0/@compositeComponents[name='MediaStore']/@encapsulatedAssemblyContexts.1" name="provRole_MediaManagerMediaStore">
+          <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='IMediaStore']"/>
+        </providedRoles>
+      </encapsulatedAssemblyContexts>
+      <encapsulatedAssemblyContexts ownerComponent="//@contexts.0/@compositeComponents[name='MediaStore']" name="acDigitalWatermarking">
+        <providedInterfaces href="RepositoryViewType.componentmodel#//@interFaces[name='ISound%20']"/>
+        <instantiates href="RepositoryViewType.componentmodel#//@components[name='DigitalWatermarking']"/>
+        <providedRoles assemblyContext="//@contexts.0/@compositeComponents[name='MediaStore']/@encapsulatedAssemblyContexts.2" name="provRole_DigitalWatermarkingISound">
+          <interFace href="RepositoryViewType.componentmodel#//@interFaces[name='ISound%20']"/>
+        </providedRoles>
+      </encapsulatedAssemblyContexts>
+    </compositeComponents>
+  </contexts>
+</assembly:ContextEnvironment>

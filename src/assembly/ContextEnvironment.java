@@ -2,9 +2,9 @@
  */
 package assembly;
 
-import org.eclipse.emf.common.util.EList;
+import componentModel.AssemblyViewType;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,41 +15,39 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link assembly.ContextEnvironment#getCompositeComponents <em>Composite Components</em>}</li>
- *   <li>{@link assembly.ContextEnvironment#getDelegationConnectors <em>Delegation Connectors</em>}</li>
- *   <li>{@link assembly.ContextEnvironment#getRoles <em>Roles</em>}</li>
- *   <li>{@link assembly.ContextEnvironment#getName <em>Name</em>}</li>
  *   <li>{@link assembly.ContextEnvironment#getContexts <em>Contexts</em>}</li>
+ *   <li>{@link assembly.ContextEnvironment#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
+ *   <li>{@link assembly.ContextEnvironment#getRoles <em>Roles</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getContextEnvironment()
  * @model
  * @generated
  */
-public interface ContextEnvironment extends EObject {
+public interface ContextEnvironment extends AssemblyViewType {
 	/**
-	 * Returns the value of the '<em><b>Composite Components</b></em>' containment reference list.
-	 * The list contents are of type {@link assembly.CompositeComponent}.
+	 * Returns the value of the '<em><b>Contexts</b></em>' containment reference list.
+	 * The list contents are of type {@link assembly.Context}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Composite Components</em>' containment reference list.
-	 * @see assembly.AssemblyPackage#getContextEnvironment_CompositeComponents()
-	 * @model containment="true" keys="name" ordered="false"
+	 * @return the value of the '<em>Contexts</em>' containment reference list.
+	 * @see assembly.AssemblyPackage#getContextEnvironment_Contexts()
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<CompositeComponent> getCompositeComponents();
+	EList<Context> getContexts();
 
 	/**
-	 * Returns the value of the '<em><b>Delegation Connectors</b></em>' containment reference list.
-	 * The list contents are of type {@link assembly.DelegationConnector}.
+	 * Returns the value of the '<em><b>Assembly Connectors</b></em>' containment reference list.
+	 * The list contents are of type {@link assembly.AssemblyConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Delegation Connectors</em>' containment reference list.
-	 * @see assembly.AssemblyPackage#getContextEnvironment_DelegationConnectors()
-	 * @model containment="true" keys="name" ordered="false"
+	 * @return the value of the '<em>Assembly Connectors</em>' containment reference list.
+	 * @see assembly.AssemblyPackage#getContextEnvironment_AssemblyConnectors()
+	 * @model containment="true" keys="name"
 	 * @generated
 	 */
-	EList<DelegationConnector> getDelegationConnectors();
+	EList<AssemblyConnector> getAssemblyConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
@@ -62,39 +60,5 @@ public interface ContextEnvironment extends EObject {
 	 * @generated
 	 */
 	EList<Role> getRoles();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see assembly.AssemblyPackage#getContextEnvironment_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link assembly.ContextEnvironment#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Contexts</b></em>' containment reference list.
-	 * The list contents are of type {@link assembly.Context}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contexts</em>' containment reference list.
-	 * @see assembly.AssemblyPackage#getContextEnvironment_Contexts()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<Context> getContexts();
 
 } // ContextEnvironment

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="componentModel" nsPrefix="cm">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentModel" nsURI="http://www.example.org/componentModel"
+    nsPrefix="cm">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
@@ -23,9 +24,8 @@
         upperBound="-1" eType="#//Signature" containment="true" eKeys="#//Signature/name"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="services" ordered="false"
         upperBound="-1" eType="#//Service" containment="true" eKeys="#//Service/name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceServiceMapEntries"
-        ordered="false" upperBound="-1" eType="#//InterfaceServiceMapEntry" containment="true"
-        eKeys="#//InterfaceServiceMapEntry/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" ordered="false"
+        upperBound="-1" eType="#//DataType" containment="true" eKeys="#//DataType/name"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -134,9 +134,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Void" eSuperTypes="#//DataType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterType" eSuperTypes="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterType" abstract="true" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexType" eSuperTypes="#//ParameterType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" eSuperTypes="#//ParameterType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleType" abstract="true" eSuperTypes="#//ParameterType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Boolean" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Char" eSuperTypes="#//SimpleType"/>

@@ -20,14 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link assembly.Context#getRequiredInterfaces <em>Required Interfaces</em>}</li>
  *   <li>{@link assembly.Context#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link assembly.Context#getNestedAssemblyConnectors <em>Nested Assembly Connectors</em>}</li>
- *   <li>{@link assembly.Context#getOutwardAssemblyConnectors <em>Outward Assembly Connectors</em>}</li>
  *   <li>{@link assembly.Context#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
  * </ul>
  *
  * @see assembly.AssemblyPackage#getContext()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='contextIsPartOfOutwardAssemblyConnectors'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot contextIsPartOfOutwardAssemblyConnectors='\n\t\tself.outwardAssemblyConnectors -&gt; forAll(aCon | aCon.providedRole.assemblyContext = self xor aCon.requiredRole.assemblyContext = self )'"
  * @generated
  */
 public interface Context extends EObject {
@@ -56,28 +53,16 @@ public interface Context extends EObject {
 	EList<DelegationConnector> getDelegationConnectors();
 
 	/**
-	 * Returns the value of the '<em><b>Nested Assembly Connectors</b></em>' reference list.
+	 * Returns the value of the '<em><b>Nested Assembly Connectors</b></em>' containment reference list.
 	 * The list contents are of type {@link assembly.AssemblyConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nested Assembly Connectors</em>' reference list.
+	 * @return the value of the '<em>Nested Assembly Connectors</em>' containment reference list.
 	 * @see assembly.AssemblyPackage#getContext_NestedAssemblyConnectors()
-	 * @model keys="name" ordered="false"
-	 * @generated
-	 */
-	EList<AssemblyConnector> getNestedAssemblyConnectors();
-
-	/**
-	 * Returns the value of the '<em><b>Outward Assembly Connectors</b></em>' containment reference list.
-	 * The list contents are of type {@link assembly.AssemblyConnector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outward Assembly Connectors</em>' containment reference list.
-	 * @see assembly.AssemblyPackage#getContext_OutwardAssemblyConnectors()
 	 * @model containment="true" keys="name" ordered="false"
 	 * @generated
 	 */
-	EList<AssemblyConnector> getOutwardAssemblyConnectors();
+	EList<AssemblyConnector> getNestedAssemblyConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Provided Interfaces</b></em>' reference list.

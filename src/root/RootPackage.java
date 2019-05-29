@@ -38,7 +38,7 @@ public interface RootPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "root";
+	String eNS_URI = "http://www.example.org/root";
 
 	/**
 	 * The package namespace name.
@@ -76,22 +76,13 @@ public interface RootPackage extends EPackage {
 	int ROOT_CLASS__VIEW_POINTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Context Environments</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOT_CLASS__CONTEXT_ENVIRONMENTS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CLASS__NAME = 2;
+	int ROOT_CLASS__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Class</em>' class.
@@ -100,7 +91,7 @@ public interface RootPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_CLASS_FEATURE_COUNT = 3;
+	int ROOT_CLASS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Class</em>' class.
@@ -132,17 +123,6 @@ public interface RootPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRootClass_ViewPoints();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link root.RootClass#getContextEnvironments <em>Context Environments</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Context Environments</em>'.
-	 * @see root.RootClass#getContextEnvironments()
-	 * @see #getRootClass()
-	 * @generated
-	 */
-	EReference getRootClass_ContextEnvironments();
 
 	/**
 	 * Returns the meta object for the attribute '{@link root.RootClass#getName <em>Name</em>}'.
@@ -195,14 +175,6 @@ public interface RootPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOT_CLASS__VIEW_POINTS = eINSTANCE.getRootClass_ViewPoints();
-
-		/**
-		 * The meta object literal for the '<em><b>Context Environments</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOT_CLASS__CONTEXT_ENVIRONMENTS = eINSTANCE.getRootClass_ContextEnvironments();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

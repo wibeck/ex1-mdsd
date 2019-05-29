@@ -157,13 +157,13 @@ public interface ComponentModelFactory extends EFactory {
 	DeploymentViewPoint createDeploymentViewPoint();
 
 	/**
-	 * Returns a new object of class '<em>Simple Type</em>'.
+	 * Returns a new object of class '<em>Void</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Simple Type</em>'.
+	 * @return a new object of class '<em>Void</em>'.
 	 * @generated
 	 */
-	SimpleType createSimpleType();
+	Void createVoid();
 
 	/**
 	 * Returns a new object of class '<em>Complex Type</em>'.
@@ -173,6 +173,96 @@ public interface ComponentModelFactory extends EFactory {
 	 * @generated
 	 */
 	ComplexType createComplexType();
+
+	/**
+	 * Returns a new object of class '<em>Boolean</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean</em>'.
+	 * @generated
+	 */
+	Boolean createBoolean();
+
+	/**
+	 * Returns a new object of class '<em>Int</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Int</em>'.
+	 * @generated
+	 */
+	Int createInt();
+
+	/**
+	 * Returns a new object of class '<em>Char</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Char</em>'.
+	 * @generated
+	 */
+	Char createChar();
+
+	/**
+	 * Returns a new object of class '<em>Date</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date</em>'.
+	 * @generated
+	 */
+	Date createDate();
+
+	/**
+	 * Returns a new object of class '<em>List</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>List</em>'.
+	 * @generated
+	 */
+	List createList();
+
+	/**
+	 * Returns a new object of class '<em>Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Map</em>'.
+	 * @generated
+	 */
+	Map createMap();
+
+	/**
+	 * Returns a new object of class '<em>Float</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Float</em>'.
+	 * @generated
+	 */
+	Float createFloat();
+
+	/**
+	 * Returns a new object of class '<em>Long</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Long</em>'.
+	 * @generated
+	 */
+	Long createLong();
+
+	/**
+	 * Returns a new object of class '<em>Double</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Double</em>'.
+	 * @generated
+	 */
+	Double createDouble();
+
+	/**
+	 * Returns a new object of class '<em>String</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String</em>'.
+	 * @generated
+	 */
+	String createString();
 
 	/**
 	 * Returns the package supported by this factory.

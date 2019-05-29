@@ -140,18 +140,8 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRootClass_ContextEnvironments() {
-		return (EReference)rootClassEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getRootClass_Name() {
-		return (EAttribute)rootClassEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)rootClassEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -185,7 +175,6 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 		// Create classes and their features
 		rootClassEClass = createEClass(ROOT_CLASS);
 		createEReference(rootClassEClass, ROOT_CLASS__VIEW_POINTS);
-		createEReference(rootClassEClass, ROOT_CLASS__CONTEXT_ENVIRONMENTS);
 		createEAttribute(rootClassEClass, ROOT_CLASS__NAME);
 	}
 
@@ -214,7 +203,6 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 
 		// Obtain other dependent packages
 		ComponentModelPackage theComponentModelPackage = (ComponentModelPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentModelPackage.eNS_URI);
-		AssemblyPackage theAssemblyPackage = (AssemblyPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -226,8 +214,6 @@ public class RootPackageImpl extends EPackageImpl implements RootPackage {
 		initEClass(rootClassEClass, RootClass.class, "RootClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRootClass_ViewPoints(), theComponentModelPackage.getViewPoint(), null, "viewPoints", null, 1, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		getRootClass_ViewPoints().getEKeys().add(theComponentModelPackage.getViewPoint_Name());
-		initEReference(getRootClass_ContextEnvironments(), theAssemblyPackage.getContextEnvironment(), null, "contextEnvironments", null, 0, -1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		getRootClass_ContextEnvironments().getEKeys().add(theAssemblyPackage.getContextEnvironment_Name());
 		initEAttribute(getRootClass_Name(), ecorePackage.getEString(), "name", null, 1, 1, RootClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource

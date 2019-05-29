@@ -2,8 +2,6 @@
  */
 package root.impl;
 
-import assembly.ContextEnvironment;
-
 import componentModel.ViewPoint;
 
 import java.util.Collection;
@@ -34,7 +32,6 @@ import root.RootPackage;
  * </p>
  * <ul>
  *   <li>{@link root.impl.RootClassImpl#getViewPoints <em>View Points</em>}</li>
- *   <li>{@link root.impl.RootClassImpl#getContextEnvironments <em>Context Environments</em>}</li>
  *   <li>{@link root.impl.RootClassImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -50,16 +47,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 	 * @ordered
 	 */
 	protected EList<ViewPoint> viewPoints;
-
-	/**
-	 * The cached value of the '{@link #getContextEnvironments() <em>Context Environments</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContextEnvironments()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ContextEnvironment> contextEnvironments;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -119,19 +106,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 	 * @generated
 	 */
 	@Override
-	public EList<ContextEnvironment> getContextEnvironments() {
-		if (contextEnvironments == null) {
-			contextEnvironments = new EObjectContainmentEList<ContextEnvironment>(ContextEnvironment.class, this, RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS);
-		}
-		return contextEnvironments;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getName() {
 		return name;
 	}
@@ -159,8 +133,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 		switch (featureID) {
 			case RootPackage.ROOT_CLASS__VIEW_POINTS:
 				return ((InternalEList<?>)getViewPoints()).basicRemove(otherEnd, msgs);
-			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
-				return ((InternalEList<?>)getContextEnvironments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -175,8 +147,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 		switch (featureID) {
 			case RootPackage.ROOT_CLASS__VIEW_POINTS:
 				return getViewPoints();
-			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
-				return getContextEnvironments();
 			case RootPackage.ROOT_CLASS__NAME:
 				return getName();
 		}
@@ -196,10 +166,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 				getViewPoints().clear();
 				getViewPoints().addAll((Collection<? extends ViewPoint>)newValue);
 				return;
-			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
-				getContextEnvironments().clear();
-				getContextEnvironments().addAll((Collection<? extends ContextEnvironment>)newValue);
-				return;
 			case RootPackage.ROOT_CLASS__NAME:
 				setName((String)newValue);
 				return;
@@ -218,9 +184,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 			case RootPackage.ROOT_CLASS__VIEW_POINTS:
 				getViewPoints().clear();
 				return;
-			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
-				getContextEnvironments().clear();
-				return;
 			case RootPackage.ROOT_CLASS__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -238,8 +201,6 @@ public class RootClassImpl extends MinimalEObjectImpl.Container implements RootC
 		switch (featureID) {
 			case RootPackage.ROOT_CLASS__VIEW_POINTS:
 				return viewPoints != null && !viewPoints.isEmpty();
-			case RootPackage.ROOT_CLASS__CONTEXT_ENVIRONMENTS:
-				return contextEnvironments != null && !contextEnvironments.isEmpty();
 			case RootPackage.ROOT_CLASS__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}

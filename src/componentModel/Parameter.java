@@ -2,6 +2,8 @@
  */
 package componentModel;
 
+import java.lang.String;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,8 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see componentModel.ComponentModelPackage#getParameter()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='VoidNotParameterType'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot VoidNotParameterType='if self.parameterType.oclIsKindOf(SimpleType) then self.parameterType.oclAsType(SimpleType) \n\t\t\t\t\t\t\t\t\t\t&lt;&gt; SimpleDataType::VOID else true endif'"
+ * @model
  * @generated
  */
 public interface Parameter extends EObject {
@@ -50,12 +51,12 @@ public interface Parameter extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter Type</em>' reference.
-	 * @see #setParameterType(Type)
+	 * @see #setParameterType(ParameterType)
 	 * @see componentModel.ComponentModelPackage#getParameter_ParameterType()
 	 * @model required="true"
 	 * @generated
 	 */
-	Type getParameterType();
+	ParameterType getParameterType();
 
 	/**
 	 * Sets the value of the '{@link componentModel.Parameter#getParameterType <em>Parameter Type</em>}' reference.
@@ -65,6 +66,6 @@ public interface Parameter extends EObject {
 	 * @see #getParameterType()
 	 * @generated
 	 */
-	void setParameterType(Type value);
+	void setParameterType(ParameterType value);
 
 } // Parameter
