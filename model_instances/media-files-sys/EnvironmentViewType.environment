@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:ConcreteDeploymentViewPoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:env="env" name="MediaFilesDeployment">
+  <environment name="MediaFilesEnvironment">
+    <container name="ApplicationServer" outwardLinks="//@environment/@link[name='mainLink']"/>
+    <container name="DatabaseServer" outwardLinks="//@environment/@link[name='mainLink']"/>
+    <link container="//@environment/@container[name='ApplicationServer'] //@environment/@container[name='DatabaseServer']" name="mainLink"/>
+  </environment>
+</env:ConcreteDeploymentViewPoint>
