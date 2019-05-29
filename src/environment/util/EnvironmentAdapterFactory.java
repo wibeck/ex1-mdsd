@@ -3,7 +3,9 @@
 package environment.util;
 
 import componentModel.AllocationViewType;
+import componentModel.DeploymentViewPoint;
 import componentModel.EnvironmentViewType;
+import componentModel.ViewPoint;
 import componentModel.ViewType;
 
 import environment.*;
@@ -88,6 +90,14 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 				return createAllocationContextAdapter();
 			}
 			@Override
+			public Adapter caseAllocationEnvironment(AllocationEnvironment object) {
+				return createAllocationEnvironmentAdapter();
+			}
+			@Override
+			public Adapter caseConcreteDeploymentViewPoint(ConcreteDeploymentViewPoint object) {
+				return createConcreteDeploymentViewPointAdapter();
+			}
+			@Override
 			public Adapter caseViewType(ViewType object) {
 				return createViewTypeAdapter();
 			}
@@ -98,6 +108,14 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAllocationViewType(AllocationViewType object) {
 				return createAllocationViewTypeAdapter();
+			}
+			@Override
+			public Adapter caseViewPoint(ViewPoint object) {
+				return createViewPointAdapter();
+			}
+			@Override
+			public Adapter caseDeploymentViewPoint(DeploymentViewPoint object) {
+				return createDeploymentViewPointAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -176,6 +194,34 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link environment.AllocationEnvironment <em>Allocation Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see environment.AllocationEnvironment
+	 * @generated
+	 */
+	public Adapter createAllocationEnvironmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link environment.ConcreteDeploymentViewPoint <em>Concrete Deployment View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see environment.ConcreteDeploymentViewPoint
+	 * @generated
+	 */
+	public Adapter createConcreteDeploymentViewPointAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link componentModel.ViewType <em>View Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -214,6 +260,34 @@ public class EnvironmentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAllocationViewTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.ViewPoint <em>View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.ViewPoint
+	 * @generated
+	 */
+	public Adapter createViewPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentModel.DeploymentViewPoint <em>Deployment View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentModel.DeploymentViewPoint
+	 * @generated
+	 */
+	public Adapter createDeploymentViewPointAdapter() {
 		return null;
 	}
 

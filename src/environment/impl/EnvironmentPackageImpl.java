@@ -11,6 +11,8 @@ import componentModel.ComponentModelPackage;
 import componentModel.impl.ComponentModelPackageImpl;
 
 import environment.AllocationContext;
+import environment.AllocationEnvironment;
+import environment.ConcreteDeploymentViewPoint;
 import environment.Environment;
 import environment.EnvironmentFactory;
 import environment.EnvironmentPackage;
@@ -64,6 +66,20 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @generated
 	 */
 	private EClass allocationContextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass allocationEnvironmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass concreteDeploymentViewPointEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -286,6 +302,66 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAllocationContext_Name() {
+		return (EAttribute)allocationContextEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAllocationEnvironment() {
+		return allocationEnvironmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAllocationEnvironment_AllocationContexts() {
+		return (EReference)allocationEnvironmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getConcreteDeploymentViewPoint() {
+		return concreteDeploymentViewPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConcreteDeploymentViewPoint_AllocationEnvironment() {
+		return (EReference)concreteDeploymentViewPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConcreteDeploymentViewPoint_Environment() {
+		return (EReference)concreteDeploymentViewPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EnvironmentFactory getEnvironmentFactory() {
 		return (EnvironmentFactory)getEFactoryInstance();
 	}
@@ -325,6 +401,14 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		allocationContextEClass = createEClass(ALLOCATION_CONTEXT);
 		createEReference(allocationContextEClass, ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT);
 		createEReference(allocationContextEClass, ALLOCATION_CONTEXT__CONTAINER);
+		createEAttribute(allocationContextEClass, ALLOCATION_CONTEXT__NAME);
+
+		allocationEnvironmentEClass = createEClass(ALLOCATION_ENVIRONMENT);
+		createEReference(allocationEnvironmentEClass, ALLOCATION_ENVIRONMENT__ALLOCATION_CONTEXTS);
+
+		concreteDeploymentViewPointEClass = createEClass(CONCRETE_DEPLOYMENT_VIEW_POINT);
+		createEReference(concreteDeploymentViewPointEClass, CONCRETE_DEPLOYMENT_VIEW_POINT__ALLOCATION_ENVIRONMENT);
+		createEReference(concreteDeploymentViewPointEClass, CONCRETE_DEPLOYMENT_VIEW_POINT__ENVIRONMENT);
 	}
 
 	/**
@@ -360,7 +444,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 
 		// Add supertypes to classes
 		environmentEClass.getESuperTypes().add(theComponentModelPackage.getEnvironmentViewType());
-		allocationContextEClass.getESuperTypes().add(theComponentModelPackage.getAllocationViewType());
+		allocationEnvironmentEClass.getESuperTypes().add(theComponentModelPackage.getAllocationViewType());
+		concreteDeploymentViewPointEClass.getESuperTypes().add(theComponentModelPackage.getDeploymentViewPoint());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -372,7 +457,6 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		initEClass(containerEClass, environment.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContainer_Name(), ecorePackage.getEString(), "name", null, 1, 1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContainer_AllocationContexts(), this.getAllocationContext(), this.getAllocationContext_Container(), "allocationContexts", null, 0, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		getContainer_AllocationContexts().getEKeys().add(theComponentModelPackage.getViewType_Name());
 		initEReference(getContainer_OutwardLinks(), this.getLink(), null, "outwardLinks", null, 0, -1, environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		getContainer_OutwardLinks().getEKeys().add(this.getLink_Name());
 
@@ -384,6 +468,15 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		initEClass(allocationContextEClass, AllocationContext.class, "AllocationContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocationContext_AssemblyContext(), theAssemblyPackage.getAssemblyContext(), null, "assemblyContext", null, 1, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAllocationContext_Container(), this.getContainer(), this.getContainer_AllocationContexts(), "container", null, 0, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAllocationContext_Name(), ecorePackage.getEString(), "name", null, 1, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(allocationEnvironmentEClass, AllocationEnvironment.class, "AllocationEnvironment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAllocationEnvironment_AllocationContexts(), this.getAllocationContext(), null, "allocationContexts", null, 0, -1, AllocationEnvironment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		getAllocationEnvironment_AllocationContexts().getEKeys().add(this.getAllocationContext_Name());
+
+		initEClass(concreteDeploymentViewPointEClass, ConcreteDeploymentViewPoint.class, "ConcreteDeploymentViewPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConcreteDeploymentViewPoint_AllocationEnvironment(), this.getAllocationEnvironment(), null, "allocationEnvironment", null, 0, 1, ConcreteDeploymentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConcreteDeploymentViewPoint_Environment(), this.getEnvironment(), null, "environment", null, 0, 1, ConcreteDeploymentViewPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

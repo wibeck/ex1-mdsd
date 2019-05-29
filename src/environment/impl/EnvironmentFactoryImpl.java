@@ -60,6 +60,8 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 			case EnvironmentPackage.CONTAINER: return createContainer();
 			case EnvironmentPackage.LINK: return createLink();
 			case EnvironmentPackage.ALLOCATION_CONTEXT: return createAllocationContext();
+			case EnvironmentPackage.ALLOCATION_ENVIRONMENT: return createAllocationEnvironment();
+			case EnvironmentPackage.CONCRETE_DEPLOYMENT_VIEW_POINT: return createConcreteDeploymentViewPoint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +109,28 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	public AllocationContext createAllocationContext() {
 		AllocationContextImpl allocationContext = new AllocationContextImpl();
 		return allocationContext;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AllocationEnvironment createAllocationEnvironment() {
+		AllocationEnvironmentImpl allocationEnvironment = new AllocationEnvironmentImpl();
+		return allocationEnvironment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConcreteDeploymentViewPoint createConcreteDeploymentViewPoint() {
+		ConcreteDeploymentViewPointImpl concreteDeploymentViewPoint = new ConcreteDeploymentViewPointImpl();
+		return concreteDeploymentViewPoint;
 	}
 
 	/**

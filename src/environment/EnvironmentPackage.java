@@ -227,22 +227,13 @@ public interface EnvironmentPackage extends EPackage {
 	int ALLOCATION_CONTEXT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ALLOCATION_CONTEXT__NAME = ComponentModelPackage.ALLOCATION_VIEW_TYPE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assembly Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT = ComponentModelPackage.ALLOCATION_VIEW_TYPE_FEATURE_COUNT + 0;
+	int ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -251,7 +242,16 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT__CONTAINER = ComponentModelPackage.ALLOCATION_VIEW_TYPE_FEATURE_COUNT + 1;
+	int ALLOCATION_CONTEXT__CONTAINER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_CONTEXT__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Allocation Context</em>' class.
@@ -260,7 +260,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT_FEATURE_COUNT = ComponentModelPackage.ALLOCATION_VIEW_TYPE_FEATURE_COUNT + 2;
+	int ALLOCATION_CONTEXT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Allocation Context</em>' class.
@@ -269,7 +269,117 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT_OPERATION_COUNT = ComponentModelPackage.ALLOCATION_VIEW_TYPE_OPERATION_COUNT + 0;
+	int ALLOCATION_CONTEXT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link environment.impl.AllocationEnvironmentImpl <em>Allocation Environment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see environment.impl.AllocationEnvironmentImpl
+	 * @see environment.impl.EnvironmentPackageImpl#getAllocationEnvironment()
+	 * @generated
+	 */
+	int ALLOCATION_ENVIRONMENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_ENVIRONMENT__NAME = ComponentModelPackage.ALLOCATION_VIEW_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Allocation Contexts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_ENVIRONMENT__ALLOCATION_CONTEXTS = ComponentModelPackage.ALLOCATION_VIEW_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Allocation Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_ENVIRONMENT_FEATURE_COUNT = ComponentModelPackage.ALLOCATION_VIEW_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Allocation Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_ENVIRONMENT_OPERATION_COUNT = ComponentModelPackage.ALLOCATION_VIEW_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link environment.impl.ConcreteDeploymentViewPointImpl <em>Concrete Deployment View Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see environment.impl.ConcreteDeploymentViewPointImpl
+	 * @see environment.impl.EnvironmentPackageImpl#getConcreteDeploymentViewPoint()
+	 * @generated
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT = 5;
+
+	/**
+	 * The feature id for the '<em><b>View Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT__VIEW_TYPES = ComponentModelPackage.DEPLOYMENT_VIEW_POINT__VIEW_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT__NAME = ComponentModelPackage.DEPLOYMENT_VIEW_POINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Allocation Environment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT__ALLOCATION_ENVIRONMENT = ComponentModelPackage.DEPLOYMENT_VIEW_POINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Environment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT__ENVIRONMENT = ComponentModelPackage.DEPLOYMENT_VIEW_POINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Concrete Deployment View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT_FEATURE_COUNT = ComponentModelPackage.DEPLOYMENT_VIEW_POINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Concrete Deployment View Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_DEPLOYMENT_VIEW_POINT_OPERATION_COUNT = ComponentModelPackage.DEPLOYMENT_VIEW_POINT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -412,6 +522,70 @@ public interface EnvironmentPackage extends EPackage {
 	EReference getAllocationContext_Container();
 
 	/**
+	 * Returns the meta object for the attribute '{@link environment.AllocationContext#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see environment.AllocationContext#getName()
+	 * @see #getAllocationContext()
+	 * @generated
+	 */
+	EAttribute getAllocationContext_Name();
+
+	/**
+	 * Returns the meta object for class '{@link environment.AllocationEnvironment <em>Allocation Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Allocation Environment</em>'.
+	 * @see environment.AllocationEnvironment
+	 * @generated
+	 */
+	EClass getAllocationEnvironment();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link environment.AllocationEnvironment#getAllocationContexts <em>Allocation Contexts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Allocation Contexts</em>'.
+	 * @see environment.AllocationEnvironment#getAllocationContexts()
+	 * @see #getAllocationEnvironment()
+	 * @generated
+	 */
+	EReference getAllocationEnvironment_AllocationContexts();
+
+	/**
+	 * Returns the meta object for class '{@link environment.ConcreteDeploymentViewPoint <em>Concrete Deployment View Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Concrete Deployment View Point</em>'.
+	 * @see environment.ConcreteDeploymentViewPoint
+	 * @generated
+	 */
+	EClass getConcreteDeploymentViewPoint();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link environment.ConcreteDeploymentViewPoint#getAllocationEnvironment <em>Allocation Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Allocation Environment</em>'.
+	 * @see environment.ConcreteDeploymentViewPoint#getAllocationEnvironment()
+	 * @see #getConcreteDeploymentViewPoint()
+	 * @generated
+	 */
+	EReference getConcreteDeploymentViewPoint_AllocationEnvironment();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link environment.ConcreteDeploymentViewPoint#getEnvironment <em>Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Environment</em>'.
+	 * @see environment.ConcreteDeploymentViewPoint#getEnvironment()
+	 * @see #getConcreteDeploymentViewPoint()
+	 * @generated
+	 */
+	EReference getConcreteDeploymentViewPoint_Environment();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -545,6 +719,58 @@ public interface EnvironmentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ALLOCATION_CONTEXT__CONTAINER = eINSTANCE.getAllocationContext_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ALLOCATION_CONTEXT__NAME = eINSTANCE.getAllocationContext_Name();
+
+		/**
+		 * The meta object literal for the '{@link environment.impl.AllocationEnvironmentImpl <em>Allocation Environment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see environment.impl.AllocationEnvironmentImpl
+		 * @see environment.impl.EnvironmentPackageImpl#getAllocationEnvironment()
+		 * @generated
+		 */
+		EClass ALLOCATION_ENVIRONMENT = eINSTANCE.getAllocationEnvironment();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocation Contexts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALLOCATION_ENVIRONMENT__ALLOCATION_CONTEXTS = eINSTANCE.getAllocationEnvironment_AllocationContexts();
+
+		/**
+		 * The meta object literal for the '{@link environment.impl.ConcreteDeploymentViewPointImpl <em>Concrete Deployment View Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see environment.impl.ConcreteDeploymentViewPointImpl
+		 * @see environment.impl.EnvironmentPackageImpl#getConcreteDeploymentViewPoint()
+		 * @generated
+		 */
+		EClass CONCRETE_DEPLOYMENT_VIEW_POINT = eINSTANCE.getConcreteDeploymentViewPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocation Environment</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONCRETE_DEPLOYMENT_VIEW_POINT__ALLOCATION_ENVIRONMENT = eINSTANCE.getConcreteDeploymentViewPoint_AllocationEnvironment();
+
+		/**
+		 * The meta object literal for the '<em><b>Environment</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONCRETE_DEPLOYMENT_VIEW_POINT__ENVIRONMENT = eINSTANCE.getConcreteDeploymentViewPoint_Environment();
 
 	}
 
