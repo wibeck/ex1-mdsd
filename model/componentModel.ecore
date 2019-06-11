@@ -141,7 +141,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Char" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Date" eSuperTypes="#//SimpleType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//SimpleType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="List0" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Map" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//SimpleType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Long" eSuperTypes="#//SimpleType"/>
